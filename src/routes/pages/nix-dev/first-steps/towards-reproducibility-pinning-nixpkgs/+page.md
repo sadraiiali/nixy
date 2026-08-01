@@ -1,0 +1,45 @@
+# <a id="pinning-nixpkgs"></a> در مسیر بازتولیدپذیری: سنجاق کردن Nixpkgs
+
+در مثال‌های مختلف Nix، اغلب موارد زیر را مشاهده خواهید کرد:
+
+```nix
+{ pkgs ? import <nixpkgs> {} }:
+
+...
+```
+
+> <span class="admonition-kind" data-kind="note"></span>
+>
+> **نکته**
+>
+> `&lt;nixpkgs&gt;` به مسیر سیستم‌عامل برای نسخه‌ای مشخص از *Nixpkgs* اشاره می‌کند.
+> اطلاعات بیشتر را درباره [مسیرهای جستجو](/pages/nix-dev/tutorials/nix-language) در [reading-nix-language](/pages/nix-dev/tutorials/nix-language) بیابید.
+
+این یک روش **راحت** برای نمایش سریع یک عبارت نیکس (Nix expression) و راه‌اندازی آن با وارد کردن بسته‌های نیکس است.
+
+با این حال، &lt;ref-search-path&gt;**عبارت نیکس حاصل به‌طور کامل بازتولیدپذیر نیست**.&lt;/ref-search-path&gt;
+
+## سنجاق کردن بسته‌ها با URLها درون یک عبارت نیکس
+
+برای ایجاد عبارت‌های نیکس **کاملاً بازتولیدپذیر**، می‌توانیم نسخه مشخصی از Nixpkgs را سنجاق (Pin) کنیم.
+
+ساده‌ترین راه برای انجام این کار، دریافت نسخه مورد نیاز Nixpkgs به صورت یک تاربال (tarball) است که از طریق هش کامیت مرتبط Git مشخص شده است:
+
+```nix
+{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/06278c77b5d162e62df170fec307e83f1812d94b.tar.gz") {}
+}:
+
+...
+```
+
+انتخاب کامیت را می‌توان از طریق [status.nixos.org](https://status.nixos.org/) انجام داد که تمام نسخه‌ها و آخرین کامیتی که تمامی تست‌ها را با موفقیت گذرانده است فهرست می‌کند.
+
+هنگام انتخاب یک کامیت، توصیه می‌شود که یکی از موارد زیر را دنبال کنید:
+
+- **جدیدترین نسخه پایدار NixOS** با استفاده از یک نسخه خاص، مانند `nixos-21.05`، **یا**
+- جدیدترین **نسخه ناپایدار** از طریق `nixos-unstable`.
+
+## گام‌های نخستین
+
+- برای مثال‌های بیشتر و جزئیات روش‌های مختلف سنجاق کردن Nixpkgs، بخش [ref-pinning-nixpkgs](/pages/nix-dev/reference/pinning-nixpkgs) را ببینید.
+- [dependency-management-npins](/pages/nix-dev/guides/recipes/dependency-management)

@@ -1,0 +1,16 @@
+[project]
+name = "nix-guide-dl"
+version = "0.1.0"
+description = "Download, glossary, translate, and publish Nix docs for the SvelteKit site (tools/)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "openai>=2.48.0",
+    "requests>=2.34.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tools*"]
+

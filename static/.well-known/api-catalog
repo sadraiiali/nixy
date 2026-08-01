@@ -1,0 +1,97 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://nixy.a15d.at/.well-known/api-catalog",
+      "item": [
+        {
+          "href": "https://nixy.a15d.at/glossary.json",
+          "type": "application/json",
+          "title": "Persian Nix/NixOS glossary (JSON)"
+        },
+        {
+          "href": "https://nixy.a15d.at/sitemap.xml",
+          "type": "application/xml",
+          "title": "Site sitemap"
+        },
+        {
+          "href": "https://nixy.a15d.at/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Agent Skills discovery index (RFC v0.2.0)"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://nixy.a15d.at/",
+          "type": "text/html",
+          "title": "نیکسی — Persian Nix & NixOS guides (homepage)"
+        },
+        {
+          "href": "https://nixy.a15d.at/pages/nix-dev",
+          "type": "text/html",
+          "title": "nix.dev (Persian)"
+        },
+        {
+          "href": "https://nixy.a15d.at/pages/nix-manual",
+          "type": "text/html",
+          "title": "Nix reference manual (Persian)"
+        },
+        {
+          "href": "https://nixy.a15d.at/pages/nixpkgs-manual",
+          "type": "text/html",
+          "title": "Nixpkgs manual (Persian)"
+        },
+        {
+          "href": "https://nixy.a15d.at/glossary",
+          "type": "text/html",
+          "title": "Glossary (human-readable)"
+        },
+        {
+          "href": "https://nixy.a15d.at/licenses",
+          "type": "text/html",
+          "title": "Licenses and attribution"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://nixy.a15d.at/glossary.json",
+          "type": "application/json",
+          "title": "Glossary data feed"
+        },
+        {
+          "href": "https://nixy.a15d.at/sitemap.xml",
+          "type": "application/xml",
+          "title": "XML sitemap of all pages"
+        },
+        {
+          "href": "https://nixy.a15d.at/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Agent Skills discovery index"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://nixy.a15d.at/robots.txt",
+          "type": "text/plain",
+          "title": "robots.txt"
+        }
+      ]
+    },
+    {
+      "anchor": "https://nixy.a15d.at/glossary.json",
+      "service-desc": [
+        {
+          "href": "https://nixy.a15d.at/glossary.json",
+          "type": "application/json",
+          "title": "Glossary entries JSON schema: { version, docs[], entries[{ term, suggestion, translation, notes, sources, count, is_tech, status }] }"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://nixy.a15d.at/glossary",
+          "type": "text/html",
+          "title": "Browse and search the glossary"
+        }
+      ]
+    }
+  ]
+}

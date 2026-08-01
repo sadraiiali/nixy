@@ -1,0 +1,26 @@
+# نام
+
+`nix-store --add` - افزودن مسیرها به انبار Nix
+
+# خلاصه دستور
+
+`nix-store` `--add` *paths…*
+
+# توضیحات
+
+عملیات `--add` مسیرهای مشخص‌شده را به انبار Nix اضافه می‌کند. این عملیات، مسیرهای حاصل در انبار Nix را در خروجی استاندارد چاپ می‌کند.
+
+*paths* (مسیرهایی) که به پیوندهای نمادین اشاره دارند، ارجاع‌زدایی (dereference) نمی‌شوند، بلکه به عنوان پیوند نمادین با همان مقصد به انبار اضافه می‌شوند.
+
+{{#include ./opt-common.md}}
+
+{{#include ../opt-common.md}}
+
+{{#include ../env-common.md}}
+
+# مثال
+
+```console
+$ nix-store --add ./foo.c
+/nix/store/m7lrha58ph6rcnv109yzx1nk1cj7k7zf-foo.c
+```

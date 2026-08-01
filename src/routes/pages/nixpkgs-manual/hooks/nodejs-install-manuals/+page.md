@@ -1,0 +1,10 @@
+# <a id="nodejs-install-manuals"></a> nodejsInstallManuals
+
+راهنماهای موجود در بسته‌های Node.js را شناسایی کرده و تلاش می‌کند آن‌ها را در مکان‌های استاندارد نصب کند.
+این شناسایی با بررسی package.json پروژه و یافتن هرگونه ورودی با نوع `man` انجام می‌شود.
+
+در حال حاضر هیچ روشی برای پیکربندی این قلاب وجود ندارد.
+
+## <a id="nodejs-install-manuals-example"></a> نمونه‌ها
+
+[](#npm-build-hook-example-snippet)

@@ -1,0 +1,142 @@
+[
+  {
+    "path": "introduction/nix",
+    "topic": "گشتی در Nix"
+  },
+  {
+    "path": "introduction-tour",
+    "topic": "نحوه کارکرد آن..."
+  },
+  {
+    "path": "introduction/helloworld",
+    "topic": "سلام دنیا"
+  },
+  {
+    "path": "strings/introduction",
+    "topic": "رشته‌ها"
+  },
+  {
+    "path": "strings/multiline",
+    "topic": "رشته چندخطی"
+  },
+  {
+    "path": "strings/typeconversion",
+    "topic": "تبدیل عدد صحیح به رشته"
+  },
+  {
+    "path": "functions/introduction",
+    "topic": "توابع: مقدمه"
+  },
+  {
+    "path": "functions/minmax",
+    "topic": "توابع: نخستین تابع شما!"
+  },
+  {
+    "path": "functions/attrsets",
+    "topic": "توابع: آرگومان‌های مجموعه‌های ویژگی"
+  },
+  {
+    "path": "functions/ellipsis",
+    "topic": "توابع: الگوی @"
+  },
+  {
+    "path": "functions/ellipsis2",
+    "topic": "توابع: الگوی @-بخش دوم"
+  },
+  {
+    "path": "attrset/rec",
+    "topic": "مجموعه ویژگی‌ها: rec"
+  },
+  {
+    "path": "functions/partial_application",
+    "topic": "اعمال جزئی (Partial application)"
+  },
+  {
+    "path": "functions/partial_application2",
+    "topic": "کاربرد جزئی II"
+  },
+  {
+    "path": "attrset/examples",
+    "topic": "مجموعه ویژگی‌ها: مثال‌های ۱"
+  },
+  {
+    "path": "attrset/examples2",
+    "topic": "مجموعه ویژگی‌ها: مثال‌های ۲"
+  },
+  {
+    "path": "attrset/examples3",
+    "topic": "مجموعه ویژگی‌ها: مثال‌های ۳"
+  },
+  {
+    "path": "attrset/merging",
+    "topic": "مجموعه ویژگی‌ها: ادغام"
+  },
+  {
+    "path": "attrset/booleans",
+    "topic": "مجموعه‌های ویژگی و مقادیر بولین"
+  },
+  {
+    "path": "lists/operations",
+    "topic": "فهرست‌ها"
+  },
+  {
+    "path": "lists/examples1",
+    "topic": "فهرست‌ها و مجموعه‌های ویژگی"
+  },
+  {
+    "path": "library/usage",
+    "topic": "دستورات inherit / import / with!"
+  },
+  {
+    "path": "scopes",
+    "topic": "محدوده‌بندی صفت‌ها در let/with"
+  },
+  {
+    "path": "types",
+    "topic": "سیستم نوع‌داده (Typing system)"
+  },
+  {
+    "path": "assertions",
+    "topic": "ادعاها (Assertions)"
+  },
+  {
+    "path": "nano",
+    "topic": "اشکال‌زدایی بسته‌بندی nano"
+  },
+  {
+    "path": "map",
+    "topic": "نگاشت"
+  },
+  {
+    "path": "mapAttrs",
+    "topic": "mapAttrs"
+  },
+  {
+    "path": "fold/introduction",
+    "topic": "تا کردن (Fold): مقدمه"
+  },
+  {
+    "path": "reimplementation/reverselist",
+    "topic": "پیاده‌سازی مجدد: reverseList"
+  },
+  {
+    "path": "reimplementation/map",
+    "topic": "تاشو (Fold): پیاده‌سازی 'map'"
+  },
+  {
+    "path": "reimplementation/attrVals",
+    "topic": "پیاده‌سازی مجدد: attrVals"
+  },
+  {
+    "path": "reimplementation/attrValues",
+    "topic": "پیاده‌سازی مجدد: attrValues"
+  },
+  {
+    "path": "reimplementation/catAttrs",
+    "topic": "پیاده‌سازی مجدد: catAttrs"
+  },
+  {
+    "path": "end",
+    "topic": "پایان"
+  }
+]

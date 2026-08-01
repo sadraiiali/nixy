@@ -1,0 +1,16 @@
+{
+  "name": "نیکسی — آموزش و راهنمای فارسی Nix و NixOS",
+  "short_name": "نیکسی",
+  "description": "راهنماهای فارسی Nix و NixOS — nix.dev، راهنمای مرجع، Nixpkgs و تور نیکس",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#5277C3",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}

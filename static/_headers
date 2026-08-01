@@ -1,0 +1,46 @@
+# Cloudflare Pages headers (copied into build/ by SvelteKit)
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Long-cache fingerprinted assets
+/_app/immutable/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Homepage: revalidate + agent discovery Link relations (RFC 8288 / RFC 9727)
+# (modulepreload Links from the HTML response are separate; these are agent-useful.)
+# Vary: Accept — HTML vs text/markdown (Pages Function middleware; see functions/_middleware.js)
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  Vary: Accept
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json", </glossary.json>; rel="service-desc"; type="application/json", </sitemap.xml>; rel="describedby"; type="application/xml", </>; rel="service-doc"; type="text/html"
+
+# RFC 9727 api-catalog document
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Agent Skills Discovery RFC v0.2.0
+# https://github.com/cloudflare/agent-skills-discovery-rfc
+/.well-known/agent-skills/index.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/.well-known/agent-skills/*/SKILL.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Never serve env / secret-looking paths (static site should not include these)
+/.env
+  X-Robots-Tag: noindex
+  Cache-Control: no-store
+
+/.env.*
+  X-Robots-Tag: noindex
+  Cache-Control: no-store

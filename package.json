@@ -1,0 +1,42 @@
+{
+	"name": "nix",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "node scripts/fetch-source-avatars.mjs && node scripts/fetch-page-contributors.mjs && node scripts/generate-agent-skills-index.mjs && vite build && node scripts/generate-sitemap.mjs",
+		"build:webxdc": "node scripts/fetch-source-avatars.mjs && node scripts/fetch-page-contributors.mjs && node scripts/generate-agent-skills-index.mjs && WEBXDC=1 VITE_WEBXDC=1 vite build",
+		"avatars": "node scripts/fetch-source-avatars.mjs",
+		"contributors": "node scripts/fetch-page-contributors.mjs",
+		"agent-skills": "node scripts/generate-agent-skills-index.mjs",
+		"sitemap": "node scripts/generate-sitemap.mjs",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"pages:dev": "wrangler pages dev build",
+		"pages:deploy": "wrangler pages deploy build --project-name=nixy --branch=main --commit-dirty=true",
+		"deploy": "PUBLIC_SITE_URL=https://nixy.a15d.at npm run build && wrangler pages deploy build --project-name=nixy --branch=main --commit-dirty=true"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.63.0",
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@types/node": "^26.1.2",
+		"@types/prismjs": "^1.26.6",
+		"@types/turndown": "^5.0.6",
+		"mdsvex": "^0.12.7",
+		"prismjs": "^1.30.0",
+		"svelte": "^5.56.1",
+		"svelte-check": "^4.6.0",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.16",
+		"wrangler": "^4.115.0"
+	},
+	"dependencies": {
+		"marked": "^18.0.7",
+		"monaco-editor": "^0.56.0",
+		"turndown": "^7.2.4"
+	}
+}

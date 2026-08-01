@@ -1,0 +1,123 @@
+# 8.3.4. nix-env
+
+## نام
+
+`nix-env` - دستکاری یا پرس‌وجو از پروفایل‌های کاربری Nix
+
+## خلاصه
+`nix-env` *operation* [*options*] [*arguments…*]
+  [`--option` *name* *value*]
+  [`--arg` *name* *value*]
+  [`--argstr` *name* *value*]
+  [{'{'}'{'{'}'{'}'}`--file` | `-f`{'{'}'{'}'}'{'}'} *path*]
+  [{'{'}'{'{'}'{'}'}`--profile` | `-p`{'{'}'{'}'}'{'}'} *path*]
+  [`--system-filter` *system*]
+  [`--dry-run`]
+
+## توضیحات
+دستور `nix-env` برای دستکاری پروفایل‌های کاربری Nix استفاده می‌شود. پروفایل‌های کاربری مجموعه‌ای از بسته‌های نرم‌افزاری هستند که در هر برهه زمانی برای یک کاربر در دسترس هستند. به عبارت دیگر، آن‌ها نمای ترکیبی و یکپارچه‌ای از برنامه‌های موجود در انبار Nix را ارائه می‌دهند. ممکن است تعداد زیادی پروفایل کاربری وجود داشته باشد: کاربران مختلف می‌توانند پروفایل‌های متفاوتی داشته باشند، و هر کاربر به‌تنهایی می‌تواند بین پروفایل‌های گوناگون جابه‌جا شود.
+
+دستور `nix-env` دقیقا یک پرچم *operation* دریافت می‌کند که نشان‌دهنده زیردستوری است که باید اجرا شود. عملیات زیر در دسترس هستند:
+
+- [`--install`](/pages/nix-manual/command-ref/nix-env/install)
+- [`--upgrade`](/pages/nix-manual/command-ref/nix-env/upgrade)
+- [`--uninstall`](/pages/nix-manual/command-ref/nix-env/uninstall)
+- [`--set`](/pages/nix-manual/command-ref/nix-env/set)
+- [`--set-flag`](/pages/nix-manual/command-ref/nix-env/set-flag)
+- [`--query`](/pages/nix-manual/command-ref/nix-env/query)
+- [`--switch-profile`](/pages/nix-manual/command-ref/nix-env/switch-profile)
+- [`--list-generations`](/pages/nix-manual/command-ref/nix-env/list-generations)
+- [`--delete-generations`](/pages/nix-manual/command-ref/nix-env/delete-generations)
+- [`--switch-generation`](/pages/nix-manual/command-ref/nix-env/switch-generation)
+- [`--rollback`](/pages/nix-manual/command-ref/nix-env/rollback)
+
+این صفحات را می‌توان به صورت آفلاین مشاهده کرد:
+
+- `man nix-env-&lt;operation&gt;`.
+
+  مثال: `man nix-env-install`
+
+- `nix-env --help --&lt;operation&gt;`
+
+  مثال: `nix-env --help --install`
+
+## منابع بسته
+ابزار `nix-env` می‌تواند بسته‌ها را از چندین منبع دریافت کند:
+
+- یک مجموعه ویژگی از derivationها از طریق:
+  - [عبارت پیش‌فرض Nix](/pages/nix-manual/command-ref/files/default-nix-expression) (به صورت پیش‌فرض)
+  - یک فایل Nix، مشخص‌شده از طریق `--file`
+  - یک [پروفایل](/pages/nix-manual/command-ref/files/profiles)، مشخص‌شده از طریق `--from-profile`
+  - یک عبارت Nix که تابعی است و عبارت پیش‌فرض را به عنوان آرگومان می‌پذیرد، مشخص‌شده از طریق `--from-expression`
+- یک [مسیر انبار](/pages/nix-manual/store/store-path)
+
+## انتخابگرها
+چندین عملیات، مانند [`nix-env --query`](/pages/nix-manual/command-ref/nix-env/query) و [`nix-env --install`](/pages/nix-manual/command-ref/nix-env/install)، فهرستی از *آرگومان‌ها* را دریافت می‌کنند که بسته‌های مورد نظر برای انجام عملیات را مشخص می‌کنند.
+
+بسته‌ها بر اساس بخش `name` و بخش `version` یک [نام نمادین derivation](/pages/nix-manual/language/derivations#attr-name) شناسایی می‌شوند:
+
+- `name`: هر چیزی تا قبل از اولین خط فاصله (`-`) که پس از آن یک حرف قرار *نداشته* باشد.
+- `version`: مابقی بخش‌ها، به استثنای خط فاصله جداکننده.
+
+> **مثال**
+>
+> ابزار `nix-env` نام نمادین derivation یعنی `apache-httpd-2.0.48` را به صورت زیر تجزیه می‌کند:
+>
+
+```json
+> {
+>   "name": "apache-httpd",
+>   "version": "2.0.48"
+> }
+> ```
+
+> **مثال**
+>
+> ابزار `nix-env` نام درایویشن نمادین `firefox.*` را به شکل زیر تجزیه می‌کند:
+>
+
+```json
+> {
+>   "name": "firefox.*",
+>   "version": ""
+> }
+> ```
+
+بخش‌های `name` از *آرگومان‌ها* به `nix-env` به عنوان عبارت‌های باقاعده (regular expressions) توسعه‌یافته در نظر گرفته می‌شوند و با بخش‌های `name` از نام‌های derivation در کد منبع بسته مطابقت داده می‌شوند.
+این تطابق به کوچک و بزرگ بودن حروف حساس است (case-sensitive).
+عبارت باقاعده می‌تواند اختیاری با یک خط تیره (`-`) و یک شماره نسخه دنبال شود؛ اگر حذف شود، هر نسخه‌ای از بسته مطابقت خواهد داشت.
+برای جزئیات بیشتر در مورد عبارت‌های باقاعده، به [**regex**(7)](https://linux.die.net/man/7/regex) مراجعه کنید.
+
+> **مثال**
+>
+> الگوهای رایج برای یافتن نام بسته‌ها با `nix-env`:
+>
+> - `firefox`
+>
+>   با نام بسته `firefox` و هر نسخه‌ای مطابقت دارد.
+>
+> - `firefox-32.0`
+>
+>   با نام بسته `firefox` و نسخه `32.0` مطابقت دارد.
+>
+> - `gtk\\+`
+>
+>   با نام بسته `gtk+` مطابقت دارد.
+>   کاراکتر `+` باید با استفاده از یک بک اسلش (`\`) فراردهی (escape) شود تا از تفسیر آن به عنوان یک کمیت‌سنج جلوگیری شود، و خود بک اسلش نیز به نوبه خود باید با یک بک اسلش دیگر فراردهی شود تا اطمینان حاصل شود که شل آن را منتقل می‌کند.
+>
+> - `.\*`
+>
+>   با هر نام بسته‌ای مطابقت دارد.
+>   این حالت پیش‌فرض برای بیشتر دستورها است.
+>
+> - `'.*zip.*'`
+>
+>   با هر نام بسته‌ای که شامل رشته `zip` باشد مطابقت دارد.
+>   به نقاط توجه کنید: `'*zip*'` کار نمی‌کند، زیرا در یک عبارت باقاعده، کاراکتر `*` به عنوان یک کمیت‌سنج تفسیر می‌شود.
+>
+> - `'.*(firefox|chromium).*'`
+>
+>   با هر نام بسته‌ای که حاوی رشته‌های `firefox` یا `chromium` باشد مطابقت دارد.
+
+## فایل‌ها
+`nix-env` روی فایل‌های زیر کار می‌کند.

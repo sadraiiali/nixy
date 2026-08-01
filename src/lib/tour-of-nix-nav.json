@@ -1,0 +1,221 @@
+{
+  "pages": [
+    {
+      "route": "/pages/tour-of-nix",
+      "title": "گشتی در Nix",
+      "rel": "index.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/assertions",
+      "title": "ادعاها (Assertions)",
+      "rel": "assertions.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/attrset/booleans",
+      "title": "مجموعه‌های ویژگی و مقادیر بولین",
+      "rel": "attrset/booleans.md",
+      "section": "attrset"
+    },
+    {
+      "route": "/pages/tour-of-nix/attrset/examples",
+      "title": "مجموعه ویژگی‌ها: مثال‌های ۱",
+      "rel": "attrset/examples.md",
+      "section": "attrset"
+    },
+    {
+      "route": "/pages/tour-of-nix/attrset/examples2",
+      "title": "مجموعه ویژگی‌ها: مثال‌های ۲",
+      "rel": "attrset/examples2.md",
+      "section": "attrset"
+    },
+    {
+      "route": "/pages/tour-of-nix/attrset/examples3",
+      "title": "مجموعه ویژگی‌ها: مثال‌های ۳",
+      "rel": "attrset/examples3.md",
+      "section": "attrset"
+    },
+    {
+      "route": "/pages/tour-of-nix/attrset/merging",
+      "title": "مجموعه ویژگی‌ها: ادغام",
+      "rel": "attrset/merging.md",
+      "section": "attrset"
+    },
+    {
+      "route": "/pages/tour-of-nix/attrset/rec",
+      "title": "مجموعه ویژگی‌ها: rec",
+      "rel": "attrset/rec.md",
+      "section": "attrset"
+    },
+    {
+      "route": "/pages/tour-of-nix/end",
+      "title": "پایان",
+      "rel": "end.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/fold/introduction",
+      "title": "تا کردن (Fold): مقدمه",
+      "rel": "fold/introduction.md",
+      "section": "fold"
+    },
+    {
+      "route": "/pages/tour-of-nix/functions/attrsets",
+      "title": "توابع: آرگومان‌های مجموعه‌های ویژگی",
+      "rel": "functions/attrsets.md",
+      "section": "functions"
+    },
+    {
+      "route": "/pages/tour-of-nix/functions/ellipsis",
+      "title": "توابع: الگوی @",
+      "rel": "functions/ellipsis.md",
+      "section": "functions"
+    },
+    {
+      "route": "/pages/tour-of-nix/functions/ellipsis2",
+      "title": "توابع: الگوی @-بخش دوم",
+      "rel": "functions/ellipsis2.md",
+      "section": "functions"
+    },
+    {
+      "route": "/pages/tour-of-nix/functions/introduction",
+      "title": "توابع: مقدمه",
+      "rel": "functions/introduction.md",
+      "section": "functions"
+    },
+    {
+      "route": "/pages/tour-of-nix/functions/minmax",
+      "title": "توابع: نخستین تابع شما!",
+      "rel": "functions/minmax.md",
+      "section": "functions"
+    },
+    {
+      "route": "/pages/tour-of-nix/functions/partial_application",
+      "title": "اعمال جزئی (Partial application)",
+      "rel": "functions/partial_application.md",
+      "section": "functions"
+    },
+    {
+      "route": "/pages/tour-of-nix/functions/partial_application2",
+      "title": "کاربرد جزئی II",
+      "rel": "functions/partial_application2.md",
+      "section": "functions"
+    },
+    {
+      "route": "/pages/tour-of-nix/introduction-tour",
+      "title": "نحوه کارکرد آن...",
+      "rel": "introduction-tour.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/introduction/helloworld",
+      "title": "سلام دنیا",
+      "rel": "introduction/helloworld.md",
+      "section": "introduction"
+    },
+    {
+      "route": "/pages/tour-of-nix/introduction/nix",
+      "title": "گشتی در Nix",
+      "rel": "introduction/nix.md",
+      "section": "introduction"
+    },
+    {
+      "route": "/pages/tour-of-nix/library/usage",
+      "title": "دستورات inherit / import / with!",
+      "rel": "library/usage.md",
+      "section": "library"
+    },
+    {
+      "route": "/pages/tour-of-nix/lists/examples1",
+      "title": "فهرست‌ها و مجموعه‌های ویژگی",
+      "rel": "lists/examples1.md",
+      "section": "lists"
+    },
+    {
+      "route": "/pages/tour-of-nix/lists/operations",
+      "title": "فهرست‌ها",
+      "rel": "lists/operations.md",
+      "section": "lists"
+    },
+    {
+      "route": "/pages/tour-of-nix/map",
+      "title": "نگاشت",
+      "rel": "map.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/mapAttrs",
+      "title": "mapAttrs",
+      "rel": "mapAttrs.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/nano",
+      "title": "اشکال‌زدایی بسته‌بندی nano",
+      "rel": "nano.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/reimplementation/attrVals",
+      "title": "پیاده‌سازی مجدد: attrVals",
+      "rel": "reimplementation/attrVals.md",
+      "section": "reimplementation"
+    },
+    {
+      "route": "/pages/tour-of-nix/reimplementation/attrValues",
+      "title": "پیاده‌سازی مجدد: attrValues",
+      "rel": "reimplementation/attrValues.md",
+      "section": "reimplementation"
+    },
+    {
+      "route": "/pages/tour-of-nix/reimplementation/catAttrs",
+      "title": "پیاده‌سازی مجدد: catAttrs",
+      "rel": "reimplementation/catAttrs.md",
+      "section": "reimplementation"
+    },
+    {
+      "route": "/pages/tour-of-nix/reimplementation/map",
+      "title": "تاشو (Fold): پیاده‌سازی 'map'",
+      "rel": "reimplementation/map.md",
+      "section": "reimplementation"
+    },
+    {
+      "route": "/pages/tour-of-nix/reimplementation/reverselist",
+      "title": "پیاده‌سازی مجدد: reverseList",
+      "rel": "reimplementation/reverselist.md",
+      "section": "reimplementation"
+    },
+    {
+      "route": "/pages/tour-of-nix/scopes",
+      "title": "محدوده‌بندی صفت‌ها در let/with",
+      "rel": "scopes.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/tour-of-nix/strings/introduction",
+      "title": "رشته‌ها",
+      "rel": "strings/introduction.md",
+      "section": "strings"
+    },
+    {
+      "route": "/pages/tour-of-nix/strings/multiline",
+      "title": "رشته چندخطی",
+      "rel": "strings/multiline.md",
+      "section": "strings"
+    },
+    {
+      "route": "/pages/tour-of-nix/strings/typeconversion",
+      "title": "تبدیل عدد صحیح به رشته",
+      "rel": "strings/typeconversion.md",
+      "section": "strings"
+    },
+    {
+      "route": "/pages/tour-of-nix/types",
+      "title": "سیستم نوع‌داده (Typing system)",
+      "rel": "types.md",
+      "section": "root"
+    }
+  ],
+  "count": 36
+}

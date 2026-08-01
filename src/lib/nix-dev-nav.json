@@ -1,0 +1,365 @@
+{
+  "pages": [
+    {
+      "route": "/pages/nix-dev",
+      "title": "به nix.dev خوش آمدید",
+      "rel": "index.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/nix-dev/install-nix",
+      "title": "نصب Nix",
+      "rel": "install-nix.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/nix-dev/recommended-reading",
+      "title": "مطالعه بیشتر",
+      "rel": "recommended-reading.md",
+      "section": "root"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials",
+      "title": "آموزش‌ها",
+      "rel": "tutorials/index.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/callpackage",
+      "title": "پارامترهای بسته و بازنویسی‌ها با callPackage",
+      "rel": "tutorials/callpackage.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/cross-compilation",
+      "title": "کامپایل متقاطع",
+      "rel": "tutorials/cross-compilation.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/first-steps",
+      "title": "گام‌های نخستین",
+      "rel": "tutorials/first-steps/index.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/first-steps/ad-hoc-shell-environments",
+      "title": "محیط‌های شل آنی (ad-hoc)",
+      "rel": "tutorials/first-steps/ad-hoc-shell-environments.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/first-steps/declarative-shell",
+      "title": "محیط‌های شل اعلامی با shell.nix",
+      "rel": "tutorials/first-steps/declarative-shell.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/first-steps/reproducible-scripts",
+      "title": "اسکریپت‌های تفسیری بازتولیدپذیر",
+      "rel": "tutorials/first-steps/reproducible-scripts.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/first-steps/towards-reproducibility-pinning-nixpkgs",
+      "title": "در مسیر بازتولیدپذیری: سنجاق کردن Nixpkgs",
+      "rel": "tutorials/first-steps/towards-reproducibility-pinning-nixpkgs.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/module-system",
+      "title": "سیستم ماژول",
+      "rel": "tutorials/module-system/index.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/module-system/a-basic-module",
+      "title": "یک ماژول ساده",
+      "rel": "tutorials/module-system/a-basic-module/index.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/module-system/deep-dive",
+      "title": "بررسی عمیق سیستم ماژول",
+      "rel": "tutorials/module-system/deep-dive.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nix-language",
+      "title": "مبانی زبان Nix",
+      "rel": "tutorials/nix-language.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos",
+      "title": "NixOS",
+      "rel": "tutorials/nixos/index.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/binary-cache-setup",
+      "title": "راه‌اندازی کش باینری HTTP",
+      "rel": "tutorials/nixos/binary-cache-setup.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/building-and-running-docker-images",
+      "title": "ساخت و اجرای تصاویر داکر",
+      "rel": "tutorials/nixos/building-and-running-docker-images.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/building-bootable-iso-image",
+      "title": "ساخت یک تصویر ISO قابل بوت",
+      "rel": "tutorials/nixos/building-bootable-iso-image.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/deploying-nixos-using-terraform",
+      "title": "استقرار NixOS با استفاده از Terraform",
+      "rel": "tutorials/nixos/deploying-nixos-using-terraform.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/distributed-builds-setup",
+      "title": "راه‌اندازی ساخت‌های توزیع‌شده",
+      "rel": "tutorials/nixos/distributed-builds-setup.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/installing-nixos-on-a-raspberry-pi",
+      "title": "نصب NixOS روی یک رسبری پای (Raspberry Pi)",
+      "rel": "tutorials/nixos/installing-nixos-on-a-raspberry-pi.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/integration-testing-using-virtual-machines",
+      "title": "تست یکپارچه‌سازی با ماشین‌های مجازی NixOS",
+      "rel": "tutorials/nixos/integration-testing-using-virtual-machines.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/nixos-configuration-on-vm",
+      "title": "&lt;span id=\"nixos-vms\"&gt;&lt;/span&gt; ماشین‌های مجازی NixOS",
+      "rel": "tutorials/nixos/nixos-configuration-on-vm.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/nixos/provisioning-remote-machines",
+      "title": "آموزش پیکربندی و آماده‌سازی ماشین‌های راه دور از طریق SSH",
+      "rel": "tutorials/nixos/provisioning-remote-machines.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/packaging-existing-software",
+      "title": "بسته‌بندی نرم‌افزارهای موجود با Nix",
+      "rel": "tutorials/packaging-existing-software.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/tutorials/working-with-local-files",
+      "title": "کار با فایل‌های محلی",
+      "rel": "tutorials/working-with-local-files.md",
+      "section": "tutorials"
+    },
+    {
+      "route": "/pages/nix-dev/guides",
+      "title": "راهنماها",
+      "rel": "guides/index.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/best-practices",
+      "title": "بهترین روش‌ها",
+      "rel": "guides/best-practices.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/faq",
+      "title": "پرسش‌های متداول",
+      "rel": "guides/faq.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes",
+      "title": "دستورالعمل‌ها",
+      "rel": "guides/recipes/index.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes/add-binary-cache",
+      "title": "پیکربندی Nix برای استفاده از یک کش باینری سفارشی",
+      "rel": "guides/recipes/add-binary-cache.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes/continuous-integration-github-actions",
+      "title": "ادغام مداوم با GitHub Actions",
+      "rel": "guides/recipes/continuous-integration-github-actions.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes/dependency-management",
+      "title": "مدیریت خودکار منابع راه دور با npins",
+      "rel": "guides/recipes/dependency-management.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes/direnv",
+      "title": "فعال‌سازی خودکار محیط با direnv",
+      "rel": "guides/recipes/direnv.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes/post-build-hook",
+      "title": "راه‌اندازی قلاب‌های پس از ساخت",
+      "rel": "guides/recipes/post-build-hook.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes/python-environment",
+      "title": "راه‌اندازی محیط توسعه پایتون",
+      "rel": "guides/recipes/python-environment.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/recipes/sharing-dependencies",
+      "title": "وابستگی‌ها در شل توسعه",
+      "rel": "guides/recipes/sharing-dependencies.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/guides/troubleshooting",
+      "title": "عیب‌یابی",
+      "rel": "guides/troubleshooting.md",
+      "section": "guides"
+    },
+    {
+      "route": "/pages/nix-dev/concepts",
+      "title": "مفاهیم",
+      "rel": "concepts/index.md",
+      "section": "concepts"
+    },
+    {
+      "route": "/pages/nix-dev/concepts/faq",
+      "title": "سؤالات متداول",
+      "rel": "concepts/faq.md",
+      "section": "concepts"
+    },
+    {
+      "route": "/pages/nix-dev/concepts/flakes",
+      "title": "فلیک‌ها",
+      "rel": "concepts/flakes.md",
+      "section": "concepts"
+    },
+    {
+      "route": "/pages/nix-dev/reference",
+      "title": "مرجع",
+      "rel": "reference/index.md",
+      "section": "reference"
+    },
+    {
+      "route": "/pages/nix-dev/reference/glossary",
+      "title": "واژه‌نامه",
+      "rel": "reference/glossary.md",
+      "section": "reference"
+    },
+    {
+      "route": "/pages/nix-dev/reference/nix-manual",
+      "title": "راهنمای مرجع Nix",
+      "rel": "reference/nix-manual.md",
+      "section": "reference"
+    },
+    {
+      "route": "/pages/nix-dev/reference/pinning-nixpkgs",
+      "title": "سنجاق کردن Nixpkgs",
+      "rel": "reference/pinning-nixpkgs.md",
+      "section": "reference"
+    },
+    {
+      "route": "/pages/nix-dev/contributing",
+      "title": "مشارکت",
+      "rel": "contributing/index.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/contributing/documentation",
+      "title": "مشارکت در مستندسازی",
+      "rel": "contributing/documentation/index.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/contributing/documentation/diataxis",
+      "title": "چارچوب مستندسازی",
+      "rel": "contributing/documentation/diataxis.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/contributing/documentation/resources",
+      "title": "منابع مستندات",
+      "rel": "contributing/documentation/resources.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/contributing/documentation/style-guide",
+      "title": "راهنمای سبک",
+      "rel": "contributing/documentation/style-guide.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/contributing/documentation/writing-a-tutorial",
+      "title": "نحوه نوشتن یک راهنما",
+      "rel": "contributing/documentation/writing-a-tutorial.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/contributing/how-to-contribute",
+      "title": "راهنمای مشارکت",
+      "rel": "contributing/how-to-contribute.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/contributing/how-to-get-help",
+      "title": "نحوه دریافت کمک",
+      "rel": "contributing/how-to-get-help.md",
+      "section": "contributing"
+    },
+    {
+      "route": "/pages/nix-dev/acknowledgements",
+      "title": "قدردانی‌ها",
+      "rel": "acknowledgements/index.md",
+      "section": "acknowledgements"
+    },
+    {
+      "route": "/pages/nix-dev/first-steps",
+      "title": "گام‌های نخستین",
+      "rel": "first-steps/index.fa.md",
+      "section": "first-steps"
+    },
+    {
+      "route": "/pages/nix-dev/first-steps/ad-hoc-shell-environments",
+      "title": "محیط‌های شل آنی (ad-hoc)",
+      "rel": "first-steps/ad-hoc-shell-environments.fa.md",
+      "section": "first-steps"
+    },
+    {
+      "route": "/pages/nix-dev/first-steps/declarative-shell",
+      "title": "محیط‌های شل اعلامی با shell.nix",
+      "rel": "first-steps/declarative-shell.fa.md",
+      "section": "first-steps"
+    },
+    {
+      "route": "/pages/nix-dev/first-steps/reproducible-scripts",
+      "title": "اسکریپت‌های تفسیری بازتولیدپذیر",
+      "rel": "first-steps/reproducible-scripts.fa.md",
+      "section": "first-steps"
+    },
+    {
+      "route": "/pages/nix-dev/first-steps/towards-reproducibility-pinning-nixpkgs",
+      "title": "در مسیر بازتولیدپذیری: سنجاق کردن Nixpkgs",
+      "rel": "first-steps/towards-reproducibility-pinning-nixpkgs.fa.md",
+      "section": "first-steps"
+    }
+  ],
+  "count": 60
+}

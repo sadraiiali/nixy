@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
+		<meta name="text-scale" content="scale" />
+		<meta name="color-scheme" content="light dark" />
+		<!--
+			Fontiran proprietary webfonts (self-hosted; no CDN). Not shown in UI.
+			Peyda: license (7TJXCV0A) — https://fontiran.com/license/7TJXCV0A
+			IRANYekanX: license (L04ARHMJ) — https://fontiran.com/license/L04ARHMJ
+			See static/fonts/*/LICENSE.txt next to the webfont files.
+		-->
+		<!-- Early favicon links (must not mention the sveltekit head placeholder) -->
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<script>
+			/* apply theme + rem base before first paint (settings → localStorage) */
+			(function () {
+				try {
+					var root = document.documentElement;
+					/* theme: light | dark | system */
+					var theme = localStorage.getItem('nix-notes-theme') || 'system';
+					if (theme !== 'light' && theme !== 'dark' && theme !== 'system') theme = 'system';
+					root.setAttribute('data-theme', theme);
+					var dark =
+						theme === 'dark' ||
+						(theme === 'system' &&
+							window.matchMedia &&
+							window.matchMedia('(prefers-color-scheme: dark)').matches);
+					var resolved = dark ? 'dark' : 'light';
+					root.setAttribute('data-theme-resolved', resolved);
+					root.style.colorScheme = resolved;
+
+					/* font family: peyda (default) | iranyekan | shabnam */
+					var font = localStorage.getItem('nix-notes-font-family') || 'peyda';
+					if (font !== 'peyda' && font !== 'iranyekan' && font !== 'shabnam') font = 'peyda';
+					root.setAttribute('data-font', font);
+
+					/* rem base */
+					var n = parseInt(localStorage.getItem('nix-notes-font-size') || '16', 10);
+					if (isNaN(n) || n < 14) n = 16;
+					if (n > 22) n = 22;
+					root.style.fontSize = n + 'px';
+					root.style.setProperty('--user-font-size', n + 'px');
+				} catch (e) {}
+			})();
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
+

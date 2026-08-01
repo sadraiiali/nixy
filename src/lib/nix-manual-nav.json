@@ -1,0 +1,1615 @@
+{
+  "pages": [
+    {
+      "route": "/pages/nix-manual",
+      "title": "فهرست مطالب",
+      "rel": "SUMMARY.md",
+      "section": "root",
+      "source": "https://nix.dev/manual/nix/stable/"
+    },
+    {
+      "route": "/pages/nix-manual/introduction",
+      "title": "1. مقدمه",
+      "navTitle": "مقدمه",
+      "number": "1",
+      "rel": "introduction.md",
+      "section": "root",
+      "source": "https://nix.dev/manual/nix/stable/introduction.html"
+    },
+    {
+      "route": "/pages/nix-manual/quick-start",
+      "title": "2. شروع سریع",
+      "navTitle": "شروع سریع",
+      "number": "2",
+      "rel": "quick-start.md",
+      "section": "root",
+      "source": "https://nix.dev/manual/nix/stable/quick-start.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation",
+      "title": "3. نصب",
+      "navTitle": "نصب",
+      "number": "3",
+      "rel": "installation/index.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/"
+    },
+    {
+      "route": "/pages/nix-manual/installation/supported-platforms",
+      "title": "3.1. پلتفرم‌های پشتیبانی‌شده",
+      "navTitle": "پلتفرم‌های پشتیبانی‌شده",
+      "number": "3.1",
+      "rel": "installation/supported-platforms.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/supported-platforms.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/installing-binary",
+      "title": "3.2. نصب یک توزیع باینری",
+      "navTitle": "نصب یک توزیع باینری",
+      "number": "3.2",
+      "rel": "installation/installing-binary.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/installing-binary.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/installing-source",
+      "title": "3.3. نصب Nix از منبع",
+      "navTitle": "نصب Nix از منبع",
+      "number": "3.3",
+      "rel": "installation/installing-source.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/installing-source.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/prerequisites-source",
+      "title": "3.3.1. پیش‌نیازها",
+      "navTitle": "پیش‌نیازها",
+      "number": "3.3.1",
+      "rel": "installation/prerequisites-source.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/prerequisites-source.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/obtaining-source",
+      "title": "3.3.2. تهیه توزیع کد منبع",
+      "navTitle": "تهیه توزیع کد منبع",
+      "number": "3.3.2",
+      "rel": "installation/obtaining-source.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/obtaining-source.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/building-source",
+      "title": "3.3.3. ساخت Nix از منبع",
+      "navTitle": "ساخت Nix از منبع",
+      "number": "3.3.3",
+      "rel": "installation/building-source.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/building-source.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/installing-docker",
+      "title": "3.4. استفاده از Nix در داخل Docker",
+      "navTitle": "استفاده از Nix در داخل Docker",
+      "number": "3.4",
+      "rel": "installation/installing-docker.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/installing-docker.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/nix-security",
+      "title": "3.5. امنیت",
+      "navTitle": "امنیت",
+      "number": "3.5",
+      "rel": "installation/nix-security.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/nix-security.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/single-user",
+      "title": "3.5.1. حالت تک‌کاربره",
+      "navTitle": "حالت تک‌کاربره",
+      "number": "3.5.1",
+      "rel": "installation/single-user.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/single-user.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/multi-user",
+      "title": "3.5.2. حالت چندکاربره",
+      "navTitle": "حالت چندکاربره",
+      "number": "3.5.2",
+      "rel": "installation/multi-user.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/multi-user.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/env-variables",
+      "title": "3.6. متغیرهای محیطی",
+      "navTitle": "متغیرهای محیطی",
+      "number": "3.6",
+      "rel": "installation/env-variables.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/env-variables.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/upgrading",
+      "title": "3.7. ارتقای Nix",
+      "navTitle": "ارتقای Nix",
+      "number": "3.7",
+      "rel": "installation/upgrading.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/upgrading.html"
+    },
+    {
+      "route": "/pages/nix-manual/installation/uninstall",
+      "title": "3.8. حذف نصب Nix",
+      "navTitle": "حذف نصب Nix",
+      "number": "3.8",
+      "rel": "installation/uninstall.md",
+      "section": "installation",
+      "source": "https://nix.dev/manual/nix/stable/installation/uninstall.html"
+    },
+    {
+      "route": "/pages/nix-manual/store",
+      "title": "4. انبار Nix",
+      "navTitle": "انبار Nix",
+      "number": "4",
+      "rel": "store/index.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/"
+    },
+    {
+      "route": "/pages/nix-manual/store/file-system-object",
+      "title": "4.1. شیء سیستم‌فایل",
+      "navTitle": "شیء سیستم‌فایل",
+      "number": "4.1",
+      "rel": "store/file-system-object.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/file-system-object.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/file-system-object/content-address",
+      "title": "4.1.1. اشیاء سیستم‌فایل آدرس‌دهی‌شده بر اساس محتوا",
+      "navTitle": "اشیاء سیستم‌فایل آدرس‌دهی‌شده بر اساس محتوا",
+      "number": "4.1.1",
+      "rel": "store/file-system-object/content-address.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/file-system-object/content-address.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/file-system-object/os-file-system",
+      "title": "4.1.2. نمایش در سیستم‌فایل‌های سیستم‌عامل",
+      "navTitle": "نمایش در سیستم‌فایل‌های سیستم‌عامل",
+      "number": "4.1.2",
+      "rel": "store/file-system-object/os-file-system.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/file-system-object/os-file-system.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/store-object",
+      "title": "4.2. شیء انبار",
+      "navTitle": "شیء انبار",
+      "number": "4.2",
+      "rel": "store/store-object.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/store-object.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/store-object/content-address",
+      "title": "4.2.1. اشیاء انبار آدرس‌دهی‌شده بر اساس محتوا",
+      "navTitle": "اشیاء انبار آدرس‌دهی‌شده بر اساس محتوا",
+      "number": "4.2.1",
+      "rel": "store/store-object/content-address.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/store-object/content-address.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/store-path",
+      "title": "4.3. مسیر انبار و پوشه انبار",
+      "navTitle": "مسیر انبار و پوشه انبار",
+      "number": "4.3",
+      "rel": "store/store-path.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/store-path.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/derivation",
+      "title": "4.4. Derivation انبار و مسیر Deriving",
+      "navTitle": "Derivation انبار و مسیر Deriving",
+      "number": "4.4",
+      "rel": "store/derivation/index.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/derivation/"
+    },
+    {
+      "route": "/pages/nix-manual/store/derivation/outputs",
+      "title": "4.4.1. خروجی‌های Derivation و انواع Derivationها",
+      "navTitle": "خروجی‌های Derivation و انواع Derivationها",
+      "number": "4.4.1",
+      "rel": "store/derivation/outputs/index.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/derivation/outputs/"
+    },
+    {
+      "route": "/pages/nix-manual/store/derivation/outputs/content-address",
+      "title": "4.4.1.1. خروجی‌های derivation آدرس‌دهی‌شده بر اساس محتوا",
+      "navTitle": "خروجی‌های derivation آدرس‌دهی‌شده بر اساس محتوا",
+      "number": "4.4.1.1",
+      "rel": "store/derivation/outputs/content-address.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/derivation/outputs/content-address.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/derivation/outputs/input-address",
+      "title": "4.4.1.2. خروجی‌های derivation آدرس‌دهی‌شده بر اساس ورودی",
+      "navTitle": "خروجی‌های derivation آدرس‌دهی‌شده بر اساس ورودی",
+      "number": "4.4.1.2",
+      "rel": "store/derivation/outputs/input-address.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/derivation/outputs/input-address.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/build-trace",
+      "title": "4.5. ردیابی ساخت",
+      "navTitle": "ردیابی ساخت",
+      "number": "4.5",
+      "rel": "store/build-trace.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/build-trace.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/resolution",
+      "title": "4.6. حل‌وفصل Derivation",
+      "navTitle": "حل‌وفصل Derivation",
+      "number": "4.6",
+      "rel": "store/resolution.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/resolution.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/building",
+      "title": "4.7. در حال ساخت",
+      "navTitle": "در حال ساخت",
+      "number": "4.7",
+      "rel": "store/building.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/building.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/secrets",
+      "title": "4.8. اطلاعات محرمانه",
+      "navTitle": "اطلاعات محرمانه",
+      "number": "4.8",
+      "rel": "store/secrets.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/secrets.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types",
+      "title": "4.9. انواع انبار",
+      "navTitle": "انواع انبار",
+      "number": "4.9",
+      "rel": "store/types/index.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/"
+    },
+    {
+      "route": "/pages/nix-manual/store/math-notation",
+      "title": "4.10. پیوست: نمادگذاری ریاضی",
+      "navTitle": "پیوست: نمادگذاری ریاضی",
+      "number": "4.10",
+      "rel": "store/math-notation.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/math-notation.html"
+    },
+    {
+      "route": "/pages/nix-manual/language",
+      "title": "5. زبان Nix",
+      "navTitle": "زبان Nix",
+      "number": "5",
+      "rel": "language/index.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/"
+    },
+    {
+      "route": "/pages/nix-manual/language/types",
+      "title": "5.1. انواع داده",
+      "navTitle": "انواع داده",
+      "number": "5.1",
+      "rel": "language/types.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/types.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/string-context",
+      "title": "5.1.1. محتوای رشته",
+      "navTitle": "محتوای رشته",
+      "number": "5.1.1",
+      "rel": "language/string-context.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/string-context.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/syntax",
+      "title": "5.2. نحو و معناشناسی",
+      "navTitle": "نحو و معناشناسی",
+      "number": "5.2",
+      "rel": "language/syntax.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/syntax.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/evaluation",
+      "title": "5.2.1. ارزیابی",
+      "navTitle": "ارزیابی",
+      "number": "5.2.1",
+      "rel": "language/evaluation.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/evaluation.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/variables",
+      "title": "5.2.2. متغیرها",
+      "navTitle": "متغیرها",
+      "number": "5.2.2",
+      "rel": "language/variables.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/variables.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/string-literals",
+      "title": "5.2.3. لیترال‌های رشته",
+      "navTitle": "لیترال‌های رشته",
+      "number": "5.2.3",
+      "rel": "language/string-literals.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/string-literals.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/identifiers",
+      "title": "5.2.4. شناسه‌ها",
+      "navTitle": "شناسه‌ها",
+      "number": "5.2.4",
+      "rel": "language/identifiers.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/identifiers.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/scope",
+      "title": "5.2.5. قوانین محدوده (Scoping)",
+      "navTitle": "قوانین محدوده (Scoping)",
+      "number": "5.2.5",
+      "rel": "language/scope.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/scope.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/string-interpolation",
+      "title": "5.2.6. درون‌گذاری رشته",
+      "navTitle": "درون‌گذاری رشته",
+      "number": "5.2.6",
+      "rel": "language/string-interpolation.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/string-interpolation.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/constructs/lookup-path",
+      "title": "5.2.7. مسیر جستجو",
+      "navTitle": "مسیر جستجو",
+      "number": "5.2.7",
+      "rel": "language/constructs/lookup-path.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/constructs/lookup-path.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/operators",
+      "title": "5.3. عملگرها",
+      "navTitle": "عملگرها",
+      "number": "5.3",
+      "rel": "language/operators.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/operators.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/builtins",
+      "title": "5.4. توابع توکار",
+      "navTitle": "توابع توکار",
+      "number": "5.4",
+      "rel": "language/builtins.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/builtins.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/derivations",
+      "title": "5.4.1. Derivationها",
+      "navTitle": "Derivationها",
+      "number": "5.4.1",
+      "rel": "language/derivations.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/derivations.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/advanced-attributes",
+      "title": "5.4.1.1. صفات پیشرفته",
+      "navTitle": "صفات پیشرفته",
+      "number": "5.4.1.1",
+      "rel": "language/advanced-attributes.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/advanced-attributes.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/import-from-derivation",
+      "title": "5.4.1.2. درون‌ریزی از Derivation",
+      "navTitle": "درون‌ریزی از Derivation",
+      "number": "5.4.1.2",
+      "rel": "language/import-from-derivation.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/import-from-derivation.html"
+    },
+    {
+      "route": "/pages/nix-manual/package-management",
+      "title": "6. مدیریت بسته",
+      "navTitle": "مدیریت بسته",
+      "number": "6",
+      "rel": "package-management/index.md",
+      "section": "package-management",
+      "source": "https://nix.dev/manual/nix/stable/package-management/"
+    },
+    {
+      "route": "/pages/nix-manual/package-management/profiles",
+      "title": "6.1. پروفایل‌ها",
+      "navTitle": "پروفایل‌ها",
+      "number": "6.1",
+      "rel": "package-management/profiles.md",
+      "section": "package-management",
+      "source": "https://nix.dev/manual/nix/stable/package-management/profiles.html"
+    },
+    {
+      "route": "/pages/nix-manual/package-management/garbage-collection",
+      "title": "6.2. جمع‌آوری زباله (garbage collection)",
+      "navTitle": "جمع‌آوری زباله (garbage collection)",
+      "number": "6.2",
+      "rel": "package-management/garbage-collection.md",
+      "section": "package-management",
+      "source": "https://nix.dev/manual/nix/stable/package-management/garbage-collection.html"
+    },
+    {
+      "route": "/pages/nix-manual/package-management/garbage-collector-roots",
+      "title": "6.2.1. ریشه‌های جمع‌کننده‌ی زباله (garbage collector)",
+      "navTitle": "ریشه‌های جمع‌کننده‌ی زباله (garbage collector)",
+      "number": "6.2.1",
+      "rel": "package-management/garbage-collector-roots.md",
+      "section": "package-management",
+      "source": "https://nix.dev/manual/nix/stable/package-management/garbage-collector-roots.html"
+    },
+    {
+      "route": "/pages/nix-manual/advanced-topics",
+      "title": "7. موضوعات پیشرفته",
+      "navTitle": "موضوعات پیشرفته",
+      "number": "7",
+      "rel": "advanced-topics/index.md",
+      "section": "advanced-topics",
+      "source": "https://nix.dev/manual/nix/stable/advanced-topics/"
+    },
+    {
+      "route": "/pages/nix-manual/package-management/sharing-packages",
+      "title": "7.1. اشتراک‌گذاری بسته‌ها بین ماشین‌ها",
+      "navTitle": "اشتراک‌گذاری بسته‌ها بین ماشین‌ها",
+      "number": "7.1",
+      "rel": "package-management/sharing-packages.md",
+      "section": "package-management",
+      "source": "https://nix.dev/manual/nix/stable/package-management/sharing-packages.html"
+    },
+    {
+      "route": "/pages/nix-manual/package-management/binary-cache-substituter",
+      "title": "7.1.1. میزبانی انبار Nix از طریق HTTP",
+      "navTitle": "میزبانی انبار Nix از طریق HTTP",
+      "number": "7.1.1",
+      "rel": "package-management/binary-cache-substituter.md",
+      "section": "package-management",
+      "source": "https://nix.dev/manual/nix/stable/package-management/binary-cache-substituter.html"
+    },
+    {
+      "route": "/pages/nix-manual/package-management/ssh-substituter",
+      "title": "7.1.2. میزبانی انبار Nix از طریق SSH",
+      "navTitle": "میزبانی انبار Nix از طریق SSH",
+      "number": "7.1.2",
+      "rel": "package-management/ssh-substituter.md",
+      "section": "package-management",
+      "source": "https://nix.dev/manual/nix/stable/package-management/ssh-substituter.html"
+    },
+    {
+      "route": "/pages/nix-manual/advanced-topics/distributed-builds",
+      "title": "7.2. ساخت‌های راه دور",
+      "navTitle": "ساخت‌های راه دور",
+      "number": "7.2",
+      "rel": "advanced-topics/distributed-builds.md",
+      "section": "advanced-topics",
+      "source": "https://nix.dev/manual/nix/stable/advanced-topics/distributed-builds.html"
+    },
+    {
+      "route": "/pages/nix-manual/advanced-topics/cores-vs-jobs",
+      "title": "7.3. تنظیم دقیق تعداد پردازنده‌ها و کارها",
+      "navTitle": "تنظیم دقیق تعداد پردازنده‌ها و کارها",
+      "number": "7.3",
+      "rel": "advanced-topics/cores-vs-jobs.md",
+      "section": "advanced-topics",
+      "source": "https://nix.dev/manual/nix/stable/advanced-topics/cores-vs-jobs.html"
+    },
+    {
+      "route": "/pages/nix-manual/advanced-topics/diff-hook",
+      "title": "7.4. بررسی بازتولیدپذیری ساخت",
+      "navTitle": "بررسی بازتولیدپذیری ساخت",
+      "number": "7.4",
+      "rel": "advanced-topics/diff-hook.md",
+      "section": "advanced-topics",
+      "source": "https://nix.dev/manual/nix/stable/advanced-topics/diff-hook.html"
+    },
+    {
+      "route": "/pages/nix-manual/advanced-topics/post-build-hook",
+      "title": "7.5. استفاده از post-build-hook",
+      "navTitle": "استفاده از post-build-hook",
+      "number": "7.5",
+      "rel": "advanced-topics/post-build-hook.md",
+      "section": "advanced-topics",
+      "source": "https://nix.dev/manual/nix/stable/advanced-topics/post-build-hook.html"
+    },
+    {
+      "route": "/pages/nix-manual/advanced-topics/eval-profiler",
+      "title": "7.6. پروفایلر ارزیابی",
+      "navTitle": "پروفایلر ارزیابی",
+      "number": "7.6",
+      "rel": "advanced-topics/eval-profiler.md",
+      "section": "advanced-topics",
+      "source": "https://nix.dev/manual/nix/stable/advanced-topics/eval-profiler.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref",
+      "title": "8. مرجع دستورات",
+      "navTitle": "مرجع دستورات",
+      "number": "8",
+      "rel": "command-ref/index.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/opt-common",
+      "title": "8.1. گزینه‌های رایج",
+      "navTitle": "گزینه‌های رایج",
+      "number": "8.1",
+      "rel": "command-ref/opt-common.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/opt-common.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/env-common",
+      "title": "8.2. متغیرهای محیطی رایج",
+      "navTitle": "متغیرهای محیطی رایج",
+      "number": "8.2",
+      "rel": "command-ref/env-common.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/env-common.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/main-commands",
+      "title": "8.3. دستورات اصلی",
+      "navTitle": "دستورات اصلی",
+      "number": "8.3",
+      "rel": "command-ref/main-commands.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/main-commands.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-build",
+      "title": "8.3.1. nix-build",
+      "navTitle": "nix-build",
+      "number": "8.3.1",
+      "rel": "command-ref/nix-build.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-build.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-shell",
+      "title": "8.3.2. nix-shell",
+      "navTitle": "nix-shell",
+      "number": "8.3.2",
+      "rel": "command-ref/nix-shell.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-shell.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store",
+      "title": "8.3.3. nix-store",
+      "navTitle": "nix-store",
+      "number": "8.3.3",
+      "rel": "command-ref/nix-store.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/add-fixed",
+      "title": "8.3.3.1. nix-store --add-fixed",
+      "navTitle": "nix-store --add-fixed",
+      "number": "8.3.3.1",
+      "rel": "command-ref/nix-store/add-fixed.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/add-fixed.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/add",
+      "title": "8.3.3.2. nix-store --add",
+      "navTitle": "nix-store --add",
+      "number": "8.3.3.2",
+      "rel": "command-ref/nix-store/add.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/add.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/delete",
+      "title": "8.3.3.3. nix-store --delete",
+      "navTitle": "nix-store --delete",
+      "number": "8.3.3.3",
+      "rel": "command-ref/nix-store/delete.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/delete.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/dump-db",
+      "title": "8.3.3.4. nix-store --dump-db",
+      "navTitle": "nix-store --dump-db",
+      "number": "8.3.3.4",
+      "rel": "command-ref/nix-store/dump-db.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/dump-db.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/dump",
+      "title": "8.3.3.5. nix-store --dump",
+      "navTitle": "nix-store --dump",
+      "number": "8.3.3.5",
+      "rel": "command-ref/nix-store/dump.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/dump.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/export",
+      "title": "8.3.3.6. nix-store --export",
+      "navTitle": "nix-store --export",
+      "number": "8.3.3.6",
+      "rel": "command-ref/nix-store/export.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/export.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/gc",
+      "title": "8.3.3.7. nix-store --gc",
+      "navTitle": "nix-store --gc",
+      "number": "8.3.3.7",
+      "rel": "command-ref/nix-store/gc.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/gc.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/generate-binary-cache-key",
+      "title": "8.3.3.8. nix-store --generate-binary-cache-key",
+      "navTitle": "nix-store --generate-binary-cache-key",
+      "number": "8.3.3.8",
+      "rel": "command-ref/nix-store/generate-binary-cache-key.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/generate-binary-cache-key.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/import",
+      "title": "8.3.3.9. nix-store --import",
+      "navTitle": "nix-store --import",
+      "number": "8.3.3.9",
+      "rel": "command-ref/nix-store/import.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/import.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/load-db",
+      "title": "8.3.3.10. nix-store --load-db",
+      "navTitle": "nix-store --load-db",
+      "number": "8.3.3.10",
+      "rel": "command-ref/nix-store/load-db.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/load-db.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/optimise",
+      "title": "8.3.3.11. nix-store --optimise",
+      "navTitle": "nix-store --optimise",
+      "number": "8.3.3.11",
+      "rel": "command-ref/nix-store/optimise.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/optimise.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/print-env",
+      "title": "8.3.3.12. nix-store --print-env",
+      "navTitle": "nix-store --print-env",
+      "number": "8.3.3.12",
+      "rel": "command-ref/nix-store/print-env.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/print-env.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/query",
+      "title": "8.3.3.13. nix-store --query",
+      "navTitle": "nix-store --query",
+      "number": "8.3.3.13",
+      "rel": "command-ref/nix-store/query.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/query.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/read-log",
+      "title": "8.3.3.14. nix-store --read-log",
+      "navTitle": "nix-store --read-log",
+      "number": "8.3.3.14",
+      "rel": "command-ref/nix-store/read-log.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/read-log.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/realise",
+      "title": "8.3.3.15. nix-store --realise",
+      "navTitle": "nix-store --realise",
+      "number": "8.3.3.15",
+      "rel": "command-ref/nix-store/realise.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/realise.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/repair-path",
+      "title": "8.3.3.16. nix-store --repair-path",
+      "navTitle": "nix-store --repair-path",
+      "number": "8.3.3.16",
+      "rel": "command-ref/nix-store/repair-path.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/repair-path.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/restore",
+      "title": "8.3.3.17. nix-store --restore",
+      "navTitle": "nix-store --restore",
+      "number": "8.3.3.17",
+      "rel": "command-ref/nix-store/restore.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/restore.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/serve",
+      "title": "8.3.3.18. nix-store --serve",
+      "navTitle": "nix-store --serve",
+      "number": "8.3.3.18",
+      "rel": "command-ref/nix-store/serve.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/serve.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/verify-path",
+      "title": "8.3.3.19. nix-store --verify-path",
+      "navTitle": "nix-store --verify-path",
+      "number": "8.3.3.19",
+      "rel": "command-ref/nix-store/verify-path.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/verify-path.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/verify",
+      "title": "8.3.3.20. nix-store --verify",
+      "navTitle": "nix-store --verify",
+      "number": "8.3.3.20",
+      "rel": "command-ref/nix-store/verify.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/verify.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env",
+      "title": "8.3.4. nix-env",
+      "navTitle": "nix-env",
+      "number": "8.3.4",
+      "rel": "command-ref/nix-env.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/delete-generations",
+      "title": "8.3.4.1. nix-env --delete-generations",
+      "navTitle": "nix-env --delete-generations",
+      "number": "8.3.4.1",
+      "rel": "command-ref/nix-env/delete-generations.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/delete-generations.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/install",
+      "title": "8.3.4.2. nix-env --install",
+      "navTitle": "nix-env --install",
+      "number": "8.3.4.2",
+      "rel": "command-ref/nix-env/install.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/install.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/list-generations",
+      "title": "8.3.4.3. nix-env --list-generations",
+      "navTitle": "nix-env --list-generations",
+      "number": "8.3.4.3",
+      "rel": "command-ref/nix-env/list-generations.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/list-generations.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/query",
+      "title": "8.3.4.4. nix-env --query",
+      "navTitle": "nix-env --query",
+      "number": "8.3.4.4",
+      "rel": "command-ref/nix-env/query.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/query.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/rollback",
+      "title": "8.3.4.5. nix-env --rollback",
+      "navTitle": "nix-env --rollback",
+      "number": "8.3.4.5",
+      "rel": "command-ref/nix-env/rollback.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/rollback.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/set-flag",
+      "title": "8.3.4.6. nix-env --set-flag",
+      "navTitle": "nix-env --set-flag",
+      "number": "8.3.4.6",
+      "rel": "command-ref/nix-env/set-flag.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/set-flag.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/set",
+      "title": "8.3.4.7. nix-env --set",
+      "navTitle": "nix-env --set",
+      "number": "8.3.4.7",
+      "rel": "command-ref/nix-env/set.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/set.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/switch-generation",
+      "title": "8.3.4.8. nix-env --switch-generation",
+      "navTitle": "nix-env --switch-generation",
+      "number": "8.3.4.8",
+      "rel": "command-ref/nix-env/switch-generation.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/switch-generation.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/switch-profile",
+      "title": "8.3.4.9. nix-env --switch-profile",
+      "navTitle": "nix-env --switch-profile",
+      "number": "8.3.4.9",
+      "rel": "command-ref/nix-env/switch-profile.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/switch-profile.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/uninstall",
+      "title": "8.3.4.10. nix-env --uninstall",
+      "navTitle": "nix-env --uninstall",
+      "number": "8.3.4.10",
+      "rel": "command-ref/nix-env/uninstall.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/uninstall.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/upgrade",
+      "title": "8.3.4.11. nix-env --upgrade",
+      "navTitle": "nix-env --upgrade",
+      "number": "8.3.4.11",
+      "rel": "command-ref/nix-env/upgrade.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/upgrade.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/utilities",
+      "title": "8.4. ابزارها",
+      "navTitle": "ابزارها",
+      "number": "8.4",
+      "rel": "command-ref/utilities.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/utilities.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-channel",
+      "title": "8.4.1. nix-channel",
+      "navTitle": "nix-channel",
+      "number": "8.4.1",
+      "rel": "command-ref/nix-channel.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-channel.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-collect-garbage",
+      "title": "8.4.2. nix-collect-garbage",
+      "navTitle": "nix-collect-garbage",
+      "number": "8.4.2",
+      "rel": "command-ref/nix-collect-garbage.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-collect-garbage.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-copy-closure",
+      "title": "8.4.3. nix-copy-closure",
+      "navTitle": "nix-copy-closure",
+      "number": "8.4.3",
+      "rel": "command-ref/nix-copy-closure.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-copy-closure.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-daemon",
+      "title": "8.4.4. nix-daemon",
+      "navTitle": "nix-daemon",
+      "number": "8.4.4",
+      "rel": "command-ref/nix-daemon.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-daemon.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-hash",
+      "title": "8.4.5. nix-hash",
+      "navTitle": "nix-hash",
+      "number": "8.4.5",
+      "rel": "command-ref/nix-hash.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-hash.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-instantiate",
+      "title": "8.4.6. nix-instantiate",
+      "navTitle": "nix-instantiate",
+      "number": "8.4.6",
+      "rel": "command-ref/nix-instantiate.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-instantiate.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-prefetch-url",
+      "title": "8.4.7. nix-prefetch-url",
+      "navTitle": "nix-prefetch-url",
+      "number": "8.4.7",
+      "rel": "command-ref/nix-prefetch-url.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-prefetch-url.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/experimental-commands",
+      "title": "8.5. دستورات آزمایشی",
+      "navTitle": "دستورات آزمایشی",
+      "number": "8.5",
+      "rel": "command-ref/experimental-commands.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/experimental-commands.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/files",
+      "title": "8.6. فایل‌ها",
+      "navTitle": "فایل‌ها",
+      "number": "8.6",
+      "rel": "command-ref/files.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/files.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/conf-file",
+      "title": "8.6.1. nix.conf",
+      "navTitle": "nix.conf",
+      "number": "8.6.1",
+      "rel": "command-ref/conf-file.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/conf-file.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/files/profiles",
+      "title": "8.6.2. پروفایل‌ها",
+      "navTitle": "پروفایل‌ها",
+      "number": "8.6.2",
+      "rel": "command-ref/files/profiles.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/files/profiles.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/files/manifest.nix",
+      "title": "8.6.2.1. manifest.nix",
+      "navTitle": "manifest.nix",
+      "number": "8.6.2.1",
+      "rel": "command-ref/files/manifest.nix.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/files/manifest.nix.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/files/manifest.json",
+      "title": "8.6.2.2. manifest.json",
+      "navTitle": "manifest.json",
+      "number": "8.6.2.2",
+      "rel": "command-ref/files/manifest.json.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/files/manifest.json.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/files/channels",
+      "title": "8.6.3. کانال‌ها",
+      "navTitle": "کانال‌ها",
+      "number": "8.6.3",
+      "rel": "command-ref/files/channels.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/files/channels.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/files/default-nix-expression",
+      "title": "8.6.4. عبارت پیش‌فرض Nix",
+      "navTitle": "عبارت پیش‌فرض Nix",
+      "number": "8.6.4",
+      "rel": "command-ref/files/default-nix-expression.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/files/default-nix-expression.html"
+    },
+    {
+      "route": "/pages/nix-manual/architecture/architecture",
+      "title": "9. معماری و طراحی",
+      "navTitle": "معماری و طراحی",
+      "number": "9",
+      "rel": "architecture/architecture.md",
+      "section": "architecture",
+      "source": "https://nix.dev/manual/nix/stable/architecture/architecture.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols",
+      "title": "10. قالب‌ها و پروتکل‌ها",
+      "navTitle": "قالب‌ها و پروتکل‌ها",
+      "number": "10",
+      "rel": "protocols/index.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json",
+      "title": "10.1. قالب‌های JSON",
+      "navTitle": "قالب‌های JSON",
+      "number": "10.1",
+      "rel": "protocols/json/index.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/file-system-object",
+      "title": "10.1.1. شیء سیستم‌فایل",
+      "navTitle": "شیء سیستم‌فایل",
+      "number": "10.1.1",
+      "rel": "protocols/json/file-system-object.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/file-system-object.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/hash",
+      "title": "10.1.2. هش",
+      "navTitle": "هش",
+      "number": "10.1.2",
+      "rel": "protocols/json/hash.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/hash.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/content-address",
+      "title": "10.1.3. آدرس محتوا",
+      "navTitle": "آدرس محتوا",
+      "number": "10.1.3",
+      "rel": "protocols/json/content-address.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/content-address.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/store-path",
+      "title": "10.1.4. مسیر انبار",
+      "navTitle": "مسیر انبار",
+      "number": "10.1.4",
+      "rel": "protocols/json/store-path.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/store-path.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/signature",
+      "title": "10.1.5. امضا",
+      "navTitle": "امضا",
+      "number": "10.1.5",
+      "rel": "protocols/json/signature.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/signature.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/store-object-info",
+      "title": "10.1.6. اطلاعات شیء انبار",
+      "navTitle": "اطلاعات شیء انبار",
+      "number": "10.1.6",
+      "rel": "protocols/json/store-object-info.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/store-object-info.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/derivation",
+      "title": "10.1.7. Derivation",
+      "navTitle": "Derivation",
+      "number": "10.1.7",
+      "rel": "protocols/json/derivation/index.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/derivation/"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/derivation/resolved",
+      "title": "10.1.7.1. Derivation حل‌شده",
+      "navTitle": "Derivation حل‌شده",
+      "number": "10.1.7.1",
+      "rel": "protocols/json/derivation/resolved.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/derivation/resolved.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/derivation/options",
+      "title": "10.1.7.2. گزینه‌های Derivation",
+      "navTitle": "گزینه‌های Derivation",
+      "number": "10.1.7.2",
+      "rel": "protocols/json/derivation/options.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/derivation/options.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/deriving-path",
+      "title": "10.1.8. مسیر Deriving",
+      "navTitle": "مسیر Deriving",
+      "number": "10.1.8",
+      "rel": "protocols/json/deriving-path.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/deriving-path.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/build-trace-entry",
+      "title": "10.1.9. ورودی ردیابی ساخت",
+      "navTitle": "ورودی ردیابی ساخت",
+      "number": "10.1.9",
+      "rel": "protocols/json/build-trace-entry.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/build-trace-entry.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/build-result",
+      "title": "10.1.10. نتیجه ساخت",
+      "navTitle": "نتیجه ساخت",
+      "number": "10.1.10",
+      "rel": "protocols/json/build-result.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/build-result.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/json/store",
+      "title": "10.1.11. انبار",
+      "navTitle": "انبار",
+      "number": "10.1.11",
+      "rel": "protocols/json/store.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/json/store.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/tarball-fetcher",
+      "title": "10.2. ارائه فلیک‌های تاربال (Tarball Flakes)",
+      "navTitle": "ارائه فلیک‌های تاربال (Tarball Flakes)",
+      "number": "10.2",
+      "rel": "protocols/tarball-fetcher.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/tarball-fetcher.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/store-path",
+      "title": "10.2.1. مشخصات مسیر انبار",
+      "navTitle": "مشخصات مسیر انبار",
+      "number": "10.2.1",
+      "rel": "protocols/store-path.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/store-path.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/nix-archive",
+      "title": "10.3. قالب آرشیو نیکس (NAR)",
+      "navTitle": "قالب آرشیو نیکس (NAR)",
+      "number": "10.3",
+      "rel": "protocols/nix-archive/index.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/nix-archive/"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/binary-cache",
+      "title": "10.4. کش باینری",
+      "navTitle": "کش باینری",
+      "number": "10.4",
+      "rel": "protocols/binary-cache/index.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/binary-cache/"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/binary-cache/nix-cache-info",
+      "title": "10.4.1. قالب nix-cache-info",
+      "navTitle": "قالب nix-cache-info",
+      "number": "10.4.1",
+      "rel": "protocols/binary-cache/nix-cache-info.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/binary-cache/nix-cache-info.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/binary-cache/narinfo",
+      "title": "10.4.2. قالب .narinfo",
+      "navTitle": "قالب .narinfo",
+      "number": "10.4.2",
+      "rel": "protocols/binary-cache/narinfo.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/binary-cache/narinfo.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/derivation-aterm",
+      "title": "10.5. قالب فایل «ATerm» مربوط به Derivation",
+      "navTitle": "قالب فایل «ATerm» مربوط به Derivation",
+      "number": "10.5",
+      "rel": "protocols/derivation-aterm.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/derivation-aterm.html"
+    },
+    {
+      "route": "/pages/nix-manual/protocols/nix32",
+      "title": "10.6. کدگذاری Nix32",
+      "navTitle": "کدگذاری Nix32",
+      "number": "10.6",
+      "rel": "protocols/nix32.md",
+      "section": "protocols",
+      "source": "https://nix.dev/manual/nix/stable/protocols/nix32.html"
+    },
+    {
+      "route": "/pages/nix-manual/c-api",
+      "title": "11. رابط برنامه‌نویسی C",
+      "navTitle": "رابط برنامه‌نویسی C",
+      "number": "11",
+      "rel": "c-api.md",
+      "section": "root",
+      "source": "https://nix.dev/manual/nix/stable/c-api.html"
+    },
+    {
+      "route": "/pages/nix-manual/glossary",
+      "title": "12. واژه‌نامه",
+      "navTitle": "واژه‌نامه",
+      "number": "12",
+      "rel": "glossary.md",
+      "section": "root",
+      "source": "https://nix.dev/manual/nix/stable/glossary.html"
+    },
+    {
+      "route": "/pages/nix-manual/development",
+      "title": "13. توسعه",
+      "navTitle": "توسعه",
+      "number": "13",
+      "rel": "development/index.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/"
+    },
+    {
+      "route": "/pages/nix-manual/development/building",
+      "title": "13.1. ساخت",
+      "navTitle": "ساخت",
+      "number": "13.1",
+      "rel": "development/building.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/building.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/testing",
+      "title": "13.2. آزمایش",
+      "navTitle": "آزمایش",
+      "number": "13.2",
+      "rel": "development/testing.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/testing.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/benchmarking",
+      "title": "13.3. سنجش کارایی (Benchmarking)",
+      "navTitle": "سنجش کارایی (Benchmarking)",
+      "number": "13.3",
+      "rel": "development/benchmarking.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/benchmarking.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/debugging",
+      "title": "13.4. اشکال‌زدایی",
+      "navTitle": "اشکال‌زدایی",
+      "number": "13.4",
+      "rel": "development/debugging.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/debugging.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/documentation",
+      "title": "13.5. مستندات",
+      "navTitle": "مستندات",
+      "number": "13.5",
+      "rel": "development/documentation.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/documentation.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/cli-guideline",
+      "title": "13.6. راهنمای خط فرمان",
+      "navTitle": "راهنمای خط فرمان",
+      "number": "13.6",
+      "rel": "development/cli-guideline.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/cli-guideline.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/data-modeling",
+      "title": "13.7. دستورالعمل‌های مدل‌سازی داده‌ها",
+      "navTitle": "دستورالعمل‌های مدل‌سازی داده‌ها",
+      "number": "13.7",
+      "rel": "development/data-modeling.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/data-modeling.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/cxx",
+      "title": "13.8. راهنمای سبک کدنویسی C++",
+      "navTitle": "راهنمای سبک کدنویسی C++",
+      "number": "13.8",
+      "rel": "development/cxx.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/cxx.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/static-analysis",
+      "title": "13.9. تحلیل ایستا",
+      "navTitle": "تحلیل ایستا",
+      "number": "13.9",
+      "rel": "development/static-analysis.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/static-analysis.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/experimental-features",
+      "title": "13.10. ویژگی‌های آزمایشی",
+      "navTitle": "ویژگی‌های آزمایشی",
+      "number": "13.10",
+      "rel": "development/experimental-features.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/experimental-features.html"
+    },
+    {
+      "route": "/pages/nix-manual/development/contributing",
+      "title": "13.11. مشارکت",
+      "navTitle": "مشارکت",
+      "number": "13.11",
+      "rel": "development/contributing.md",
+      "section": "development",
+      "source": "https://nix.dev/manual/nix/stable/development/contributing.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/conf-file-prefix",
+      "title": "نام",
+      "navTitle": "نام",
+      "number": "",
+      "rel": "command-ref/conf-file-prefix.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/conf-file-prefix.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/new-cli/nix",
+      "title": "nix - Nix 2.34.9 Reference Manual",
+      "navTitle": "nix - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "command-ref/new-cli/nix.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/new-cli/nix.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/new-cli/nix3-copy",
+      "title": "nix copy - Nix 2.34.9 Reference Manual",
+      "navTitle": "nix copy - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "command-ref/new-cli/nix3-copy.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-copy.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/new-cli/nix3-flake",
+      "title": "nix flake - Nix 2.34.9 Reference Manual",
+      "navTitle": "nix flake - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "command-ref/new-cli/nix3-flake.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-flake.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/new-cli/nix3-hash",
+      "title": "nix hash - Nix 2.34.9 Reference Manual",
+      "navTitle": "nix hash - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "command-ref/new-cli/nix3-hash.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-hash.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/new-cli/nix3-help-stores",
+      "title": "nix help-stores - Nix 2.34.9 Reference Manual",
+      "navTitle": "nix help-stores - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "command-ref/new-cli/nix3-help-stores.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-help-stores.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/new-cli/nix3-profile",
+      "title": "nix profile - Nix 2.34.9 Reference Manual",
+      "navTitle": "nix profile - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "command-ref/new-cli/nix3-profile.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-profile.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/new-cli/nix3-repl",
+      "title": "nix repl - Nix 2.34.9 Reference Manual",
+      "navTitle": "nix repl - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "command-ref/new-cli/nix3-repl.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-repl.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/env-common",
+      "title": "متغیرهای محیطی",
+      "navTitle": "متغیرهای محیطی",
+      "number": "",
+      "rel": "command-ref/nix-env/env-common.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/env-common.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-env/opt-common",
+      "title": "گزینه‌ها",
+      "navTitle": "گزینه‌ها",
+      "number": "",
+      "rel": "command-ref/nix-env/opt-common.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-env/opt-common.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/nix-store/opt-common",
+      "title": "گزینه‌ها",
+      "navTitle": "گزینه‌ها",
+      "number": "",
+      "rel": "command-ref/nix-store/opt-common.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/nix-store/opt-common.html"
+    },
+    {
+      "route": "/pages/nix-manual/command-ref/status-build-failure",
+      "title": "کدهای خروج ویژه برای خرابی ساخت",
+      "navTitle": "کدهای خروج ویژه برای خرابی ساخت",
+      "number": "",
+      "rel": "command-ref/status-build-failure.md",
+      "section": "command-ref",
+      "source": "https://nix.dev/manual/nix/stable/command-ref/status-build-failure.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/builtins-prefix",
+      "title": "توکارها",
+      "navTitle": "توکارها",
+      "number": "",
+      "rel": "language/builtins-prefix.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/builtins-prefix.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/builtins-suffix",
+      "title": "builtins-suffix",
+      "navTitle": "builtins-suffix",
+      "number": "",
+      "rel": "language/builtins-suffix.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/builtins-suffix.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/constructs",
+      "title": "ساختارهای زبانی",
+      "navTitle": "ساختارهای زبانی",
+      "number": "",
+      "rel": "language/constructs.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/constructs.html"
+    },
+    {
+      "route": "/pages/nix-manual/language/values",
+      "title": "انواع داده",
+      "navTitle": "انواع داده",
+      "number": "",
+      "rel": "language/values.md",
+      "section": "language",
+      "source": "https://nix.dev/manual/nix/stable/language/values.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types/experimental-ssh-store-with-filesystem-mounted",
+      "title": "Experimental SSH Store with filesystem mounted - Nix 2.34.9 Reference Manual",
+      "navTitle": "Experimental SSH Store with filesystem mounted - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "store/types/experimental-ssh-store-with-filesystem-mounted.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/experimental-ssh-store-with-filesystem-mounted.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types/http-binary-cache-store",
+      "title": "HTTP Binary Cache Store - Nix 2.34.9 Reference Manual",
+      "navTitle": "HTTP Binary Cache Store - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "store/types/http-binary-cache-store.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/http-binary-cache-store.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types/local-binary-cache-store",
+      "title": "Local Binary Cache Store - Nix 2.34.9 Reference Manual",
+      "navTitle": "Local Binary Cache Store - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "store/types/local-binary-cache-store.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/local-binary-cache-store.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types/local-daemon-store",
+      "title": "Local Daemon Store - Nix 2.34.9 Reference Manual",
+      "navTitle": "Local Daemon Store - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "store/types/local-daemon-store.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/local-daemon-store.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types/local-store",
+      "title": "Local Store - Nix 2.34.9 Reference Manual",
+      "navTitle": "Local Store - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "store/types/local-store.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/local-store.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types/s3-binary-cache-store",
+      "title": "S3 Binary Cache Store - Nix 2.34.9 Reference Manual",
+      "navTitle": "S3 Binary Cache Store - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "store/types/s3-binary-cache-store.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/s3-binary-cache-store.html"
+    },
+    {
+      "route": "/pages/nix-manual/store/types/ssh-store",
+      "title": "SSH Store - Nix 2.34.9 Reference Manual",
+      "navTitle": "SSH Store - Nix 2.34.9 Reference Manual",
+      "number": "",
+      "rel": "store/types/ssh-store.md",
+      "section": "store",
+      "source": "https://nix.dev/manual/nix/stable/store/types/ssh-store.html"
+    }
+  ],
+  "count": 179,
+  "webBase": "https://nix.dev/manual/nix/stable"
+}

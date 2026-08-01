@@ -1,0 +1,16 @@
+# https://nixy.a15d.at/robots.txt
+# Content Signals — https://contentsignals.org/
+# (IETF draft-romm-aipref-contentsignals)
+
+User-agent: *
+# search: indexing for search results
+# ai-input: use as input to AI systems / agents (RAG, answers)
+# ai-train: use as training data for foundation models
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Disallow:
+
+# Private / noindex app surfaces (also marked noindex in HTML)
+Disallow: /settings
+Disallow: /glossary-dev
+
+Sitemap: https://nixy.a15d.at/sitemap.xml

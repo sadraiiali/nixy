@@ -1,0 +1,63 @@
+# قراردادهای کدنویسی {#chap-conventions}
+
+این بخش به [CONTRIBUTING.md](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md) منتقل شده است.
+
+## نحو {#sec-syntax}
+
+این بخش به [CONTRIBUTING.md](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md) منتقل شده است.
+
+## نام‌گذاری بسته {#sec-package-naming}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+## نام‌گذاری و سازمان‌دهی فایل‌ها {#sec-organisation}
+
+این بخش به [CONTRIBUTING.md](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md) منتقل شده است.
+
+### نسخه‌گذاری {#sec-versioning}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+## دریافت کدهای منبع {#sec-sources}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+## به دست آوردن هش کد منبع {#sec-source-hashes}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+### به دست آوردن امن هش‌ها {#sec-source-hashes-security}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+## پچ‌ها {#sec-patches}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+## تست‌های بسته {#sec-package-tests}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+### نوشتن تست‌های درون‌خطی بسته {#ssec-inline-package-tests-writing}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+### نوشتن تست‌های بزرگ‌تر بسته {#ssec-package-tests-writing}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+### اجرای تست‌های بسته {#ssec-package-tests-running}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+### نمونه‌های تست‌های بسته {#ssec-package-tests-examples}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+### پیوند دادن تست‌های ماژول NixOS به یک بسته {#ssec-nixos-tests-linking}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.
+
+### درون‌ریزی از درایویشن (Import From Derivation) {#ssec-import-from-derivation}
+
+این بخش به [pkgs/README.md](https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md) منتقل شده است.

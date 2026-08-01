@@ -1,0 +1,1795 @@
+{
+  "pages": [
+    {
+      "route": "/pages/nixpkgs-manual",
+      "title": "فهرست مطالب",
+      "rel": "SUMMARY.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/preface",
+      "title": "1. پیش‌گفتار",
+      "navTitle": "پیش‌گفتار",
+      "number": "1",
+      "rel": "preface.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/preface.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/first-package",
+      "title": "2. نخستین بسته",
+      "navTitle": "نخستین بسته",
+      "number": "2",
+      "rel": "first-package.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/first-package.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers",
+      "title": "کمک‌رسان‌های ساخت",
+      "navTitle": "کمک‌رسان‌های ساخت",
+      "number": "",
+      "rel": "build-helpers.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/dev-shell-tools",
+      "title": "ابزارهای کمکی شل توسعه",
+      "navTitle": "ابزارهای کمکی شل توسعه",
+      "number": "",
+      "rel": "build-helpers/dev-shell-tools.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/dev-shell-tools.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/fetchers",
+      "title": "دریافت‌کننده‌ها",
+      "navTitle": "دریافت‌کننده‌ها",
+      "number": "",
+      "rel": "build-helpers/fetchers.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/fetchers.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/fixed-point-arguments",
+      "title": "آرگومان‌های نقطه ثابت کمک‌رسان‌های ساخت",
+      "navTitle": "آرگومان‌های نقطه ثابت کمک‌رسان‌های ساخت",
+      "number": "",
+      "rel": "build-helpers/fixed-point-arguments.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/fixed-point-arguments.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/images",
+      "title": "تصاویر",
+      "navTitle": "تصاویر",
+      "number": "",
+      "rel": "build-helpers/images.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/images.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/images/appimagetools",
+      "title": "pkgs.appimageTools",
+      "navTitle": "pkgs.appimageTools",
+      "number": "",
+      "rel": "build-helpers/images/appimagetools.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/images/appimagetools.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/images/binarycache",
+      "title": "pkgs.mkBinaryCache",
+      "navTitle": "pkgs.mkBinaryCache",
+      "number": "",
+      "rel": "build-helpers/images/binarycache.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/images/binarycache.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/images/dockertools",
+      "title": "pkgs.dockerTools",
+      "navTitle": "pkgs.dockerTools",
+      "number": "",
+      "rel": "build-helpers/images/dockertools.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/images/dockertools.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/images/makediskimage",
+      "title": "&lt;nixpkgs/nixos/lib/make-disk-image.nix&gt;",
+      "navTitle": "&lt;nixpkgs/nixos/lib/make-disk-image.nix&gt;",
+      "number": "",
+      "rel": "build-helpers/images/makediskimage.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/images/makediskimage.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/images/ocitools",
+      "title": "pkgs.ociTools",
+      "navTitle": "pkgs.ociTools",
+      "number": "",
+      "rel": "build-helpers/images/ocitools.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/images/ocitools.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/images/portableservice",
+      "title": "pkgs.portableService",
+      "navTitle": "pkgs.portableService",
+      "number": "",
+      "rel": "build-helpers/images/portableservice.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/images/portableservice.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special",
+      "title": "کمک‌رسان‌های ساخت ویژه",
+      "navTitle": "کمک‌رسان‌های ساخت ویژه",
+      "number": "",
+      "rel": "build-helpers/special.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special/buildenv",
+      "title": "buildEnv",
+      "navTitle": "buildEnv",
+      "number": "",
+      "rel": "build-helpers/special/buildenv.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special/buildenv.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special/checkpoint-build",
+      "title": "pkgs.checkpointBuildTools",
+      "navTitle": "pkgs.checkpointBuildTools",
+      "number": "",
+      "rel": "build-helpers/special/checkpoint-build.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special/checkpoint-build.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special/fakenss",
+      "title": "fakeNss",
+      "navTitle": "fakeNss",
+      "number": "",
+      "rel": "build-helpers/special/fakenss.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special/fakenss.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special/fhs-environments",
+      "title": "buildFHSEnv",
+      "navTitle": "buildFHSEnv",
+      "number": "",
+      "rel": "build-helpers/special/fhs-environments.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special/fhs-environments.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special/makesetuphook",
+      "title": "pkgs.makeSetupHook",
+      "navTitle": "pkgs.makeSetupHook",
+      "number": "",
+      "rel": "build-helpers/special/makesetuphook.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special/makesetuphook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special/mkshell",
+      "title": "pkgs.mkShell",
+      "navTitle": "pkgs.mkShell",
+      "number": "",
+      "rel": "build-helpers/special/mkshell.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special/mkshell.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/special/vm-tools",
+      "title": "vmTools",
+      "navTitle": "vmTools",
+      "number": "",
+      "rel": "build-helpers/special/vm-tools.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/special/vm-tools.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/testers",
+      "title": "تست‌کننده‌ها",
+      "navTitle": "تست‌کننده‌ها",
+      "number": "",
+      "rel": "build-helpers/testers.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/testers.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/build-helpers/trivial-build-helpers",
+      "title": "کمک‌رسان‌های ساخت ساده",
+      "navTitle": "کمک‌رسان‌های ساخت ساده",
+      "number": "",
+      "rel": "build-helpers/trivial-build-helpers.md",
+      "section": "build-helpers",
+      "source": "https://nixos.org/manual/nixpkgs/stable/build-helpers/trivial-build-helpers.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/channels",
+      "title": "کانال‌ها چگونه کار می‌کنند",
+      "navTitle": "کانال‌ها چگونه کار می‌کنند",
+      "number": "",
+      "rel": "channels.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/channels.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/contributing",
+      "title": "مشارکت در Nixpkgs",
+      "navTitle": "مشارکت در Nixpkgs",
+      "number": "",
+      "rel": "contributing.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/contributing.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/contributing/coding-conventions",
+      "title": "قراردادهای کدنویسی",
+      "navTitle": "قراردادهای کدنویسی",
+      "number": "",
+      "rel": "contributing/coding-conventions.md",
+      "section": "contributing",
+      "source": "https://nixos.org/manual/nixpkgs/stable/contributing/coding-conventions.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/contributing/contributing-to-documentation",
+      "title": "مشارکت در مستندات Nixpkgs",
+      "navTitle": "مشارکت در مستندات Nixpkgs",
+      "number": "",
+      "rel": "contributing/contributing-to-documentation.md",
+      "section": "contributing",
+      "source": "https://nixos.org/manual/nixpkgs/stable/contributing/contributing-to-documentation.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/contributing/quick-start",
+      "title": "شروع سریع افزودن یک بسته",
+      "navTitle": "شروع سریع افزودن یک بسته",
+      "number": "",
+      "rel": "contributing/quick-start.md",
+      "section": "contributing",
+      "source": "https://nixos.org/manual/nixpkgs/stable/contributing/quick-start.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/contributing/reviewing-contributions",
+      "title": "بررسی مشارکت‌ها",
+      "navTitle": "بررسی مشارکت‌ها",
+      "number": "",
+      "rel": "contributing/reviewing-contributions.md",
+      "section": "contributing",
+      "source": "https://nixos.org/manual/nixpkgs/stable/contributing/reviewing-contributions.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/contributing/submitting-changes",
+      "title": "ارسال تغییرات",
+      "navTitle": "ارسال تغییرات",
+      "number": "",
+      "rel": "contributing/submitting-changes.md",
+      "section": "contributing",
+      "source": "https://nixos.org/manual/nixpkgs/stable/contributing/submitting-changes.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/contributing/vulnerability-roundup",
+      "title": "جمع‌بندی آسیب‌پذیری‌ها",
+      "navTitle": "جمع‌بندی آسیب‌پذیری‌ها",
+      "number": "",
+      "rel": "contributing/vulnerability-roundup.md",
+      "section": "contributing",
+      "source": "https://nixos.org/manual/nixpkgs/stable/contributing/vulnerability-roundup.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/development",
+      "title": "توسعه Nixpkgs",
+      "navTitle": "توسعه Nixpkgs",
+      "number": "",
+      "rel": "development.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/development.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/development/opening-issues",
+      "title": "باز کردن ایشوها",
+      "navTitle": "باز کردن ایشوها",
+      "number": "",
+      "rel": "development/opening-issues.md",
+      "section": "development",
+      "source": "https://nixos.org/manual/nixpkgs/stable/development/opening-issues.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/functions",
+      "title": "مرجع توابع",
+      "navTitle": "مرجع توابع",
+      "number": "",
+      "rel": "functions.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/functions.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/functions/debug",
+      "title": "اشکال‌زدایی عبارت‌های Nix",
+      "navTitle": "اشکال‌زدایی عبارت‌های Nix",
+      "number": "",
+      "rel": "functions/debug.md",
+      "section": "functions",
+      "source": "https://nixos.org/manual/nixpkgs/stable/functions/debug.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/functions/generators",
+      "title": "مولدها",
+      "navTitle": "مولدها",
+      "number": "",
+      "rel": "functions/generators.md",
+      "section": "functions",
+      "source": "https://nixos.org/manual/nixpkgs/stable/functions/generators.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/functions/library",
+      "title": "توابع کتابخانه Nixpkgs",
+      "navTitle": "توابع کتابخانه Nixpkgs",
+      "number": "",
+      "rel": "functions/library.md",
+      "section": "functions",
+      "source": "https://nixos.org/manual/nixpkgs/stable/functions/library.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/functions/nix-gitignore",
+      "title": "pkgs.nix-gitignore",
+      "navTitle": "pkgs.nix-gitignore",
+      "number": "",
+      "rel": "functions/nix-gitignore.md",
+      "section": "functions",
+      "source": "https://nixos.org/manual/nixpkgs/stable/functions/nix-gitignore.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/functions/prefer-remote-fetch",
+      "title": "اورلی prefer-remote-fetch",
+      "navTitle": "اورلی prefer-remote-fetch",
+      "number": "",
+      "rel": "functions/prefer-remote-fetch.md",
+      "section": "functions",
+      "source": "https://nixos.org/manual/nixpkgs/stable/functions/prefer-remote-fetch.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/autoconf",
+      "title": "Autoconf",
+      "navTitle": "Autoconf",
+      "number": "",
+      "rel": "hooks/autoconf.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/autoconf.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/automake",
+      "title": "Automake",
+      "navTitle": "Automake",
+      "number": "",
+      "rel": "hooks/automake.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/automake.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/autopatchcil",
+      "title": "autoPatchcilHook",
+      "navTitle": "autoPatchcilHook",
+      "number": "",
+      "rel": "hooks/autopatchcil.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/autopatchcil.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/autopatchelf",
+      "title": "autoPatchelfHook",
+      "navTitle": "autoPatchelfHook",
+      "number": "",
+      "rel": "hooks/autopatchelf.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/autopatchelf.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/aws-c-common",
+      "title": "aws-c-common",
+      "navTitle": "aws-c-common",
+      "number": "",
+      "rel": "hooks/aws-c-common.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/aws-c-common.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/bmake",
+      "title": "bmake",
+      "navTitle": "bmake",
+      "number": "",
+      "rel": "hooks/bmake.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/bmake.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/breakpoint",
+      "title": "breakpointHook",
+      "navTitle": "breakpointHook",
+      "number": "",
+      "rel": "hooks/breakpoint.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/breakpoint.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/cernlib",
+      "title": "CERNLIB",
+      "navTitle": "CERNLIB",
+      "number": "",
+      "rel": "hooks/cernlib.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/cernlib.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/check-phase-thread-limit-hook",
+      "title": "checkPhaseThreadLimitHook",
+      "navTitle": "checkPhaseThreadLimitHook",
+      "number": "",
+      "rel": "hooks/check-phase-thread-limit-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/check-phase-thread-limit-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/cmake",
+      "title": "cmake",
+      "navTitle": "cmake",
+      "number": "",
+      "rel": "hooks/cmake.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/cmake.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/desktop-file-utils",
+      "title": "desktop-file-utils",
+      "navTitle": "desktop-file-utils",
+      "number": "",
+      "rel": "hooks/desktop-file-utils.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/desktop-file-utils.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/gdk-pixbuf",
+      "title": "gdk-pixbuf",
+      "navTitle": "gdk-pixbuf",
+      "number": "",
+      "rel": "hooks/gdk-pixbuf.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/gdk-pixbuf.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/ghc",
+      "title": "GHC",
+      "navTitle": "GHC",
+      "number": "",
+      "rel": "hooks/ghc.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/ghc.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/gnome",
+      "title": "پلتفرم GNOME",
+      "navTitle": "پلتفرم GNOME",
+      "number": "",
+      "rel": "hooks/gnome.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/gnome.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/haredo",
+      "title": "haredo",
+      "navTitle": "haredo",
+      "number": "",
+      "rel": "hooks/haredo.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/haredo.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks",
+      "title": "مرجع قلاب‌ها",
+      "navTitle": "مرجع قلاب‌ها",
+      "number": "",
+      "rel": "hooks/index.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/installFonts",
+      "title": "installFonts",
+      "navTitle": "installFonts",
+      "number": "",
+      "rel": "hooks/installFonts.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/installFonts.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/installShellFiles",
+      "title": "installShellFiles",
+      "navTitle": "installShellFiles",
+      "number": "",
+      "rel": "hooks/installShellFiles.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/installShellFiles.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/juce",
+      "title": "juce.projucerHook",
+      "navTitle": "juce.projucerHook",
+      "number": "",
+      "rel": "hooks/juce.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/juce.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/julec",
+      "title": "julec.hook",
+      "navTitle": "julec.hook",
+      "number": "",
+      "rel": "hooks/julec.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/julec.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/just",
+      "title": "just",
+      "navTitle": "just",
+      "number": "",
+      "rel": "hooks/just.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/just.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/libglycin",
+      "title": "libglycin",
+      "navTitle": "libglycin",
+      "number": "",
+      "rel": "hooks/libglycin.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/libglycin.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/libiconv",
+      "title": "libiconv, libintl",
+      "navTitle": "libiconv, libintl",
+      "number": "",
+      "rel": "hooks/libiconv.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/libiconv.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/libxml2",
+      "title": "libxml2",
+      "navTitle": "libxml2",
+      "number": "",
+      "rel": "hooks/libxml2.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/libxml2.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/memcached-test-hook",
+      "title": "memcachedTestHook",
+      "navTitle": "memcachedTestHook",
+      "number": "",
+      "rel": "hooks/memcached-test-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/memcached-test-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/meson",
+      "title": "Meson",
+      "navTitle": "Meson",
+      "number": "",
+      "rel": "hooks/meson.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/meson.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/mpi-check-hook",
+      "title": "mpiCheckPhaseHook",
+      "navTitle": "mpiCheckPhaseHook",
+      "number": "",
+      "rel": "hooks/mpi-check-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/mpi-check-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/ninja",
+      "title": "ninja",
+      "navTitle": "ninja",
+      "number": "",
+      "rel": "hooks/ninja.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/ninja.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/nodejs-install-executables",
+      "title": "nodejsInstallExecutables",
+      "navTitle": "nodejsInstallExecutables",
+      "number": "",
+      "rel": "hooks/nodejs-install-executables.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/nodejs-install-executables.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/nodejs-install-manuals",
+      "title": "nodejsInstallManuals",
+      "navTitle": "nodejsInstallManuals",
+      "number": "",
+      "rel": "hooks/nodejs-install-manuals.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/nodejs-install-manuals.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/npm-build-hook",
+      "title": "npmHooks.npmBuildHook",
+      "navTitle": "npmHooks.npmBuildHook",
+      "number": "",
+      "rel": "hooks/npm-build-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/npm-build-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/npm-config-hook",
+      "title": "npmHooks.npmConfigHook",
+      "navTitle": "npmHooks.npmConfigHook",
+      "number": "",
+      "rel": "hooks/npm-config-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/npm-config-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/npm-install-hook",
+      "title": "npmHooks.npmInstallHook",
+      "navTitle": "npmHooks.npmInstallHook",
+      "number": "",
+      "rel": "hooks/npm-install-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/npm-install-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/patch-rc-path-hooks",
+      "title": "قلاب‌های patchRcPath",
+      "navTitle": "قلاب‌های patchRcPath",
+      "number": "",
+      "rel": "hooks/patch-rc-path-hooks.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/patch-rc-path-hooks.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/perl",
+      "title": "Perl",
+      "navTitle": "Perl",
+      "number": "",
+      "rel": "hooks/perl.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/perl.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/pkg-config",
+      "title": "pkg-config",
+      "navTitle": "pkg-config",
+      "number": "",
+      "rel": "hooks/pkg-config.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/pkg-config.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/pnpm",
+      "title": "pnpmBuildHook",
+      "navTitle": "pnpmBuildHook",
+      "number": "",
+      "rel": "hooks/pnpm.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/pnpm.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/postgresql-test-hook",
+      "title": "postgresqlTestHook",
+      "navTitle": "postgresqlTestHook",
+      "number": "",
+      "rel": "hooks/postgresql-test-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/postgresql-test-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/premake",
+      "title": "Premake",
+      "navTitle": "Premake",
+      "number": "",
+      "rel": "hooks/premake.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/premake.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/python",
+      "title": "Python",
+      "navTitle": "Python",
+      "number": "",
+      "rel": "hooks/python.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/python.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/redis-test-hook",
+      "title": "redisTestHook",
+      "navTitle": "redisTestHook",
+      "number": "",
+      "rel": "hooks/redis-test-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/redis-test-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/scons",
+      "title": "scons",
+      "navTitle": "scons",
+      "number": "",
+      "rel": "hooks/scons.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/scons.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/tauri",
+      "title": "cargo-tauri.hook",
+      "navTitle": "cargo-tauri.hook",
+      "number": "",
+      "rel": "hooks/tauri.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/tauri.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/tetex-tex-live",
+      "title": "teTeX / TeX Live",
+      "navTitle": "teTeX / TeX Live",
+      "number": "",
+      "rel": "hooks/tetex-tex-live.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/tetex-tex-live.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/udevCheckHook",
+      "title": "udevCheckHook",
+      "navTitle": "udevCheckHook",
+      "number": "",
+      "rel": "hooks/udevCheckHook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/udevCheckHook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/unzip",
+      "title": "unzip",
+      "navTitle": "unzip",
+      "number": "",
+      "rel": "hooks/unzip.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/unzip.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/validatePkgConfig",
+      "title": "validatePkgConfig",
+      "navTitle": "validatePkgConfig",
+      "number": "",
+      "rel": "hooks/validatePkgConfig.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/validatePkgConfig.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/versionCheckHook",
+      "title": "versionCheckHook",
+      "navTitle": "versionCheckHook",
+      "number": "",
+      "rel": "hooks/versionCheckHook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/versionCheckHook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/waf",
+      "title": "wafHook",
+      "navTitle": "wafHook",
+      "number": "",
+      "rel": "hooks/waf.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/waf.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/writable-tmpdir-as-home-hook",
+      "title": "writableTmpDirAsHomeHook",
+      "navTitle": "writableTmpDirAsHomeHook",
+      "number": "",
+      "rel": "hooks/writable-tmpdir-as-home-hook.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/writable-tmpdir-as-home-hook.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/xcbuild",
+      "title": "xcbuildHook",
+      "navTitle": "xcbuildHook",
+      "number": "",
+      "rel": "hooks/xcbuild.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/xcbuild.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/xfce4-dev-tools",
+      "title": "xfce4-dev-tools",
+      "navTitle": "xfce4-dev-tools",
+      "number": "",
+      "rel": "hooks/xfce4-dev-tools.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/xfce4-dev-tools.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/hooks/zig",
+      "title": "Zig",
+      "navTitle": "Zig",
+      "number": "",
+      "rel": "hooks/zig.md",
+      "section": "hooks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/hooks/zig.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/interoperability",
+      "title": "استانداردهای تعامل‌پذیری",
+      "navTitle": "استانداردهای تعامل‌پذیری",
+      "number": "",
+      "rel": "interoperability.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/interoperability.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/interoperability/cyclonedx",
+      "title": "CycloneDX",
+      "navTitle": "CycloneDX",
+      "number": "",
+      "rel": "interoperability/cyclonedx.md",
+      "section": "interoperability",
+      "source": "https://nixos.org/manual/nixpkgs/stable/interoperability/cyclonedx.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/interoperability/openxr",
+      "title": "OpenXR در NixOS",
+      "navTitle": "OpenXR در NixOS",
+      "number": "",
+      "rel": "interoperability/openxr.md",
+      "section": "interoperability",
+      "source": "https://nixos.org/manual/nixpkgs/stable/interoperability/openxr.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/agda",
+      "title": "Agda",
+      "navTitle": "Agda",
+      "number": "",
+      "rel": "languages-frameworks/agda.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/agda.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/android",
+      "title": "Android",
+      "navTitle": "Android",
+      "number": "",
+      "rel": "languages-frameworks/android.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/android.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/astal",
+      "title": "Astal",
+      "navTitle": "Astal",
+      "number": "",
+      "rel": "languages-frameworks/astal.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/astal.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/beam",
+      "title": "زبان‌های BEAM (Erlang، Elixir و LFE)",
+      "navTitle": "زبان‌های BEAM (Erlang، Elixir و LFE)",
+      "number": "",
+      "rel": "languages-frameworks/beam.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/beam.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/chicken",
+      "title": "CHICKEN",
+      "navTitle": "CHICKEN",
+      "number": "",
+      "rel": "languages-frameworks/chicken.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/chicken.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/cosmic",
+      "title": "COSMIC",
+      "navTitle": "COSMIC",
+      "number": "",
+      "rel": "languages-frameworks/cosmic.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/cosmic.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/crystal",
+      "title": "Crystal",
+      "navTitle": "Crystal",
+      "number": "",
+      "rel": "languages-frameworks/crystal.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/crystal.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/cuda",
+      "title": "CUDA",
+      "navTitle": "CUDA",
+      "number": "",
+      "rel": "languages-frameworks/cuda.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/cuda.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/cuelang",
+      "title": "Cue (Cuelang)",
+      "navTitle": "Cue (Cuelang)",
+      "number": "",
+      "rel": "languages-frameworks/cuelang.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/cuelang.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/dart",
+      "title": "Dart",
+      "navTitle": "Dart",
+      "number": "",
+      "rel": "languages-frameworks/dart.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/dart.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/dhall",
+      "title": "Dhall",
+      "navTitle": "Dhall",
+      "number": "",
+      "rel": "languages-frameworks/dhall.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/dhall.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/dlang",
+      "title": "D (Dlang)",
+      "navTitle": "D (Dlang)",
+      "number": "",
+      "rel": "languages-frameworks/dlang.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/dlang.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/dotnet",
+      "title": "Dotnet",
+      "navTitle": "Dotnet",
+      "number": "",
+      "rel": "languages-frameworks/dotnet.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/dotnet.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/emscripten",
+      "title": "Emscripten",
+      "navTitle": "Emscripten",
+      "number": "",
+      "rel": "languages-frameworks/emscripten.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/emscripten.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/factor",
+      "title": "Factor",
+      "navTitle": "Factor",
+      "number": "",
+      "rel": "languages-frameworks/factor.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/factor.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/gnome",
+      "title": "GNOME",
+      "navTitle": "GNOME",
+      "number": "",
+      "rel": "languages-frameworks/gnome.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/gnome.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/go",
+      "title": "Go",
+      "navTitle": "Go",
+      "number": "",
+      "rel": "languages-frameworks/go.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/go.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/gradle",
+      "title": "Gradle",
+      "navTitle": "Gradle",
+      "number": "",
+      "rel": "languages-frameworks/gradle.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/gradle.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/hare",
+      "title": "Hare",
+      "navTitle": "Hare",
+      "number": "",
+      "rel": "languages-frameworks/hare.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/hare.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/haskell",
+      "title": "Haskell",
+      "navTitle": "Haskell",
+      "number": "",
+      "rel": "languages-frameworks/haskell.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/haskell.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/hy",
+      "title": "Hy",
+      "navTitle": "Hy",
+      "number": "",
+      "rel": "languages-frameworks/hy.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/hy.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/idris",
+      "title": "Idris",
+      "navTitle": "Idris",
+      "number": "",
+      "rel": "languages-frameworks/idris.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/idris.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/idris2",
+      "title": "Idris2",
+      "navTitle": "Idris2",
+      "number": "",
+      "rel": "languages-frameworks/idris2.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/idris2.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks",
+      "title": "زبان‌ها و چارچوب‌ها",
+      "navTitle": "زبان‌ها و چارچوب‌ها",
+      "number": "",
+      "rel": "languages-frameworks/index.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/ios",
+      "title": "iOS",
+      "navTitle": "iOS",
+      "number": "",
+      "rel": "languages-frameworks/ios.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/ios.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/java",
+      "title": "Java",
+      "navTitle": "Java",
+      "number": "",
+      "rel": "languages-frameworks/java.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/java.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/javascript",
+      "title": "Javascript",
+      "navTitle": "Javascript",
+      "number": "",
+      "rel": "languages-frameworks/javascript.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/javascript.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/julia",
+      "title": "julia",
+      "navTitle": "julia",
+      "number": "",
+      "rel": "languages-frameworks/julia.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/julia.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/lean4",
+      "title": "Lean 4",
+      "navTitle": "Lean 4",
+      "number": "",
+      "rel": "languages-frameworks/lean4.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/lean4.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/lisp",
+      "title": "lisp",
+      "navTitle": "lisp",
+      "number": "",
+      "rel": "languages-frameworks/lisp.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/lisp.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/lua",
+      "title": "Lua",
+      "navTitle": "Lua",
+      "number": "",
+      "rel": "languages-frameworks/lua.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/lua.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/maven",
+      "title": "Maven",
+      "navTitle": "Maven",
+      "number": "",
+      "rel": "languages-frameworks/maven.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/maven.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/neovim",
+      "title": "Neovim",
+      "navTitle": "Neovim",
+      "number": "",
+      "rel": "languages-frameworks/neovim.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/neovim.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/nim",
+      "title": "Nim",
+      "navTitle": "Nim",
+      "number": "",
+      "rel": "languages-frameworks/nim.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/nim.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/ocaml",
+      "title": "OCaml",
+      "navTitle": "OCaml",
+      "number": "",
+      "rel": "languages-frameworks/ocaml.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/ocaml.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/octave",
+      "title": "Octave",
+      "navTitle": "Octave",
+      "number": "",
+      "rel": "languages-frameworks/octave.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/octave.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/perl",
+      "title": "Perl",
+      "navTitle": "Perl",
+      "number": "",
+      "rel": "languages-frameworks/perl.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/perl.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/php",
+      "title": "PHP",
+      "navTitle": "PHP",
+      "number": "",
+      "rel": "languages-frameworks/php.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/php.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/pkg-config",
+      "title": "pkg-config",
+      "navTitle": "pkg-config",
+      "number": "",
+      "rel": "languages-frameworks/pkg-config.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/pkg-config.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/python",
+      "title": "پایتون",
+      "navTitle": "پایتون",
+      "number": "",
+      "rel": "languages-frameworks/python.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/python.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/qt",
+      "title": "Qt",
+      "navTitle": "Qt",
+      "number": "",
+      "rel": "languages-frameworks/qt.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/qt.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/r",
+      "title": "R",
+      "navTitle": "R",
+      "number": "",
+      "rel": "languages-frameworks/r.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/r.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/rocq",
+      "title": "Rocq و بسته‌های rocq",
+      "navTitle": "Rocq و بسته‌های rocq",
+      "number": "",
+      "rel": "languages-frameworks/rocq.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/rocq.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/ruby",
+      "title": "Ruby",
+      "navTitle": "Ruby",
+      "number": "",
+      "rel": "languages-frameworks/ruby.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/ruby.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/rust",
+      "title": "Rust",
+      "navTitle": "Rust",
+      "number": "",
+      "rel": "languages-frameworks/rust.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/rust.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/scheme",
+      "title": "Scheme",
+      "navTitle": "Scheme",
+      "number": "",
+      "rel": "languages-frameworks/scheme.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/scheme.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/swift",
+      "title": "Swift",
+      "navTitle": "Swift",
+      "number": "",
+      "rel": "languages-frameworks/swift.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/swift.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/tcl",
+      "title": "tcl",
+      "navTitle": "tcl",
+      "number": "",
+      "rel": "languages-frameworks/tcl.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/tcl.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/texlive",
+      "title": "texlive",
+      "navTitle": "texlive",
+      "number": "",
+      "rel": "languages-frameworks/texlive.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/texlive.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/typst",
+      "title": "Typst",
+      "navTitle": "Typst",
+      "number": "",
+      "rel": "languages-frameworks/typst.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/typst.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/languages-frameworks/vim",
+      "title": "Vim",
+      "navTitle": "Vim",
+      "number": "",
+      "rel": "languages-frameworks/vim.md",
+      "section": "languages-frameworks",
+      "source": "https://nixos.org/manual/nixpkgs/stable/languages-frameworks/vim.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/lib",
+      "title": "lib در Nixpkgs",
+      "navTitle": "lib در Nixpkgs",
+      "number": "",
+      "rel": "lib.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/lib.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/module-system/module-system",
+      "title": "module-system",
+      "navTitle": "module-system",
+      "number": "",
+      "rel": "module-system/module-system.md",
+      "section": "module-system",
+      "source": "https://nixos.org/manual/nixpkgs/stable/module-system/module-system.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/modules/generic",
+      "title": "عمومی",
+      "navTitle": "عمومی",
+      "number": "",
+      "rel": "modules/generic.md",
+      "section": "modules",
+      "source": "https://nixos.org/manual/nixpkgs/stable/modules/generic.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/modules",
+      "title": "ماژول‌ها",
+      "navTitle": "ماژول‌ها",
+      "number": "",
+      "rel": "modules/index.md",
+      "section": "modules",
+      "source": "https://nixos.org/manual/nixpkgs/stable/modules/"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/build-support",
+      "title": "پشتیبانی از ساخت",
+      "navTitle": "پشتیبانی از ساخت",
+      "number": "",
+      "rel": "packages/build-support.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/build-support.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/cataclysm-dda",
+      "title": "Cataclysm: Dark Days Ahead",
+      "navTitle": "Cataclysm: Dark Days Ahead",
+      "number": "",
+      "rel": "packages/cataclysm-dda.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/cataclysm-dda.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/citrix",
+      "title": "citrix",
+      "navTitle": "citrix",
+      "number": "",
+      "rel": "packages/citrix.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/citrix.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/darwin-builder",
+      "title": "darwin.linux-builder",
+      "navTitle": "darwin.linux-builder",
+      "number": "",
+      "rel": "packages/darwin-builder.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/darwin-builder.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/dlib",
+      "title": "DLib",
+      "navTitle": "DLib",
+      "number": "",
+      "rel": "packages/dlib.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/dlib.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/eclipse",
+      "title": "eclipse",
+      "navTitle": "eclipse",
+      "number": "",
+      "rel": "packages/eclipse.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/eclipse.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/elm",
+      "title": "Elm",
+      "navTitle": "Elm",
+      "number": "",
+      "rel": "packages/elm.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/elm.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/emacs",
+      "title": "Emacs",
+      "navTitle": "Emacs",
+      "number": "",
+      "rel": "packages/emacs.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/emacs.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/etc-files",
+      "title": "فایل‌های /etc",
+      "navTitle": "فایل‌های /etc",
+      "number": "",
+      "rel": "packages/etc-files.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/etc-files.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/firefox",
+      "title": "Firefox",
+      "navTitle": "Firefox",
+      "number": "",
+      "rel": "packages/firefox.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/firefox.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/fish",
+      "title": "Fish",
+      "navTitle": "Fish",
+      "number": "",
+      "rel": "packages/fish.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/fish.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/friction-graphics",
+      "title": "Friction",
+      "navTitle": "Friction",
+      "number": "",
+      "rel": "packages/friction-graphics.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/friction-graphics.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/fuse",
+      "title": "fuse",
+      "navTitle": "fuse",
+      "number": "",
+      "rel": "packages/fuse.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/fuse.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/geant4",
+      "title": "Geant4",
+      "navTitle": "Geant4",
+      "number": "",
+      "rel": "packages/geant4.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/geant4.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/ibus",
+      "title": "ibus-engines.typing-booster",
+      "navTitle": "ibus-engines.typing-booster",
+      "number": "",
+      "rel": "packages/ibus.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/ibus.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages",
+      "title": "بسته‌ها",
+      "navTitle": "بسته‌ها",
+      "number": "",
+      "rel": "packages/index.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/inkscape",
+      "title": "Inkscape",
+      "navTitle": "Inkscape",
+      "number": "",
+      "rel": "packages/inkscape.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/inkscape.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/kakoune",
+      "title": "Kakoune",
+      "navTitle": "Kakoune",
+      "number": "",
+      "rel": "packages/kakoune.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/kakoune.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/krita",
+      "title": "krita",
+      "navTitle": "krita",
+      "number": "",
+      "rel": "packages/krita.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/krita.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/lhapdf",
+      "title": "LHAPDF",
+      "navTitle": "LHAPDF",
+      "number": "",
+      "rel": "packages/lhapdf.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/lhapdf.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/linux",
+      "title": "linux",
+      "navTitle": "linux",
+      "number": "",
+      "rel": "packages/linux.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/linux.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/locales",
+      "title": "locales",
+      "navTitle": "locales",
+      "number": "",
+      "rel": "packages/locales.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/locales.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/nginx",
+      "title": "nginx",
+      "navTitle": "nginx",
+      "number": "",
+      "rel": "packages/nginx.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/nginx.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/nrfutil",
+      "title": "nrfutil",
+      "navTitle": "nrfutil",
+      "number": "",
+      "rel": "packages/nrfutil.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/nrfutil.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/opengl",
+      "title": "OpenGL",
+      "navTitle": "OpenGL",
+      "number": "",
+      "rel": "packages/opengl.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/opengl.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/packer",
+      "title": "Packer",
+      "navTitle": "Packer",
+      "number": "",
+      "rel": "packages/packer.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/packer.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/python-tree-sitter",
+      "title": "Python Tree Sitter",
+      "navTitle": "Python Tree Sitter",
+      "number": "",
+      "rel": "packages/python-tree-sitter.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/python-tree-sitter.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/shell-helpers",
+      "title": "ابزارهای کمکی شل تعاملی",
+      "navTitle": "ابزارهای کمکی شل تعاملی",
+      "number": "",
+      "rel": "packages/shell-helpers.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/shell-helpers.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/steam",
+      "title": "Steam",
+      "navTitle": "Steam",
+      "number": "",
+      "rel": "packages/steam.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/steam.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/treefmt",
+      "title": "treefmt",
+      "navTitle": "treefmt",
+      "number": "",
+      "rel": "packages/treefmt.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/treefmt.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/urxvt",
+      "title": "Urxvt",
+      "navTitle": "Urxvt",
+      "number": "",
+      "rel": "packages/urxvt.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/urxvt.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/uv",
+      "title": "uv",
+      "navTitle": "uv",
+      "number": "",
+      "rel": "packages/uv.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/uv.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/vcpkg",
+      "title": "VCPKG",
+      "navTitle": "VCPKG",
+      "number": "",
+      "rel": "packages/vcpkg.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/vcpkg.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/packages/weechat",
+      "title": "WeeChat",
+      "navTitle": "WeeChat",
+      "number": "",
+      "rel": "packages/weechat.md",
+      "section": "packages",
+      "source": "https://nixos.org/manual/nixpkgs/stable/packages/weechat.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/stdenv",
+      "title": "محیط استاندارد",
+      "navTitle": "محیط استاندارد",
+      "number": "",
+      "rel": "stdenv.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/stdenv.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/stdenv/cross-compilation",
+      "title": "کامپایل متقاطع",
+      "navTitle": "کامپایل متقاطع",
+      "number": "",
+      "rel": "stdenv/cross-compilation.md",
+      "section": "stdenv",
+      "source": "https://nixos.org/manual/nixpkgs/stable/stdenv/cross-compilation.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/stdenv/meta",
+      "title": "صفات متاداده",
+      "navTitle": "صفات متاداده",
+      "number": "",
+      "rel": "stdenv/meta.md",
+      "section": "stdenv",
+      "source": "https://nixos.org/manual/nixpkgs/stable/stdenv/meta.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/stdenv/multiple-output",
+      "title": "multiple-output",
+      "navTitle": "multiple-output",
+      "number": "",
+      "rel": "stdenv/multiple-output.md",
+      "section": "stdenv",
+      "source": "https://nixos.org/manual/nixpkgs/stable/stdenv/multiple-output.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/stdenv/passthru",
+      "title": "passthru",
+      "navTitle": "passthru",
+      "number": "",
+      "rel": "stdenv/passthru.md",
+      "section": "stdenv",
+      "source": "https://nixos.org/manual/nixpkgs/stable/stdenv/passthru.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/stdenv/platform-notes",
+      "title": "The build-build clang will use the 12.3 SDK while the package build itself will use the 13.3 SDK.",
+      "navTitle": "The build-build clang will use the 12.3 SDK while the package build itself will use the 13.3 SDK.",
+      "number": "",
+      "rel": "stdenv/platform-notes.md",
+      "section": "stdenv",
+      "source": "https://nixos.org/manual/nixpkgs/stable/stdenv/platform-notes.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/stdenv/stdenv",
+      "title": "pkg is the _original_ definition (for illustration purposes)",
+      "navTitle": "pkg is the _original_ definition (for illustration purposes)",
+      "number": "",
+      "rel": "stdenv/stdenv.md",
+      "section": "stdenv",
+      "source": "https://nixos.org/manual/nixpkgs/stable/stdenv/stdenv.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/toolchains",
+      "title": "زنجیره‌های ابزار",
+      "navTitle": "زنجیره‌های ابزار",
+      "number": "",
+      "rel": "toolchains.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/toolchains.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/toolchains/llvm",
+      "title": "زنجیره‌ابزار LLVM",
+      "navTitle": "زنجیره‌ابزار LLVM",
+      "number": "",
+      "rel": "toolchains/llvm.md",
+      "section": "toolchains",
+      "source": "https://nixos.org/manual/nixpkgs/stable/toolchains/llvm.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/using-nixpkgs",
+      "title": "استفاده از Nixpkgs",
+      "navTitle": "استفاده از Nixpkgs",
+      "number": "",
+      "rel": "using-nixpkgs.md",
+      "section": "root",
+      "source": "https://nixos.org/manual/nixpkgs/stable/using-nixpkgs.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/using/configuration",
+      "title": "پیکربندی سراسری",
+      "navTitle": "پیکربندی سراسری",
+      "number": "",
+      "rel": "using/configuration.md",
+      "section": "using",
+      "source": "https://nixos.org/manual/nixpkgs/stable/using/configuration.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/using/overlays",
+      "title": "overlays",
+      "navTitle": "overlays",
+      "number": "",
+      "rel": "using/overlays.md",
+      "section": "using",
+      "source": "https://nixos.org/manual/nixpkgs/stable/using/overlays.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/using/overrides",
+      "title": "بازنشانی",
+      "navTitle": "بازنشانی",
+      "number": "",
+      "rel": "using/overrides.md",
+      "section": "using",
+      "source": "https://nixos.org/manual/nixpkgs/stable/using/overrides.html"
+    },
+    {
+      "route": "/pages/nixpkgs-manual/using/platform-support",
+      "title": "پشتیبانی از پلتفرم",
+      "navTitle": "پشتیبانی از پلتفرم",
+      "number": "",
+      "rel": "using/platform-support.md",
+      "section": "using",
+      "source": "https://nixos.org/manual/nixpkgs/stable/using/platform-support.html"
+    }
+  ],
+  "count": 199,
+  "webBase": "https://nixos.org/manual/nixpkgs/stable"
+}

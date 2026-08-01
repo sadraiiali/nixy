@@ -1,0 +1,10 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	// Cloudflare Pages project name (custom domain: nixy.a15d.at)
+	"name": "nixy",
+	// SvelteKit adapter-static output (see vite.config.ts)
+	"pages_build_output_dir": "build",
+	// Workers runtime features available to any future Pages Functions
+	"compatibility_date": "2026-07-30",
+	"compatibility_flags": ["nodejs_compat"]
+}

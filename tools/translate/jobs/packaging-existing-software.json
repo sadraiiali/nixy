@@ -1,0 +1,11 @@
+{
+  "jobs": [
+    {
+      "source": "docs/en/tutorials/packaging-existing-software.md",
+      "dest": "docs/fa/tutorials/packaging-existing-software.md",
+      "auto": true,
+      "model": "google/gemini-3.5-flash-lite",
+      "comment": "Re-translate only FA sections that still look English (Gemini 3.5 Flash Lite)"
+    }
+  ]
+}

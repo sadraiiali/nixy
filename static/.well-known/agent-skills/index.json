@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "fetch-page-markdown",
+      "type": "skill-md",
+      "description": "Fetch Niksy HTML pages as Markdown via HTTP content negotiation (Accept: text/markdown). Use when reading documentation from this site for agent context.",
+      "url": "/.well-known/agent-skills/fetch-page-markdown/SKILL.md",
+      "digest": "sha256:f3f853b22afb2af50f5a3cf0388e71fabafd247a1b0cbbb8da1a855d7d073d40"
+    },
+    {
+      "name": "nix-glossary",
+      "type": "skill-md",
+      "description": "Look up Nix/NixOS terms in Niksy's Persian glossary JSON. Use when translating or explaining terminology (English or Persian) for Nix, NixOS, flakes, derivations, nixpkgs, etc.",
+      "url": "/.well-known/agent-skills/nix-glossary/SKILL.md",
+      "digest": "sha256:c0feed1d19c201316a26bfce4b4b7a1d450ba797ee5fbac4312e3080180eae69"
+    },
+    {
+      "name": "nixy-docs",
+      "type": "skill-md",
+      "description": "Browse and cite Persian Nix/NixOS documentation on Niksy (نیکسی). Use when answering questions about Nix, NixOS, nix.dev guides, the Nix manual, Nixpkgs, Tour of Nix, or Persian terminology for this site.",
+      "url": "/.well-known/agent-skills/nixy-docs/SKILL.md",
+      "digest": "sha256:1e22a8fa65c8563b274e22de864f0f802a0c97b3522f3feeeec7e6615c8e90e3"
+    }
+  ]
+}
