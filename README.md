@@ -1,5 +1,7 @@
 # Nix notes
 
+**License:** [GNU GPL v3 or later](LICENSE) — Copyright (C) 2026 Alireza SadraiiRad.
+
 Two things live in this folder:
 
 1. **Python pipeline** (`tools/`) — download, glossary, translate, and publish Markdown (via `uv`)
