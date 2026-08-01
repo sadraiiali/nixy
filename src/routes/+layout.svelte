@@ -661,7 +661,15 @@
 	<footer class="foot" data-no-panel>
 		<span
 			>نیکسی · یادداشت‌های فارسی Nix ·
-			<a class="foot__link" href="/licenses">مجوزها و نسبت‌دهی</a></span
+			<a class="foot__link" href="/licenses">مجوزها و نسبت‌دهی</a>
+			·
+			<a
+				class="foot__link"
+				href="https://github.com/sadraiiali/nixy"
+				target="_blank"
+				rel="noopener noreferrer"
+				>کد</a
+			></span
 		>
 		<span class="foot__muted foot__credit">
 			{#if isWebxdc}
