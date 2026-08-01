@@ -1,4 +1,5 @@
-<p class="blog-page__kicker">
+<header class="blog-page__header">
+<a class="blog-page__kicker" href="/blog" data-no-panel="1">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 24 24"
@@ -11,19 +12,15 @@
 		stroke-linejoin="round"
 		aria-hidden="true"
 	>
-		<path d="M12 8V4H8" />
-		<rect width="16" height="12" x="4" y="8" rx="2" />
-		<path d="M2 14h2" />
-		<path d="M20 14h2" />
-		<path d="M15 13v2" />
-		<path d="M9 13v2" />
+		<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 	</svg>
-	صفحه · هوش مصنوعی
-</p>
+	وبلاگ
+</a>
 
 # از هوش مصنوعی نترسید
 
 <p class="blog-page__meta">چرا AI ترسناک نیست و چطور می‌توانیم با کنترل انسانی از آن برای یادگیری و زندگی بهتر استفاده کنیم</p>
+</header>
 
 خیلی‌ها وقتی می‌شنوند «این متن با هوش مصنوعی تولید شده است»، فوراً دچار تردید می‌شوند: نکند بی‌دقت باشد؟ نکند قرار است جای انسان را بگیرد؟ یا شاید همه‌چیز را خراب کند؟
 

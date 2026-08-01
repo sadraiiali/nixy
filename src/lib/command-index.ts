@@ -70,6 +70,7 @@ const CHROME: { href: string; title: string; group: string }[] = [
 	{ href: '/pages/nixpkgs-manual', title: 'راهنمای Nixpkgs', group: 'ناوبری' },
 	{ href: '/pages/tour-of-nix', title: 'تور نیکس', group: 'ناوبری' },
 	{ href: '/glossary', title: 'واژه‌نامه', group: 'ناوبری' },
+	{ href: '/blog', title: 'وبلاگ', group: 'ناوبری' },
 	{ href: '/blog/do-not-be-afraid-of-ai', title: 'از هوش مصنوعی نترسید', group: 'ناوبری' },
 	{
 		href: '/blog/how-we-build-this-website',

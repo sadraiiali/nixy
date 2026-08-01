@@ -29,7 +29,7 @@
 			</svg>
 		</span>
 		<span class="ai-gen-notice__body">
-			<span class="ai-gen-notice__title">این صفحه با کمک هوش مصنوعی تولید شده است</span>
+			<span class="ai-gen-notice__title">این پروژه با کمک هوش مصنوعی ترجمه شده است</span>
 			<span class="ai-gen-notice__hint">
 				ترجمه‌ی کنترل‌شده، نه ترجمه‌ی خام · از هوش مصنوعی نترسید
 			</span>

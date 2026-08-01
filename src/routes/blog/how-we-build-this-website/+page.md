@@ -1,4 +1,5 @@
-<p class="blog-page__kicker">
+<header class="blog-page__header">
+<a class="blog-page__kicker" href="/blog" data-no-panel="1">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 24 24"
@@ -11,19 +12,15 @@
 		stroke-linejoin="round"
 		aria-hidden="true"
 	>
-		<path d="M12 8V4H8" />
-		<rect width="16" height="12" x="4" y="8" rx="2" />
-		<path d="M2 14h2" />
-		<path d="M20 14h2" />
-		<path d="M15 13v2" />
-		<path d="M9 13v2" />
+		<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 	</svg>
-	یادداشت · ساخت سایت
-</p>
+	وبلاگ
+</a>
 
 # چگونه این وب‌سایت را ساختیم
 
 <p class="blog-page__meta">معماری نیکسی، ترجمه‌ی کنترل‌شده با AI، واژه‌نامه، و ویرایشگر داخلی Markdown</p>
+</header>
 
 نیکسی یک وب‌سایت **کاملاً فارسی** برای یادگیری Nix و NixOS است. محتوای رسمی انگلیسی (nix.dev، راهنمای Nix، Nixpkgs، تور نیکس) را گردآوری می‌کنیم، با یک خط لولهٔ شفاف به فارسی برمی‌گردانیم، و در مرورگر با SvelteKit و mdsvex نمایش می‌دهیم. این نوشته توضیح می‌دهد که نیکسی **چگونه** ساخته شده است؛ اگر مایلید دربارهٔ فلسفهٔ «از AI نترسید» بیشتر بخوانید، به یادداشت [از هوش مصنوعی نترسید](/blog/do-not-be-afraid-of-ai) سر بزنید.
 
@@ -176,6 +173,30 @@ uv run python -m tools.translate.docs
 
 نیکسی بر سه پایهٔ اصلی استوار است: **سایت استاتیک فارسی**، **خط لولهٔ ترجمه‌ی کنترل‌شده** و **ویرایش و بازبینی انسانی در محیط توسعه**. هوش مصنوعی سرعت کار را افزایش می‌دهد و انسان، کیفیت و روانی متن را تضمین می‌کند.
 
-برای مطالعهٔ بیشتر دربارهٔ رویکرد ما به هوش مصنوعی: [از هوش مصنوعی نترسید](/blog/do-not-be-afraid-of-ai)
+برای مطالعهٔ بیشتر دربارهٔ رویکرد ما به هوش مصنوعی، این نوشته را بخوانید:
 
-[← بازگشت به خانه](/) · [واژه‌نامه](/glossary) · [مجوزها](/licenses)
+<a class="blog-page__card" href="/blog/do-not-be-afraid-of-ai" data-no-panel="1">
+	<span class="blog-page__card-body">
+		<span class="blog-page__card-title">از هوش مصنوعی نترسید</span>
+		<span class="blog-page__card-desc">فلسفهٔ AI · کنترل انسانی · یادگیری بهتر</span>
+	</span>
+	<span class="blog-page__card-arrow" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="m12 19-7-7 7-7" />
+			<path d="M19 12H5" />
+		</svg>
+	</span>
+</a>
+
+<a class="blog-page__card blog-page__card--home" href="/" data-no-panel="1">
+	<span class="blog-page__card-arrow" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M5 12h14" />
+			<path d="m12 5 7 7-7 7" />
+		</svg>
+	</span>
+	<span class="blog-page__card-body">
+		<span class="blog-page__card-title">بازگشت به خانه</span>
+		<span class="blog-page__card-desc">فهرست راهنماها و مستندات نیکسی</span>
+	</span>
+</a>

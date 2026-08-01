@@ -4,30 +4,21 @@
 	import DevMdWysiwyg from '$lib/components/DevMdWysiwyg.svelte';
 	import { page } from '$app/state';
 	import { devMdIsActive } from '$lib/dev-md-edit.svelte';
+	import { blogPostMetaByPath } from '$lib/blog-posts';
 
 	let { children } = $props();
-
-	/** Per-slug SEO (extend when adding posts). */
-	const metaByPath: Record<string, { title: string; description: string }> = {
-		'/blog/do-not-be-afraid-of-ai': {
-			title: 'از هوش مصنوعی نترسید',
-			description:
-				'هوش مصنوعی ترسناک نیست؛ با کنترل انسانی می‌توان از AI برای یادگیری و زندگی بهتر استفاده کرد.'
-		},
-		'/blog/how-we-build-this-website': {
-			title: 'چگونه این وب‌سایت را ساختیم',
-			description:
-				'معماری نیکسی، ترجمه‌ی کنترل‌شده، واژه‌نامه، خط لولهٔ tools و ویرایشگر داخلی Ctrl+E.'
-		}
-	};
 
 	function norm(p: string) {
 		return p.replace(/\/$/, '') || '/';
 	}
 
+	const path = $derived(norm(page.url.pathname));
+	const isIndex = $derived(path === '/blog');
+	const isPost = $derived(!isIndex);
+
 	const meta = $derived(
-		metaByPath[norm(page.url.pathname)] ?? {
-			title: 'وبلاگ نیکسی',
+		blogPostMetaByPath[path] ?? {
+			title: isIndex ? 'وبلاگ' : 'وبلاگ نیکسی',
 			description: 'یادداشت‌های نیکسی دربارهٔ Nix، NixOS و ابزارهای توسعه.'
 		}
 	);
@@ -38,12 +29,17 @@
 <article
 	class="prose prose-fa doc-page blog-page nd-article"
 	class:nd-article--dev-edit={devMdIsActive(page.url.pathname)}
+	class:blog-page--index={isIndex}
 	data-no-panel
 >
-	{#if devMdIsActive(page.url.pathname)}
+	{#if isPost && devMdIsActive(page.url.pathname)}
 		<DevMdToolbar />
 	{/if}
-	<DevMdWysiwyg>
+	{#if isPost}
+		<DevMdWysiwyg>
+			{@render children()}
+		</DevMdWysiwyg>
+	{:else}
 		{@render children()}
-	</DevMdWysiwyg>
+	{/if}
 </article>

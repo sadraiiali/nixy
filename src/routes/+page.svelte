@@ -171,54 +171,29 @@
 </section>
 
 <section class="home-engage" aria-labelledby="home-engage-title">
-	<h2 id="home-engage-title" class="home-engage__title">همکاری و گفتگو</h2>
-	<p class="home-engage__lead">نیکسی با همراهی شما بهتر می‌شود.</p>
-	<div class="home-engage__cards" data-no-panel>
+	<h2 id="home-engage-title" class="home-engage__title">
+		<img
+			class="home-engage__emoji"
+			src="/icons/fluentui-emoji/memo.webp"
+			alt=""
+			width="28"
+			height="28"
+			decoding="async"
+		/>
+		همکاری و گفتگو
+	</h2>
+	<p class="home-engage__lead">
+		سایت نیکسی
+		<strong class="home-engage__highlight">در حال حاضر در نسخه‌ی بتاست</strong>
+		و ممکن است برخی ترجمه‌های آن ایراد داشته باشند. با ارسال کامیت، پول ریکوئست یا گزارش Issue در
 		<a
-			class="home-engage__card"
-			href="https://a15d.at"
+			class="home-engage__link"
+			href="https://github.com/sadraiiali/nixy"
 			target="_blank"
 			rel="noopener noreferrer"
-			data-no-panel="1"
-		>
-			<img
-				class="home-engage__emoji"
-				src="/icons/fluentui-emoji/light-bulb.webp"
-				alt=""
-				width="40"
-				height="40"
-				decoding="async"
-			/>
-			<span class="home-engage__card-title">درخواست ترجمه مقاله</span>
-			<span class="home-engage__card-body">
-				اگر مقاله یا راهنمایی از Nix یا NixOS مد نظر دارید که هنوز به فارسی برگردانده نشده، به من
-				بگویید. تلاش می‌کنم آن را در نوبت ترجمه بگذارم.
-			</span>
-			<span class="home-engage__cta">درخواست ترجمه</span>
-		</a>
-		<a
-			class="home-engage__card"
-			href="https://a15d.at"
-			target="_blank"
-			rel="noopener noreferrer"
-			data-no-panel="1"
-		>
-			<img
-				class="home-engage__emoji"
-				src="/icons/fluentui-emoji/memo.webp"
-				alt=""
-				width="40"
-				height="40"
-				decoding="async"
-			/>
-			<span class="home-engage__card-title">ارسال نظر و گزارش خطا</span>
-			<span class="home-engage__card-body">
-				اشکالی در متن‌ها دیده‌اید یا پیشنهادی برای بهبود سایت دارید؟ خیلی خوشحال می‌شوم نظرتان را
-				بشنوم.
-			</span>
-			<span class="home-engage__cta">ارسال بازخورد</span>
-		</a>
-	</div>
+			>گیت‌هاب</a
+		>، خوشحال می‌شویم در بهبود این مستندات به ما کمک کنید.
+	</p>
 </section>
 
 <div class="home__ai-notice">
