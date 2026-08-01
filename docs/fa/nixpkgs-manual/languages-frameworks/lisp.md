@@ -114,7 +114,7 @@ ecl.pkgs.alexandria.overrideLispAttrs (oldAttrs: {
 })
 ```
 
-برای اطلاع از نحوهٔ ادغام مجدد آن در `ecl.pkgs`، [بخش مربوطه](#lisp-including-external-pkg-in-scope) در مورد استفاده از
+برای اطلاع از نحوه‌ی ادغام مجدد آن در `ecl.pkgs`، [بخش مربوطه](#lisp-including-external-pkg-in-scope) در مورد استفاده از
 
 ```
 nix-shell -p 'sbcl.withPackages (ps: [ ps.alexandria ps.bordeaux-threads ])'

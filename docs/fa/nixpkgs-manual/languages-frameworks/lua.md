@@ -31,7 +31,7 @@ nix-env -if build.nix
 
 #### محیط Lua تعریف‌شده در `~/.config/nixpkgs/config.nix` {#lua-environment-defined-in-.confignixpkgsconfig.nix}
 
-اگر ترجیح می‌دهید، می‌توانید این محیط را به‌عنوان یک بازنشانی بسته به مجموعهٔ Nixpkgs نیز اضافه کنید، برای مثال با استفاده از `config.nix`،
+اگر ترجیح می‌دهید، می‌توانید این محیط را به‌عنوان یک بازنشانی بسته به مجموعه‌ی Nixpkgs نیز اضافه کنید، برای مثال با استفاده از `config.nix`،
 
 ```nix
 {
@@ -204,14 +204,14 @@ Let's double-check all rules:
 lua.withPackages (ps: [ ps.luafilesystem ])
 ```
 
-`withPackages` مجموعه بسته‌های صحیح مربوط به نسخهٔ مفسر خاص را به عنوان یک آرگومان به تابع پاس می‌دهد. در مثال بالا، `ps` برابر با `luaPackages` است.
+`withPackages` مجموعه بسته‌های صحیح مربوط به نسخه‌ی مفسر خاص را به عنوان یک آرگومان به تابع پاس می‌دهد. در مثال بالا، `ps` برابر با `luaPackages` است.
 اما همچنین می‌توانید به راحتی به
 
 ```nix
 lua5_1.withPackages (ps: [ ps.lua ])
 ```
 
-اکنون، `ps` روی `lua5_1.pkgs` تنظیم شده‌است که با نسخهٔ مفسر مطابقت دارد.
+اکنون، `ps` روی `lua5_1.pkgs` تنظیم شده‌است که با نسخه‌ی مفسر مطابقت دارد.
 
 ### راهنمای مشارکت در Lua {#lua-contributing}
 

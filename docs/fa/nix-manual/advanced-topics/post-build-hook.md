@@ -35,7 +35,7 @@ URL کش را به [`substituters`](../command-ref/conf-file.md#conf-substituter
 
     secret-key-files = /etc/nix/key.private
 
-ما در مرحلهٔ بعد خدمت پس‌زمینه (daemon) Nix را مجدداً راه‌اندازی خواهیم کرد.
+ما در مرحله‌ی بعد خدمت پس‌زمینه (daemon) Nix را مجدداً راه‌اندازی خواهیم کرد.
 
 # پیاده‌سازی قلاب پس از ساخت (build hook)
 

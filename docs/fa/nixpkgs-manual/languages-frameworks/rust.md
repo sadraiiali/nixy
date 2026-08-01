@@ -197,7 +197,7 @@ rustPlatform.buildRustPackage {
 
 ### کامپایل متقاطع {#cross-compilation}
 
-به‌طور پیش‌فرض، بسته‌های Rust درست مانند هر بستهٔ دیگری برای پلتفرم هاست کامپایل می‌شوند. مقدار `--target` ارسال‌شده به ابزارهای Rust از روی همین پلتفرم محاسبه می‌شود.
+به‌طور پیش‌فرض، بسته‌های Rust درست مانند هر بسته‌ی دیگری برای پلتفرم هاست کامپایل می‌شوند. مقدار `--target` ارسال‌شده به ابزارهای Rust از روی همین پلتفرم محاسبه می‌شود.
 به‌طور پیش‌فرض، این فرآیند `stdenv.hostPlatform.config` را دریافت کرده و مولفه‌هایی را که تفاوت آن‌ها شناخته‌شده‌است جایگزین می‌کند. اما روش‌هایی برای سفارشی‌سازی این آرگومان وجود دارد:
 
  - برای انتخاب یک تارگت متفاوت بر اساس نام، `stdenv.hostPlatform.rust.
@@ -435,7 +435,7 @@ buildPythonPackage rec {
 }
 ```
 
-#### بستهٔ Python با استفاده از `maturin` {#python-package-using-maturin}
+#### بسته‌ی Python با استفاده از `maturin` {#python-package-using-maturin}
 
 بسته‌های Python که از [Maturin](https://github.com/PyO3/maturin) استفاده می‌کنند می‌توانند با `fetchCargoVendor`، `cargoSetupHook` و `maturinBuildHook` ساخته شوند. برای نمونه، درایویشن (جزئی) زیر بسته Python به نام `retworkx` را می‌سازد. از `fetchCargoVendor` و `cargoSetupHook` برای دریافت و آماده‌سازی وابستگی‌های crate استفاده می‌شود. از `maturinBuildHook` نیز برای انجام فرآیند ساخت استفاده می‌شود.
 
@@ -533,7 +533,7 @@ stdenv.mkDerivation (finalAttrs: {
 })
 ```
 
-### کامپایل بستهٔ `wasm32-wasip1` {#compiling-wasm32-wasip1-package}
+### کامپایل بسته‌ی `wasm32-wasip1` {#compiling-wasm32-wasip1-package}
 
 ```nix
 pkgsCross.wasm32-wasip1.callPackage (
@@ -566,7 +566,7 @@ pkgsCross.wasm32-wasip1.callPackage (
 
 ### عملکرد ساده {#simple-operation}
 
-هنگام اجرا، `cargo build` فایلی به نام `Cargo.lock` تولید می‌کند که شامل نسخه‌های ثابت‌شدهٔ همهٔ وابستگی‌ها است. Nixpkgs شامل ابزاری به نام `crate2Nix` (`nix-shell -p crate2nix`) است که می‌توان از آن برای تبدیل یک `Cargo.lock` به یک عبارت نیکس (Nix expression) استفاده کرد.
+هنگام اجرا، `cargo build` فایلی به نام `Cargo.lock` تولید می‌کند که شامل نسخه‌های ثابت‌شده‌ی همه‌ی وابستگی‌ها است. Nixpkgs شامل ابزاری به نام `crate2Nix` (`nix-shell -p crate2nix`) است که می‌توان از آن برای تبدیل یک `Cargo.lock` به یک عبارت نیکس (Nix expression) استفاده کرد.
 
 ```nix
 with import <nixpkgs> { };
@@ -612,7 +612,7 @@ with import <nixpkgs> { };
 
 در واقع، بازنشانی‌های معرفی‌شده در بخش قبلی کلی‌تر هستند. پارامترهای متعدد دیگری نیز قابل بازنشانی هستند:
 
-- نسخهٔ `rustc` استفاده‌شده برای کامپایل کردن کریت:
+- نسخه‌ی `rustc` استفاده‌شده برای کامپایل کردن کریت:
 ```nix
   (hello { }).override { rust = pkgs.rust; }
   ```
@@ -722,7 +722,7 @@ $ cargo build
 $ cargo test
 ```
 
-## استفاده از زنجیره‌ابزارهای Rust نگه‌داری‌شده توسط جامعهٔ کاربری {#using-community-maintained-rust-toolchains}
+## استفاده از زنجیره‌ابزارهای Rust نگه‌داری‌شده توسط جامعه‌ی کاربری {#using-community-maintained-rust-toolchains}
 
 ::: {.note}
 پروژه‌های زیر نمی‌توانند در Nixpkgs استفاده شوند، زیرا [Import From Derivation](https://nixos.org/manual/nix/unstable/language/import-from-derivation) (IFD) در Nixpkgs مجاز نیست.

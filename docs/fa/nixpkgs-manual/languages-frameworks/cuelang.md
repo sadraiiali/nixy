@@ -18,12 +18,12 @@
 - عملگر `&` [عملگر یکسان‌سازی](https://cuelang.org/docs/references/spec/#unification) است (مشابه عملگر ادغام در سطح نوع)، و `|` [عملگر فصل](https://cuelang.org/docs/references/spec/#disjunction) است (مشابه عملگر اجتماع در سطح نوع).
 - مقادیر خود نوع **هستند**، به عنوان مثال `myStruct: { a: 3 }` یک تعریف نوع معتبر است که تنها مقدار `3` را مجاز می‌داند.
 
-- برای کسب اطلاعات بیشتر دربارهٔ معناشناسی، <https://cuelang.org/docs/concepts/logic/> را بخوانید.
+- برای کسب اطلاعات بیشتر درباره‌ی معناشناسی، <https://cuelang.org/docs/concepts/logic/> را بخوانید.
 - برای آشنایی با مشخصات زبان، <https://cuelang.org/docs/references/spec/> را بخوانید.
 
 ## `writeCueValidator` {#cuelang-writeCueValidator}
 
-مجموعهٔ بسته‌های نیکس (Nixpkgs) یک کمک‌کننده `pkgs.writeCueValidator` ارائه می‌دهد که بر اساس اسکیمای Cuelang ارائه‌شده، یک اسکریپت اعتبارسنجی می‌نویسد.
+مجموعه‌ی بسته‌های نیکس (Nixpkgs) یک کمک‌کننده `pkgs.writeCueValidator` ارائه می‌دهد که بر اساس اسکیمای Cuelang ارائه‌شده، یک اسکریپت اعتبارسنجی می‌نویسد.
 
 در ادامه یک مثال آورده شده‌است:
 ```nix

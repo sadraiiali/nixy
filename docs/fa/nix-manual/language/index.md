@@ -92,7 +92,7 @@
   <td>
 
    <!-- FIXME: using two no-break spaces, because apparently mdBook swallows the second regular space! -->
-   یک رشتهٔ چندخطی. فضای خالی پیشوند مشترک را حذف می‌کند. به `"multi\n line\n  string"` ارزیابی می‌شود.
+   یک رشته‌ی چندخطی. فضای خالی پیشوند مشترک را حذف می‌کند. به `"multi\n line\n  string"` ارزیابی می‌شود.
 
   </td>
  </tr>

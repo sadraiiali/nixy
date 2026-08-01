@@ -102,7 +102,7 @@ Download .NET:
 * `projectFile` برای مشخص کردن فایل پروژه dotnet، نسبت به ریشه کد منبع استفاده می‌شود. این فایل‌ها دارای پسوند `.sln` (کل راهکار) یا `.csproj` (یک پروژه) هستند. این مورد می‌تواند لیستی از چندین پروژه نیز باشد. در صورت حذف، سعی خواهد شد راهکار (`.sln`) پیدا و ساخته شود. اگر با مشکل مواجه شدید، مطمئن شوید که آن را روی یک فایل (یا لیستی از فایل‌ها) با پسوند `.csproj` تنظیم کرده‌اید - ساخت برنامه‌ها به عنوان کل راهکار به طور کامل توسط CLI مربوط به .NET پشتیبانی نمی‌شود.
 * `nugetDeps` باید یک مسیر به یک فایل JSON، یک مسیر به یک فایل nix (منسوخ‌شده)، یک درایویشن، یا لیستی از درایویشن‌ها باشد. یک فایل `deps.json` را می‌توان با استفاده از اسکریپت متصل به `passthru.fetch-deps` تولید کرد که روش ترجیحی است. تمام بسته‌های `nugetDeps` به `buildInputs` اضافه می‌شوند.
 ::: {.note}
-برای جزییات بیشتر دربارهٔ مدیریت فایل `deps.json`، بخش [تولید و به‌روزرسانی وابستگی‌های NuGet](#generating-and-updating-nuget-dependencies) را ببینید.
+برای جزییات بیشتر درباره‌ی مدیریت فایل `deps.json`، بخش [تولید و به‌روزرسانی وابستگی‌های NuGet](#generating-and-updating-nuget-dependencies) را ببینید.
 :::
 
 * `packNupkg` برای بسته‌بندی پروژه به عنوان یک `nupkg` استفاده می‌شود و آن را در `$out/share` نصب می‌کند. در صورت تنظیم روی `true`، درایویشن می‌تواند با افزودن به `buildInputs` به عنوان یک وابستگی برای پروژه dotnet دیگری استفاده شود.
@@ -234,7 +234,7 @@ buildDotnetGlobalTool {
 ```
 ## تولید و به‌روزرسانی وابستگی‌های NuGet {#generating-and-updating-nuget-dependencies}
 
-هنگام نوشتن یک عبارت جدید، می‌توانید از اسکریپت تولیدشدهٔ `fetch-deps` برای مقداردهی اولیه lockfile استفاده کنید.
+هنگام نوشتن یک عبارت جدید، می‌توانید از اسکریپت تولیدشده‌ی `fetch-deps` برای مقداردهی اولیه lockfile استفاده کنید.
 پس از تنظیم `nugetDeps` روی مسیر دلخواه lockfile (برای مثال `./deps.json`)،
 اسکریپت را با `nix-build -A package.fetch-deps` بسازید و سپس نتیجه را اجرا کنید.
 (وقتی صفت ریشه، بسته شما باشد، این دستور به‌سادگی `nix-build -A fetch-deps` است.)
@@ -248,7 +248,7 @@ $ dotnet restore --packages out
   Restored /home/ggg/git-credential-manager/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj (in 1.21 sec).
 ```
 
-در ادامه، از ابزار `nuget-to-json` ارائه‌شده در Nixpkgs برای تولید لاک‌فایل در `deps.json` از بسته‌های داخل پوشهٔ `out` استفاده کنید.
+در ادامه، از ابزار `nuget-to-json` ارائه‌شده در Nixpkgs برای تولید لاک‌فایل در `deps.json` از بسته‌های داخل پوشه‌ی `out` استفاده کنید.
 
 ```bash
 $ nuget-to-json out > deps.json

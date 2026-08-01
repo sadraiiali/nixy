@@ -14,7 +14,7 @@
 
 هیچ رابط یکپارچه‌ای برای کمک‌رسان‌های ساخت وجود ندارد.
 [کمک‌رسان‌های ساخت ساده](#chap-trivial-builders) و [دریافت‌کننده‌ها](#chap-pkgs-fetchers) برای سهولت کار، انواع ورودی‌های مختلفی دارند.
-[کمک‌رسان‌های ساخت مخصوص زبان یا چارچوب](#chap-language-support) معمولاً از سبک `stdenv.mkDerivation` پیروی می‌کنند که یک مجموعه ویژگی (attribute set) یا یک تابع نقطه-ثابت (fixed-point) دریافت‌کنندهٔ مجموعه ویژگی را می‌پذیرد.
+[کمک‌رسان‌های ساخت مخصوص زبان یا چارچوب](#chap-language-support) معمولاً از سبک `stdenv.mkDerivation` پیروی می‌کنند که یک مجموعه ویژگی (attribute set) یا یک تابع نقطه-ثابت (fixed-point) دریافت‌کننده‌ی مجموعه ویژگی را می‌پذیرد.
 
 ```{=include=} chapters
 build-helpers/fixed-point-arguments.chapter.md

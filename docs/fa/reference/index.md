@@ -26,6 +26,6 @@ pinning-nixpkgs.md
 - [راهنمای NixOS](https://nixos.org/manual/nixos/stable/)
 - [پروژه‌های جامعه](https://github.com/nix-community/)
 - [ابزارهای پشتیبانی (awesome-nix)](https://github.com/nix-community/awesome-nix)
-- [مطالعهٔ بیشتر](../recommended-reading.md)
+- [مطالعه‌ی بیشتر](../recommended-reading.md)
 - [قفل‌کردن Nixpkgs](./pinning-nixpkgs.md)
 

@@ -29,7 +29,7 @@ myst:
 
 فرم موجود در صفحه [ایجاد کش باینری](https://app.cachix.org/cache) را تکمیل کنید.
 
-دستورالعمل‌های تب **Push binaries** را روی کش باینری تازه ایجادشدهٔ خود دنبال کنید.
+دستورالعمل‌های تب **Push binaries** را روی کش باینری تازه ایجادشده‌ی خود دنبال کنید.
 
 ### ۲. پیکربندی رمزها (Secrets)
 
@@ -38,7 +38,7 @@ myst:
 ۱. روی `Settings` کلیک کنید.
 ۲. روی `Secrets and variables` کلیک کرده و در فهرست کشویی روی `Actions` کلیک کنید.
 ۳. روی `New repository secret` کلیک کنید.
-۴. رمزهای تولیدشدهٔ قبلی خود (`CACHIX_SIGNING_KEY` و/یا `CACHIX_AUTH_TOKEN`) را اضافه کنید.
+۴. رمزهای تولیدشده‌ی قبلی خود (`CACHIX_SIGNING_KEY` و/یا `CACHIX_AUTH_TOKEN`) را اضافه کنید.
 
 ### ۳. راه‌اندازی GitHub Actions
 

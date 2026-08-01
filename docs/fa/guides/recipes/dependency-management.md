@@ -14,7 +14,7 @@ $ nix-shell -p npins --run "npins init --bare; npins add github nixos nixpkgs --
 این دستور در پوشه جاری فایل `npins/sources.json` را تولید می‌کند که حاوی یک ارجاع سنجاق‌شده (Pinned) به بازنگری به‌دست‌آمده خواهد بود.
 همچنین این دستور فایل `npins/default.nix` را ایجاد می‌کند که آن وابستگی‌ها را به عنوان یک مجموعه ویژگی (attribute set) در دسترس قرار می‌دهد.
 
-فایل تولیدشدهٔ `npins/default.nix` را به عنوان مقدار پیش‌فرض برای آرگومان تابع موجود در `default.nix` درون‌ریزی کرده و از آن برای ارجاع به پوشه سورس Nixpkgs استفاده کنید:
+فایل تولیدشده‌ی `npins/default.nix` را به عنوان مقدار پیش‌فرض برای آرگومان تابع موجود در `default.nix` درون‌ریزی کرده و از آن برای ارجاع به پوشه سورس Nixpkgs استفاده کنید:
 
 ```nix
 {
@@ -30,7 +30,7 @@ $ nix-shell -p npins --run "npins init --bare; npins add github nixos nixpkgs --
 دستور `nix-build` تابع سطح بالا را با مجموعه ویژگی خالی `{}`, یا با صفت‌های ارسال‌شده از طریق [`--arg`](/pages/nix-manual/command-ref/nix-build#opt-arg) یا [`--argstr`](/pages/nix-manual/command-ref/nix-build#opt-argstr) فراخوانی می‌کند.
 این الگو امکان [بازنشانی منابع با npins](overriding-sources-npins) را به صورت برنامه‌نویسی فراهم می‌کند.
 
-برای اینکه `npins` در محیط توسعهٔ پروژه شما به‌راحتی در دسترس باشد، آن را اضافه کنید:
+برای اینکه `npins` در محیط توسعه‌ی پروژه شما به‌راحتی در دسترس باشد، آن را اضافه کنید:
 
 ```diff
  {
@@ -61,7 +61,7 @@ $ nix-shell -p npins --run "npins init --bare; npins add github nixos nixpkgs --
 (overriding-sources-npins)=
 ## بازنشانی منابع
 
-به عنوان یک مثال، از عبارت ایجادشدهٔ قبلی با نسخهٔ قدیمی‌تری از Nixpkgs استفاده خواهیم کرد.
+به عنوان یک مثال، از عبارت ایجادشده‌ی قبلی با نسخه‌ی قدیمی‌تری از Nixpkgs استفاده خواهیم کرد.
 
 وارد محیط توسعه شوید، یک پوشه جدید بسازید و npins را با نسخه متفاوتی از Nixpkgs راه‌اندازی کنید:
 
@@ -95,7 +95,7 @@ nix-build .. -A build --arg sources 'import ./npins'
 
 ## مهاجرت از `niv`
 
-نسخهٔ قبلی این راهنما استفاده از [`niv`](https://github.com/nmattia/niv/)، یک مدیر ثابت‌سازی نسخه (Pinning) مشابه که به زبان Haskell نوشته شده‌است را پیشنهاد می‌کرد.
+نسخه‌ی قبلی این راهنما استفاده از [`niv`](https://github.com/nmattia/niv/)، یک مدیر ثابت‌سازی نسخه (Pinning) مشابه که به زبان Haskell نوشته شده‌است را پیشنهاد می‌کرد.
 
 اگر پروژه‌ای دارید که از `niv` استفاده می‌کند، می‌توانید تعاریف منابع راه دور را به `npins` درون‌ریزی کنید:
 

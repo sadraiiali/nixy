@@ -6,7 +6,7 @@
 
 - یک فایل [`nix-cache-info`](./nix-cache-info.md) در ریشه حاوی پیکربندی سمت راه دور.
 - برای هر [شیء انبار](@docroot@/store/store-object.md):
-  - یک فایل [`.narinfo`](./narinfo.md) حاوی [متادیتای](@docroot@/store/store-object.md#metadata) شیء و یک URL (معمولاً نسبی) به فایل فشرده‌شدهٔ NAR متناظر.
+  - یک فایل [`.narinfo`](./narinfo.md) حاوی [متادیتای](@docroot@/store/store-object.md#metadata) شیء و یک URL (معمولاً نسبی) به فایل فشرده‌شده‌ی NAR متناظر.
   - یک [بایگانی نیکس](@docroot@/store/file-system-object/content-address.md#serial-nix-archive) احتمالاً فشرده‌شده که حاوی داده‌های سیستم‌فایل شیء انبار است.
 - برای هر ورودی در [ردیابی ساخت](@docroot@/store/build-trace.md)، یک فایل JSON در مسیر `build-trace-v2/<drvBaseName>/<outputName>.doi`:
   - مسیر، [کلید](@docroot@/protocols/json/build-trace-entry.md#key) را کدگذاری می‌کند.

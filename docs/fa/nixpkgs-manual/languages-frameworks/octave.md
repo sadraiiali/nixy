@@ -15,7 +15,7 @@ $ nix-build -A octavePackages.symbolic
 $ nix-env -f. -iA octavePackages.symbolic
 ```
 
-شما می‌توانید با استفاده از تابع پاس‌داده‌شدهٔ `withPackages`، Octave را همراه با بسته‌ها بسازید.
+شما می‌توانید با استفاده از تابع پاس‌داده‌شده‌ی `withPackages`، Octave را همراه با بسته‌ها بسازید.
 
 ```ShellSession
 $ nix-shell -p 'octave.withPackages (ps: with ps; [ symbolic ])'

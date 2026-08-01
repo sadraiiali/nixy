@@ -2,7 +2,7 @@
 
 ارزیاب Nix از [ارزیابی](@docroot@/language/evaluation.md)
 [پروفایل‌سازی](<https://en.wikipedia.org/wiki/Profiling_(computer_programming)>)
-سازگار با `flamegraph.pl` پشتیبانی می‌کند. این ابزار پروفایل‌سازی، پشتهٔ فراخوانی تابع nix را در فواصل زمانی منظم نمونه‌برداری می‌کند. این قابلیت را می‌توان با تنظیم
+سازگار با `flamegraph.pl` پشتیبانی می‌کند. این ابزار پروفایل‌سازی، پشته‌ی فراخوانی تابع nix را در فواصل زمانی منظم نمونه‌برداری می‌کند. این قابلیت را می‌توان با تنظیم
 [`eval-profiler`](@docroot@/command-ref/conf-file.md#conf-eval-profiler)
 فعال کرد:
 

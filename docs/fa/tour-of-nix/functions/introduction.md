@@ -10,7 +10,7 @@
 
 **نکته:** الحاق رشته‌ها را می‌توان با استفاده از عملگر '+' انجام داد.
 
-**نکته:** دربارهٔ نوشتن توابع در <https://nixos.org/manual/nix/stable/language/constructs#functions> مطالعه کنید.
+**نکته:** درباره‌ی نوشتن توابع در <https://nixos.org/manual/nix/stable/language/constructs#functions> مطالعه کنید.
 
 **نکته:** توابع توکاری وجود دارند که همیشه می‌توانید از آن‌ها استفاده کنید؛ به <https://nixos.org/manual/nix/stable/language/builtins> مراجعه کنید.
 

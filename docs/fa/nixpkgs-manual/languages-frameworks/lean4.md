@@ -14,7 +14,7 @@ leanPackages.buildLakePackage {
 }
 ```
 
-وابستگی‌ها برای Lake در lakefile و برای Nix در عبارت نیکس (Nix expression) اعلام می‌شوند. `leanDeps` کتابخانه‌های مدیریت‌شده توسط Nix را ارائه می‌دهد که فایل‌های `.olean` آن‌ها، فرآوردهٔ ساخت پیش‌فرض جنبهٔ (facet
+وابستگی‌ها برای Lake در lakefile و برای Nix در عبارت نیکس (Nix expression) اعلام می‌شوند. `leanDeps` کتابخانه‌های مدیریت‌شده توسط Nix را ارائه می‌دهد که فایل‌های `.olean` آن‌ها، فرآورده‌ی ساخت پیش‌فرض جنبه‌ی (facet
 
 ```json
 {"version":"1.1.0","packagesDir":".lake/packages","packages":[]}

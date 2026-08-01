@@ -47,7 +47,7 @@
   };
 ```
 
-علاوه بر این، باید یک رمز عبور برای این کاربر مشخص کنید. فقط به منظور نمایش، با افزودن گزینهٔ `initialPassword` به پیکربندی کاربر، یک رمز عبور ناامن و به صورت متن ساده (Plain text) مشخص می‌کنید:
+علاوه بر این، باید یک رمز عبور برای این کاربر مشخص کنید. فقط به منظور نمایش، با افزودن گزینه‌ی `initialPassword` به پیکربندی کاربر، یک رمز عبور ناامن و به صورت متن ساده (Plain text) مشخص می‌کنید:
 
 ```nix
    initialPassword = "test";
@@ -107,11 +107,11 @@ $ nix-build '<nixpkgs/nixos>' -A vm -I nixpkgs=channel:nixos-24.05 -I nixos-conf
     
     کمک‌رسان ساخت ماشین مجازی در NixOS تعریف شده است که بخشی از [مخزن `nixpkgs`](https://github.com/NixOS/nixpkgs) است. بنابراین ما از [مسیر جستجو](/pages/nix-dev/tutorials/nix-language) `<nixpkgs/nixos>` استفاده می‌کنیم.
     
-- [گزینهٔ `-A`](/pages/nix-manual/command-ref/opt-common#opt-attr) صفت مورد نظر را برای انتخاب از عبارت Nix ارائه‌شده یعنی `<nixpkgs/nixos>` مشخص می‌کند.
+- [گزینه‌ی `-A`](/pages/nix-manual/command-ref/opt-common#opt-attr) صفت مورد نظر را برای انتخاب از عبارت Nix ارائه‌شده یعنی `<nixpkgs/nixos>` مشخص می‌کند.
     
     برای ساخت ماشین مجازی، ما صفت `vm` را همان‌طور که در [`nixos/default.nix`](https://github.com/NixOS/nixpkgs/blob/7c164f4bea71d74d98780ab7be4f9105630a2eba/nixos/default.nix#L19) تعریف شده است، انتخاب می‌کنیم.
     
-- [گزینهٔ `-I`](/pages/nix-manual/command-ref/opt-common#opt-I) ورودی‌ها را به مسیر جستجو اضافه می‌کند.
+- [گزینه‌ی `-I`](/pages/nix-manual/command-ref/opt-common#opt-I) ورودی‌ها را به مسیر جستجو اضافه می‌کند.
     
     در اینجا ما `nixpkgs` را طوری تنظیم می‌کنیم که به [نسخه خاصی از Nixpkgs](/pages/nix-dev/reference/pinning-nixpkgs) اشاره کند و `nix-config` را روی فایل `configuration.nix` در پوشه جاری تنظیم می‌کنیم.
     
@@ -135,7 +135,7 @@ run-nixos-vm
 $ QEMU_KERNEL_PARAMS=console=ttyS0 ./result/bin/run-nixos-vm -nographic; reset
 ```
 
-این دستور به دلیل وجود `-nographic`، QEMU را در همین ترمینال اجرا خواهد کرد. گزینهٔ `console=ttyS0` همچنین فرآیند راه‌اندازی (بوت) را نمایش می‌دهد که در صفحهٔ ورود به کنسول به پایان می‌رسد.
+این دستور به دلیل وجود `-nographic`، QEMU را در همین ترمینال اجرا خواهد کرد. گزینه‌ی `console=ttyS0` همچنین فرآیند راه‌اندازی (بوت) را نمایش می‌دهد که در صفحه‌ی ورود به کنسول به پایان می‌رسد.
 
 با نام کاربری `alice` و رمز عبور `test` وارد شوید. بررسی کنید که برنامه‌ها طبق مشخصات واقعاً در دسترس هستند:
 
@@ -280,7 +280,7 @@ $ sudo poweroff
 > > > > }
 > > > > ```
 > > >
-> > > راهنمای NixOS دارای فصل‌هایی دربارهٔ [X11](https://nixos.org/manual/nixos/stable/#sec-x11) و [Wayland](https://nixos.org/manual/nixos/stable/#sec-wayland) است که مدیران پنجره جایگزین را فهرست می‌کنند.
+> > > راهنمای NixOS دارای فصل‌هایی درباره‌ی [X11](https://nixos.org/manual/nixos/stable/#sec-x11) و [Wayland](https://nixos.org/manual/nixos/stable/#sec-wayland) است که مدیران پنجره جایگزین را فهرست می‌کنند.
 > > >
 > > > ## مراجع
 > > >

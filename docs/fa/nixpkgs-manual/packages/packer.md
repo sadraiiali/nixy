@@ -6,7 +6,7 @@
 packer.withPlugins (ps: [ ps.docker ])
 ```
 
-این یک فایل اجرایی `packer` تولید می‌کند که همراه با متغیر محیطیِ تنظیم‌شدهٔ `PACKER_PLUGIN_PATH` پوشانده شده (wrapped)
+این یک فایل اجرایی `packer` تولید می‌کند که همراه با متغیر محیطیِ تنظیم‌شده‌ی `PACKER_PLUGIN_PATH` پوشانده شده (wrapped)
 
 ```nix
 {

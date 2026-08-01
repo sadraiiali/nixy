@@ -4,7 +4,7 @@
 
 - <span id="opt-add-root">[`--add-root`](#opt-add-root)</span> *path*
 
-  باعث می‌شود نتیجهٔ یک realization (`--realise` و `--force-realise`) به عنوان ریشهٔ جمع‌کنندهٔ زباله ثبت شود. *path* به عنوان یک پیوند نمادین (symlink) به مسیر انبار حاصل ایجاد خواهد شد. علاوه بر این، یک پیوند نمادین با نامی منحصربه‌فرد به *path* در `/nix/var/nix/gcroots/auto/` ایجاد خواهد شد. برای نمونه،
+  باعث می‌شود نتیجه‌ی یک realization (`--realise` و `--force-realise`) به عنوان ریشه‌ی جمع‌کننده‌ی زباله ثبت شود. *path* به عنوان یک پیوند نمادین (symlink) به مسیر انبار حاصل ایجاد خواهد شد. علاوه بر این، یک پیوند نمادین با نامی منحصربه‌فرد به *path* در `/nix/var/nix/gcroots/auto/` ایجاد خواهد شد. برای نمونه،
 ```console
   $ nix-store --add-root /home/eelco/bla/result --realise ...
 
@@ -15,7 +15,7 @@
   lrwxrwxrwx    1 ... 2005-03-13 21:10 /home/eelco/bla/result -> /nix/store/1r11343n6qd4...-f-spot-0.0.10
   ```
 
-بنابراین، هنگامی که `/home/eelco/bla/result` حذف می‌شود، ریشه جمع‌آوری زباله (garbage collection) در پوشه `auto` به یک پیوند نمادین (symlink) معلق تبدیل شده و توسط جمع‌کنندهٔ زباله (garbage collector) نادیده گرفته خواهد شد.
+بنابراین، هنگامی که `/home/eelco/bla/result` حذف می‌شود، ریشه جمع‌آوری زباله (garbage collection) در پوشه `auto` به یک پیوند نمادین (symlink) معلق تبدیل شده و توسط جمع‌کننده‌ی زباله (garbage collector) نادیده گرفته خواهد شد.
 
 > **هشدار**
 >

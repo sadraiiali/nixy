@@ -124,7 +124,7 @@ xcode.simulateApp {
 }
 ```
 
-با ارائهٔ نتیجهٔ تابع `xcode.buildApp {}` و پیکربندی شناسهٔ app bundle، برنامه به صورت خودکار استقرار یافته و اجرا می‌شود.
+با ارائه‌ی نتیجه‌ی تابع `xcode.buildApp {}` و پیکربندی شناسه‌ی app bundle، برنامه به صورت خودکار استقرار یافته و اجرا می‌شود.
 
 ```bash
 $ rm -rf ~/Library/Developer/Xcode/DerivedData

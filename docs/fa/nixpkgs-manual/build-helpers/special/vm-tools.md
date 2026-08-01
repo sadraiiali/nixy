@@ -34,7 +34,7 @@
 { pkgs }: with pkgs; with vmTools; runInLinuxVM hello
 ```
 
-ساخت درون یک ماشین مجازی (VM) با حافظهٔ اضافی:
+ساخت درون یک ماشین مجازی (VM) با حافظه‌ی اضافی:
 ```nix
 { pkgs }:
 with pkgs;
@@ -135,7 +135,7 @@ runInLinuxVM (
 
 ### صفات {#vm-tools-diskImageFuns-attributes}
 
-* `size` (اختیاری، مقدار پیش‌فرض `4096`). اندازهٔ تصویر بر حسب MiB.
+* `size` (اختیاری، مقدار پیش‌فرض `4096`). اندازه‌ی تصویر بر حسب MiB.
 * `extraPackages` (اختیاری). فهرستی از نام بسته‌های اضافی از توزیع که باید در تصویر گنجانده شوند.
 
 ### مثال‌ها {#vm-tools-diskImageFuns-examples}

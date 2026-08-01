@@ -16,13 +16,13 @@
 (channel-branches)=
 ## از کدام شاخه کانال باید استفاده کنم؟
 
-مجموعهٔ بسته‌های نیکس (Nixpkgs) و NixOS دارای نسخه‌های پایدار و غلتان (rolling) هستند.
+مجموعه‌ی بسته‌های نیکس (Nixpkgs) و NixOS دارای نسخه‌های پایدار و غلتان (rolling) هستند.
 
 این نسخه‌ها در گونه‌هایی به نام «شاخه‌های کانال» توزیع می‌شوند:
 شاخه‌های Git که برای انتشارها استفاده می‌شوند و همچنین به کانال‌های Nix تبدیل می‌شوند.
 
 :::{tip}
-برای اطلاعات بیشتر دربارهٔ کانال‌ها به ورودی [`nix-channel`](/pages/nix-manual/command-ref/nix-channel) در راهنمای Nix و برای استراتژی انشعاب‌گیری Nixpkgs به [راهنمای مشارکت در Nixpkgs](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#branch-conventions) مراجعه کنید.
+برای اطلاعات بیشتر درباره‌ی کانال‌ها به ورودی [`nix-channel`](/pages/nix-manual/command-ref/nix-channel) در راهنمای Nix و برای استراتژی انشعاب‌گیری Nixpkgs به [راهنمای مشارکت در Nixpkgs](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#branch-conventions) مراجعه کنید.
 :::
 
 ### پایدار
@@ -56,13 +56,13 @@
 - در لینوکس (از جمله NixOS و WSL)، از [`nixos-unstable`](https://github.com/NixOS/nixpkgs/branches/all?query=nixos-unstable) استفاده کنید.
 - در هر پلتفرم دیگری، از [`nixpkgs-unstable`](https://github.com/NixOS/nixpkgs/branches/all?query=nixpkgs-unstable) استفاده کنید.
 
-شاخه‌های کانال [`*-small`](https://github.com/NixOS/nixpkgs/branches/all?query=-small) مجموعه‌تست کوچک‌تری را پشت سر گذاشته‌اند، به این معنا که نسبت به شاخهٔ پایه خود به‌روزتر هستند، اما تضمین‌های پایداری کمتری ارائه می‌دهند.
+شاخه‌های کانال [`*-small`](https://github.com/NixOS/nixpkgs/branches/all?query=-small) مجموعه‌تست کوچک‌تری را پشت سر گذاشته‌اند، به این معنا که نسبت به شاخه‌ی پایه خود به‌روزتر هستند، اما تضمین‌های پایداری کمتری ارائه می‌دهند.
 
 ## آیا ناخالصی‌ای در ساخت‌های ایزوله شده (Sandboxed) باقی مانده‌است؟
 
 بله. موارد زیر وجود دارند:
 
-- معماری CPU: تلاش زیادی می‌شود تا از کامپایل دستورات بومی به نفع دستورات پشتیبانی‌شدهٔ ازپیش‌تعیین‌شده جلوگیری شود.
+- معماری CPU: تلاش زیادی می‌شود تا از کامپایل دستورات بومی به نفع دستورات پشتیبانی‌شده‌ی ازپیش‌تعیین‌شده جلوگیری شود.
 - زمان/تاریخ فعلی سیستم.
 - سیستم‌فایل مورد استفاده برای ساخت (نیز ببینید: [`TMPDIR`](/pages/nix-manual/command-ref/env-common#env-TMPDIR)).
 - پارامترهای هسته لینوکس، از جمله:

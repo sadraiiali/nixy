@@ -29,7 +29,7 @@ mkTclDerivation (finalAttrs: {
 ```
 
 ترجیح دهید.
-نحوهٔ استفاده از آن در `pkgs/development/tcl-modules/by-name/README.md` مستند شده‌است.
+نحوه‌ی استفاده از آن در `pkgs/development/tcl-modules/by-name/README.md` مستند شده‌است.
 
 تمام برنامه‌های Tcl در
 

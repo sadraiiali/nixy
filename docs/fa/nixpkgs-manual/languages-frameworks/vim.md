@@ -53,7 +53,7 @@ vim-full.customize {
 }
 ```
 
-بستهٔ حاصل را می‌توان به `packageOverrides` در `~/.nixpkgs/config.nix` اضافه کرد تا قابل نصب شود:
+بسته‌ی حاصل را می‌توان به `packageOverrides` در `~/.nixpkgs/config.nix` اضافه کرد تا قابل نصب شود:
 
 ```nix
 {
@@ -73,7 +73,7 @@ vim-full.customize {
 }
 ```
 
-پس از آن می‌توانید بسته‌های پیوندخوردهٔ خاص `myVim` یا `myNeovim` خود را نصب کنید.
+پس از آن می‌توانید بسته‌های پیوندخورده‌ی خاص `myVim` یا `myNeovim` خود را نصب کنید.
 
 ### اگر افزونه
 
@@ -167,7 +167,7 @@ nix-shell -p vimPluginsUpdater --run 'vim-plugins-updater update "nvim-treesitte
 اسکریپت به‌روزرسانی آرگومان‌های افزونه را در قالب‌های مختلفی می‌پذیرد:
 
 - `"mini.nvim"` := نام مخزن GitHub، نام خام افزونه، یا نام مستعار تعریف‌شده در `vim-plugin-names`.
-- `"mini-nvim"` := نام نرمال‌سازی‌شدهٔ افزونه، که با نام صفت (attribute) تولیدشده در `generated.nix` مطابقت دارد
+- `"mini-nvim"` := نام نرمال‌سازی‌شده‌ی افزونه، که با نام صفت (attribute) تولیدشده در `generated.nix` مطابقت دارد
 
 ## چگونه یک اورلی خارج از درخت (out-of-tree) از افزونه‌های vim را نگهداری کنیم؟ {#vim-out-of-tree-overlays}
 

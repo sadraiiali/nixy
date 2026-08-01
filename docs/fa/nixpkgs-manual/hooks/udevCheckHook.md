@@ -20,7 +20,7 @@ stdenv.mkDerivation (finalAttrs: {
   # ...
 })
 ```
-توجه داشته باشید که برای [`buildPythonPackage`](#buildpythonpackage-function) و [`buildPythonApplication`](#buildpythonapplication-function)، گزینهٔ `doInstallCheck` به‌طور پیش‌فرض فعال است.
+توجه داشته باشید که برای [`buildPythonPackage`](#buildpythonpackage-function) و [`buildPythonApplication`](#buildpythonapplication-function)، گزینه‌ی `doInstallCheck` به‌طور پیش‌فرض فعال است.
 
 تمام خروجی‌ها برای مسیرهای `/{etc,lib}/udev/rules.d` خود اسکن می‌شوند.
 اگر هیچ خروجی قانونی یافت نشود، قلاب عملاً هیچ کاری انجام نمی‌دهد.
@@ -29,4 +29,4 @@ stdenv.mkDerivation (finalAttrs: {
 این قلاب به‌طور داخلی مشروط به پشتیبانی `hostPlatform` از udev و توانایی `buildPlatform` برای اجرای `udevadm` است.
 این قلاب در مواضعی که استفاده می‌شود، نیازی به بررسی‌های صریح پلتفرم ندارد.
 
-این قلاب را می‌توان با استفاده از `dontUdevCheck` غیرفعال کرد، که این کار زمانی ضروری است که بخواهید در `installCheckPhase` روی بسته‌ای با خروجی‌های قانون udev خراب، وظیفهٔ دیگری را اجرا کنید.
+این قلاب را می‌توان با استفاده از `dontUdevCheck` غیرفعال کرد، که این کار زمانی ضروری است که بخواهید در `installCheckPhase` روی بسته‌ای با خروجی‌های قانون udev خراب، وظیفه‌ی دیگری را اجرا کنید.

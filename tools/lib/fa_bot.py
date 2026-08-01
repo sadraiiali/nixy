@@ -192,10 +192,13 @@ def apply_orthography(text: str) -> str:
     text = text.replace("\u05F4", '"')
     text = re.sub(r"[\u06D4\u0701\uFF0E\uFF61]", ".", text)
     text = text.replace("\u3014", "(").replace("\u3015", ")")
-    text = re.sub(r"[ۂۀ](?![\s\n])", "هٔ ", text)
-    text = re.sub(r"ه[\u200c\u200e\s]+ی([\s\n])", r"هٔ\1", text)
-    text = re.sub(r"ه[\u200c\u200e\s]*[ءٔ]([\s\n])", r"هٔ\1", text)
-    text = re.sub(r"(ۀ|هٓ)", "هٔ", text)
+    # Project style (nix notes): ezafe after heh is ه + ZWNJ + ی, not hamza (هٔ).
+    # Upstream fa_bot prefers هٔ; we invert that for this repo.
+    text = re.sub(r"[ۂۀ](?![\s\n])", "ه\u200cی ", text)
+    text = re.sub(r"ه[\u200c\u200e\s]*[ءٔ]([\s\n]|$)", "ه\u200cی\\1", text)
+    text = re.sub(r"(ۀ|هٓ)", "ه\u200cی", text)
+    # Normalize bare heh+hamza ezafe (هٔ) → ه‌ی
+    text = text.replace("ه\u0654", "ه\u200cی")
     text = re.sub(r"ه\u200c[ئی]ی", "ه\u200cای", text)
     text = re.sub(r"([\u200c\u200e])([\s\n])", r"\2", text)
     text = re.sub(r"([\s\n])([\u200c\u200e])", r"\1", text)
@@ -212,10 +215,10 @@ def apply_orthography(text: str) -> str:
         "درباره\u200c\\1\\2",
         text,
     )
-    text = text.replace("درباره ", "دربارهٔ ")
+    text = text.replace("درباره ", "درباره\u200cی ")
     text = re.sub(
         rf"صفحه(\s|)([{PERSIAN_DIGITS}]+)(\n|\.|\,|\||\<)",
-        r"صفحهٔ \2\3",
+        "صفحه\u200cی \\2\\3",
         text,
     )
     return text

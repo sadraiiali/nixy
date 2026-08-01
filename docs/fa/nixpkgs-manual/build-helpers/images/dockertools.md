@@ -96,7 +96,7 @@
 
 `runAsRoot` (رشته یا Null؛ _اختیاری_)
 
-: یک اسکریپت Bash که با دسترسی root درون یک ماشین مجازی (VM) که شامل لایه‌های موجودِ تصویر پایه و لایهٔ جدید تولیدشده است (از جمله فایل‌های حاصل از `copyToRoot`)، اجرا خواهد شد.
+: یک اسکریپت Bash که با دسترسی root درون یک ماشین مجازی (VM) که شامل لایه‌های موجودِ تصویر پایه و لایه‌ی جدید تولیدشده است (از جمله فایل‌های حاصل از `copyToRoot`)، اجرا خواهد شد.
   این اسکریپت در پوشه کاری `/` اجرا می‌شود.
   این را می‌توان معادل `RUN ...` در یک `Dockerfile` در نظر گرفت.
   مقدار `null` به این معنی است که از این مرحله در فرآیند تولید تصویر صرف‌نظر خواهد شد.
@@ -118,10 +118,10 @@
 
 `extraCommands` (رشته؛ _اختیاری_)
 
-: یک اسکریپت Bash که قبل از نهایی شدن لایهٔ ایجادشده توسط `buildImage` اجرا خواهد شد.
+: یک اسکریپت Bash که قبل از نهایی شدن لایه‌ی ایجادشده توسط `buildImage` اجرا خواهد شد.
   این اسکریپت روی یک پوشه کاری (مبهم) اجرا می‌شود که پس از ایجاد لایه به `/` تبدیل خواهد شد.
   این گزینه مشابه `runAsRoot` است، با این تفاوت که اسکریپت مشخص‌شده در `extraCommands` با دسترسی root اجرا **نمی‌شود** و مستلزم ایجاد ماشین مجازی (VM) نیست.
-  این اسکریپت صرفاً به عنوان بخشی از ساخت derivation ای اجرا می‌شود که خروجی آن لایهٔ ایجادشده توسط `buildImage` است.
+  این اسکریپت صرفاً به عنوان بخشی از ساخت derivation ای اجرا می‌شود که خروجی آن لایه‌ی ایجادشده توسط `buildImage` است.
 
   برای نحوه کار با این صفت و تفاوت‌های ظریف آن نسبت به `runAsRoot` به [](#ex-dockerTools-buildImage-extraCommands) مراجعه کنید.
 
@@ -268,7 +268,7 @@ dockerTools.buildImage {
 }
 ```
 
-نتیجهٔ ساخت این بسته یک فایل `.tar.gz` است که می‌توان آن را در Docker بارگذاری کرد:
+نتیجه‌ی ساخت این بسته یک فایل `.tar.gz` است که می‌توان آن را در Docker بارگذاری کرد:
 
 ```shell
 $ nix-build
@@ -400,7 +400,7 @@ hello        latest   de2bf4786de6   About a minute ago   25.2MB
 
 ## buildLayeredImage {#ssec-pkgs-dockerTools-buildLayeredImage}
 
-`buildLayeredImage` در لایهٔ زیرین از [`streamLayeredImage`](#ssec-pkgs-dockerTools-streamLayeredImage) برای ساخت یک tarball مخزنِ فشرده‌شده و سازگار با Docker استفاده می‌کند.
+`buildLayeredImage` در لایه‌ی زیرین از [`streamLayeredImage`](#ssec-pkgs-dockerTools-streamLayeredImage) برای ساخت یک tarball مخزنِ فشرده‌شده و سازگار با Docker استفاده می‌کند.
 در واقع، `buildLayeredImage` اسکریپت ایجادشده توسط `streamLayeredImage` را اجرا می‌کند تا تصویر فشرده‌شده را در انبار نیکس (Nix store) ذخیره کند.
 `buildLayeredImage` از همان گزینه‌های `streamLayeredImage` پشتیبانی می‌کند؛ برای جزئیات بیشتر به [`streamLayeredImage`](#ssec-pkgs-dockerTools-streamLayeredImage) مراجعه کنید.
 
@@ -410,15 +410,15 @@ hello        latest   de2bf4786de6   About a minute ago   25.2MB
 اگرچه برخی از آرگومان‌ها ممکن است مرتبط به نظر برسند، اما نمی‌توان آن‌ها را به جای یکدیگر استفاده کرد.
 :::
 
-شما می‌توانید نتیجهٔ این تابع را با دستور `docker image load` در Docker بارگذاری کنید.
-برای مشاهدهٔ نحوهٔ انجام این کار، [](#ex-dockerTools-buildLayeredImage-hello) را ببینید.
+شما می‌توانید نتیجه‌ی این تابع را با دستور `docker image load` در Docker بارگذاری کنید.
+برای مشاهده‌ی نحوه‌ی انجام این کار، [](#ex-dockerTools-buildLayeredImage-hello) را ببینید.
 
 ### نمونه‌ها {#ssec-pkgs-dockerTools-buildLayeredImage-examples}
 
 :::{.example #ex-dockerTools-buildLayeredImage-hello}
 # ساخت یک تصویر لایه‌ای Docker
 
-بستهٔ زیر یک تصویر لایه‌ای Docker می‌سازد که فایل اجرایی `hello` را از بستهٔ `hello` اجرا می‌کند.
+بسته‌ی زیر یک تصویر لایه‌ای Docker می‌سازد که فایل اجرایی `hello` را از بسته‌ی `hello` اجرا می‌کند.
 تصویر Docker دارای نام `hello` و برچسب `latest` خواهد بود.
 
 ```nix
@@ -433,7 +433,7 @@ dockerTools.buildLayeredImage {
 }
 ```
 
-نتیجهٔ ساخت این بسته یک فایل `.tar.gz` است که می‌توان آن را در Docker بارگذاری کرد:
+نتیجه‌ی ساخت این بسته یک فایل `.tar.gz` است که می‌توان آن را در Docker بارگذاری کرد:
 
 ```shell
 $ nix-build
@@ -583,14 +583,14 @@ Loaded image: hello:latest
 
 `extraCommands` (String؛ _اختیاری_)
 
-: یک اسکریپت Bash که در بافت (context) لایهٔ ایجادشده با محتویات مشخص‌شده توسط `contents` اجرا خواهد شد.
+: یک اسکریپت Bash که در بافت (context) لایه‌ی ایجادشده با محتویات مشخص‌شده توسط `contents` اجرا خواهد شد.
   در زمانی که این اسکریپت اجرا می‌شود، تنها محتویاتی که مستقیماً توسط `contents` مشخص شده‌اند به عنوان پیوند در دسترس خواهند بود.
 
   _مقدار پیش‌فرض:_ `""`.
 
 `fakeRootCommands` (String؛ _اختیاری_)
 
-: یک اسکریپت Bash که در بافت لایهٔ ایجادشده با محتویات مشخص‌شده توسط `contents` اجرا خواهد شد.
+: یک اسکریپت Bash که در بافت لایه‌ی ایجادشده با محتویات مشخص‌شده توسط `contents` اجرا خواهد شد.
   در طول فرآیند تولید آن لایه، اگر اسکریپت در `extraCommands` مشخص شده باشد، ابتدا اجرا خواهد شد.
   پس از آن، وارد یک محیط {manpage}`fakeroot(1)` می‌شود.
   اسکریپت مشخص‌شده در `fakeRootCommands` درون محیط fakeroot اجرا می‌شود، و سپس لایه از دید فایل‌های داخل محیط fakeroot تولید می‌گردد.
@@ -679,7 +679,7 @@ dockerTools.streamLayeredImage {
 }
 ```
 
-نتیجهٔ ساخت این بسته یک اسکریپت است.
+نتیجه‌ی ساخت این بسته یک اسکریپت است.
 اجرای این اسکریپت و هدایت خروجی آن به `docker image load` همان تصویری را به شما می‌دهد که در [](#ex-dockerTools-buildLayeredImage-hello) ساخته شده بود.
 توجه داشته باشید که در این حالت، تصویر هرگز به انبار نیکس (Nix store) اضافه نمی‌شود، بلکه به‌طور مستقیم به Docker استریم می‌شود.
 
@@ -728,10 +728,10 @@ $ nix-store --query -R $(nix-build -A hello)
 ```
 
 این بدان معناست که تمامی این بسته‌ها در تصویر تولیدشده توسط `streamLayeredImage` گنجانده خواهند شد.
-این کار هر بسته را در لایهٔ مجزای خود قرار می‌دهد که در مجموع شامل ۵ لایه همراه با فایل‌های واقعی درون آن‌ها خواهد بود.
-یک لایهٔ نهایی تنها با پیوندهای نمادین (symlinks) برای بستهٔ `hello` ایجاد خواهد شد.
+این کار هر بسته را در لایه‌ی مجزای خود قرار می‌دهد که در مجموع شامل ۵ لایه همراه با فایل‌های واقعی درون آن‌ها خواهد بود.
+یک لایه‌ی نهایی تنها با پیوندهای نمادین (symlinks) برای بسته‌ی `hello` ایجاد خواهد شد.
 
-تصویر تولیدشده دارای ساختار پوشهٔ زیر خواهد بود (برخی از پوشه‌ها برای خوانایی بیشتر خلاصه شده‌اند):
+تصویر تولیدشده دارای ساختار پوشه‌ی زیر خواهد بود (برخی از پوشه‌ها برای خوانایی بیشتر خلاصه شده‌اند):
 
 ```
 ├── bin
@@ -1020,7 +1020,7 @@ $ nix run nixpkgs#nix-prefetch-docker -- --help
 
 `diskSize` (عدد؛ _اختیاری_)
 
-: اندازهٔ دیسک (به مگابایت) ماشین مجازی (VM) استفاده‌شده برای استخراج تصویر را کنترل می‌کند.
+: اندازه‌ی دیسک (به مگابایت) ماشین مجازی (VM) استفاده‌شده برای استخراج تصویر را کنترل می‌کند.
 
   _مقدار پیش‌فرض:_ 1024.
 
@@ -1185,7 +1185,7 @@ $ nix-build
 
 اکثر این کمک‌رسان‌ها بسته هستند، به این معنی که باید آن‌ها را به فهرست محتوایی که قرار است در تصویر گنجانده شود اضافه کنید (این مورد بسته به تابعی که برای ساخت تصویر استفاده می‌کنید تغییر می‌کند).
 [](#ex-dockerTools-helpers-buildImage) و [](#ex-dockerTools-helpers-buildLayeredImage) نحوه گنجاندن این بسته‌ها در توابع `dockerTools` که یک تصویر می‌سازند را نشان می‌دهند.
-برای جزئیات بیشتر دربارهٔ نحوه کارکرد آن، مستندات مربوط به تابعی را که استفاده می‌کنید ببینید.
+برای جزئیات بیشتر درباره‌ی نحوه کارکرد آن، مستندات مربوط به تابعی را که استفاده می‌کنید ببینید.
 
 ### usrBinEnv {#sssec-pkgs-dockerTools-helpers-usrBinEnv}
 
@@ -1254,7 +1254,7 @@ dockerTools.buildImage {
 ```
 
 پس از ساخت تصویر و بارگذاری آن در Docker، می‌توانیم یک کنتینر بر اساس آن ایجاد کرده و وارد یک شل در داخل کنتینر شویم.
-این امر به وسیلهٔ `binSh` امکان‌پذیر شده‌است.
+این امر به وسیله‌ی `binSh` امکان‌پذیر شده‌است.
 
 ```shell
 $ nix-build
@@ -1376,7 +1376,7 @@ dockerTools.buildLayeredImage {
 []{#ssec-pkgs-dockerTools-buildNixShellImage-arguments}
 ## buildNixShellImage {#ssec-pkgs-dockerTools-buildNixShellImage}
 
-`buildNixShellImage` در لایهٔ زیرین از [`streamNixShellImage`](#ssec-pkgs-dockerTools-streamNixShellImage) استفاده می‌کند تا یک tarball از مخزنِ سازگار با Docker و فشرده‌شده برای تصویری بسازد که محیطی مشابه با اجرای `nix-shell` روی یک derivation / اشتقاق ساخت را آماده می‌کند.
+`buildNixShellImage` در لایه‌ی زیرین از [`streamNixShellImage`](#ssec-pkgs-dockerTools-streamNixShellImage) استفاده می‌کند تا یک tarball از مخزنِ سازگار با Docker و فشرده‌شده برای تصویری بسازد که محیطی مشابه با اجرای `nix-shell` روی یک derivation / اشتقاق ساخت را آماده می‌کند.
 در واقع، `buildNixShellImage` اسکریپت ایجادشده توسط `streamNixShellImage` را اجرا می‌کند تا تصویر فشرده‌شده را در انبار نیکس (Nix store) ذخیره نماید.
 
 `buildNixShellImage` از همان گزینه‌های `streamNixShellImage` پشتیبانی می‌کند؛ برای جزئیات بیشتر به [`streamNixShellImage`](#ssec-pkgs-dockerTools-streamNixShellImage) مراجعه کنید.
@@ -1590,7 +1590,7 @@ dockerTools.streamNixShellImage {
 }
 ```
 
-نتیجهٔ ساخت این بسته اسکریپتی است که می‌توان آن را اجرا کرد و خروجی آن را به `docker image load` پایپ کرد تا تصویر تولیدشده بارگذاری شود.
+نتیجه‌ی ساخت این بسته اسکریپتی است که می‌توان آن را اجرا کرد و خروجی آن را به `docker image load` پایپ کرد تا تصویر تولیدشده بارگذاری شود.
 
 ```shell
 $ nix-build
@@ -1639,7 +1639,7 @@ dockerTools.streamNixShellImage {
 }
 ```
 
-نتیجهٔ ساخت این بسته، اسکریپتی است که می‌توان آن را اجرا کرد و به `docker image load` پایپ نمود تا تصویر تولیدشده بارگذاری شود.
+نتیجه‌ی ساخت این بسته، اسکریپتی است که می‌توان آن را اجرا کرد و به `docker image load` پایپ نمود تا تصویر تولیدشده بارگذاری شود.
 
 ```shell
 $ nix-build
@@ -1651,7 +1651,7 @@ $ /nix/store/iz4dhdvgzazl5vrgyz719iwjzjy6xlx1-stream-hello-2.12.1-env | docker i
 Loaded image: hello-2.12.1-env:latest
 ```
 
-پس از راه‌اندازی یک کنتینر تعاملی، می‌توانیم نتیجهٔ `shellHook` را مشاهده کنیم:
+پس از راه‌اندازی یک کنتینر تعاملی، می‌توانیم نتیجه‌ی `shellHook` را مشاهده کنیم:
 
 ```shell
 $ docker container run -it hello-2.12.1-env:latest

@@ -155,7 +155,7 @@ Nixpkgs توابع زیر را برای تولید درایویشن‌هایی �
 این توابع برای ایجاد فایل‌ها از عبارت‌های Nix مفید هستند و همگی به عنوان پوشش‌های تسهیل‌کننده در اطراف `writeTextFile` پیاده‌سازی شده‌اند.
 
 هر یک از این توابع باعث تولید یک درایویشن می‌شوند.
-وقتی نتیجهٔ هر یک از این توابع را با [درون‌گذاری رشته](https://nixos.org/manual/nix/stable/language/string-interpolation) یا [`toString`](https://nixos.org/manual/nix/stable/language/builtins#builtins-toString) به یک رشته تبدیل می‌کنید، به [مسیر انبار](https://nixos.org/manual/nix/stable/store/store-path) این درایویشن ارزیابی می‌شود.
+وقتی نتیجه‌ی هر یک از این توابع را با [درون‌گذاری رشته](https://nixos.org/manual/nix/stable/language/string-interpolation) یا [`toString`](https://nixos.org/manual/nix/stable/language/builtins#builtins-toString) به یک رشته تبدیل می‌کنید، به [مسیر انبار](https://nixos.org/manual/nix/stable/store/store-path) این درایویشن ارزیابی می‌شود.
 
 ::: {.note}
 برخی از این توابع، فایل‌های حاصل را درون پوشه‌ای در داخل [خروجی درایویشن](https://nixos.org/manual/nix/stable/language/derivations#attr-outputs) قرار می‌دهند.
@@ -338,7 +338,7 @@ hello.overrideAttrs {
 : آیا جایگزینی از یک کش باینری مجاز باشد یا خیر.
   به [`allowSubstitutes`](https://nixos.org/manual/nix/stable/language/advanced-attributes#adv-attr-allowSubstitutes) در فراخوانی زیرین `derivation` منتقل می‌شود.
 
-  مقدار پیش‌فرض آن `false` است، زیرا فرض می‌شود اجرای فایل قابل اجرای سادهٔ `builder` مربوط به derivation به صورت محلی سریع‌تر از عملیات شبکه‌ای است.
+  مقدار پیش‌فرض آن `false` است، زیرا فرض می‌شود اجرای فایل قابل اجرای ساده‌ی `builder` مربوط به derivation به صورت محلی سریع‌تر از عملیات شبکه‌ای است.
   اگر گام `checkPhase` سنگین است، آن را برابر true قرار دهید.
 
   پیش‌فرض: `false`
@@ -391,7 +391,7 @@ writeTextFile {
 ::: {.example #ex2-writeTextFile}
 # کاربرد ۲ `writeTextFile`
 
-رشتهٔ `Contents of File` را در `/nix/store/<store path>` بنویسید.
+رشته‌ی `Contents of File` را در `/nix/store/<store path>` بنویسید.
 همچنین تابع کمکی [](#trivial-builder-writeText) را ببینید.
 
 ```nix
@@ -818,7 +818,7 @@ writeShellApplication {
 
 ## `symlinkJoin` {#trivial-builder-symlinkJoin}
 
-از این تابع می‌توان برای قرار دادن چندین درایویشن در یک ساختار پوشه یکسان استفاده کرد. نحوه کار آن به این صورت است که یک درایویشن جدید ایجاد کرده و پیوندهای نمادین (symlinks) را به هر یک از مسیرهای فهرست‌شده اضافه می‌کند. این تابع دو آرگومان دریافت می‌کند: `name` و `paths`. صفت `name` (یا به عنوان جایگزین، `pname` و `version`) نامی است که در مسیر انبار نیکس (Nix store) برای درایویشن ایجادشده استفاده می‌شود. `paths` فهرستی از مسیرها است که پیوند نمادین (symlink) داده خواهند شد. این مسیرها می‌توانند به درایویشن‌های انبار نیکس (Nix store) یا هر زیرپوشهٔ موجود در آن‌ها اشاره داشته باشند.
+از این تابع می‌توان برای قرار دادن چندین درایویشن در یک ساختار پوشه یکسان استفاده کرد. نحوه کار آن به این صورت است که یک درایویشن جدید ایجاد کرده و پیوندهای نمادین (symlinks) را به هر یک از مسیرهای فهرست‌شده اضافه می‌کند. این تابع دو آرگومان دریافت می‌کند: `name` و `paths`. صفت `name` (یا به عنوان جایگزین، `pname` و `version`) نامی است که در مسیر انبار نیکس (Nix store) برای درایویشن ایجادشده استفاده می‌شود. `paths` فهرستی از مسیرها است که پیوند نمادین (symlink) داده خواهند شد. این مسیرها می‌توانند به درایویشن‌های انبار نیکس (Nix store) یا هر زیرپوشه‌ی موجود در آن‌ها اشاره داشته باشند.
 در ادامه یک نمونه آورده شده‌است:
 ```nix
 # adds symlinks of hello and stack to current build and prints "links added"
@@ -875,7 +875,7 @@ writeClosure [ (writeScriptBin "hi" "${hello}/bin/hello") ]
 
 ## `writeDirectReferencesToFile` {#trivial-builder-writeDirectReferencesToFile}
 
-مجموعهٔ ارجاعات، یعنی وابستگی‌های مستقیم آن‌ها را در فایل خروجی می‌نویسد.
+مجموعه‌ی ارجاعات، یعنی وابستگی‌های مستقیم آن‌ها را در فایل خروجی می‌نویسد.
 
 این خروجی معادل `nix-store -q --references` تولید می‌کند.
 

@@ -113,4 +113,4 @@ buildDunePackage (finalAttrs: {
 })
 ```
 
-اگر دو نسخهٔ متفاوت از یک کتابخانه به `buildInputs` اضافه شوند (که معمولاً به صورت متعدی و به دلیل `propagatedBuildInputs` رخ می‌دهد)، ساخت به طور خودکار با شکست مواجه خواهد شد. برای غیرفعال کردن این رفتار، `dontDetectOcamlConflicts` را روی true قرار دهید.
+اگر دو نسخه‌ی متفاوت از یک کتابخانه به `buildInputs` اضافه شوند (که معمولاً به صورت متعدی و به دلیل `propagatedBuildInputs` رخ می‌دهد)، ساخت به طور خودکار با شکست مواجه خواهد شد. برای غیرفعال کردن این رفتار، `dontDetectOcamlConflicts` را روی true قرار دهید.

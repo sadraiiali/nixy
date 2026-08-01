@@ -30,7 +30,7 @@ ruby.withPackages (
 
 در اینجا چه اتفاقی می‌افتد؟
 
-1. کار را با درون‌ریزی مجموعهٔ بسته‌های نیکس (Nixpkgs) آغاز می‌کنیم. `import <nixpkgs>` تابع `<
+1. کار را با درون‌ریزی مجموعه‌ی بسته‌های نیکس (Nixpkgs) آغاز می‌کنیم. `import <nixpkgs>` تابع `<
 
 ```ShellSession
 $ nix-shell -p "ruby.withPackages (ps: with ps; [ nokogiri pry ])" --run "pry"

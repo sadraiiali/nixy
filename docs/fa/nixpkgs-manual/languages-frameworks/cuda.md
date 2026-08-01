@@ -4,22 +4,22 @@
 
 ## راهنمای کاربر {#cuda-user-guide}
 
-بسته‌های ارائه‌شده توسط NVIDIA که به CUDA نیاز دارند، معمولاً در مجموعه‌های بستهٔ CUDA ذخیره می‌شوند.
+بسته‌های ارائه‌شده توسط NVIDIA که به CUDA نیاز دارند، معمولاً در مجموعه‌های بسته‌ی CUDA ذخیره می‌شوند.
 
-Nixpkgs تعدادی مجموعه بستهٔ CUDA ارائه می‌دهد که هرکدام بر اساس یک انتشار متفاوت CUDA هستند. صفات (attribute) سطح بالا که دسترسی به مجموعه‌های بستهٔ CUDA را فراهم می‌کنند، از این قراردادهای نام‌گذاری پیروی می‌کنند:
+Nixpkgs تعدادی مجموعه بسته‌ی CUDA ارائه می‌دهد که هرکدام بر اساس یک انتشار متفاوت CUDA هستند. صفات (attribute) سطح بالا که دسترسی به مجموعه‌های بسته‌ی CUDA را فراهم می‌کنند، از این قراردادهای نام‌گذاری پیروی می‌کنند:
 
-- `cudaPackages_x_y`: یک مجموعه بستهٔ دارای نسخه اصلی-فرعی برای یک انتشار خاص CUDA، که در آن `x` و `y` نسخه‌های اصلی و فرعی آن انتشار CUDA هستند.
-- `cudaPackages_x`: یک نام مستعار دارای نسخه اصلی به مجموعه بستهٔ CUDA دارای نسخه اصلی-فرعی با آخرین انتشار اصلی CUDA که به‌طور گسترده پشتیبانی می‌شود.
-- `cudaPackages`: یک نام مستعار بدون نسخه به نام مستعار دارای نسخه اصلی برای آخرین انتشار CUDA که به‌طور گسترده پشتیبانی می‌شود. مجموعه بسته‌ای که توسط این نام مستعار ارجاع داده می‌شود، مجموعه بستهٔ CUDA «پیش‌فرض» نیز نامیده می‌شود.
+- `cudaPackages_x_y`: یک مجموعه بسته‌ی دارای نسخه اصلی-فرعی برای یک انتشار خاص CUDA، که در آن `x` و `y` نسخه‌های اصلی و فرعی آن انتشار CUDA هستند.
+- `cudaPackages_x`: یک نام مستعار دارای نسخه اصلی به مجموعه بسته‌ی CUDA دارای نسخه اصلی-فرعی با آخرین انتشار اصلی CUDA که به‌طور گسترده پشتیبانی می‌شود.
+- `cudaPackages`: یک نام مستعار بدون نسخه به نام مستعار دارای نسخه اصلی برای آخرین انتشار CUDA که به‌طور گسترده پشتیبانی می‌شود. مجموعه بسته‌ای که توسط این نام مستعار ارجاع داده می‌شود، مجموعه بسته‌ی CUDA «پیش‌فرض» نیز نامیده می‌شود.
 
-توصیه می‌شود از صفت (attribute) بدون نسخه `cudaPackages` استفاده کنید. اگرچه مجموعه‌های بستهٔ دارای نسخه (مانند `cudaPackages_12_8`) در دسترس هستند، اما به صورت دوره‌ای حذف می‌شوند.
+توصیه می‌شود از صفت (attribute) بدون نسخه `cudaPackages` استفاده کنید. اگرچه مجموعه‌های بسته‌ی دارای نسخه (مانند `cudaPackages_12_8`) در دسترس هستند، اما به صورت دوره‌ای حذف می‌شوند.
 
 در ادامه دو مثال برای روشن شدن قراردادهای نام‌گذاری آورده شده‌است:
 
 - اگر `cudaPackages_12_9` آخرین انتشار در سری 12.x باشد، اما کتابخانه‌های اصلی مانند OpenCV یا ONNX Runtime در ساخت با آن شکست بخورند، `cudaPackages_12` ممکن است به جای `cudaPackages_12_9` نام مستعاری برای `cudaPackages_12_8` باشد.
 - اگر `cudaPackages_13_1` آخرین انتشار باشد، اما کتابخانه‌های اصلی مانند PyTorch یا Torch Vision در ساخت با آن شکست بخورند، `cudaPackages` ممکن است به جای `cudaPackages_13` نام مستعاری برای `cudaPackages_12` باشد.
 
-تمام مجموعه‌های بستهٔ CUDA شامل بسته‌های رایج CUDA مانند `libcublas`، `cudnn`، `tensorrt` و `nccl` هستند.
+تمام مجموعه‌های بسته‌ی CUDA شامل بسته‌های رایج CUDA مانند `libcublas`، `cudnn`، `tensorrt` و `nccl` هستند.
 
 ### پیکربندی Nixpkgs برای CUDA {#cuda-configuring-nixpkgs-for-cuda}
 
@@ -67,7 +67,7 @@ Nixpkgs تعدادی مجموعه بستهٔ CUDA ارائه می‌دهد که 
 
 مجموعه‌های بسته CUDA دارای اسکوپ (scope) هستند و صفت معمول `overrideScope` را برای بازنشانی صفات بسته ارائه می‌دهند (یادداشت مربوط به `_cuda` در [پیکربندی مجموعه‌های بسته CUDA](#cuda-modifying-cuda-package-sets) را ببینید).
 
-با الهام از `pythonPackagesExtensions`، صفت `_cuda.extensions` فهرستی از افزونه‌ها است که روی تمامی نسخه‌های مجموعه بسته‌های CUDA اعمال می‌شود، و امکان تغییر همهٔ نسخه‌های مجموعه بسته‌های CUDA را بدون نیاز به دانستن نام آن‌ها یا شمارش و تغییر صریح آن‌ها فراهم می‌سازد. به‌عنوان مثال، غیرفعال کردن `cuda_compat` در تمامی مجموعه بسته‌های CUDA با این اورلی امکان‌پذیر است:
+با الهام از `pythonPackagesExtensions`، صفت `_cuda.extensions` فهرستی از افزونه‌ها است که روی تمامی نسخه‌های مجموعه بسته‌های CUDA اعمال می‌شود، و امکان تغییر همه‌ی نسخه‌های مجموعه بسته‌های CUDA را بدون نیاز به دانستن نام آن‌ها یا شمارش و تغییر صریح آن‌ها فراهم می‌سازد. به‌عنوان مثال، غیرفعال کردن `cuda_compat` در تمامی مجموعه بسته‌های CUDA با این اورلی امکان‌پذیر است:
 
 ```nix
 final: prev: {
@@ -79,12 +79,12 @@ final: prev: {
 }
 ```
 
-بسته‌های قابل توزیع مجدد توسط کمک‌رسان ساخت `buildRedist` ساخته می‌شوند؛ برای مشاهدهٔ پیاده‌سازی، `pkgs/development/cuda-modules/buildRedist/default.nix` را ببینید.
+بسته‌های قابل توزیع مجدد توسط کمک‌رسان ساخت `buildRedist` ساخته می‌شوند؛ برای مشاهده‌ی پیاده‌سازی، `pkgs/development/cuda-modules/buildRedist/default.nix` را ببینید.
 
 ### استفاده از `cudaPackages` {#cuda-using-cudapackages}
 
 ::: {.caution}
-مقدار غیربدیهی از قابلیت کشف و قابلیت استفادهٔ بسته‌های CUDA به قلاب‌های راه‌اندازی (setup hooks) گوناگونی متکی است که توسط یک مجموعه بستهٔ CUDA استفاده می‌شوند. در نتیجه، کاربران احتمالاً هنگام تلاش برای انجام ساخت‌ها درون یک `devShell` بدون فراخوانی دستی فازها، با مشکل مواجه خواهند شد.
+مقدار غیربدیهی از قابلیت کشف و قابلیت استفاده‌ی بسته‌های CUDA به قلاب‌های راه‌اندازی (setup hooks) گوناگونی متکی است که توسط یک مجموعه بسته‌ی CUDA استفاده می‌شوند. در نتیجه، کاربران احتمالاً هنگام تلاش برای انجام ساخت‌ها درون یک `devShell` بدون فراخوانی دستی فازها، با مشکل مواجه خواهند شد.
 :::
 
 برای استفاده از یک یا چند بسته CUDA در یک عبارت، یک پارامتر `cudaPackages` به عبارت بدهید و در صورتی که پشتیبانی از CUDA اختیاری باشد، پارامترهای `config` و `cudaSupport` را اضافه کنید:
@@ -109,7 +109,7 @@ final: prev: {
 
 این تنظیمات تضمین می‌کنند که قلاب‌های راه‌اندازی CUDA طبق انتظار عمل کنند.
 
-هنگام استفاده از `callPackage`، می‌توانید گونهٔ دیگری را پاس دهید؛ برای مثال زمانی که یک بسته به نسخه خاصی از CUDA نیاز دارد:
+هنگام استفاده از `callPackage`، می‌توانید گونه‌ی دیگری را پاس دهید؛ برای مثال زمانی که یک بسته به نسخه خاصی از CUDA نیاز دارد:
 
 ```nix
 { mypkg = callPackage { cudaPackages = cudaPackages_12_6; }; }
@@ -154,16 +154,16 @@ final: prev: {
 ```
 
 ::: {.note}
-در `pkgsForCudaArch`، گزینهٔ `cudaForwardCompat` روی `false` تنظیم شده‌است زیرا واریانت مربوطه در Nixpkgs دقیقاً از یک معماری CUDA پشتیبانی می‌کند. به‌علاوه، برخی از معماری‌ها، از جمله مجموعه‌ویژگی‌های مختص به معماری مانند `sm_90a`، نمی‌توانند با قابلیت سازگاری رو به جلو (forward compatibility) ساخته شوند.
+در `pkgsForCudaArch`، گزینه‌ی `cudaForwardCompat` روی `false` تنظیم شده‌است زیرا واریانت مربوطه در Nixpkgs دقیقاً از یک معماری CUDA پشتیبانی می‌کند. به‌علاوه، برخی از معماری‌ها، از جمله مجموعه‌ویژگی‌های مختص به معماری مانند `sm_90a`، نمی‌توانند با قابلیت سازگاری رو به جلو (forward compatibility) ساخته شوند.
 :::
 
 ::: {.caution}
-همهٔ نسخه‌های CUDA از تمامی معماری‌ها پشتیبانی نمی‌کنند!
+همه‌ی نسخه‌های CUDA از تمامی معماری‌ها پشتیبانی نمی‌کنند!
 
 برای توضیح بیشتر: پشتیبانی از Blackwell (برای مثال `sm_100`) در CUDA 12.8 اضافه شد. فرض کنید مجموعه بسته‌های پیش‌فرض CUDA در Nixpkgs ما روی CUDA 12.6 باشد. در این صورت، واریانت Nixpkgs موجود از طریق `pkgsForCudaArch.sm_100` بی‌استفاده خواهد بود، زیرا بسته‌هایی مانند `pkgsForCudaArch.sm_100.opencv` و `pkgsForCudaArch.sm_100.python3Packages.torch` تلاش خواهند کرد کدی برای `sm_100` تولید کنند، معماری‌ای که برای CUDA 12.6 ناشناخته است. در آن صورت، باید در عوض از `pkgsForCudaArch.sm_100.cudaPackages_12_8.pkgs` استفاده کنید (برای جزئیات بیشتر به [استفاده از `cudaPackages.pkgs`](#cuda-using-cudapackages-pkgs) مراجعه کنید).
 :::
 
-مجموعه ویژگی `pkgsForCudaArch` دسترسی به بسته‌های ساخته‌شده برای یک معماری خاص را بدون نیاز به فراخوانی دستی `pkgs.extend` و ارائهٔ یک `config` جدید امکان‌پذیر می‌سازد. به عنوان نمونه، `pkgsForCudaArch.sm_89.python3Packages.torch` نرم‌افزار PyTorch ساخته‌شده برای پردازنده‌های گرافیکی Ada Lovelace را ارائه می‌دهد.
+مجموعه ویژگی `pkgsForCudaArch` دسترسی به بسته‌های ساخته‌شده برای یک معماری خاص را بدون نیاز به فراخوانی دستی `pkgs.extend` و ارائه‌ی یک `config` جدید امکان‌پذیر می‌سازد. به عنوان نمونه، `pkgsForCudaArch.sm_89.python3Packages.torch` نرم‌افزار PyTorch ساخته‌شده برای پردازنده‌های گرافیکی Ada Lovelace را ارائه می‌دهد.
 
 ### اجرای کانتینرهای Docker یا Podman با پشتیبانی از CUDA {#cuda-docker-podman}
 
@@ -175,7 +175,7 @@ final: prev: {
 { hardware.nvidia-container-toolkit.enable = true; }
 ```
 
-این کار به‌طور خودکار سرویسی را فعال می‌کند که بر اساس سخت‌افزار خودکار شناسایی‌شدهٔ ماشین شما، یک مشخصات CDI (واقع در `/var/run/cdi/nvidia-container-toolkit.json`) ایجاد می‌کند. می‌توانید این سرویس را با اجرای دستور زیر بررسی کنید:
+این کار به‌طور خودکار سرویسی را فعال می‌کند که بر اساس سخت‌افزار خودکار شناسایی‌شده‌ی ماشین شما، یک مشخصات CDI (واقع در `/var/run/cdi/nvidia-container-toolkit.json`) ایجاد می‌کند. می‌توانید این سرویس را با اجرای دستور زیر بررسی کنید:
 
 ```ShellSession
 $ systemctl status nvidia-container-toolkit-cdi-generator.service
@@ -185,7 +185,7 @@ $ systemctl status nvidia-container-toolkit-cdi-generator.service
 بسته به تنظیماتی که قبلاً در سیستم خود فعال کرده‌اید، ممکن است لازم باشد ماشین خود را راه‌اندازی مجدد کنید تا NVIDIA Container Toolkit یک مشخصات CDI معتبر برای ماشین شما تولید کند.
 :::
 
-هنگامی که یک مشخصات CDI معتبر در زمان راه‌اندازی (بوت) برای ماشین شما تولید شد، هر دو Podman و Docker (> 25) در صورت ارائهٔ پرچم `--device` از این مشخصات استفاده خواهند کرد:
+هنگامی که یک مشخصات CDI معتبر در زمان راه‌اندازی (بوت) برای ماشین شما تولید شد، هر دو Podman و Docker (> 25) در صورت ارائه‌ی پرچم `--device` از این مشخصات استفاده خواهند کرد:
 
 ```ShellSession
 $ podman run --rm -it --device=nvidia.com/gpu=all ubuntu:latest nvidia-smi -L
@@ -199,7 +199,7 @@ GPU 0: NVIDIA GeForce RTX 4090 (UUID: <REDACTED>)
 GPU 1: NVIDIA GeForce RTX 2080 SUPER (UUID: <REDACTED>)
 ```
 
-می‌توانید با بررسی محتوای فایل `/var/run/cdi/nvidia-container-toolkit.json`، تمامی شناسه‌های ایجادشده برای سخت‌افزارِ به طور خودکار شناسایی‌شدهٔ خود را بررسی کنید:
+می‌توانید با بررسی محتوای فایل `/var/run/cdi/nvidia-container-toolkit.json`، تمامی شناسه‌های ایجادشده برای سخت‌افزارِ به طور خودکار شناسایی‌شده‌ی خود را بررسی کنید:
 
 ```ShellSession
 $ nix run nixpkgs#jq -- -r '.devices[].name' < /var/run/cdi/nvidia-container-toolkit.json
@@ -226,7 +226,7 @@ GPU 1: NVIDIA GeForce RTX 2080 SUPER (UUID: <REDACTED>)
 ```
 
 ::: {.note}
-به‌طور پیش‌فرض، NVIDIA Container Toolkit از اندیس GPU برای شناسایی دستگاه‌های مشخص استفاده می‌کند. شما می‌توانید نحوهٔ شناسایی دستگاه‌هایی که قرار است در دسترس قرار گیرند را با استفاده از صفت (attribute) NixOS به نام `hardware.nvidia-container-toolkit.device-name-strategy` تغییر دهید.
+به‌طور پیش‌فرض، NVIDIA Container Toolkit از اندیس GPU برای شناسایی دستگاه‌های مشخص استفاده می‌کند. شما می‌توانید نحوه‌ی شناسایی دستگاه‌هایی که قرار است در دسترس قرار گیرند را با استفاده از صفت (attribute) NixOS به نام `hardware.nvidia-container-toolkit.device-name-strategy` تغییر دهید.
 :::
 
 #### استفاده از docker-compose {#cuda-using-docker-compose}
@@ -270,9 +270,9 @@ services:
 این بخش از مستندات هنوز به‌شدت در حال تکمیل است. بازخوردها در بخش GitHub Issues با تگ کردن @NixOS/cuda-maintainers یا در [Matrix](https://matrix.to/#/#cuda:nixos.org) پذیرفته می‌شود.
 :::
 
-### نگهداری مجموعهٔ بسته‌ها {#cuda-package-set-maintenance}
+### نگهداری مجموعه‌ی بسته‌ها {#cuda-package-set-maintenance}
 
-مجموعه‌ابزار CUDA Toolkit مجموعه‌ای از کتابخانه‌ها و نرم‌افزارهای CUDA است که برای ارائه محیط توسعه جهت برنامه‌های شتاب‌یافته با CUDA در نظر گرفته شده‌است. تا پیش از انتشار CUDA 11.4، شرکت NVIDIA مجموعه CUDA Toolkit را تنها به صورت یک نصاب runfile چندگیگابایتی ارائه می‌کرد. از نسخه CUDA 11.4 به بعد، NVIDIA توزیع‌پذیرهای CUDA موسوم به («CUDA-redist») را نیز ارائه کرده‌است: قطعات مستقل بسته‌بندی‌شده از CUDA Toolkit که هدف آن‌ها تسهیل بازتوزیع و گنجاندن در پروژه‌های پایین‌دستی است. این بسته‌ها در مجموعهٔ بسته‌های [`cudaPackages`](https://search.nixos.org/packages?channel=unstable&type=packages&query=cudaPackages) در دسترس هستند.
+مجموعه‌ابزار CUDA Toolkit مجموعه‌ای از کتابخانه‌ها و نرم‌افزارهای CUDA است که برای ارائه محیط توسعه جهت برنامه‌های شتاب‌یافته با CUDA در نظر گرفته شده‌است. تا پیش از انتشار CUDA 11.4، شرکت NVIDIA مجموعه CUDA Toolkit را تنها به صورت یک نصاب runfile چندگیگابایتی ارائه می‌کرد. از نسخه CUDA 11.4 به بعد، NVIDIA توزیع‌پذیرهای CUDA موسوم به («CUDA-redist») را نیز ارائه کرده‌است: قطعات مستقل بسته‌بندی‌شده از CUDA Toolkit که هدف آن‌ها تسهیل بازتوزیع و گنجاندن در پروژه‌های پایین‌دستی است. این بسته‌ها در مجموعه‌ی بسته‌های [`cudaPackages`](https://search.nixos.org/packages?channel=unstable&type=packages&query=cudaPackages) در دسترس هستند.
 
 اگرچه نصاب یکپارچه runfile برای CUDA Toolkit دیگر ارائه نمی‌شود، [`cudaPackages.cudatoolkit`](https://search.nixos.org/packages?channel=unstable&type=packages&query=cudaPackages.cudatoolkit) یک تقریب پیوندیافته با `symlinkJoin` از کتابخانه‌های رایج را ارائه می‌دهد. استفاده از [`cudaPackages.cudatoolkit`](https://search.nixos.org/packages?channel=unstable&type=packages&query=cudaPackages.cudatoolkit) توصیه نمی‌شود: همه پروژه‌های جدید باید به جای آن از توزیع‌پذیرهای CUDA موجود در [`cudaPackages`](https://search.nixos.org/packages?channel=unstable&type=packages&query=cudaPackages) استفاده کنند، زیرا نگهداری و به‌روزرسانی آن‌ها بسیار آسان‌تر است.
 
@@ -281,7 +281,7 @@ services:
 هر زمان که نسخه جدیدی از مانیفست توزیع‌پذیرها در دسترس قرار گرفت:
 
 1. برای آدرس URL مورد استفاده هنگام vendor کردن مانیفست‌ها، فایل README.md مربوطه در `pkgs/development/cuda-modules/_cuda/manifests` را بررسی کنید.
-2. نسخه مانیفست استفاده‌شده در ساخت هر مجموعهٔ بسته‌های CUDA در `pkgs/top-level/cuda-packages.nix` را به‌روزرسانی کنید.
+2. نسخه مانیفست استفاده‌شده در ساخت هر مجموعه‌ی بسته‌های CUDA در `pkgs/top-level/cuda-packages.nix` را به‌روزرسانی کنید.
 3. عبارت‌های بسته را در `pkgs/development/cuda-modules/packages` به‌روزرسانی کنید.
 
 به‌روزرسانی عبارت‌های بسته شامل موارد زیر است:
@@ -295,14 +295,14 @@ services:
 1. مقدار `nvccCompatibilities` در `pkgs/development/cuda-modules/_cuda/db/bootstrap/nvcc.nix` را به‌روزرسانی کنید تا شامل جدیدترین نسخه NVCC و همچنین هر کامپایلر هاستِ جدیداً پشتیبانی‌شده باشد.
 2. مقدار `cudaCapabilityToInfo` در `pkgs/development/cuda-modules/_cuda/db/bootstrap/cuda.nix` را به‌روزرسانی کنید تا شامل هر GPU جدیدی باشد که توسط نسخه جدید CUDA پشتیبانی می‌شود.
 
-#### به‌روزرسانی مجموعهٔ بسته‌های CUDA {#cuda-updating-the-cuda-package-set}
+#### به‌روزرسانی مجموعه‌ی بسته‌های CUDA {#cuda-updating-the-cuda-package-set}
 
 ::: {.note}
-تغییر مجموعهٔ بسته‌های پیش‌فرض CUDA باید در یک PR جداگانه انجام شود تا زمان کافی برای تست‌های اضافی فراهم باشد.
+تغییر مجموعه‌ی بسته‌های پیش‌فرض CUDA باید در یک PR جداگانه انجام شود تا زمان کافی برای تست‌های اضافی فراهم باشد.
 :::
 
 ::: {.warning}
-همان‌طور که در [استفاده از `cudaPackages.pkgs`](#cuda-using-cudapackages-pkgs) توضیح داده شده‌است، راهکار پیاده‌سازی فعلی برای نشت مجموعهٔ بسته‌ها شامل ایجاد یک نمونه جدید برای هر یک از مجموعه‌های بسته‌های غیرپیش‌فرض CUDA است. به همین دلیل، باید تعداد مجموعه‌بسته‌های CUDA که مقدار `recurseForDerivations` در آن‌ها برابر با true است را محدود کنیم: `lib.recurseIntoAttrs` تنها باید روی مجموعهٔ بسته‌های پیش‌فرض CUDA اعمال شود.
+همان‌طور که در [استفاده از `cudaPackages.pkgs`](#cuda-using-cudapackages-pkgs) توضیح داده شده‌است، راهکار پیاده‌سازی فعلی برای نشت مجموعه‌ی بسته‌ها شامل ایجاد یک نمونه جدید برای هر یک از مجموعه‌های بسته‌های غیرپیش‌فرض CUDA است. به همین دلیل، باید تعداد مجموعه‌بسته‌های CUDA که مقدار `recurseForDerivations` در آن‌ها برابر با true است را محدود کنیم: `lib.recurseIntoAttrs` تنها باید روی مجموعه‌ی بسته‌های پیش‌فرض CUDA اعمال شود.
 :::
 
 1. یک مجموعه بسته جدید `cudaPackages_<major>_<minor>` را در `pkgs/top-level/cuda-packages.nix` قرار داده و آن را در `pkgs/top-level/all-packages.nix` به ارث ببرید (inherit کنید).

@@ -10,9 +10,9 @@
 
 اکنون خط آخر را کامل کنید:
 
-* نتیجهٔ ارزیابی آن باید 'foobar' باشد.
+* نتیجه‌ی ارزیابی آن باید 'foobar' باشد.
 
-نحوهٔ استفاده از آن را در [nixpkgs/all-packages](https://github.com/NixOS/nixpkgs/blob/5a237aecb57296f67276ac9ab296a41c23981f56/pkgs/top-level/all-packages.nix#L16761) ببینید.
+نحوه‌ی استفاده از آن را در [nixpkgs/all-packages](https://github.com/NixOS/nixpkgs/blob/5a237aecb57296f67276ac9ab296a41c23981f56/pkgs/top-level/all-packages.nix#L16761) ببینید.
 
 ## کد اولیه
 

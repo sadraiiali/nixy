@@ -1,12 +1,15 @@
 """Persian orthography fixes applied after AI translation (and via CLI).
 
 Pipeline:
-1. Project rules (ترجمه‌ی ezafe form, strip em/en dashes)
-2. Wikipedia fa_bot.js *persianTools* port (`tools.lib.fa_bot`), applied outside
-   Markdown protected regions (fences, inline code, URLs, HTML, link targets)
+1. Project rules (ezafe after heh as ه‌ی, strip em/en dashes)
+2. Wikipedia fa_bot.js *persianTools* port (`tools.lib.fa_bot`), adapted for this
+   repo’s ezafe style, applied outside Markdown protected regions
 
 Upstream bot:
   https://fa.wikipedia.org/wiki/ویکی‌پدیا:ویرایشگر_خودکار/ابرابزار/fa_bot.js
+
+House style (differs from fa.wiki hamza-ezafe):
+  ارائهٔ / ترجمه‌شدهٔ  →  ارائه‌ی / ترجمه‌شده‌ی   (heh + ZWNJ + yeh)
 """
 
 from __future__ import annotations
@@ -16,11 +19,15 @@ from pathlib import Path
 
 from tools.lib.fa_bot import apply_fa_bot, replace_except
 
-# Bad: heh + U+0654 ARABIC HAMZA ABOVE  (common hamza-ezafe spelling)
-# Bad: U+06C0 ARABIC LETTER HEH WITH YEH ABOVE (single-codepoint form after mim)
-# Good: heh + U+200C ZWNJ + yeh
-_TARJOME_RE = re.compile(r"ترجم(?:ه\u0654|\u06c0)")
-_TARJOME_GOOD = "ترجمه\u200cی"
+# Good ezafe after heh: heh + U+200C ZWNJ + yeh (ه‌ی)
+_HEH_EZAFE_GOOD = "ه\u200cی"
+# Bad: heh + U+0654 ARABIC HAMZA ABOVE; single-codepoint ۀ / ۂ / heh with yeh above
+_HEH_HAMZA_EZAFE_RE = re.compile(
+    r"ه\u0654"  # هٔ as heh + combining hamza
+    r"|ۀ"  # U+06C0 ARABIC LETTER HEH WITH YEH ABOVE
+    r"|ۂ"  # U+06C2
+    r"|هٓ"  # heh + madda (nonstandard ezafe)
+)
 # U+2014 em dash, U+2013 en dash, U+2015 horizontal bar
 _DASH_RE = re.compile(r"[\u2013\u2014\u2015]")
 
@@ -51,11 +58,16 @@ _MD_EXCEPTIONS: list[re.Pattern[str]] = [
 ]
 
 
-def fix_tarjome_ezafe(text: str) -> str:
-    """Replace hamza-ezafe spellings of «tarjome» with ZWNJ+yeh form."""
+def fix_heh_ezafe(text: str) -> str:
+    """House style: ezafe after heh is ه‌ی (ZWNJ+yeh), never hamza forms (هٔ / ۀ)."""
     if not text:
         return text
-    return _TARJOME_RE.sub(_TARJOME_GOOD, text)
+    return _HEH_HAMZA_EZAFE_RE.sub(_HEH_EZAFE_GOOD, text)
+
+
+def fix_tarjome_ezafe(text: str) -> str:
+    """Backward-compatible alias: all heh-ezafe forms use ZWNJ+yeh."""
+    return fix_heh_ezafe(text)
 
 
 def strip_em_dashes(text: str) -> str:
@@ -78,7 +90,7 @@ def apply_fa_orthography(
     """All post-translation Persian orthography fixes."""
     if not text:
         return text
-    text = strip_em_dashes(fix_tarjome_ezafe(text))
+    text = strip_em_dashes(fix_heh_ezafe(text))
     if use_bot:
         text = replace_except(
             text,
@@ -89,8 +101,8 @@ def apply_fa_orthography(
             ),
             _MD_EXCEPTIONS,
         )
-        # bot may reintroduce hamza-ezafe forms via هٔ rules; re-assert project rule
-        text = fix_tarjome_ezafe(text)
+        # re-assert house ezafe style after bot
+        text = fix_heh_ezafe(text)
         text = strip_em_dashes(text)
     return text
 

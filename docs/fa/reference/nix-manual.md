@@ -49,5 +49,5 @@ Nix 2.31 (in Nixpkgs 25.11) </pages/nix-manual>
   ارائه‌شده به همراه نسخه پایدار قبلی {term}`Nixpkgs` و {term}`NixOS`: 25.11
 
 :::{tip}
-اطلاعات بیشتر دربارهٔ نسخه‌های Nixpkgs و NixOS: [channel branches](/pages/nix-dev/concepts/faq#channel-branches)
+اطلاعات بیشتر درباره‌ی نسخه‌های Nixpkgs و NixOS: [channel branches](/pages/nix-dev/concepts/faq#channel-branches)
 :::

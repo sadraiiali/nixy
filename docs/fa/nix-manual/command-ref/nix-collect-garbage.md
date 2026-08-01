@@ -11,7 +11,7 @@
 دستور `nix-collect-garbage` عمدتاً یک نام مستعار برای [`nix-store --gc`](@docroot@/command-ref/nix-store/gc.md) است.
 به عبارت دیگر، تمام [اشیاء انبار] غیرقابل‌دسترس را در انبار Nix حذف می‌کند تا سیستم شما پاکسازی شود.
 
-با این حال، این دستور دو گزینهٔ اضافی ارائه می‌دهد،
+با این حال، این دستور دو گزینه‌ی اضافی ارائه می‌دهد،
 [`--delete-old`](#opt-delete-old) و [`--delete-older-than`](#opt-delete-older-than)،
 که [پروفایل]‌های قدیمی را نیز حذف می‌کنند و به طور بالقوه امکان حذف [اشیاء انبار] بیشتری را فراهم می‌کنند، زیرا پروفایل‌ها نیز ریشه‌های جمع‌آوری زباله (garbage collection) هستند.
 این گزینه‌ها معادل اجرای
@@ -60,15 +60,15 @@
   مقدار *period* مقداری مانند `30d` است که به معنای ۳۰ روز خواهد بود.
 
   این معادل فراخوانی [`nix-env --delete-generations <period>`](@docroot@/command-ref/nix-env/delete-generations.md#generations-time) روی هر پروفایل یافت‌شده‌است.
-  برای اطلاعات بیشتر دربارهٔ آرگومان *period*، مستندات آن دستور را مشاهده کنید.
+  برای اطلاعات بیشتر درباره‌ی آرگومان *period*، مستندات آن دستور را مشاهده کنید.
 
 - <span id="opt-max-freed">[`--max-freed`](#opt-max-freed)</span> *bytes*
 
    <!-- duplication from https://github.com/NixOS/nix/blob/442a2623e48357ff72c77bb11cf2cf06d94d2f90/doc/manual/source/command-ref/nix-store/gc.md?plain=1#L39-L44 -->
 
   به حذف مسیرها ادامه بده تا زمانی که حداقل *bytes* بایت حذف شود،
-  سپس متوقف شو. آرگومان *bytes* می‌تواند با پسوند ضرب‌کنندهٔ
-  `K`، `M`، `G` یا `T` دنبال شود که نشان‌دهندهٔ واحدهای KiB، MiB، GiB یا TiB است.
+  سپس متوقف شو. آرگومان *bytes* می‌تواند با پسوند ضرب‌کننده‌ی
+  `K`، `M`، `G` یا `T` دنبال شود که نشان‌دهنده‌ی واحدهای KiB، MiB، GiB یا TiB است.
 
 {{#include ./opt-common.md}}
 

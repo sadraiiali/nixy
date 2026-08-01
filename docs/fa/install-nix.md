@@ -35,7 +35,7 @@ $ curl -L https://nixos.org/nix/install | sh
 ```console
 error: the user '_nixbld1' in the group 'nixbld' does not exist
 ```
-هنگام اجرای دستورات Nix، برای راهنمایی جهت اصلاح نصب خود بدون نیاز به نصب مجدد، به مسئلهٔ گیت‌هاب [NixOS/nix#10892](https://github.com/NixOS/nix/issues/10892) مراجعه کنید.
+هنگام اجرای دستورات Nix، برای راهنمایی جهت اصلاح نصب خود بدون نیاز به نصب مجدد، به مسئله‌ی گیت‌هاب [NixOS/nix#10892](https://github.com/NixOS/nix/issues/10892) مراجعه کنید.
 :::
 
 ::::

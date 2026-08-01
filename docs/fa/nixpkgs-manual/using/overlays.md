@@ -36,7 +36,7 @@ final: prev:
 $ LD_LIBRARY_PATH=$(nix-build -A mkl)/lib${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH nix-shell -p octave --run octave
 ```
 
-Intel MKL هنگام اجرا با چند پردازنده، به یک پیاده‌سازی `openmp` نیاز دارد. به‌طور پیش‌فرض، در صورتی که گزینهٔ دیگری مشخص نشده باشد، `
+Intel MKL هنگام اجرا با چند پردازنده، به یک پیاده‌سازی `openmp` نیاز دارد. به‌طور پیش‌فرض، در صورتی که گزینه‌ی دیگری مشخص نشده باشد، `
 
 ```nix
 final: prev:

@@ -2,7 +2,7 @@
 
 ## مقدمه {#javascript-introduction}
 
-این بخش شامل دستورالعمل‌هایی دربارهٔ نحوه بسته‌بندی برنامه‌های JavaScript است.
+این بخش شامل دستورالعمل‌هایی درباره‌ی نحوه بسته‌بندی برنامه‌های JavaScript است.
 
 ابزارهای مختلف موجود در [tools-overview](#javascript-tools-overview) فهرست خواهند شد.
 سپس برخی از اصول عمومی برای بسته‌بندی ارائه می‌شود.
@@ -75,7 +75,7 @@ buildNpmPackage (finalAttrs: {
 })
 ```
 
-در فاز نصب (installPhase) پیش‌فرض که توسط `buildNpmPackage` تنظیم می‌شود، از `npm pack --json --dry-run` برای تصمیم‌گیری دربارهٔ فایل‌های قابل نصب در `$out/lib/node_modules/$name/` استفاده می‌شود، که در آن `$name` همان رشته `name` تعریف‌شده در `package.json` متعلق به بسته‌است.
+در فاز نصب (installPhase) پیش‌فرض که توسط `buildNpmPackage` تنظیم می‌شود، از `npm pack --json --dry-run` برای تصمیم‌گیری درباره‌ی فایل‌های قابل نصب در `$out/lib/node_modules/$name/` استفاده می‌شود، که در آن `$name` همان رشته `name` تعریف‌شده در `package.json` متعلق به بسته‌است.
 علاوه بر این، کلیدهای `bin` و `man` در `package.json` کد منبع برای تصمیم‌گیری در مورد این‌که چه باینری‌ها و صفحات راهنمایی (manpages) باید نصب شوند، استفاده می‌شوند.
 اگر این موارد تعریف نشده باشند، ممکن است `npm pack` برخی از فایل‌ها را ندیده بگیرد و هیچ باینری تولید نشود.
 
@@ -350,7 +350,7 @@ Wait, check `npmHooks.npmBuildHook
 
 #### pnpm `fetcherVersion` {#javascript-pnpm-fetcherVersion}
 
-این نسخهٔ خروجی `fetchPnpmDeps` است. بسته‌های جدید باید از `4` استفاده کنند:
+این نسخه‌ی خروجی `fetchPnpmDeps` است. بسته‌های جدید باید از `4` استفاده کنند:
 
 ```nix
 {
@@ -430,7 +430,7 @@ __metadata:
   cacheKey: 10[cX]
 ```
 
-برای این بسته‌ها، برخی ابزارهای کمکی در زیر بسته‌های مربوطهٔ `yarn-berry_3` و `yarn-berry_4` ارائه شده‌اند:
+برای این بسته‌ها، برخی ابزارهای کمکی در زیر بسته‌های مربوطه‌ی `yarn-berry_3` و `yarn-berry_4` ارائه شده‌اند:
 
 -
 
@@ -473,7 +473,7 @@ stdenv.mkDerivation (finalAttrs: {
 $ yarn-berry-fetcher prefetch </path/to/yarn.lock> [/path/to/missing-hashes.json]
 ```
 
-این خروجی، هش را در stdout چاپ می‌کند و می‌توان از آن در اسکریپت‌های به‌روزرسانی برای محاسبهٔ مجدد هش برای نسخه جدیدی از `yarn.lock` استفاده کرد.
+این خروجی، هش را در stdout چاپ می‌کند و می‌توان از آن در اسکریپت‌های به‌روزرسانی برای محاسبه‌ی مجدد هش برای نسخه جدیدی از `yarn.lock` استفاده کرد.
 
 ##### `yarn-berry_X.yarnBerryConfigHook` {#javascript-yarnBerryConfigHook}
 `yarnBerryConfigHook` از مسیر انبار که `offlineCache` به آن اشاره دارد برای اجرای `yarn install` در طول ساخت استفاده می‌کند و یک پوشه `node_modules` قابل استفاده از وابستگی‌های دانلودشده تولید می‌نماید.

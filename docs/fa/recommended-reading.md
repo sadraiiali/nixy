@@ -22,13 +22,13 @@
 
   مقدمه‌ای بر نوشتن درایویشن‌ها.
 
-- [آنچه باید دربارهٔ ارزیابی تنبل در Nix بدانید، Nixcademy](https://nixcademy.com/posts/what-you-need-to-know-about-laziness/) (یاسِک گالوویچ، ۲۰۲۴)
+- [آنچه باید درباره‌ی ارزیابی تنبل در Nix بدانید، Nixcademy](https://nixcademy.com/posts/what-you-need-to-know-about-laziness/) (یاسِک گالوویچ، ۲۰۲۴)
 
 ## مقالات دیگر
 
 - [قرص‌های Nix](https://nixos.org/nixos/nix-pills/index.html)
 
-  یک آموزش سطح پایین دربارهٔ ساخت بسته‌های نرم‌افزاری با Nix که به جزئیات نحوه ساخت Nixpkgs می‌پردازد.
+  یک آموزش سطح پایین درباره‌ی ساخت بسته‌های نرم‌افزاری با Nix که به جزئیات نحوه ساخت Nixpkgs می‌پردازد.
 
 - [سفارشی‌سازی بسته‌ها در Nix](https://bobvanderlinden.me/customizing-packages-in-nix/) (۲۰۲۲)
 
@@ -40,7 +40,7 @@
 
 - [نکات کوتاه Nix](https://github.com/justinwoo/nix-shorts)
 
-  مجموعه‌ای از پست‌ها دربارهٔ مبانی نحوه کارکرد بسته‌بندی با Nix.
+  مجموعه‌ای از پست‌ها درباره‌ی مبانی نحوه کارکرد بسته‌بندی با Nix.
 
 - [NixOS و فلیک‌ها - کتابی غیررسمی برای مبتدیان](https://nixos-and-flakes.thiscute.world) (۲۰۲۳)
 
@@ -58,11 +58,11 @@
 
 - [Nixpkgs](https://www.youtube.com/@jonringer117/videos) (جان رینگر، ۲۰۲۰-۲۲)
 
-  مجموعه ویدیویی حاوی آموزش‌هایی دربارهٔ فعالیت‌های مختلف پیرامون Nixpkgs.
+  مجموعه ویدیویی حاوی آموزش‌هایی درباره‌ی فعالیت‌های مختلف پیرامون Nixpkgs.
 
 - [NixOS](https://www.youtube.com/playlist?list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-) (ویل تیلور، ۲۰۲۱)
 
-  مجموعه‌ای از آموزش‌ها دربارهٔ شروع کار با NixOS.
+  مجموعه‌ای از آموزش‌ها درباره‌ی شروع کار با NixOS.
 
 - [بنیاد NixOS در یوتیوب](https://www.youtube.com/@NixOS-Foundation/playlists)
 

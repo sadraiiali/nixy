@@ -15,11 +15,11 @@
 
 اتصالات (bindings) مجموعه‌ای از تعاریف هستند که با نقطه‌ویرگول از هم جدا شده‌اند.
 
-**نکته:** در Nix می‌توانید از سازهٔ `let` برای اتصال یک `value` به یک
+**نکته:** در Nix می‌توانید از سازه‌ی `let` برای اتصال یک `value` به یک
 `attribute` و همچنین یک `function` استفاده کنید. سپس در `<body>` می‌توانید
 به `bound values`، حتی چندین بار ارجاع دهید.
 
-اطلاعات بیشتر در [Nix by example part1](https://medium.com/@MrJamesFisher/nix-by-example-a0063a1a4c55#8310) نوشتهٔ James Fisher.
+اطلاعات بیشتر در [Nix by example part1](https://medium.com/@MrJamesFisher/nix-by-example-a0063a1a4c55#8310) نوشته‌ی James Fisher.
 
 ## کد شروع
 

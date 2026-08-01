@@ -68,7 +68,7 @@ nix-prefetch -E "{ sha256 }: ((import ./. { }).my-package.overrideAttrs { vendor
 
 ### `proxyVendor` {#var-go-proxyVendor}
 
-اگر `true` باشد، دریافت‌کنندهٔ واسط به جای وندور کردن (vendoring) وابستگی‌ها، آن‌ها را از [Go module proxy](https://go.dev/ref/mod#module-proxy)
+اگر `true` باشد، دریافت‌کننده‌ی واسط به جای وندور کردن (vendoring) وابستگی‌ها، آن‌ها را از [Go module proxy](https://go.dev/ref/mod#module-proxy)
 
 ```nix
 {
@@ -152,7 +152,7 @@ nix-prefetch -E "{ sha256 }: ((import ./. { }).my-package.overrideAttrs { vendor
 }
 ```
 
--Name_Resolution) و [os/user](https://pkg.go.dev/os/user#pkg-overview) را ببینید. توجه داشته باشید که تصمیم دربارهٔ اینکه آیا این بسته‌ها باید از پیاده‌سازی بومی Go استفاده کنند یا خیر را می‌توان در سطح هر
+-Name_Resolution) و [os/user](https://pkg.go.dev/os/user#pkg-overview) را ببینید. توجه داشته باشید که تصمیم درباره‌ی اینکه آیا این بسته‌ها باید از پیاده‌سازی بومی Go استفاده کنند یا خیر را می‌توان در سطح هر
 
 ```nix
 {

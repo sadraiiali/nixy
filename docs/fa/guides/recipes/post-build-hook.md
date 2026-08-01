@@ -1,7 +1,7 @@
 (post-build-hooks)=
 # راه‌اندازی قلاب‌های پس از ساخت
 
-این راهنما نحوه استفاده از گزینه پیکربندی [`post-build-hook`](/pages/nix-manual/command-ref/conf-file-prefix#conf-post-build-hook) در Nix را برای بارگذاری خودکار فرآوردهٔ ساخت در یک [کش باینری سازگار با S3](/pages/nix-manual/store/types) نشان می‌دهد.
+این راهنما نحوه استفاده از گزینه پیکربندی [`post-build-hook`](/pages/nix-manual/command-ref/conf-file-prefix#conf-post-build-hook) در Nix را برای بارگذاری خودکار فرآورده‌ی ساخت در یک [کش باینری سازگار با S3](/pages/nix-manual/store/types) نشان می‌دهد.
 
 ## نکات احتیاطی در پیاده‌سازی
 

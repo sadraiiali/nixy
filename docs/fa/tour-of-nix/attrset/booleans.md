@@ -8,7 +8,7 @@
 
 **نکته:** علامت `#` را حذف کنید تا با پیشروی در تمرین‌ها، آن‌ها را از حالت کامنت خارج کنید.
 
-برای جزئیات بیشتر دربارهٔ `attribute sets` به [مستندات نیکس](https://nixos.org/manual/nix/stable/language/values#attribute-set) مراجعه کنید.
+برای جزئیات بیشتر درباره‌ی `attribute sets` به [مستندات نیکس](https://nixos.org/manual/nix/stable/language/values#attribute-set) مراجعه کنید.
 
 ## کد اولیه
 

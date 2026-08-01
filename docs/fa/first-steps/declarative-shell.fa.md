@@ -82,7 +82,7 @@ in
 تابع `mkShellNoCC` یک مجموعه صفت (attribute set) را به عنوان آرگومان می‌پذیرد.
 در اینجا ما به آن یک صفت `packages` همراه با فهرستی شامل دو آیتم از مجموعه صفت `pkgs` می‌دهیم.
 
-:::{Dropdown} نکتهٔ حاشیه‌ای دربارهٔ `mkShell`
+:::{Dropdown} نکته‌ی حاشیه‌ای درباره‌ی `mkShell`
 
 دستورات `nix-shell` و `mkShell` در ابتدا به عنوان روشی برای ساخت یک محیط شل حاوی [tools needed to debug package builds](https://nixos.org/manual/nixpkgs/stable/#sec-tools-of-stdenv)، مانند Make یا GCC طراحی شدند.
 فقط بعدها بود که استفاده از آن به عنوان یک روش عمومی برای ساخت محیط‌های موقت برای اهداف دیگر به طور گسترده‌ای رایج شد.
