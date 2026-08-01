@@ -1,158 +1,146 @@
-# Nix notes
+# Nixy
 
-**License:** [GNU GPL v3 or later](LICENSE) — Copyright (C) 2026 Alireza SadraiiRad.
+Persian (Farsi) documentation site for [Nix](https://nixos.org/) and NixOS.
 
-Two things live in this folder:
+Nixy gathers official English material, runs it through a staged EN→FA translation pipeline, and publishes a fully Persian reading experience in the browser.
 
-1. **Python pipeline** (`tools/`) — download, glossary, translate, and publish Markdown (via `uv`)
-2. **SvelteKit + mdsvex site** (`src/`) — serves those notes in the browser
+**Live site:** [nixy.a15d.at](https://nixy.a15d.at)  
+**Repository:** [github.com/sadraiiali/nixy](https://github.com/sadraiiali/nixy)
 
-> Note: there is no npm package named `mdxserve`. This site uses **[mdsvex](https://mdsvex.pngwn.io/)** (Markdown / MDX preprocessor for Svelte), which is the usual Svelte equivalent.
+## What’s included
 
-## Website
+| Section | Upstream | On the site |
+|---------|----------|-------------|
+| **nix.dev** | [NixOS/nix.dev](https://github.com/NixOS/nix.dev) | `/pages/nix-dev/…` |
+| **Nix reference manual** | [NixOS/nix](https://github.com/NixOS/nix) `doc/manual` | `/pages/nix-manual/…` |
+| **Nixpkgs manual** | [NixOS/nixpkgs](https://github.com/NixOS/nixpkgs) `doc/` | `/pages/nixpkgs-manual/…` |
+| **How Nix works** | nixos.org guide | `/pages/how-nix-works` |
+| **Tour of Nix** | [nixcloud/tour_of_nix](https://github.com/nixcloud/tour_of_nix) | `/pages/tour-of-nix` |
+| **Blog** | local notes | `/blog/…` |
+| **Glossary** | built from docs | `/glossary` |
+
+The UI is **RTL Persian**. Upstream source links and contributor info appear on doc pages where mapped.
+
+## Stack
+
+Two main pieces live in this repo:
+
+1. **SvelteKit + mdsvex site** (`src/`) — static site (Cloudflare Pages), Markdown routes, glossary, blog, agent discovery under `/.well-known/`.
+2. **Python content pipeline** (`tools/`, via [`uv`](https://github.com/astral-sh/uv)) — download English sources, glossary, translate, publish into `src/routes/pages/`.
+
+Orchestration is via the root **`Makefile`**. Secrets and paths go in **`.env`** (see `.env.example`).
+
+## Website (dev & deploy)
 
 ```bash
 npm install
-npm run dev
+npm run dev          # http://localhost:5173
 ```
 
-Open (سایت **فقط فارسی** است):
+Useful routes while developing:
 
 | URL | Content |
 |-----|---------|
-| http://localhost:5173/ | خانه |
-| http://localhost:5173/pages/how-nix-works | راهنمای «نیکس چگونه کار می‌کند» |
+| `/` | Home |
+| `/pages/how-nix-works` | How Nix works |
+| `/pages/nix-dev/…` | nix.dev (FA) |
+| `/glossary` | Public glossary |
+| `/glossary-dev` | Glossary review (dev) |
+| `/settings` | Reader settings |
+| `/licenses` | Licenses & attribution |
 
-Production build (static → `build/`, for Cloudflare Pages):
+Production build (static output → `build/`):
 
 ```bash
 npm run build
 npm run preview
 ```
 
-### Deploy to Cloudflare Pages
+### Cloudflare Pages
 
-Requires [Wrangler](https://developers.cloudflare.com/workers/wrangler/) (installed as a devDependency) and a Cloudflare account.
+Config: `wrangler.jsonc` (project `nixy`, output `build/`).
 
 ```bash
-npx wrangler login          # once
-npm run deploy              # vite build → build/ then wrangler pages deploy
+npx wrangler login    # once
+npm run deploy        # build + deploy
 # or after a local build:
 npm run pages:deploy
+npm run pages:dev     # serve build/ locally via Wrangler
 ```
 
-Config lives in `wrangler.jsonc`:
+Git-connected Pages: build command `npm run build`, output directory `build`, Node 20+.
 
-| Field | Value |
-|-------|--------|
-| Project name | `nix-notes` |
-| Output dir | `build` |
-| Framework | SvelteKit + `@sveltejs/adapter-static` |
-
-**Git-connected Pages** (dashboard): Build command `npm run build`, build output directory `build`, Node version 20+.
-
-**Local Pages preview** (after build):
+Optional offline pack:
 
 ```bash
-npm run pages:dev
+npm run build:webxdc   # → build-webxdc/
 ```
 
-Webxdc offline packs stay separate (`npm run build:webxdc` → `build-webxdc/`).
+## Content pipeline
 
-The page is a mdsvex route:
+Full documents are **not** bulk-translated until the glossary is reviewed.
 
-`src/routes/pages/how-nix-works/+page.md`
-
-(source copy of root `how-nix-works.md`).
-
-## Makefile
+```text
+1. Download English Markdown (nix.dev, manuals, tour, …)
+2. Extract tech terms → glossary
+3. API suggests FA for words only (pending)
+4. Human review / approve (site /glossary-dev or CLI)
+5. Translate Markdown (approved glossary; fenced code never sent to the model)
+6. Publish FA into src/routes/pages/*
+```
 
 ```bash
-make install     # uv sync + npm install
-make download    # fetch English guide
-make translate   # EN → FA (fenced code never sent to the model)
-make dev         # SvelteKit dev server
-make build
+make install              # uv sync + npm install
+make help                 # all targets
+make env-check            # non-secret config status
+
+# Staged flow (example: nix.dev)
+make download-nix-dev
+make glossary
+make glossary-suggest
+make glossary-approve     # or review in the browser
+make translate-docs
+make publish-site
 ```
 
-## Configuration (`.env`)
+Common targets:
 
-**All keys and settings** for download/translate live in `.env` (gitignored).
+| Target | Role |
+|--------|------|
+| `download-nix-dev` / `download-nix-manual` / `download-nixpkgs-manual` / `download-tour` | Fetch EN sources → `docs/en/…` |
+| `glossary` / `glossary-suggest` / `glossary-approve` | Term list + API suggestions + approve |
+| `translate-docs` / `translate-nix-manual` / `translate-nixpkgs-manual` | EN→FA → `docs/fa/…` |
+| `publish-site` / `publish-tour` | Write into site routes / tour JSON |
+| `page-source-map` | Route → GitHub + published web URL map |
+| `pipeline-full` | Bulk 1–6 (long API run) |
+| `dev` / `build` / `deploy` | Site |
+
+Section-level re-translate (partial FA pages), jobs, and module layout: **`tools/README.md`**.
+
+### Configuration
 
 ```bash
 cp .env.example .env
-# edit OPENAI_API_KEY, OPENAI_MODEL, paths, …
-make env-check   # prints non-secret config
+# set OPENAI_API_KEY, model, paths, …
+make env-check
 ```
 
-| Variable | Purpose |
-|----------|---------|
-| `OPENAI_API_KEY` | API secret (OpenRouter / OpenAI) |
-| `OPENAI_BASE_URL` | API base URL |
-| `OPENAI_MODEL` | e.g. `google/gemini-3.5-flash-lite` |
-| `OPENAI_TEMPERATURE` | sampling temperature |
-| `DOWNLOAD_URL` / `DOWNLOAD_OUTPUT` | scrape source & output path |
-| `TRANSLATE_INPUT` / `TRANSLATE_OUTPUT` / `TRANSLATE_SITE` | translation paths |
-| `TRANSLATE_TARGET_LANG` | default `fa` |
+Typical variables: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL` / `TRANSLATE_MODEL`, glossary paths, download/translate I/O dirs. CLI flags override paths when provided.
 
-CLI flags still override paths when passed; otherwise scripts read only from `.env`.
-
-## Staged pipeline (required order)
-
-Full documents are **not** translated until you review the word list.
-
-```text
-1. Download docs (GitHub nix.dev first-steps)
-2. Build unique tech glossary (no code)
-3. API translates WORDS only → pending suggestions
-4. YOU review/approve on /glossary-dev (dev only)
-5. Full Markdown translation (approved glossary + no code to model)
-```
-
-```bash
-make pipeline-words      # steps 1–3
-make dev                 # http://localhost:5173/glossary-dev  → تأیید + ذخیره
-                         # http://localhost:5173/glossary      → واژه‌نامهٔ نهایی (عمومی)
-make translate-docs      # step 5 — docs/fa/first-steps/
-```
-
-| Make target | What it does |
-|-------------|--------------|
-| `download-first-steps` | `NixOS/nix.dev` → `docs/en/first-steps/` |
-| `glossary` | tech terms → `glossary.json` |
-| `glossary-suggest` | API fills term translations only (`status` stays pending) |
-| `translate-docs` | full MD; uses **approved** glossary only; skips code fences |
-| `translate` | legacy single-file helper |
-
-### Gate
-
-`translate-docs` needs at least `TRANSLATE_MIN_APPROVED` approved terms (default 1).
-Set `TRANSLATE_REQUIRE_NO_PENDING=true` to require zero pending tech terms.
-
-### Sources
-
-- Web: https://nix.dev/tutorials/first-steps/
-- Repo: https://github.com/NixOS/nix.dev (`source/tutorials/first-steps`)
-
-## Re-download the guide
-
-```bash
-make download
-# or:
-uv sync
-uv run python -m tools.download.page
-cp how-nix-works.md src/routes/pages/how-nix-works/+page.md
-```
-
-## Layout
+## Repository layout
 
 | Path | Purpose |
 |------|---------|
-| `Makefile` | install / download / translate / dev / build |
-| `tools/` | Python pipeline (download → glossary → translate → publish); see `tools/README.md` |
-| `docs/` | English + Farsi Markdown sources |
-| `src/` | SvelteKit website |
-| `how-nix-works.md` | English source (legacy single page) |
-| `how-nix-works.fa.md` | Farsi translation (legacy) |
-| `context/` | python-markdownify reference (not a dependency) |
-| `.env` | API key (gitignored) |
+| `src/` | SvelteKit app (routes, components, styles) |
+| `src/routes/pages/` | Published FA Markdown pages |
+| `docs/en/`, `docs/fa/` | English sources and FA translations |
+| `tools/` | Download, glossary, translate, publish |
+| `scripts/` | Build helpers (sitemap, avatars, agent skills, …) |
+| `static/` | Static assets, `/.well-known/`, tour runtime |
+| `Makefile` | Pipeline + site targets |
+| `glossary.json` | Term store used by translate & site |
+| `.env` | Local secrets (gitignored) |
+
+## License
+
+This project is free software under the [GNU General Public License v3 or later](LICENSE).
