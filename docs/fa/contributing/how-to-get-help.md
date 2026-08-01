@@ -7,11 +7,11 @@
 
 برای کارایی بهتر و شانس موفقیت بیشتر، باید سعی کنید ابتدا با افراد یا گروه‌هایی که دانش تخصصی‌تری دارند تماس بگیرید:
 
-- اگر مشارکت شما مربوط به بسته‌ای در مجموعه‌ی بسته‌های نیکس (Nixpkgs) است، نگه‌دارندگان آن را در صفت [`maintainers`](https://nixos.org/manual/nixpkgs/stable/#var-meta-maintainers) جستجو کنید.
+- اگر مشارکت شما مربوط به بسته‌ای در مجموعهٔ بسته‌های نیکس (Nixpkgs) است، نگه‌دارندگان آن را در صفت [`maintainers`](https://nixos.org/manual/nixpkgs/stable/#var-meta-maintainers) جستجو کنید.
 - بررسی کنید که آیا تیم خاصی مسئول زیرسیستم مربوطه هست یا خیر:
   - در [وب‌سایت NixOS](https://nixos.org/community/#governance-teams).
-  - در [فهرست تیم‌های نگه‌دارنده مجموعه‌ی بسته‌های نیکس (Nixpkgs)](https://github.com/NixOS/nixpkgs/blob/master/maintainers/team-list.nix).
-  - در فایل‌های `CODEOWNERS` برای [مجموعه‌ی بسته‌های نیکس (Nixpkgs)](https://github.com/NixOS/nixpkgs/blob/master/ci/OWNERS) یا [Nix](https://github.com/NixOS/nix/blob/master/.github/CODEOWNERS).
+  - در [فهرست تیم‌های نگه‌دارنده مجموعهٔ بسته‌های نیکس (Nixpkgs)](https://github.com/NixOS/nixpkgs/blob/master/maintainers/team-list.nix).
+  - در فایل‌های `CODEOWNERS` برای [مجموعهٔ بسته‌های نیکس (Nixpkgs)](https://github.com/NixOS/nixpkgs/blob/master/ci/OWNERS) یا [Nix](https://github.com/NixOS/nix/blob/master/.github/CODEOWNERS).
 - خروجی [`git blame`](https://git-scm.com/docs/git-blame) یا [`git log`](https://www.git-scm.com/docs/git-log) را برای فایل‌هایی که به کمک نیاز دارید بررسی کنید.
   آدرس‌های ایمیل افرادی را که کدهای مرتبط را کامیت کرده‌اند، یادداشت کنید.
 
@@ -22,7 +22,7 @@
 - [GitHub](https://github.com/nixos)
 
   تمام کدهای منبع روی گیت‌هاب نگهداری می‌شوند.
-  این مکان مناسبی برای بحث درباره جزئیات پیاده‌سازی است.
+  این مکان مناسبی برای بحث دربارهٔ جزئیات پیاده‌سازی است.
 
   در نظرات ایشوها (Issues) یا توضیحات پول ریکوئست‌ها (Pull Requests)، [نام کاربری گیت‌هاب](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#mentioning-people-and-teams) موجود در [`فایل maintainers-list.nix`](https://github.com/NixOS/nixpkgs/blob/master/maintainers/maintainer-list.nix) را منشن کنید.
 
@@ -38,7 +38,7 @@
   Matrix برای تبادلات زودگذر و به‌موقع و پیام‌های مستقیم استفاده می‌شود.
 
   برای تماس با یک نگه‌دارنده، از شناسه Matrix آن‌ها که در [`فایل maintainers-list.nix`][maintainers-list] یافت می‌شود، استفاده کنید.
-  اگر شناسه Matrix برای نگه‌دارنده‌ی خاصی وجود نداشت، سعی کنید نام کاربری گیت‌هاب آن‌ها را جستجو کنید، زیرا اکثر افراد ترجیح می‌دهند از یک نام کاربری ثابت در کانال‌های مختلف استفاده کنند.
+  اگر شناسه Matrix برای نگه‌دارندهٔ خاصی وجود نداشت، سعی کنید نام کاربری گیت‌هاب آن‌ها را جستجو کنید، زیرا اکثر افراد ترجیح می‌دهند از یک نام کاربری ثابت در کانال‌های مختلف استفاده کنند.
 
   تیم‌های نگه‌دارنده گاهی اوقات اتاق عمومی Matrix خود را دارند.
 

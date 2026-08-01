@@ -2,7 +2,7 @@
 
 > Source: [https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-hash.html](@docroot@/command-ref/new-cli/nix3-hash.md)
 
-> **Warning** 
+> **Warning**
 >
 > This program is
 > [**experimental**](https://nix.dev/manual/nix/2.34/development/experimental-features#xp-feature-nix-command)

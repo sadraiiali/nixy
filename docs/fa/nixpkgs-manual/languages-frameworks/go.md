@@ -43,7 +43,6 @@
 - [`preBuild`](#var-stdenv-preBuild)
 - `env`: برای
 
-
 ```sh
 cd path/to/nixpkgs
 nix-prefetch -E "{ sha256 }: ((import ./. { }).my-package.overrideAttrs { vendorHash = sha256; }).goModules"
@@ -101,7 +100,7 @@ nix-prefetch -E "{ sha256 }: ((import ./. { }).my-package.overrideAttrs { vendor
 
 ### `deleteVendor` {#var-go-deleteVendor}
 
-اگر روی `true` تنظیم شود، پوشه vendor از‌پیش‌موجود را حذف می‌کند. این گزینه تنها باید زمانی استفاده شود که وابستگی‌های موجود در پوشه vendor خراب یا ناقص باشند.
+اگر روی `true` تنظیم شود، پوشه vendor ازپیش‌موجود را حذف می‌کند. این گزینه تنها باید زمانی استفاده شود که وابستگی‌های موجود در پوشه vendor خراب یا ناقص باشند.
 
 ### `subPackages` {#var-go-subPackages}
 
@@ -153,7 +152,7 @@ nix-prefetch -E "{ sha256 }: ((import ./. { }).my-package.overrideAttrs { vendor
 }
 ```
 
--Name_Resolution) و [os/user](https://pkg.go.dev/os/user#pkg-overview) را ببینید. توجه داشته باشید که تصمیم درباره اینکه آیا این بسته‌ها باید از پیاده‌سازی بومی Go استفاده کنند یا خیر را می‌توان در سطح هر
+-Name_Resolution) و [os/user](https://pkg.go.dev/os/user#pkg-overview) را ببینید. توجه داشته باشید که تصمیم دربارهٔ اینکه آیا این بسته‌ها باید از پیاده‌سازی بومی Go استفاده کنند یا خیر را می‌توان در سطح هر
 
 ```nix
 {

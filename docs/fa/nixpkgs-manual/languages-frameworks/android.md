@@ -59,7 +59,7 @@ androidComposition.androidsdk
 گزینه‌های زیر پشتیبانی می‌شوند:
 
 * `cmdLineToolsVersion` نسخه بسته `cmdline-tools` مورد استفاده را مشخص می‌کند. مقدار پیش‌فرض آن آخرین نسخه است.
-* `toolsVersion` نسخه بسته `tools` را مشخص می‌کند. توجه داشته باشید که `tools` منسوخ شده است و در حال حاضر تنها نسخه `26.1.1` در دسترس است، بنابراین گزینه‌های زیادی در اینجا وجود ندارد؛ با این حال، اگر آن را نمی‌خواهید می‌توانید مقدارش را `null` قرار دهید. مقدار پیش‌فرض آن آخرین نسخه است.
+* `toolsVersion` نسخه بسته `tools` را مشخص می‌کند. توجه داشته باشید که `tools` منسوخ شده‌است و در حال حاضر تنها نسخه `26.1.1` در دسترس است، بنابراین گزینه‌های زیادی در اینجا وجود ندارد؛ با این حال، اگر آن را نمی‌خواهید می‌توانید مقدارش را `null` قرار دهید. مقدار پیش‌فرض آن آخرین نسخه است.
 * `platformToolsVersion` نسخه پلاگین `platform-tools` را مشخص می‌کند. مقدار پیش‌فرض آن آخرین نسخه است.
 * `buildToolsVersions` نسخه‌های پلاگین‌های `build-tools` مورد استفاده را مشخص می‌کند. مقدار پیش‌فرض آن آخرین نسخه است.
 * `includeEmulator` مشخص می‌کند که آیا بسته شبیه‌ساز استقرار یابد یا خیر (به طور پیش‌فرض `false`). در صورت فعال بودن، نسخه شبیه‌ساز برای استقرار را می‌توان با تنظیم پارامتر `emulatorVersion` مشخص کرد. اگر روی `"if-supported"` تنظیم شود، در صورت پشتیبانی سیستم، شبیه‌ساز استقرار داده می‌شود.
@@ -137,9 +137,9 @@ in
 androidComposition.platform-tools
 ```
 
-## استفاده از ترکیب‌های از‌پیش‌تعریف‌شده بسته‌های Android {#using-predefined-android-package-compositions}
+## استفاده از ترکیب‌های ازپیش‌تعریف‌شده بسته‌های Android {#using-predefined-android-package-compositions}
 
-علاوه بر ترکیب دستی مجموعه‌ای از بسته‌های Android، استفاده از یک ترکیب از‌پیش‌تعریف‌شده که شامل مجموعه نسبتاً کاملی از بسته‌های Android است نیز امکان‌پذیر است:
+علاوه بر ترکیب دستی مجموعه‌ای از بسته‌های Android، استفاده از یک ترکیب ازپیش‌تعریف‌شده که شامل مجموعه نسبتاً کاملی از بسته‌های Android است نیز امکان‌پذیر است:
 
 از عبارت نیکس (Nix expression) زیر می‌توان برای استقرار کل SDK استفاده کرد:
 
@@ -194,9 +194,9 @@ androidenv.emulateApp {
 
 علاوه بر APKهای پیش‌ساخته، می‌توانید پارامتر APK را به فراخوانی تابع `buildApp {}` که در مثال قبلی نشان داده شد نیز متصل کنید.
 
-## نکاتی درباره متغیرهای محیطی در پروژه‌های Android {#notes-on-environment-variables-in-android-projects}
+## نکاتی دربارهٔ متغیرهای محیطی در پروژه‌های Android {#notes-on-environment-variables-in-android-projects}
 
-* `ANDROID_HOME` باید به Android SDK اشاره کند. در عبارت‌های Nix شما، این مقدار باید `${androidComposition.androidsdk}/libexec/android-sdk` باشد. توجه داشته باشید که `ANDROID_SDK_ROOT` منسوخ شده است، اما اگر به ابزارهایی متکی هستید که به آن نیاز دارند، می‌توانید آن را نیز صادر (export) کنید.
+* `ANDROID_HOME` باید به Android SDK اشاره کند. در عبارت‌های Nix شما، این مقدار باید `${androidComposition.androidsdk}/libexec/android-sdk` باشد. توجه داشته باشید که `ANDROID_SDK_ROOT` منسوخ شده‌است، اما اگر به ابزارهایی متکی هستید که به آن نیاز دارند، می‌توانید آن را نیز صادر (export) کنید.
 * اگر در حال توسعه NDK هستید، `ANDROID_NDK_ROOT` باید به Android NDK اشاره کند. در عبارت‌های Nix شما، این مقدار باید `${ANDROID_HOME}/ndk-bundle` باشد.
 
 اگر در حال اجرای پلاگین Android Gradle هستید، باید `GRADLE_OPTS` را صادر کنید تا aapt2 را طوری بازنشانی کنید که به باینری aapt2 در انبار نیکس (Nix store) نیز اشاره کند، یا از یک محیط FHS استفاده کنید تا aapt2 بسته‌بندی‌شده بتواند اجرا شود. اگر نمی‌خواهید از یک محیط FHS استفاده کنید، چیزی مانند این باید کار کند:
@@ -241,7 +241,7 @@ pkgs.mkShell rec {
 
 توجه داشته باشید که اجرای Android Studio با مقداردهی ANDROID_HOME، در صورت عدم وجود فایل `local.properties`، به‌طور خودکار این فایل را ایجاد کرده و `sdk.dir` را روی $ANDROID_HOME تنظیم می‌کند. اگر از NDK نیز استفاده می‌کنید، ممکن است لازم باشد `ndk.dir` را به این فایل اضافه کنید.
 
-یک نمونه `shell.nix` که تمام این کارها را برای شما انجام می‌دهد در `examples/shell.nix` ارائه شده است. این shell.nix شامل یک قلاب شل (shell hook) است که local.properties را با مقادیر صحیح sdk.dir و ndk.dir بازنویسی می‌کند. این امر تضمین می‌کند که هنگام اجرای Android Studio در داخل nix-shell، پوشه‌های SDK و NDK هر دو درست باشند.
+یک نمونه `shell.nix` که تمام این کارها را برای شما انجام می‌دهد در `examples/shell.nix` ارائه شده‌است. این shell.nix شامل یک قلاب شل (shell hook) است که local.properties را با مقادیر صحیح sdk.dir و ndk.dir بازنویسی می‌کند. این امر تضمین می‌کند که هنگام اجرای Android Studio در داخل nix-shell، پوشه‌های SDK و NDK هر دو درست باشند.
 
 ## نکاتی در مورد بهبود سازگاری build.gradle {#notes-on-improving-build.gradle-compatibility}
 
@@ -270,7 +270,7 @@ android {
 ## به‌روزرسانی عبارت‌های تولیدشده {#updating-the-generated-expressions}
 
 فایل repo.json از فایل‌های XML که مدیر بسته Android Studio استفاده می‌کند تولید می‌شود.
-برای به‌روزرسانی عبارت‌ها، اسکریپت `update.sh` را که در زیرپوشه `pkgs/development/mobile/androidenv/` ذخیره شده است اجرا کنید:
+برای به‌روزرسانی عبارت‌ها، اسکریپت `update.sh` را که در زیرپوشه `pkgs/development/mobile/androidenv/` ذخیره شده‌است اجرا کنید:
 
 ```bash
 ./update.sh
@@ -280,7 +280,7 @@ android {
 
 ## ساخت یک برنامه Android با Ant {#building-an-android-application-with-ant}
 
-علاوه بر SDK، امکان ساخت یک پروژه Android مبتنی بر Ant و استقرار خودکار تمام پلاگین‌های Android مورد نیاز پروژه نیز وجود دارد. اکثر پروژه‌های جدیدتر Android از Gradle استفاده می‌کنند و این بخش صرفاً به دلایل تاریخی آورده شده است.
+علاوه بر SDK، امکان ساخت یک پروژه Android مبتنی بر Ant و استقرار خودکار تمام پلاگین‌های Android مورد نیاز پروژه نیز وجود دارد. اکثر پروژه‌های جدیدتر Android از Gradle استفاده می‌کنند و این بخش صرفاً به دلایل تاریخی آورده شده‌است.
 
 ```nix
 with import <nixpkgs> { };

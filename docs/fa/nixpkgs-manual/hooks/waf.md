@@ -22,15 +22,15 @@
 
 #### `dontUseWafConfigure` {#dont-use-waf-configure}
 
-وقتی روی true تنظیم شود، از `wafConfigurePhase` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `wafConfigurePhase` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 
 #### `dontUseWafBuild` {#dont-use-waf-build}
 
-وقتی روی true تنظیم شود، از `wafBuildPhase` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `wafBuildPhase` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 
 #### `dontUseWafInstall` {#dont-use-waf-install}
 
-وقتی روی true تنظیم شود، از `wafInstallPhase` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `wafInstallPhase` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 
 ### متغیرهای مشابه {#waf-hook-similar-variables}
 

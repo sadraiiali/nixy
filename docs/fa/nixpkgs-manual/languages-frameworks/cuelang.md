@@ -9,7 +9,7 @@
 
 ## راهنمای سریع اسکیمای Cuelang {#cuelang-quickstart}
 
-اسکیماهای Cuelang مشابه JSON هستند؛ در ادامه یک برگه تقلب سریع ارائه شده است:
+اسکیماهای Cuelang مشابه JSON هستند؛ در ادامه یک برگه تقلب سریع ارائه شده‌است:
 
 - انواع پیش‌فرض عبارتند از: `null`، `string`، `bool`، `bytes`، `number`، `int`، `float`، و لیست‌ها به صورت `[...T]` که در آن `T` یک نوع است.
 - تمام ساختارهایی که با `myStructName: { <fields> }` تعریف می‌شوند **باز** (open) هستند -- آن‌ها فیلدهایی را که مشخص نشده‌اند می‌پذیرند.
@@ -18,14 +18,14 @@
 - عملگر `&` [عملگر یکسان‌سازی](https://cuelang.org/docs/references/spec/#unification) است (مشابه عملگر ادغام در سطح نوع)، و `|` [عملگر فصل](https://cuelang.org/docs/references/spec/#disjunction) است (مشابه عملگر اجتماع در سطح نوع).
 - مقادیر خود نوع **هستند**، به عنوان مثال `myStruct: { a: 3 }` یک تعریف نوع معتبر است که تنها مقدار `3` را مجاز می‌داند.
 
-- برای کسب اطلاعات بیشتر درباره معناشناسی، <https://cuelang.org/docs/concepts/logic/> را بخوانید.
+- برای کسب اطلاعات بیشتر دربارهٔ معناشناسی، <https://cuelang.org/docs/concepts/logic/> را بخوانید.
 - برای آشنایی با مشخصات زبان، <https://cuelang.org/docs/references/spec/> را بخوانید.
 
 ## `writeCueValidator` {#cuelang-writeCueValidator}
 
-مجموعه‌ی بسته‌های نیکس (Nixpkgs) یک کمک‌کننده `pkgs.writeCueValidator` ارائه می‌دهد که بر اساس اسکیمای Cuelang ارائه‌شده، یک اسکریپت اعتبارسنجی می‌نویسد.
+مجموعهٔ بسته‌های نیکس (Nixpkgs) یک کمک‌کننده `pkgs.writeCueValidator` ارائه می‌دهد که بر اساس اسکیمای Cuelang ارائه‌شده، یک اسکریپت اعتبارسنجی می‌نویسد.
 
-در ادامه یک مثال آورده شده است:
+در ادامه یک مثال آورده شده‌است:
 ```nix
 pkgs.writeCueValidator (pkgs.writeText "schema.cue" ''
   #Def1: {
@@ -65,7 +65,7 @@ in
 
 این فایل می‌تواند هر فرمتی باشد که `cue vet` از آن پشتیبانی می‌کند، برای مثال YAML یا JSON.
 
-در ادامه یک مثال به نام `example.json` با توجه به JSON زیر آورده شده است:
+در ادامه یک مثال به نام `example.json` با توجه به JSON زیر آورده شده‌است:
 ```
 { "field1": "abc" }
 ```

@@ -23,7 +23,7 @@ Block 11:
 
 : This is a string identifying the standard C library used. Valid identifiers include "glibc" for GNU libc, "libSystem" for Darwin's Libsystem, and "uclibc" for
 
-: این گزاره‌ها در `lib.systems.inspect` تعریف شده‌اند و به هر پلتفرم اضافه شده‌اند. آن‌ها نسبت به موارد موجود در `stdenv` برتری دارند زیرا کاربر را مجبور می‌کنند درباره پلتفرمی که در حال بررسی آن است صریح باشد. لطفاً به جای آن‌ها از این موارد استفاده کنید.
+: این گزاره‌ها در `lib.systems.inspect` تعریف شده‌اند و به هر پلتفرم اضافه شده‌اند. آن‌ها نسبت به موارد موجود در `stdenv` برتری دارند زیرا کاربر را مجبور می‌کنند دربارهٔ پلتفرمی که در حال بررسی آن است صریح باشد. لطفاً به جای آن‌ها از این موارد استفاده کنید.
 
 `platform`
 
@@ -164,4 +164,4 @@ $ nix-build '<nixpkgs>' --arg crossSystem '{ config = "<arch>-<os>-<vendor>-<abi
 ```
 2:
 ::: {.note}
-If one explores Nixpkgs, they will see derivations with names like `gccCross`. Such `*Cross` derivations is a holdover from before we properly distinguished between the host and target platforms—the derivation with “Cross” in the name covered the `build = host != target` case, while the other covered the `host = target`, with build platform the same
+If one explores Nixpkgs, they will see derivations with names like `gccCross`. Such `*Cross` derivations is a holdover from before we properly distinguished between the host and target platforms، the derivation with “Cross” in the name covered the `build = host != target` case, while the other covered the `host = target`, with build platform the same

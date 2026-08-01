@@ -1,6 +1,6 @@
 # julec.hook {#julec-hook}
 
-[Jule](https://jule.dev) یک زبان برنامه‌نویسی کارآمد است که برای ساخت نرم‌افزارهای کارآمد، سریع، قابل اعتماد و امن در عین حفظ سادگی طراحی شده است.
+[Jule](https://jule.dev) یک زبان برنامه‌نویسی کارآمد است که برای ساخت نرم‌افزارهای کارآمد، سریع، قابل اعتماد و امن در عین حفظ سادگی طراحی شده‌است.
 
 در Nixpkgs، `jule.hook` فازهای پیش‌فرض ساخت، بررسی و نصب را بازنشانی می‌کند.
 
@@ -63,15 +63,15 @@ clangStdenv.mkDerivation (finalAttrs: {
 
 ### `dontUseJulecBuild` {#julec-hook-variable-dontusejulecbuild}
 
-وقتی روی true تنظیم شود، از `julecBuildHook` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `julecBuildHook` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 مقدار پیش‌فرض false است.
 
 ### `dontUseJulecCheck` {#julec-hook-variable-dontusejuleccheck}
 
-وقتی روی true تنظیم شود، از `julecCheckHook` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `julecCheckHook` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 مقدار پیش‌فرض false است.
 
 ### `dontUseJulecInstall` {#julec-hook-variable-dontusejulecinstall}
 
-وقتی روی true تنظیم شود، از `julecInstallHook` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `julecInstallHook` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 مقدار پیش‌فرض false است.

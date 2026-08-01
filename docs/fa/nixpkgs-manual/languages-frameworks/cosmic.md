@@ -2,7 +2,7 @@
 
 ## بسته‌بندی برنامه‌های COSMIC {#ssec-cosmic-packaging}
 
-‏COSMIC (Computer Operating System Main Interface Components) یک محیط دسکتاپ توسعه‌یافته توسط System76 است که عمدتاً برای توزیع Linux به نام Pop!_OS ساخته شده است. برنامه‌ها در بوم‌سازگان COSMIC به زبان Rust نوشته شده‌اند و از libcosmic استفاده می‌کنند که روی چارچوب رابط کاربر گرافیکی Iced بنا شده است. این بخش نحوه بسته‌بندی و یکپارچه‌سازی صحیح برنامه‌های COSMIC را در Nix توضیح می‌دهد.
+‏COSMIC (Computer Operating System Main Interface Components) یک محیط دسکتاپ توسعه‌یافته توسط System76 است که عمدتاً برای توزیع Linux به نام Pop!_OS ساخته شده‌است. برنامه‌ها در بوم‌سازگان COSMIC به زبان Rust نوشته شده‌اند و از libcosmic استفاده می‌کنند که روی چارچوب رابط کاربر گرافیکی Iced بنا شده‌است. این بخش نحوه بسته‌بندی و یکپارچه‌سازی صحیح برنامه‌های COSMIC را در Nix توضیح می‌دهد.
 
 ### libcosmicAppHook {#ssec-cosmic-libcosmic-app-hook}
 
@@ -53,7 +53,7 @@ rustPlatform.buildRustPackage {
 }
 ```
 
-توجه داشته باشید که `cosmic-settings` یک برنامه مجزا بوده و بخشی از خود سیستم تنظیمات libcosmic نیست. این برنامه فقط برای ارائه این تنظیمات تم جایگزین (fallback)، به صورت پیش‌فرض در `libcosmicAppHook` قرار گرفته است.
+توجه داشته باشید که `cosmic-settings` یک برنامه مجزا بوده و بخشی از خود سیستم تنظیمات libcosmic نیست. این برنامه فقط برای ارائه این تنظیمات تم جایگزین (fallback)، به صورت پیش‌فرض در `libcosmicAppHook` قرار گرفته‌است.
 
 ### آیکون‌ها {#ssec-cosmic-icons}
 

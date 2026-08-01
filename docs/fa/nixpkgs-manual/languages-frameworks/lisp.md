@@ -39,7 +39,7 @@ mkShell { packages = [ sbcl' ]; }
 
 برای صرفه‌جویی در نوشتن عبارت‌های Nix، اسکریپتی وجود دارد که تمام بسته‌های توزیع‌شده توسط Quicklisp را در `imported.nix` درون‌ریزی می‌کند. این کار با پارس کردن فایل‌های `releases.txt` و `systems.txt` آن انجام می‌شود که هر چند ماه یک‌بار در [quicklisp.org](https://beta.quicklisp.org/dist/quicklisp.txt) منتشر می‌شوند.
 
-فرآیند درون‌ریزی در پوشه `import` به صورت کد Common Lisp در سیستم ASDF با نام `org.lispbuilds.nix` پیاده‌سازی شده است. برای اجرای اسکریپت، می‌توان `ql-import.lisp
+فرآیند درون‌ریزی در پوشه `import` به صورت کد Common Lisp در سیستم ASDF با نام `org.lispbuilds.nix` پیاده‌سازی شده‌است. برای اجرای اسکریپت، می‌توان `ql-import.lisp
 
 ```
 cd pkgs/development/lisp-modules

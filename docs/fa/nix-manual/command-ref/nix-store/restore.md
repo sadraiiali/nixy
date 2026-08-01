@@ -8,7 +8,7 @@
 
 ## توضیحات
 
-عملیات `--restore` یک [آرشیو نیکس (NAR)][Nix Archive] را در *path* استخراج می‌کند، که مسیر مورد نظر نباید از‌پیش‌موجود باشد. آرشیو از ورودی استاندارد خوانده می‌شود.
+عملیات `--restore` یک [آرشیو نیکس (NAR)][Nix Archive] را در *path* استخراج می‌کند، که مسیر مورد نظر نباید ازپیش‌موجود باشد. آرشیو از ورودی استاندارد خوانده می‌شود.
 
 [Nix Archive]: @docroot@/store/file-system-object/content-address.md#serial-nix-archive
 

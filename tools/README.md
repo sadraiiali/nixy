@@ -10,7 +10,7 @@ Prefer Make targets from the repo root (`make download-nix-manual`, …).
 
 | Path | Role |
 |------|------|
-| `lib/` | Shared helpers (`envutil`, glossary I/O, tech lexicon) |
+| `lib/` | Shared helpers (`envutil`, glossary I/O, tech lexicon, `fa_orthography` / `fa_bot`) |
 | `download/` | Fetch nix.dev, Nix manual, Nixpkgs manual, Tour of Nix, single HTML pages |
 | `glossary/` | Build / API-suggest / approve glossary terms |
 | `translate/` | EN→FA Markdown (fenced code never sent to the model) |
@@ -28,6 +28,21 @@ uv run python -m tools.publish.site_docs
 uv run python -m tools.publish.page_source_map
 uv run python -m tools.publish.tour_fa_json
 ```
+
+### Persian orthography (`fa_bot`)
+
+Port of fa.wikipedia [fa_bot.js `persianTools`](https://fa.wikipedia.org/wiki/ویکی‌پدیا:ویرایشگر_خودکار/ابرابزار/fa_bot.js), adapted for Markdown (code fences, inline code, URLs, and link targets are left alone). Wired into every translation path via `apply_fa_orthography`.
+
+```bash
+# fix docs/fa in place (default target)
+uv run python -m tools.lib.fa_orthography
+
+# dry-run / single file
+uv run python -m tools.lib.fa_orthography --dry-run docs/fa
+uv run python -m tools.lib.fa_orthography docs/fa/index.md
+```
+
+Project rules kept on top of the bot: always `ترجمه‌ی` (ZWNJ+yeh), and strip em/en dashes. Western digits are **not** converted (tech docs).
 
 ### Section-level re-translate (partial FA pages)
 

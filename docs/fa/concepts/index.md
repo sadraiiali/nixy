@@ -21,4 +21,4 @@ faq.md
   - [ریشه نام Nix چیست؟](faq.md#what-is-the-origin-of-the-name-nix)
   - [فلیک‌ها چیستند؟](faq.md#what-are-flakes)
   - [از کدام شاخه کانال باید استفاده کنم؟](faq.md#which-channel-branch-should-i-use)
-  - [آیا ناخالصی‌ای در ساخت‌های ایزوله مانده است؟](faq.md#are-there-any-impurities-left-in-sandboxed-builds)
+  - [آیا ناخالصی‌ای در ساخت‌های ایزوله مانده‌است؟](faq.md#are-there-any-impurities-left-in-sandboxed-builds)

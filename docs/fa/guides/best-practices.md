@@ -182,11 +182,10 @@ import <nixpkgs> {}
 
 [Nixpkgs top-level expression]: https://github.com/NixOS/nixpkgs/blob/master/default.nix
 
-این یک مشکل شناخته‌شده است که بدون شکستن پیکربندی‌های موجود قابل‌حل نیست.
+این یک مشکل شناخته‌شده‌است که بدون شکستن پیکربندی‌های موجود قابل‌حل نیست.
 
 :::{tip}
 هنگام درون‌ریزی Nixpkgs، مقادیر [`config`](https://nixos.org/manual/nixpkgs/stable/#chap-packageconfig) و [`overlays`](https://nixos.org/manual/nixpkgs/stable/#chap-overlays) را به‌طور صریح تنظیم کنید:
-
 
 ```nix
 import <nixpkgs> { config = {}; overlays = []; }

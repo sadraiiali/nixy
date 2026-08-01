@@ -64,7 +64,7 @@ buildNimSbom (finalAttrs: {
 
 ### تولید SBOMها {#generating-nim-sboms}
 
-ابزار [nim_lk](https://git.sr.ht/~ehmry/nim_lk) می‌تواند از متادیتای بسته‌ی [
+ابزار [nim_lk](https://git.sr.ht/~ehmry/nim_lk) می‌تواند از متادیتای بستهٔ [
 
 ```nix
 pkgs.nitter.overrideNimAttrs {

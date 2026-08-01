@@ -11,7 +11,7 @@ nix-shell -p swift --run 'swiftc -' <<< 'print("Hello world!")'
 
 بسته `swift` همچنین دستور `swift` را همراه با چند نکته ارائه می‌دهد:
 
-- مدیر بسته‌های Swift (شناخته‌شده به عنوان SwiftPM) به‌صورت جداگانه در قالب `swiftpm` بسته‌بندی شده است. اگر به عملکردهایی مانند `swift build`، `swift run` یا `swift test` نیاز دارید، باید بسته `swiftpm` را نیز به کلوژر خود اضافه کنید.
+- مدیر بسته‌های Swift (شناخته‌شده به عنوان SwiftPM) به‌صورت جداگانه در قالب `swiftpm` بسته‌بندی شده‌است. اگر به عملکردهایی مانند `swift build`، `swift run` یا `swift test` نیاز دارید، باید بسته `swiftpm` را نیز به کلوژر خود اضافه کنید.
 - در Darwin، دستور `swift repl` نیازمند نصب Xcode است
 
 ```sh

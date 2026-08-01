@@ -32,7 +32,7 @@ in
 
 ## مثال کامل
 
-فرض کنید بستهٔ شما در `package.nix` تعریف شده است:
+فرض کنید بستهٔ شما در `package.nix` تعریف شده‌است:
 
 ```nix
 # package.nix
@@ -44,7 +44,7 @@ runCommand "cowsay-output" { buildInputs = [ cowsay ]; } ''
 
 در این مثال، `cowsay` با استفاده از `buildInputs` به عنوان یک وابستگی ساخت اعلام می‌شود.
 
-علاوه بر این، فرض کنید پروژه شما در `default.nix` تعریف شده است:
+علاوه بر این، فرض کنید پروژه شما در `default.nix` تعریف شده‌است:
 
 ```nix
 # default.nix
@@ -58,7 +58,6 @@ in
 ```
 
 یک صفت (attribute) برای تعیین یک محیط به `default.nix` اضافه کنید:
-
 
 ```diff
  let

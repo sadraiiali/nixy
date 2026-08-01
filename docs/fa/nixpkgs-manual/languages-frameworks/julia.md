@@ -19,7 +19,7 @@ julia.withPackages [ "Plots" ]
   [ "Plots" ]
 ```
 
-در اینجا یک روش خوب برای اجرای یک محیط Julia با یک دستور تک‌خطی شل آمده است:
+در اینجا یک روش خوب برای اجرای یک محیط Julia با یک دستور تک‌خطی شل آمده‌است:
 
 ```sh
 nix-shell -p 'julia.withPackages ["Plots"]' --run julia

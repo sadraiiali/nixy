@@ -1,7 +1,7 @@
 # قالب `.narinfo`
 
-یک فایل `.narinfo` شامل [متاداده‌ی شیء انبار](@docroot@/store/store-object.md#metadata) در قالب [کش باینری](@docroot@/protocols/binary-cache/index.md) است.
-این یک قالب ساده‌ی خط‌گرا است که در آن هر خط یک جفت `Key: Value` است.
+یک فایل `.narinfo` شامل [متادادهٔ شیء انبار](@docroot@/store/store-object.md#metadata) در قالب [کش باینری](@docroot@/protocols/binary-cache/index.md) است.
+این یک قالب سادهٔ خط‌گرا است که در آن هر خط یک جفت `Key: Value` است.
 برخی کلیدها (مانند `Sig`) ممکن است چندین بار ظاهر شوند.
 
 نام این فایل `<hash>.narinfo` است که در آن `<hash>` بخش [هش](@docroot@/store/store-path.md#digest) مربوط به [مسیر انبار](@docroot@/store/store-path.md) شیء انبار است.

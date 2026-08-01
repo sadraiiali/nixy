@@ -33,9 +33,8 @@ nix-shell -p emscripten
 
 این مثال از `zlib` از Nixpkgs استفاده می‌کند، اما به جای کامپایل کردن **C** به **ELF**، به دلیل استفاده از `pkgs.zlib.override` و تغییر `stdenv` به `pkgs.emscriptenStdenv`، **C** را به **JavaScript** کامپایل می‌کند.
 
-چندین تطبیق و هک اعمال شده است تا کار کند.
+چندین تطبیق و هک اعمال شده‌است تا کار کند.
 یک مزیت این است که وقتی `pkgs.zlib` به‌روزرسانی می‌شود، این بسته نیز به طور خودکار به‌روزرسانی خواهد شد.
-
 
 ```nix
 (pkgs.zlib.override { stdenv = pkgs.emscriptenStdenv; }).overrideAttrs (old: {
@@ -213,4 +212,4 @@ pkgs.buildEmscriptenPackage {
 4. cd libz-1.2.3
 5. `configurePhase`
 6. `buildPhase`
-7. ... هک خوش بگذرد ...
+7. ... هک خوش بگذرد …

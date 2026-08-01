@@ -9,7 +9,7 @@ All rule checks pass. Ready to output.# سیستم ماژول {#module-system}
 
 ## مقدمه {#module-system-introduction}
 
-سیستم ماژول زبانی برای مدیریت پیکربندی است که به عنوان یک کتابخانه Nix پیاده‌
+سیستم ماژول زبانی برای مدیریت پیکربندی است که به عنوان یک کتابخانه Nix پیاده
 
 تعاریف گزینه‌ای که با این نوع مشخص می‌شوند، مجموعهٔ فعلی ماژول‌ها را گسترش خواهند داد، مانند [`extendModules`](#module-system-lib-evalModules-return-value-extendModules).
 

@@ -17,9 +17,9 @@
 ما این مفهوم را هش کردن خارج‌قسمتی (quotient hashing) می‌نامیم که برگرفته از انواع یا مجموعه‌های خارج‌قسمتی (quotient types or sets) است.
 
 بنابراین، [بخش هش](@docroot@/store/store-path.md#digest) مسیرهای خروجی یک derivation با آدرس‌دهی ورودی را چگونه محاسبه می‌کنیم؟
-این کار توسط تابع `hashQuotientDerivation` که در ادامه نشان داده شده است، انجام می‌شود.
+این کار توسط تابع `hashQuotientDerivation` که در ادامه نشان داده شده‌است، انجام می‌شود.
 
-ابتدا، نکته‌ای درباره ورودی‌ها.
+ابتدا، نکته‌ای دربارهٔ ورودی‌ها.
 تابع `hashQuotientDerivation` تنها روی derivationهایی تعریف می‌شود که [ورودی‌هایشان](@docroot@/store/derivation/index.md#inputs) شکل مرتبه اول (first-order) داشته باشند:
 ```typescript
 type ConstantPath = {
@@ -102,7 +102,7 @@ function hashOutputsOrQuotientDerivation(drv) -> Map[String, Hash] | Hash:
 ### `hashOutputsOrQuotientDerivation`
 
 تابع `hashOutputsOrQuotientDerivation` چگونه کار می‌کند؟
-این تابع بر اساس اینکه خروجی‌های درایویشن قرار است بر اساس ورودی یا محتوا آدرس‌دهی شوند، از دو حالت اصلی تشکیل شده است.
+این تابع بر اساس اینکه خروجی‌های درایویشن قرار است بر اساس ورودی یا محتوا آدرس‌دهی شوند، از دو حالت اصلی تشکیل شده‌است.
 
 #### حالت خروجی‌های آدرس‌دهی‌شده بر اساس ورودی
 
@@ -169,7 +169,7 @@ $}
 \\end{prooftree}
 \\]
 
-اکنون می‌توانیم رابطهٔ هم‌ارزی \\(\\sim_\\mathrm{IA}\\) را روی خروجی‌های درایویشن مبتنی بر ورودی تعریف کنیم. دو خروجی مبتنی بر ورودی معادل هستند اگر درایویشن‌هایشان معادل باشند (از طریق رابطهٔ هنوز تعریف‌نشده‌ی \\(\\sim_{\\mathrm{IADrv}}\\)) و نام‌های خروجی آن‌ها یکسان باشد:
+اکنون می‌توانیم رابطهٔ هم‌ارزی \\(\\sim_\\mathrm{IA}\\) را روی خروجی‌های درایویشن مبتنی بر ورودی تعریف کنیم. دو خروجی مبتنی بر ورودی معادل هستند اگر درایویشن‌هایشان معادل باشند (از طریق رابطهٔ هنوز تعریف‌نشدهٔ \\(\\sim_{\\mathrm{IADrv}}\\)) و نام‌های خروجی آن‌ها یکسان باشد:
 
 \\[
 \\begin{prooftree}
@@ -219,7 +219,7 @@ $}
 >
 > \\(\\sim_\mathrm{Drv}\\) از [رزولوشن درایویشن](@docroot@/store/resolution.md) چنین رابطه هم‌ارزشی است.
 > این رابطه از این مورد درشت‌تر است: هر دو درایویشنی که با «درایویشن خارج‌قسمت هش» هم‌ارز هستند (\\(\\sim_\mathrm{IADrv}\\))، «هم‌ارز رزولوشن» نیز هستند (\\(\\sim_\mathrm{Drv}\\)).
-> همچنین درایویشن‌هایی را که `inputDrvOutputs` آن‌ها به `inputSrcs` بازنویسی شده است، به یکدیگر مرتبط می‌کند.
+> همچنین درایویشن‌هایی را که `inputDrvOutputs` آن‌ها به `inputSrcs` بازنویسی شده‌است، به یکدیگر مرتبط می‌کند.
 
 [deriving-path]: @docroot@/store/derivation/index.md#deriving-path
 [xp-feature-dynamic-derivations]: @docroot@/development/experimental-features.md#xp-feature-dynamic-derivations

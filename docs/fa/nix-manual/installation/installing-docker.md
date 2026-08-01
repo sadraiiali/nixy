@@ -18,7 +18,7 @@ nix (Nix) 2.3.12
 
 > اگر نسخه پیش‌انتشار جدیدتری می‌خواهید، می‌توانید از `ghcr.io/nixos/nix` استفاده کرده و آن‌ها را در https://github.com/nixos/nix/pkgs/container/nix مشاهده کنید.
 
-# چه چیزی در تصویر داکر Nix گنجانده شده است؟
+# چه چیزی در تصویر داکر Nix گنجانده شده‌است؟
 
 تصویر داکر رسمی با استفاده از `pkgs.dockerTools.buildLayeredImage` (و نه با `Dockerfile` که در تصاویر داکر مرسوم است) ساخته می‌شود. با این حال، همچنان می‌توانید مانند هر تصویر داکر دیگری، تصویر داکر سفارشی خود را بر پایه آن بنا کنید.
 
@@ -40,7 +40,7 @@ nix (Nix) 2.3.12
 
 # تصویر داکر با جدیدترین نسخه توسعه Nix
 
-برای دریافت جدیدترین تصویری که توسط [Hydra](https://hydra.nixos.org) ساخته شده است، دستور زیر را اجرا کنید:
+برای دریافت جدیدترین تصویری که توسط [Hydra](https://hydra.nixos.org) ساخته شده‌است، دستور زیر را اجرا کنید:
 
 ```console
 $ curl -L https://hydra.nixos.org/job/nix/master/dockerImage.x86_64-linux/latest/download/1 | docker load

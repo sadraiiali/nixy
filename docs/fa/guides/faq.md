@@ -4,7 +4,7 @@
 
 ### چگونه کد زبان Nix را به‌طور خودکار قالب‌بندی کنیم؟
 
-[`nixfmt`](https://github.com/NixOS/nixfmt) قالب‌بندی‌کننده‌ی رسمی برای کد {term}`Nix language` است.
+[`nixfmt`](https://github.com/NixOS/nixfmt) قالب‌بندی‌کنندهٔ رسمی برای کد {term}`Nix language` است.
 لطفاً برای دستورالعمل‌های نصب به مخزن سورس آن مراجعه کنید.
 
 از `nixfmt` [برای قالب‌بندی تمام کدها](https://github.com/NixOS/nixpkgs/blob/master/ci/default.nix) در {term}`Nixpkgs` استفاده می‌شود.
@@ -35,7 +35,7 @@ $ nix-shell -p nixpkgs-review --run "nixpkgs-review wip"
 
 ### چگونه برنامه‌های اجرایی غیر نیکس را اجرا کنیم؟
 
-سیستم‌عامل NixOS نمی‌تواند به‌طور پیش‌فرض برنامه‌های اجرایی پیوند داده‌شده‌ی پویا که برای محیط‌های عمومی لینوکس در نظر گرفته شده‌اند را اجرا کند.
+سیستم‌عامل NixOS نمی‌تواند به‌طور پیش‌فرض برنامه‌های اجرایی پیوند داده‌شدهٔ پویا که برای محیط‌های عمومی لینوکس در نظر گرفته شده‌اند را اجرا کند.
 دلیل این امر آن است که بر اساس طراحی، این سیستم‌عامل نه مسیر کتابخانه سراسری دارد و نه از [استاندارد سلسله‌مراتب سیستم‌فایل](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html) (FHS) پیروی می‌کند.
 
 چند روش برای حل این عدم تطابق در انتظارات محیطی وجود دارد:
@@ -74,7 +74,7 @@ $ nix-shell -p nixpkgs-review --run "nixpkgs-review wip"
 ابزار `nix-ld` برای فایل‌های اجرایی ۳۲ بیتی روی ماشین‌های `x86_64` کار نمی‌کند.
 :::
 
-- برنامه خود را در محیط شبیه به FHS که برای بسته Steam ساخته شده است، با استفاده از [`steam-run`](https://nixos.org/manual/nixpkgs/stable/#sec-steam-run) اجرا کنید:
+- برنامه خود را در محیط شبیه به FHS که برای بسته Steam ساخته شده‌است، با استفاده از [`steam-run`](https://nixos.org/manual/nixpkgs/stable/#sec-steam-run) اجرا کنید:
 ```shell-session
   $ nix-shell -p steam-run --run "steam-run <command>"
   ```

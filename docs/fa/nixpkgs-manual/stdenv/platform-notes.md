@@ -32,7 +32,7 @@ stdenv.mkDerivation {
 }
 ```
 
-نکته: امکان دارد چندین نمونه‌ی مختلف از `darwinMinVersionHook` در ورودی‌های شما وجود داشته باشد.
+نکته: امکان دارد چندین نمونهٔ مختلف از `darwinMinVersionHook` در ورودی‌های شما وجود داشته باشد.
 در این حالت، همواره نمونه‌ای که بالاترین نسخه را دارد استفاده می‌شود.
 
 #### انتخاب یک نسخه SDK {#sec-darwin-troubleshooting-picking-sdk-version}

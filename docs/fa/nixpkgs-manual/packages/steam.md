@@ -11,7 +11,7 @@ Steam به عنوان یک فایل `.deb` توزیع می‌شود، در حا�
 - اسکریپت `steam.sh` موجود در `$HOME` قابل پچ کردن نیست، زیرا توسط steam بررسی و بازنویسی می‌شود.
 - باینری steam قابل پچ کردن نیست، آن هم بررسی می‌شود.
 
-رویکرد فعلی برای استقرار Steam در NixOS، ساخت یک محیط chroot سازگار با FHS است، همان‌طور که در [اینجا](https://sandervanderburg.blogspot.com/2013/09/composing-fhs-compatible-chroot.html) مستند شده است. این به ما اجازه
+رویکرد فعلی برای استقرار Steam در NixOS، ساخت یک محیط chroot سازگار با FHS است، همان‌طور که در [اینجا](https://sandervanderburg.blogspot.com/2013/09/composing-fhs-compatible-chroot.html) مستند شده‌است. این به ما اجازه
 ```ShellSession
   strace steam
   ```

@@ -2,13 +2,13 @@
 
 ## بسته‌بندی برنامه‌های GNOME {#ssec-gnome-packaging}
 
-برنامه‌ها در دنیای GNOME به زبان‌های مختلفی نوشته شده‌اند، اما همگی از کتابخانه‌های مبتنی بر GObject مانند GLib، GTK یا GStreamer استفاده می‌کنند. این کتابخانه‌ها غالباً ماژولار هستند و برای یافتن ماژول‌های خود به جستجو در پوشه‌های خاصی متکی هستند. با این حال، به دلیل سازمان‌دهی خاص سیستم‌فایل در Nix، این کار بدون مداخله‌ی ما با شکست مواجه خواهد شد. خوشبختانه، این کتابخانه‌ها معمولاً اجازه می‌دهند که پوشه‌ها از طریق متغیرهای محیطی بازنویسی شوند، چه به‌صورت نیتیو و چه به لطف یک پچ در nixpkgs. [کپسوله‌سازی (Wrapping)](#fun-wrapProgram) فایل‌های اجرایی برای اطمینان از اینکه مسیرهای درست در دسترس برنامه هستند، بخش عمده‌ای از بسته‌بندی یک برنامه دسکتاپ مدرن را تشکیل می‌دهد. در این بخش، ماژول‌های مختلف مورد نیاز چنین برنامه‌هایی، متغیرهای محیطی لازم برای بارگذاری ماژول‌ها، و در نهایت اسکریپتی را که این کار را برای ما انجام می‌دهد، توصیف خواهیم کرد.
+برنامه‌ها در دنیای GNOME به زبان‌های مختلفی نوشته شده‌اند، اما همگی از کتابخانه‌های مبتنی بر GObject مانند GLib، GTK یا GStreamer استفاده می‌کنند. این کتابخانه‌ها غالباً ماژولار هستند و برای یافتن ماژول‌های خود به جستجو در پوشه‌های خاصی متکی هستند. با این حال، به دلیل سازمان‌دهی خاص سیستم‌فایل در Nix، این کار بدون مداخلهٔ ما با شکست مواجه خواهد شد. خوشبختانه، این کتابخانه‌ها معمولاً اجازه می‌دهند که پوشه‌ها از طریق متغیرهای محیطی بازنویسی شوند، چه به‌صورت نیتیو و چه به لطف یک پچ در nixpkgs. [کپسوله‌سازی (Wrapping)](#fun-wrapProgram) فایل‌های اجرایی برای اطمینان از اینکه مسیرهای درست در دسترس برنامه هستند، بخش عمده‌ای از بسته‌بندی یک برنامه دسکتاپ مدرن را تشکیل می‌دهد. در این بخش، ماژول‌های مختلف مورد نیاز چنین برنامه‌هایی، متغیرهای محیطی لازم برای بارگذاری ماژول‌ها، و در نهایت اسکریپتی را که این کار را برای ما انجام می‌دهد، توصیف خواهیم کرد.
 
 ### تنظیمات {#ssec-gnome-settings}
 
 [رابط برنامه‌نویسی کاربرد (API) GSettings](https://developer.gnome.org/gio/stable/GSettings.html) اغلب برای ذخیره تنظیمات استفاده می‌شود. طرح‌واره‌های (schemas) GSettings برای دانستن نوع و سایر متاداده‌های مقادیر ذخیره‌شده مورد نیاز هستند. GLib به دنبال فایل‌های `glib-2.0/schemas/gschemas.compiled` در داخل پوشه‌های `XDG_DATA_DIRS` می‌گردد.
 
-در Linux، رابط برنامه‌نویسی کاربرد (API) GSettings با استفاده از بخشسمت سرور (Backend) [dconf](https://gitlab.gnome.org/GNOME/dconf) پیاده‌سازی شده است. شما باید [ماژول GIO](#ssec-gnome-gio-modules) متعلق به `dconf` را به متغیر `GIO_EXTRA_MODULES` اضافه کنید، در غیر این صورت بخشسمت سرور (Backend) `memory` استفاده خواهد شد و تنظیمات ذخیره‌شده ماندگار نخواهند بود.
+در Linux، رابط برنامه‌نویسی کاربرد (API) GSettings با استفاده از بخشسمت سرور (Backend) [dconf](https://gitlab.gnome.org/GNOME/dconf) پیاده‌سازی شده‌است. شما باید [ماژول GIO](#ssec-gnome-gio-modules) متعلق به `dconf` را به متغیر `GIO_EXTRA_MODULES` اضافه کنید، در غیر این صورت بخشسمت سرور (Backend) `memory` استفاده خواهد شد و تنظیمات ذخیره‌شده ماندگار نخواهند بود.
 
 در نهایت به خود سرویس D-Bus دیتابیس dconf نیاز خواهید داشت. می‌توانید آن را با استفاده از `programs.dconf.enable` فعال کنید.
 
@@ -28,7 +28,7 @@
 به‌طور خاص، توصیه می‌کنیم:
 
 * افزودن `dconf.lib` برای هر نرم‌افزاری در Linux که [GSettings](#ssec-gnome-settings) را می‌خواند (حتی به‌صورت متعدی از طریق مثلاً مدیر فایل GTK)
-* افزودن `glib-networking` برای هر نرم‌افزاری که با استفاده از GIO یا libsoup به شبکه دسترسی پیدا می‌کند – glib-networking شامل ماژولی است که پشتیبانی از TLS را پیاده‌سازی کرده و تنظیمات پروکسی سرتاسر سیستم را بارگذاری می‌کند
+* افزودن `glib-networking` برای هر نرم‌افزاری که با استفاده از GIO یا libsoup به شبکه دسترسی پیدا می‌کند، glib-networking شامل ماژولی است که پشتیبانی از TLS را پیاده‌سازی کرده و تنظیمات پروکسی سرتاسر سیستم را بارگذاری می‌کند
 
 برای اجازه دادن به نرم‌افزار جهت استفاده از سیستم‌های فایل مجازی مختلف، بسته `gvfs` نیز می‌تواند اضافه شود. اما این معمولاً یک ویژگی اختیاری است، بنابراین ما به‌طور معمول از `gvfs` موجود در سیستم استفاده می‌کنیم (مثلاً نصب‌شده به‌صورت سراسری با استفاده از ماژول‌های NixOS).
 
@@ -36,7 +36,7 @@
 
 برنامه‌های GTK معمولاً از [GdkPixbuf](https://gitlab.gnome.org/GNOME/gdk-pixbuf/) برای بارگیری تصاویر استفاده می‌کنند. اما بسته `gdk-pixbuf` تنها از فرمت‌های بیت‌مپ پایه‌ای مانند JPEG، PNG یا TIFF پشتیبانی می‌کند و برای سایر فرمت‌ها به استفاده از ماژول‌های بارگذار شخص ثالث نیاز دارد. این امر به‌ویژه دشوار است زیرا خود GTK شامل آیکون‌های SVG است که بدون بارگذار ارائه‌شده توسط `librsvg` قابل رندر نیستند.
 
-برخلاف سایر کتابخانه‌های ذکرشده در این بخش، GdkPixbuf تنها از یک مقدار واحد در متغیر محیطی کنترل‌کننده خود یعنی `GDK_PIXBUF_MODULE_FILE` پشتیبانی می‌کند. قرار است این متغیر به یک فایل کش اشاره کند که حاوی اطلاعاتی درباره بارگذارهای موجود است. هر بسته بارگذار شامل یک فایل `lib/gdk-pixbuf-2.0/2.10.0/loaders.cache` خواهد بود که بارگذارهای پیش‌فرض در بسته `gdk-pixbuf` به همراه بارگذار موجود در خود بسته را توصیف می‌کند. اگر می‌خواهید از چندین بارگذار شخص ثالث استفاده کنید، باید فایل کش خود را به صورت دستی ایجاد کنید. خوشبختانه، این مورد بسیار نادر است زیرا [بارگذارهای زیادی وجود ندارند](https://gitlab.gnome.org/federico/gdk-pixbuf-survey/blob/master/src/modules.md).
+برخلاف سایر کتابخانه‌های ذکرشده در این بخش، GdkPixbuf تنها از یک مقدار واحد در متغیر محیطی کنترل‌کننده خود یعنی `GDK_PIXBUF_MODULE_FILE` پشتیبانی می‌کند. قرار است این متغیر به یک فایل کش اشاره کند که حاوی اطلاعاتی دربارهٔ بارگذارهای موجود است. هر بسته بارگذار شامل یک فایل `lib/gdk-pixbuf-2.0/2.10.0/loaders.cache` خواهد بود که بارگذارهای پیش‌فرض در بسته `gdk-pixbuf` به همراه بارگذار موجود در خود بسته را توصیف می‌کند. اگر می‌خواهید از چندین بارگذار شخص ثالث استفاده کنید، باید فایل کش خود را به صورت دستی ایجاد کنید. خوشبختانه، این مورد بسیار نادر است زیرا [بارگذارهای زیادی وجود ندارند](https://gitlab.gnome.org/federico/gdk-pixbuf-survey/blob/master/src/modules.md).
 
 بسته `gdk-pixbuf` حاوی [یک setup hook](#ssec-gnome-hooks-gdk-pixbuf) است که `GDK_PIXBUF_MODULE_FILE` را از وابستگی‌ها تنظیم می‌کند، اما همان‌طور که در بخش‌های بعدی اشاره شده، بسیار محدود است. بارگذارها باید این setup hook را انتشار دهند.
 
@@ -66,11 +66,11 @@
 
 بسته `hicolor-icon-theme` یک setup hook ارائه می‌دهد که پیوندهای نمادین (symlinks) برای تم‌های والد در پوشه `share/icons` از پوشه تم فعلی در انبار نیکس (Nix store) ایجاد می‌کند و اطمینان حاصل می‌کند که آن‌ها در زمان اجرا قابل یافتن هستند. برای اینکه این امر کار کند، بسته‌های ارائه‌دهنده تم‌های آیکون والد باید همراه با `hicolor-icon-theme` به عنوان وابستگی‌های ساخت منتشریافته فهرست شوند.
 
-همچنین مطمئن شوید که `icon-theme.cache` برای هر تم ارائه‌شده توسط بسته نصب شده است، و `dontDropIconThemeCache` را روی `true` تنظیم کنید تا فایل کش توسط setup hook مربوط به `gtk3` حذف نشود.
+همچنین مطمئن شوید که `icon-theme.cache` برای هر تم ارائه‌شده توسط بسته نصب شده‌است، و `dontDropIconThemeCache` را روی `true` تنظیم کنید تا فایل کش توسط setup hook مربوط به `gtk3` حذف نشود.
 
 ### تم‌های GTK {#ssec-gnome-themes}
 
-پیش از این، لازم بود یک تم GTK در `XDG_DATA_DIRS` قرار داشته باشد. از زمانی که GTK تم Adwaita را در خود ادغام کرده است، این کار دیگر برای اکثر برنامه‌ها ضروری نیست. برخی از برنامه‌ها (به عنوان مثال، برنامه‌هایی که برای [elementary HIG](https://docs.elementary.io/hig) طراحی شده‌اند) ممکن است به یک تم خاص مانند `pantheon.elementary-gtk-theme` نیاز داشته باشند.
+پیش از این، لازم بود یک تم GTK در `XDG_DATA_DIRS` قرار داشته باشد. از زمانی که GTK تم Adwaita را در خود ادغام کرده‌است، این کار دیگر برای اکثر برنامه‌ها ضروری نیست. برخی از برنامه‌ها (به عنوان مثال، برنامه‌هایی که برای [elementary HIG](https://docs.elementary.io/hig) طراحی شده‌اند) ممکن است به یک تم خاص مانند `pantheon.elementary-gtk-theme` نیاز داشته باشند.
 
 ### GObject introspection typelibs {#ssec-gnome-typelibs}
 
@@ -117,7 +117,7 @@
 
 - []{#ssec-gnome-hooks-glib} قلاب آماده‌سازی `glib` متغیر `GSETTINGS_SCHEMAS_PATH` را مقداردهی می‌کند و سپس قلاب `wrapGApps*` آن را به ابتدای `XDG_DATA_DIRS` می‌افزاید.
 
-- []{#ssec-gnome-hooks-gdk-pixbuf} قلاب آماده‌سازی `gdk-pixbuf` متغیر `GDK_PIXBUF_MODULE_FILE` را با مسیر بزرگ‌ترین فایل `loaders.cache` از وابستگی‌های شامل [بارگذارهای GdkPixbuf](#ssec-gnome-gdk-pixbuf-loaders) مقداردهی می‌کند. این روش زمانی که تنها دو بسته شامل بارگذار وجود داشته باشد (`gdk-pixbuf` و برای مثال `librsvg`) به خوبی کار می‌کند – بسته دوم را انتخاب می‌کند، با این انتظار معقول که چون علاوه بر بارگذارهای پیش‌فرض، بارگذار اضافی را هم توصیف می‌کند بزرگ‌تر خواهد بود. اما وقتی بیش از دو بستهٔ بارگذار وجود داشته باشد، این منطق از کار می‌افتد. یک راه حل ممکن، ساخت یک فایل کش سفارشی برای هر بستهٔ شامل برنامه است، همان‌طور که ماژول NixOS با مسیر `services/x11/gdk-pixbuf.nix` انجام می‌دهد. قلاب `wrapGApps*` متغیر محیطی `GDK_PIXBUF_MODULE_FILE` را در وراپر (wrapper) تولیدشده کپی می‌کند.
+- []{#ssec-gnome-hooks-gdk-pixbuf} قلاب آماده‌سازی `gdk-pixbuf` متغیر `GDK_PIXBUF_MODULE_FILE` را با مسیر بزرگ‌ترین فایل `loaders.cache` از وابستگی‌های شامل [بارگذارهای GdkPixbuf](#ssec-gnome-gdk-pixbuf-loaders) مقداردهی می‌کند. این روش زمانی که تنها دو بسته شامل بارگذار وجود داشته باشد (`gdk-pixbuf` و برای مثال `librsvg`) به خوبی کار می‌کند، بسته دوم را انتخاب می‌کند، با این انتظار معقول که چون علاوه بر بارگذارهای پیش‌فرض، بارگذار اضافی را هم توصیف می‌کند بزرگ‌تر خواهد بود. اما وقتی بیش از دو بستهٔ بارگذار وجود داشته باشد، این منطق از کار می‌افتد. یک راه حل ممکن، ساخت یک فایل کش سفارشی برای هر بستهٔ شامل برنامه است، همان‌طور که ماژول NixOS با مسیر `services/x11/gdk-pixbuf.nix` انجام می‌دهد. قلاب `wrapGApps*` متغیر محیطی `GDK_PIXBUF_MODULE_FILE` را در وراپر (wrapper) تولیدشده کپی می‌کند.
 
 - []{#ssec-gnome-hooks-gtk-drop-icon-theme-cache} یکی از قلاب‌های آماده‌سازی `gtk3` فایل‌های `icon-theme.cache` را از پوشه‌های تم آیکون بسته حذف می‌کند تا از تداخل جلوگیری شود. بسته‌های تم آیکون باید با تنظیم `dontDropIconThemeCache = true;` از این امر جلوگیری کنند.
 
@@ -148,7 +148,7 @@
 
 ## به‌روزرسانی بسته‌های GNOME {#ssec-gnome-updating}
 
-اکثر بسته‌های GNOME دارای [`updateScript`](#var-passthru-updateScript) هستند، بنابراین می‌توان با اجرای `nix-shell maintainers/scripts/update.nix --argstr package nautilus` به آخرین تاربال کد منبع به‌روزرسانی کرد، یا حتی به‌صورت دسته‌جمعی با `nix-shell maintainers/scripts/update.nix --argstr path gnome` این کار را انجام داد. فایل `NEWS` بسته را بخوانید تا ببینید چه تغییراتی ایجاد شده است.
+اکثر بسته‌های GNOME دارای [`updateScript`](#var-passthru-updateScript) هستند، بنابراین می‌توان با اجرای `nix-shell maintainers/scripts/update.nix --argstr package nautilus` به آخرین تاربال کد منبع به‌روزرسانی کرد، یا حتی به‌صورت دسته‌جمعی با `nix-shell maintainers/scripts/update.nix --argstr path gnome` این کار را انجام داد. فایل `NEWS` بسته را بخوانید تا ببینید چه تغییراتی ایجاد شده‌است.
 
 ## مشکلات رایج {#ssec-gnome-common-issues}
 
@@ -212,9 +212,9 @@ stdenv.mkDerivation {
 
 ### من در حال بسته‌بندی پروژه‌ای هستم که نمی‌توان آن را wrap کرد، مانند یک کتابخانه یا افزونه GNOME Shell. {#ssec-gnome-common-issues-unwrappable-package}
 
-می‌توانید به برنامه‌هایی که به کتابخانه وابسته هستند تکیه کنید تا متغیرهای محیطی لازم را تنظیم کنند، اما نادیده گرفتن این موضوع ساده است. در عوض توصیه می‌کنیم در صورت امکان، مسیرها را در کد منبع پچ کنید. در ادامه چند نمونه آورده شده است:
+می‌توانید به برنامه‌هایی که به کتابخانه وابسته هستند تکیه کنید تا متغیرهای محیطی لازم را تنظیم کنند، اما نادیده گرفتن این موضوع ساده است. در عوض توصیه می‌کنیم در صورت امکان، مسیرها را در کد منبع پچ کنید. در ادامه چند نمونه آورده شده‌است:
 
-- []{#ssec-gnome-common-issues-unwrappable-package-gnome-shell-ext} [جایگزینی یک `GI_TYPELIB_PATH` در افزونه GNOME Shell](https://github.com/NixOS/nixpkgs/blob/e981466fbb08e6231a1377539ff17fbba3270fda/pkgs/by-name/gn/gnome-shell-extensions/package.nix#L25-L32) – ما از `replaceVars` برای گنجاندن مسیر یک typelib در پچ استفاده می‌کنیم.
+- []{#ssec-gnome-common-issues-unwrappable-package-gnome-shell-ext} [جایگزینی یک `GI_TYPELIB_PATH` در افزونه GNOME Shell](https://github.com/NixOS/nixpkgs/blob/e981466fbb08e6231a1377539ff17fbba3270fda/pkgs/by-name/gn/gnome-shell-extensions/package.nix#L25-L32)، ما از `replaceVars` برای گنجاندن مسیر یک typelib در پچ استفاده می‌کنیم.
 
 - []{#ssec-gnome-common-issues-unwrappable-package-gsettings} نمونه‌های زیر در حال هاردکد کردن مسیرهای اسکیمای GSettings هستند. برای دریافت مسیرهای اسکیما از توابع زیر استفاده می‌کنیم:
 
@@ -222,9 +222,9 @@ stdenv.mkDerivation {
 
   * `glib.makeSchemaPath` یک خروجی بسته مانند `$out` و نام یک derivation را می‌پذیرد. اگر اسکیمایی که باید هاردکد کنید در همان derivation قرار دارد، باید از این تابع استفاده کنید.
 
-  []{#ssec-gnome-common-issues-unwrappable-package-gsettings-vala} [هاردکد کردن مسیر اسکیمای GSettings در پلاگین Vala (کتابخانه به‌صورت پویا بارگذاری‌شده)](https://github.com/NixOS/nixpkgs/blob/7bb8f05f12ca3cff9da72b56caa2f7472d5732bc/pkgs/desktops/pantheon/apps/elementary-files/default.nix#L78-L86) – در اینجا نمی‌توان از `replaceVars` استفاده کرد زیرا اسکیما از همان بسته می‌آید و مانع از ارسال مسیر آن به تابع می‌شود، که احتمالاً به دلیل یک [اشکال (Bug) در Nix](https://github.com/NixOS/nix/issues/1846) است.
+  []{#ssec-gnome-common-issues-unwrappable-package-gsettings-vala} [هاردکد کردن مسیر اسکیمای GSettings در پلاگین Vala (کتابخانه به‌صورت پویا بارگذاری‌شده)](https://github.com/NixOS/nixpkgs/blob/7bb8f05f12ca3cff9da72b56caa2f7472d5732bc/pkgs/desktops/pantheon/apps/elementary-files/default.nix#L78-L86)، در اینجا نمی‌توان از `replaceVars` استفاده کرد زیرا اسکیما از همان بسته می‌آید و مانع از ارسال مسیر آن به تابع می‌شود، که احتمالاً به دلیل یک [اشکال (Bug) در Nix](https://github.com/NixOS/nix/issues/1846) است.
 
-  []{#ssec-gnome-common-issues-unwrappable-package-gsettings-c} [هاردکد کردن مسیر اسکیمای GSettings در کتابخانه C](https://github.com/NixOS/nixpkgs/blob/29c120c065d03b000224872251bed93932d42412/pkgs/development/libraries/glib-networking/default.nix#L31-L34) – هیچ چیز خاصی به‌جز استفاده از [پچ Coccinelle](https://github.com/NixOS/nixpkgs/pull/67957#issuecomment-527717467) برای تولید خود پچ وجود ندارد.
+  []{#ssec-gnome-common-issues-unwrappable-package-gsettings-c} [هاردکد کردن مسیر اسکیمای GSettings در کتابخانه C](https://github.com/NixOS/nixpkgs/blob/29c120c065d03b000224872251bed93932d42412/pkgs/development/libraries/glib-networking/default.nix#L31-L34)، هیچ چیز خاصی به‌جز استفاده از [پچ Coccinelle](https://github.com/NixOS/nixpkgs/pull/67957#issuecomment-527717467) برای تولید خود پچ وجود ندارد.
 
 ### من باید یک باینری را خارج از پوشه‌های `bin` و `libexec` wrap کنم. {#ssec-gnome-common-issues-weird-location}
 

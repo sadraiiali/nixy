@@ -2,14 +2,14 @@
 
 > درس **۲۴** / ۳۵ · مسیر `types`
 
-زبان Nix از نوع‌داده‌ی پویا (dynamic typing) استفاده می‌کند و توابع توکار (`builtin`) برای بررسی نوع یک `binding` وجود دارند.
+زبان Nix از نوع‌دادهٔ پویا (dynamic typing) استفاده می‌کند و توابع توکار (`builtin`) برای بررسی نوع یک `binding` وجود دارند.
 
-**نکته:** از این توابع استفاده کنید: `isBool`، 
-`isInt`، 
-`isString`، 
-`isNull`، 
-`isList`، 
-`isAttrs` و 
+**نکته:** از این توابع استفاده کنید: `isBool`،
+`isInt`،
+`isString`،
+`isNull`،
+`isList`،
+`isAttrs` و
 `isFunction`.
 
 این کار را انجام دهید:

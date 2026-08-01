@@ -5,7 +5,7 @@
 
 افراد و سازمان‌های زیر در تحقق این تلاش نقش داشته‌اند:
 
-- [@fricklerhandwerk] از تاریخ ۲۰۲۳-۰۲ به عنوان سرپرست تیم فعالیت می‌کند و از تاریخ ۲۰۲۳-۰۲ تا ۲۰۲۴-۰۴ توسط [Antithesis](https://antithesis.com) حمایت مالی شده است.
+- [@fricklerhandwerk] از تاریخ ۲۰۲۳-۰۲ به عنوان سرپرست تیم فعالیت می‌کند و از تاریخ ۲۰۲۳-۰۲ تا ۲۰۲۴-۰۴ توسط [Antithesis](https://antithesis.com) حمایت مالی شده‌است.
 - [@zmitchell] از تاریخ ۲۰۲۳-۰۳ تا ۲۰۲۳-۰۸ رهبری کارگروه مسیر یادگیری (Learning Journey Working Group) را بر عهده داشت و توسط [flox](https://floxdev.com) حمایت مالی شد.
 - [@infinisil] بین ماه‌های نوامبر ۲۰۲۲ تا می ۲۰۲۴ در تیم فعالیت می‌کرد و توسط [Tweag] حمایت مالی می‌شد.
 - [@lucperkins](https://github.com/lucperkins) از تاریخ ۲۰۲۲-۱۱ تا ۲۰۲۳-۰۱ به عنوان سرپرست تیم فعالیت کرد و توسط [Determinate Systems](https://determinate.systems) حمایت مالی شد.
@@ -30,7 +30,7 @@
 - [@brianmcgee](https://github.com/brianmcgee) از مارس ۲۰۲۳ تا اکتبر ۲۰۲۳ عضو تیم بود و در فعالیت‌های کارگروه مسیر یادگیری مشارکت داشت.
 
 - [@zmitchell] از مارس ۲۰۲۳ تا اوت ۲۰۲۳ رهبری [کارگروه مسیر یادگیری](https://discourse.nixos.org/search?q=learning%20journey%20working%20group%20-%20meeting%20notes%20in%3Atitle%20order%3Alatest_topic) را بر عهده داشت که تعدادی آموزش را به مجموعه اضافه کرد.
-  او در آن بازه زمانی، [به‌روزرسانی‌های مرتبی درباره پیشرفت‌های مستندات](https://discourse.nixos.org/search?q=This%20Month%20in%20Nix%20Docs%20in%3Atitle%20before%3A2023-10-30%20order%3Alatest_topic) منتشر کرد.
+  او در آن بازه زمانی، [به‌روزرسانی‌های مرتبی دربارهٔ پیشرفت‌های مستندات](https://discourse.nixos.org/search?q=This%20Month%20in%20Nix%20Docs%20in%3Atitle%20before%3A2023-10-30%20order%3Alatest_topic) منتشر کرد.
 
 - [@Mic92](https://github.com/Mic92) یکی از اعضای بنیان‌گذار و از ماه می ۲۰۲۲ تا ژانویه ۲۰۲۳ عضو تیم بود.
   یورگ (Jörg) مستندات بسیار زیادی را در ویکی NixOS نوشته بود و تجربه خود را برای تعیین مسیر تیم مستندات به اشتراک گذاشت.

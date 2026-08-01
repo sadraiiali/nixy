@@ -96,7 +96,7 @@ post-build-hook: Uploading paths /nix/store/ibcyipq5gf91838ldx40mjsp0b8w9n18-exa
 /nix/store/ibcyipq5gf91838ldx40mjsp0b8w9n18-example
 ```
 
-برای بررسی اینکه قلاب اعمال شده است، مسیر را از انبار حذف کرده و تلاش کنید آن را از کش باینری جایگزین کنید:
+برای بررسی اینکه قلاب اعمال شده‌است، مسیر را از انبار حذف کرده و تلاش کنید آن را از کش باینری جایگزین کنید:
 
 ```console
 $ rm ./result

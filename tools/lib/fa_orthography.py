@@ -1,8 +1,12 @@
 """Persian orthography fixes applied after AI translation (and via CLI).
 
-Rules:
-- Always prefer tarjome + ZWNJ + yeh (ترجمه‌ی) over hamza-ezafe forms of the same word.
-- Strip em/en dashes from model output (prefer comma / plain hyphen phrasing).
+Pipeline:
+1. Project rules (ترجمه‌ی ezafe form, strip em/en dashes)
+2. Wikipedia fa_bot.js *persianTools* port (`tools.lib.fa_bot`), applied outside
+   Markdown protected regions (fences, inline code, URLs, HTML, link targets)
+
+Upstream bot:
+  https://fa.wikipedia.org/wiki/ویکی‌پدیا:ویرایشگر_خودکار/ابرابزار/fa_bot.js
 """
 
 from __future__ import annotations
@@ -10,16 +14,41 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from tools.lib.fa_bot import apply_fa_bot, replace_except
+
 # Bad: heh + U+0654 ARABIC HAMZA ABOVE  (common hamza-ezafe spelling)
 # Bad: U+06C0 ARABIC LETTER HEH WITH YEH ABOVE (single-codepoint form after mim)
 # Good: heh + U+200C ZWNJ + yeh
-_TARJOME_BAD_HAMZA = "ترجمه\u0654"
-_TARJOME_BAD_HEH_YEH = "ترجم\u06c0"
-_TARJOME_GOOD = "ترجمه\u200cی"
-
 _TARJOME_RE = re.compile(r"ترجم(?:ه\u0654|\u06c0)")
+_TARJOME_GOOD = "ترجمه\u200cی"
 # U+2014 em dash, U+2013 en dash, U+2015 horizontal bar
 _DASH_RE = re.compile(r"[\u2013\u2014\u2015]")
+
+# Regions that must not be rewritten (Markdown / MyST / HTML / URLs)
+_MD_EXCEPTIONS: list[re.Pattern[str]] = [
+    # fenced code blocks (``` or ~~~)
+    re.compile(r"(?m)^( {0,3})(`{3,}|~{3,}).*?\n[\s\S]*?^( {0,3})\2[^\n]*$", re.M),
+    # indented code block (4 spaces / tab) — conservative: whole indented runs
+    re.compile(r"(?m)(?:^(?: {4}|\t).*(?:\n|$))+"),
+    # inline code
+    re.compile(r"`+[^`\n]+`+"),
+    # HTML comments
+    re.compile(r"<!--[\s\S]*?-->"),
+    # HTML tags (attributes often have English / digits / =)
+    re.compile(r"</?[A-Za-z][^>\n]*>"),
+    # autolinks / bare URLs
+    re.compile(r"https?://[^\s)\]>\"']+"),
+    re.compile(r"//[^\s)\]>\"']+"),
+    # Markdown link/image destination: ](url) or ][ref]
+    re.compile(r"\]\([^)]*\)"),
+    re.compile(r"\]\[[^\]]*\]"),
+    # reference-style link definitions
+    re.compile(r"(?m)^\[[^\]]+\]:\s+\S+.*$"),
+    # MyST / Sphinx roles with backticks: {term}`foo`, {ref}`...`
+    re.compile(r"\{[a-zA-Z0-9_:-]+\}`[^`\n]*`"),
+    # front-matter style (label) lines used in this repo: (install-nix)=
+    re.compile(r"(?m)^\([A-Za-z0-9_./:-]+\)=\s*$"),
+]
 
 
 def fix_tarjome_ezafe(text: str) -> str:
@@ -39,21 +68,42 @@ def strip_em_dashes(text: str) -> str:
     return text
 
 
-def apply_fa_orthography(text: str) -> str:
-    """All post-translation Persian orthography fixes (extend here later)."""
-    return strip_em_dashes(fix_tarjome_ezafe(text))
+def apply_fa_orthography(
+    text: str,
+    *,
+    digits: bool = False,
+    do_punctuation: bool = True,
+    use_bot: bool = True,
+) -> str:
+    """All post-translation Persian orthography fixes."""
+    if not text:
+        return text
+    text = strip_em_dashes(fix_tarjome_ezafe(text))
+    if use_bot:
+        text = replace_except(
+            text,
+            lambda chunk: apply_fa_bot(
+                chunk,
+                digits=digits,
+                do_punctuation=do_punctuation,
+            ),
+            _MD_EXCEPTIONS,
+        )
+        # bot may reintroduce hamza-ezafe forms via هٔ rules; re-assert project rule
+        text = fix_tarjome_ezafe(text)
+        text = strip_em_dashes(text)
+    return text
 
 
 def fix_path(path: Path, *, dry_run: bool = False) -> int:
-    """Fix one UTF-8 text file in place. Returns number of substitutions."""
+    """Fix one UTF-8 text file in place. Returns 1 if content changed, else 0."""
     raw = path.read_text(encoding="utf-8")
     fixed = apply_fa_orthography(raw)
     if fixed == raw:
         return 0
-    n = len(_TARJOME_RE.findall(raw))
     if not dry_run:
         path.write_text(fixed, encoding="utf-8")
-    return n
+    return 1
 
 
 def fix_tree(
@@ -62,7 +112,11 @@ def fix_tree(
     globs: tuple[str, ...] = ("**/*.md", "**/*.svelte", "**/*.ts", "**/*.py", "**/*.json"),
     dry_run: bool = False,
 ) -> tuple[int, int]:
-    """Fix matching files under *root*. Returns (files_changed, total_subs)."""
+    """Fix matching files under *root*. Returns (files_changed, total_subs).
+
+    *total_subs* is the number of files changed (full-file rewrite), not
+    per-match counts — the bot applies many overlapping transforms.
+    """
     files_changed = 0
     total = 0
     seen: set[Path] = set()
@@ -92,7 +146,7 @@ def fix_tree(
 
 
 def main(argv: list[str] | None = None) -> int:
-    """CLI: rewrite hamza-ezafe «tarjome» → ZWNJ+yeh form in the repo (or given paths)."""
+    """CLI: apply Persian orthography (fa_bot + project rules) to paths."""
     import argparse
     import sys
 
@@ -100,43 +154,87 @@ def main(argv: list[str] | None = None) -> int:
 
     parser = argparse.ArgumentParser(
         description=(
-            "Replace hamza-ezafe spellings of the Persian word for translation "
-            f"with {_TARJOME_GOOD!r} (heh + ZWNJ + yeh)."
+            "Apply Persian orthography (Wikipedia fa_bot.js persianTools + "
+            "project rules) to files. Markdown code/URLs are protected."
         )
     )
     parser.add_argument(
         "paths",
         nargs="*",
         type=Path,
-        help="Files or directories (default: whole repo under project root)",
+        help="Files or directories (default: docs/fa)",
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Count matches only; do not write",
+        help="Report files that would change; do not write",
+    )
+    parser.add_argument(
+        "--digits",
+        action="store_true",
+        help="Also convert Western/Arabic-Indic digits to Persian digits",
+    )
+    parser.add_argument(
+        "--no-punctuation",
+        action="store_true",
+        help="Skip punctuation normalization",
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="Print each changed path",
     )
     args = parser.parse_args(argv)
 
-    targets = args.paths or [ROOT]
+    targets = args.paths or [ROOT / "docs" / "fa"]
     files_changed = 0
     total = 0
+
+    def _fix_one(path: Path) -> int:
+        raw = path.read_text(encoding="utf-8")
+        fixed = apply_fa_orthography(
+            raw,
+            digits=args.digits,
+            do_punctuation=not args.no_punctuation,
+        )
+        if fixed == raw:
+            return 0
+        if not args.dry_run:
+            path.write_text(fixed, encoding="utf-8")
+        if args.verbose:
+            print(f"{'[dry] ' if args.dry_run else ''}{path}", file=sys.stderr)
+        return 1
+
     for t in targets:
         path = t if t.is_absolute() else ROOT / t
         if path.is_file():
-            n = fix_path(path, dry_run=args.dry_run)
+            n = _fix_one(path)
             if n:
                 files_changed += 1
                 total += n
-                print(f"{'[dry] ' if args.dry_run else ''}{path}: {n}", file=sys.stderr)
         elif path.is_dir():
-            fc, n = fix_tree(path, dry_run=args.dry_run)
-            files_changed += fc
-            total += n
+            skip_dirs = {
+                "node_modules",
+                "build",
+                "build-webxdc",
+                ".git",
+                "__pycache__",
+                ".svelte-kit",
+            }
+            for md in sorted(path.rglob("*.md")):
+                if skip_dirs.intersection(md.parts):
+                    continue
+                n = _fix_one(md)
+                if n:
+                    files_changed += 1
+                    total += n
         else:
             print(f"skip missing: {path}", file=sys.stderr)
 
     print(
-        f"{'Would fix' if args.dry_run else 'Fixed'} {total} occurrence(s) in {files_changed} file(s).",
+        f"{'Would fix' if args.dry_run else 'Fixed'} {total} file(s) "
+        f"({files_changed} changed).",
         file=sys.stderr,
     )
     return 0

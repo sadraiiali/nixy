@@ -6,7 +6,7 @@
 
 وظیفه شما:
 
-* `ex0`: از `fold` برای نوشتن تابعی استفاده کنید که تمام `strings` 
+* `ex0`: از `fold` برای نوشتن تابعی استفاده کنید که تمام `strings`
 با مقدار "a" را در یک `list` معنادار می‌شمارد
 
 * `ex1`: از `fold` برای ضرب کردن هر عنصر در 2 و اضافه کردن [ 8 ] به آن استفاده کنید
@@ -18,19 +18,19 @@
 * `func`، یک `function` مانند `(el: container: container + el)`
 * `init` به عنوان مقدار اولیه شروع
 
-مثال‌های رشته‌ای: 
+مثال‌های رشته‌ای:
 
 * `lib.fold (el: c: el + c) "z" [ "a" "b" "c" ] => "abcz"`
 * `lib.fold (el: c: c ++ [el]) [0] [1 2 3] => [ 0 3 2 1 ]`
 
 ### تابع foldl
 
-`foldl func init [x_1 x_2 ... x_n] == func (... (func (func init x_1) x_2) ... x_n)`. 
+`foldl func init [x_1 x_2 ... x_n] == func (... (func (func init x_1) x_2) ... x_n)`.
 
 * `func`، یک `function` مانند `(container: el: container + el)`
 * `init` به عنوان مقدار اولیه شروع
 
-مثال‌های لیستی: 
+مثال‌های لیستی:
 
 * `lib.foldl (c: el: el + c) "z" [ "a" "b" "c" ] => "cbaz"`
 * `lib.foldl (c: el: c ++ [el]) [0] [1 2 3] => [ 0 1 2 3 ]`

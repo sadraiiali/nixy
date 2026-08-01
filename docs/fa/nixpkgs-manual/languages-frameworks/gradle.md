@@ -4,7 +4,7 @@ Gradle یک ابزار ساخت محبوب برای Java/Kotlin است. خود G
 
 ## ساخت یک بسته Gradle {#building-a-gradle-package}
 
-در ادامه نحوه‌ی شکل‌گیری یک derivation معمولی آمده است:
+در ادامه نحوهٔ شکل‌گیری یک derivation معمولی آمده‌است:
 
 ```nix
 stdenv.mkDerivation (finalAttrs: {

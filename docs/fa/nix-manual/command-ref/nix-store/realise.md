@@ -43,7 +43,7 @@
 
 - `--dry-run`
 
-  توضیحی درباره بسته‌هایی که ساخته یا بارگیری می‌شوند را بدون انجام واقعی عملیات، روی خروجی خطای استاندارد (standard error) چاپ کند.
+  توضیحی دربارهٔ بسته‌هایی که ساخته یا بارگیری می‌شوند را بدون انجام واقعی عملیات، روی خروجی خطای استاندارد (standard error) چاپ کند.
 
 - `--ignore-unknown`
 
@@ -70,7 +70,7 @@ $ nix-store --realise $(nix-instantiate ./test.nix)
 
 این اساساً همان کاری است که [`nix-build`](@docroot@/command-ref/nix-build.md) انجام می‌دهد.
 
-برای بررسی اینکه آیا یک derivation از‌پیش‌ساخته‌شده قطعی / reproducible از نظر نتیجه است یا خیر:
+برای بررسی اینکه آیا یک derivation ازپیش‌ساخته‌شده قطعی / reproducible از نظر نتیجه است یا خیر:
 
 ```console
 $ nix-build '<nixpkgs>' --attr hello --check -K

@@ -1,4 +1,4 @@
-‌اندازی این بخش، ابتدا باید [فایل `.cr` را از Netscaler Gateway بارگیری کنید](https://its.uiowa.edu/support/article/102186). پس از آن، می‌توانید `selfservice` را به
+اندازی این بخش، ابتدا باید [فایل `.cr` را از Netscaler Gateway بارگیری کنید](https://its.uiowa.edu/support/article/102186). پس از آن، می‌توانید `selfservice` را به
 
 ```ShellSession
 $ storebrowse -C ~/Downloads/receiverconfig.cr

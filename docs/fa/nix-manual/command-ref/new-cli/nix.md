@@ -2,7 +2,7 @@
 
 > Source: [https://nix.dev/manual/nix/stable/command-ref/new-cli/nix.html](@docroot@/command-ref/new-cli/nix.md)
 
-> **Warning** 
+> **Warning**
 >
 > This program is
 > [**experimental**](https://nix.dev/manual/nix/2.34/development/experimental-features#xp-feature-nix-command)
@@ -99,7 +99,7 @@ manual](https://nix.dev/manual/nix/stable/).
 
 # <a id="installables"></a> Installables
 
-> **Warning** 
+> **Warning**
 >
 > Installables are part of the unstable
 > [`nix-command` experimental feature](https://nix.dev/manual/nix/2.34/development/experimental-features#xp-feature-nix-command),
@@ -124,7 +124,7 @@ That is, Nix will operate on the default flake output attribute of the flake in 
 
 ### <a id="flake-output-attribute"></a> Flake output attribute
 
-> **Warning** 
+> **Warning**
 >
 > Flake output attribute installables depend on both the
 > [`flakes`](https://nix.dev/manual/nix/2.34/development/experimental-features#xp-feature-flakes)
@@ -160,7 +160,7 @@ For example, if `/foo/bar` is a git repository with the following structure:
 .
 └── baz
  ├── blah
- │  └── file.txt
+ │ └── file.txt
  └── flake.nix
 
 Then `/foo/bar/baz/blah` will resolve to `git+file:///foo/bar?dir=baz`
@@ -228,7 +228,7 @@ that contains programs, and a `dev` output that provides development
 artifacts like C/C++ header files. The outputs on which `nix` commands
 operate are determined as follows:
 
-- You can explicitly specify the desired outputs using the syntax *installable*`^`*output1*`,`*...*`,`*outputN* — that is, a caret followed immediately by a comma-separated list of derivation outputs to select.
+- You can explicitly specify the desired outputs using the syntax *installable*`^`*output1*`,`*...*`,`*outputN*، that is, a caret followed immediately by a comma-separated list of derivation outputs to select.
 For installables specified as Flake output attributes or Store paths, the output is specified in the same argument:
 For example, you can obtain the `dev` and `static` outputs of the `glibc` package:
 # nix build 'nixpkgs#glibc^dev,static'
@@ -284,7 +284,7 @@ The same information is also available from the [`nix help-stores`](https://nix.
 The `nix` command can be used as a `#!` interpreter.
 Arguments to Nix can be passed on subsequent lines in the script.
 
-Verbatim strings may be passed in double backtick (``````) quotes. that's markdown for two backticks in inline code. 
+Verbatim strings may be passed in double backtick (``````) quotes. that's markdown for two backticks in inline code.
 Sequences of *n* backticks of 3 or longer are parsed as *n-1* literal backticks.
 A single space before the closing `````` is ignored if present.
 

@@ -14,12 +14,10 @@
 |---|---|
 | `nix:store_path` | یک مسیر انبار Nix برای کامپوننت داده‌شده. این ویژگی باید با ویژگی‌های اضافی که تولید مسیر انبار را توصیف می‌کنند، مانند ویژگی‌های فضاهای نام `nix:narinfo:` و `nix:fod` بسترسازی و مکمل شود. |
 
-
 | فضای نام | توضیحات |
 |---|---|
 | [`nix:narinfo`](#sec-interop.cylonedx-narinfo) | فضای نام برای ویژگی‌هایی که مختص نحوه ذخیره‌سازی یک کامپوننت به عنوان یک [آرشیو Nix](https://nixos.org/manual/nix/stable/glossary#gloss-nar) (NAR) در یک [کش باینری](https://nixos.org/manual/nix/stable/glossary#gloss-binary-cache) هستند. |
 | [`nix:fod`](#sec-interop.cylonedx-fod) | فضای نام برای ویژگی‌هایی که یک [derivation / اشتقاق ساخت با خروجی ثابت](https://nixos.org/manual/nix/stable/glossary#gloss-fixed-output-derivation) را توصیف می‌کنند. |
-
 
 ### `nix:narinfo` {#sec-interop.cylonedx-narinfo}
 
@@ -35,8 +33,8 @@
 | `nix:narinfo:compression` | قالب فشرده‌سازی که آرشیو کامپوننت در آن قرار دارد. |
 | `nix:narinfo:file_hash` | یک خلاصه (digest) برای خودِ آرشیو فشرده‌شده کامپوننت، برعکس داده‌های درون آن. |
 | `nix:narinfo:file_size` | اندازه خودِ آرشیو فشرده‌شده کامپوننت. |
-| `nix:narinfo:deriver` | مسیر به derivation / اشتقاق ساخت که این کامپوننت از آن تولید شده است. |
-| `nix:narinfo:system` | پلتفرم سخت‌افزاری و نرم‌افزاری که این کامپوننت روی آن تولید شده است. |
+| `nix:narinfo:deriver` | مسیر به derivation / اشتقاق ساخت که این کامپوننت از آن تولید شده‌است. |
+| `nix:narinfo:system` | پلتفرم سخت‌افزاری و نرم‌افزاری که این کامپوننت روی آن تولید شده‌است. |
 | `nix:narinfo:sig` | امضاها که ادعا می‌کنند این کامپوننت همان چیزی است که ادعا می‌کند. |
 | `nix:narinfo:ca` | آدرس محتوایی (Content address) شیء سیستم‌فایل این شیء انبار، که برای محاسبه مسیر انبار آن استفاده می‌شود. |
 | `nix:narinfo:references` | آرایه‌ای جداشده با فاصله از مسیرهای انبار که این کامپوننت به آن‌ها ارجاع می‌دهد. |
@@ -48,7 +46,7 @@
 تمام ویژگی‌های دیگر در این فضای نام، مختص همان متد هستند.
 برای بازتولید ساخت یک کامپوننت، مقدار `nix:fod:method` به یک [تابع مناسب](#chap-pkgs-fetchers) در Nixpkgs نگاشته می‌شود که آرگومان‌های آن با ویژگی‌های داده‌شده اشتراک دارند.
 هنگام تولید ویژگی‌های `nix:fod`، متد انتخاب‌شده باید یک تابع پایدار با حداقل تعداد آرگومان‌ها باشد.
-به عنوان مثال، `fetchFromGitHub` معمولاً در Nixpkgs استفاده می‌شود اما باید به فراخوانی تابعی که توسط آن پیاده‌سازی شده است، یعنی `fetchzip` کاهش یابد.
+به عنوان مثال، `fetchFromGitHub` معمولاً در Nixpkgs استفاده می‌شود اما باید به فراخوانی تابعی که توسط آن پیاده‌سازی شده‌است، یعنی `fetchzip` کاهش یابد.
 
 | ویژگی | توضیحات |
 |------------------|-------------|
@@ -58,7 +56,6 @@
 | `nix:fod:rev` | [Git rev](https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefrevisionarevision)، در صورت استفاده از متد `"fetchgit"` موجود است |
 | `nix:fod:sha256` | هش FOD |
 | `nix:fod:url` | آدرس URL برای دریافت |
-
 
 ویژگی‌های `nix:fod` ممکن است استخراج شده و با فرض وجود یک تابع ساختگی `filterPropertiesToAttrs` با استفاده از کدی مشابه زیر، به یک derivation ارزیابی شوند:
 

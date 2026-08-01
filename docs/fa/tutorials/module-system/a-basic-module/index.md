@@ -64,14 +64,14 @@
 ماژول‌ها توسط [`lib.evalModules`](https://nixos.org/manual/nixpkgs/stable/#module-system-lib-evalModules) از کتابخانهٔ Nixpkgs ارزیابی می‌شوند.
 این تابع یک مجموعه ویژگی را به عنوان آرگومان می‌پذیرد که در آن صفت `modules` فهرستی از ماژول‌ها برای ادغام و ارزیابی است.
 
-خروجی `evalModules` شامل اطلاعاتی دربارهٔ تمام ماژول‌های ارزیابی‌شده است و مقادیر نهایی در صفت `config` ظاهر می‌شوند.
+خروجی `evalModules` شامل اطلاعاتی دربارهٔ تمام ماژول‌های ارزیابی‌شده‌است و مقادیر نهایی در صفت `config` ظاهر می‌شوند.
 
 ```{literalinclude} default.nix
 :language: nix
 :caption: default.nix
 ```
 
-در اینجا یک اسکریپت کمکی برای تجزیه و ارزیابی فایل `default.nix` خود با [`nix-instantiate --eval`](/pages/nix-manual/command-ref/nix-instantiate) و چاپ خروجی به صورت JSON آورده شده است:
+در اینجا یک اسکریپت کمکی برای تجزیه و ارزیابی فایل `default.nix` خود با [`nix-instantiate --eval`](/pages/nix-manual/command-ref/nix-instantiate) و چاپ خروجی به صورت JSON آورده شده‌است:
 
 ```{literalinclude} eval.bash
 :language: bash

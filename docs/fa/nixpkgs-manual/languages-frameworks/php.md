@@ -86,7 +86,7 @@ in
 
 #### نمونه استفاده با `nix-shell` {#ssec-php-user-guide-installing-with-extensions-nix-shell}
 
-این دستور یک محیط موقت را راه‌اندازی می‌کند که شامل یک مفسر PHP با افزونه‌های فعال‌شده‌ی `imagick` و `opcache` است:
+این دستور یک محیط موقت را راه‌اندازی می‌کند که شامل یک مفسر PHP با افزونه‌های فعال‌شدهٔ `imagick` و `opcache` است:
 
 ```sh
 nix-shell -p 'php.withExtensions ({ all, ... }: with all; [ imagick opcache ])'
@@ -111,7 +111,7 @@ nix-shell -p 'php.withExtensions ({ all, ... }: with all; [ imagick opcache ])'
 
 ### بازنشانی بسته‌های PHP {#ssec-php-user-guide-overriding-packages}
 
-فایل `php-packages.nix` یک حوزه (scope) تشکیل می‌دهد که به ما اجازه می‌دهد بسته‌های تعریف‌شده در درون آن را بازنشانی کنیم. برای نمونه، جهت اعمال یک پچ به افزونه‌ی `mysqlnd`، می‌توانید یک تابع به سبک overlay به آرگومان `packageOverrides` مربوط به `php` پاس دهید:
+فایل `php-packages.nix` یک حوزه (scope) تشکیل می‌دهد که به ما اجازه می‌دهد بسته‌های تعریف‌شده در درون آن را بازنشانی کنیم. برای نمونه، جهت اعمال یک پچ به افزونهٔ `mysqlnd`، می‌توانید یک تابع به سبک overlay به آرگومان `packageOverrides` مربوط به `php` پاس دهید:
 
 ```nix
 php.override {
@@ -162,7 +162,7 @@ php.buildComposerProject2 (finalAttrs: {
 
 روش دیگر، استفاده از تمامی این روش‌ها و قلاب‌ها به صورت جداگانه است. این کار این مزیت را دارد که در صورت نیاز، ساخت یک کتابخانه PHP در داخل یک derivation / اشتقاق ساخت دیگر بسیار آسان می‌شود.
 
-در ادامه یک نمونه کد عملیاتی برای ساخت یک کتابخانه PHP با استفاده از `mkDerivation` و توابع و قلاب‌های مجزا آورده شده است
+در ادامه یک نمونه کد عملیاتی برای ساخت یک کتابخانه PHP با استفاده از `mkDerivation` و توابع و قلاب‌های مجزا آورده شده‌است
 
 ```nix
 {

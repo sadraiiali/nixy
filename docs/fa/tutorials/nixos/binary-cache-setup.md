@@ -28,7 +28,7 @@ myst:
 
 - دسترسی SSH به یک ماشین NixOS برای استفاده به عنوان کش
 
-- اگر با NixOS تازه آشنا شده‌اید، درباره‌ی [سیستم ماژول](module-system-tutorial) بیاموزید و اولین سیستم خود را با [](nixos-vms) پیکربندی کنید.
+- اگر با NixOS تازه آشنا شده‌اید، دربارهٔ [سیستم ماژول](module-system-tutorial) بیاموزید و اولین سیستم خود را با [](nixos-vms) پیکربندی کنید.
 
 - (اختیاری) یک آی‌پی عمومی و دامین DNS
 
@@ -123,7 +123,7 @@ nix-store --generate-binary-cache-key cache.example.com cache-private-key.pem ca
 ```
 
 فایل `cache-private-key.pem` توسط خدمت پس‌زمینه کش باینری برای امضای باینری‌ها در هنگام ارائه آن‌ها استفاده خواهد شد.
-آن را در مسیری که در گزینه `services.nix-serve.secretKeyFile` روی ماشینی که میزبان کش است پیکربندی شده است، کپی کنید:
+آن را در مسیری که در گزینه `services.nix-serve.secretKeyFile` روی ماشینی که میزبان کش است پیکربندی شده‌است، کپی کنید:
 
 ```shell-session
 scp cache-private-key.pem root@cache:/var/secrets/cache-private-key.pem
@@ -142,7 +142,7 @@ ssh root@cache systemctl status nix-serve.service
 
 ## بررسی دسترسی
 
-مراحل زیر بررسی می‌کنند که آیا همه چیز به درستی راه‌اندازی شده است یا خیر و ممکن است در شناسایی مشکلات کمک کنند.
+مراحل زیر بررسی می‌کنند که آیا همه چیز به درستی راه‌اندازی شده‌است یا خیر و ممکن است در شناسایی مشکلات کمک کنند.
 
 ### بررسی دسترسی عمومی
 
@@ -208,7 +208,7 @@ nixos-rebuild switch --no-flake --target-host root@cache.example.com
 
 اگر کش باینری شما در حال حاضر یک [ماشین بیلد راه دور](/pages/nix-manual/advanced-topics/distributed-builds) است، تمام اشیاء انبار را در انبار Nix خود سرویس‌دهی خواهد کرد.
 
-- [](custom-binary-cache) با استفاده از نام هاست کش باینری و کلید عمومی تولید‌شده
+- [](custom-binary-cache) با استفاده از نام هاست کش باینری و کلید عمومی تولیدشده
 - [](post-build-hooks) برای بارگذاری اشیاء انبار به کش باینری
 - [](distributed-build-setup-tutorial)
 
@@ -219,7 +219,7 @@ nixos-rebuild switch --no-flake --target-host root@cache.example.com
 
 ## جایگزین‌ها
 
-- [`nix-serve-ng`](https://github.com/aristanetworks/nix-serve-ng): جایگزینی بی‌نقص و آماده برای `nix-serve` که به زبان Haskell نوشته شده است
+- [`nix-serve-ng`](https://github.com/aristanetworks/nix-serve-ng): جایگزینی بی‌نقص و آماده برای `nix-serve` که به زبان Haskell نوشته شده‌است
 
 - [انبار SSH](/pages/nix-manual/store/types)، [انبار SSH تجربی](/pages/nix-manual/store/types) و [انبار کش باینری S3](/pages/nix-manual/store/types) نیز می‌توانند برای سرویس‌دهی یک کش استفاده شوند.
   ارائه‌دهندگان تجاری زیادی برای ذخیره‌سازی سازگار با S3 وجود دارند، برای مثال:

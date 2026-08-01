@@ -104,7 +104,7 @@ runInLinuxVM (
 
 ## `vmTools.diskImageFuns` {#vm-tools-diskImageFuns}
 
-مجموعه‌ای از توابع که مجموعه‌ای از‌پیش‌تعریف‌شده از تصاویر مینیمال توزیع‌های Linux را می‌سازند.
+مجموعه‌ای از توابع که مجموعه‌ای ازپیش‌تعریف‌شده از تصاویر مینیمال توزیع‌های Linux را می‌سازند.
 
 ### تصاویر {#vm-tools-diskImageFuns-images}
 
@@ -135,7 +135,7 @@ runInLinuxVM (
 
 ### صفات {#vm-tools-diskImageFuns-attributes}
 
-* `size` (اختیاری، مقدار پیش‌فرض `4096`). اندازه‌ی تصویر بر حسب MiB.
+* `size` (اختیاری، مقدار پیش‌فرض `4096`). اندازهٔ تصویر بر حسب MiB.
 * `extraPackages` (اختیاری). فهرستی از نام بسته‌های اضافی از توزیع که باید در تصویر گنجانده شوند.
 
 ### مثال‌ها {#vm-tools-diskImageFuns-examples}

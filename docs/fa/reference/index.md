@@ -20,7 +20,7 @@ pinning-nixpkgs.md
 ## راهنماها و مراجع
 
 - [واژه‌نامه](./glossary.md)
-- [راهنمای مرجع Nix — نسخه‌ها و لینک‌ها](./nix-manual.md)
+- [راهنمای مرجع Nix، نسخه‌ها و لینک‌ها](./nix-manual.md)
 - [راهنمای مرجع Nix (متن فارسی)](/pages/nix-manual)
 - [راهنمای Nixpkgs](/pages/nixpkgs-manual)
 - [راهنمای NixOS](https://nixos.org/manual/nixos/stable/)

@@ -11,7 +11,7 @@
   ```
 شود.
 
-Wait, "marked as broken": "به‌عنوان خراب علامت‌گذاری شده است" or "به‌عنوان معیوب علامت‌گذاری شده است".
+Wait, "marked as broken": "به‌عنوان خراب علامت‌گذاری شده‌است" or "به‌عنوان معیوب علامت‌گذاری شده‌است".
 Link text in original: [marked
 ```shell-session
   $ nix-env -qaP -f '<nixpkgs>' -A pythonPackages -I nixpkgs=channel:nixpkgs-unstable

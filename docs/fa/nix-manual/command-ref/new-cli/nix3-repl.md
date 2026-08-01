@@ -2,7 +2,7 @@
 
 > Source: [https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-repl.html](@docroot@/command-ref/new-cli/nix3-repl.md)
 
-> **Warning** 
+> **Warning**
 >
 > This program is
 > [**experimental**](https://nix.dev/manual/nix/2.34/development/experimental-features#xp-feature-nix-command)
@@ -77,7 +77,7 @@ Hello, world!
 # <a id="description"></a> Description
 
 This command provides an interactive environment for evaluating Nix
-expressions. (REPL stands for 'read–eval–print loop'.)
+expressions. (REPL stands for 'read، eval، print loop'.)
 
 On startup, it loads the Nix expressions named *files* and adds them
 into the lexical scope. You can load addition files using the `:l <filename>` command, or reload all files using `:r`.

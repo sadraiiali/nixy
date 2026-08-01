@@ -1,6 +1,6 @@
 # فرمت فایل درایویشن «ATerm»
 
-به دلایل تاریخی، [درایویشن‌های انبار][store derivation] روی دیسک با فرمت «Annotated Term» (یا به اختصار ATerm) ذخیره می‌شوند 
+به دلایل تاریخی، [درایویشن‌های انبار][store derivation] روی دیسک با فرمت «Annotated Term» (یا به اختصار ATerm) ذخیره می‌شوند
 ([راهنما](https://homepages.cwi.nl/~daybuild/daily-books/technology/aterm-guide/aterm-guide.html)،
 [مقاله](https://doi.org/10.1002/(SICI)1097-024X(200003)30:3%3C259::AID-SPE298%3E3.0.CO;2-Y)).
 

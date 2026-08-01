@@ -1,6 +1,6 @@
 # Dhall {#sec-language-dhall}
 
-پشتیبانی Nixpkgs از Dhall، فرض را بر آشنایی نسبی با پشتیبانی زبانی Dhall برای درون‌ریزی عبارت‌های Dhall می‌گذارد که اسناد آن در اینجا آمده است:
+پشتیبانی Nixpkgs از Dhall، فرض را بر آشنایی نسبی با پشتیبانی زبانی Dhall برای درون‌ریزی عبارت‌های Dhall می‌گذارد که اسناد آن در اینجا آمده‌است:
 
 * [`dhall-lang.org` - نصب بسته‌ها](https://docs.dhall-lang.org/tutorials/Language-Tour.html#installing-packages)
 
@@ -114,13 +114,13 @@ result
 
 … که در آن:
 
-* `source.dhall` شامل نتیجه‌ی تفسیر بسته Dhall ما است:
+* `source.dhall` شامل نتیجهٔ تفسیر بسته Dhall ما است:
 ```ShellSession
   $ cat ./result/source.dhall
   True
   ```
 
-* زیرپوشه `.cache` شامل یک محصول کش باینری است که همان نتیجه‌ی `source.dhall` را رمزگذاری می‌کند:
+* زیرپوشه `.cache` شامل یک محصول کش باینری است که همان نتیجهٔ `source.dhall` را رمزگذاری می‌کند:
 ```ShellSession
   $ dhall decode < ./result/.cache/dhall/122027abdeddfe8503496adeb623466caa47da5f63abd2bc6fa19f6cfcb73ecfed70
   True
@@ -153,7 +153,7 @@ result
 2 directories, 2 files
 ```
 
-معمولاً، شما فقط `source = true;` را برای عبارت Dhall سطح بالای مورد نظر (مانند بسته Dhall نمونه‌ی ما `true.nix`) مشخص می‌کنید. با این حال، اگر تمایل دارید `source = true` را برای همه بسته‌های Dhall مشخص کنید، می‌توانید اورلی Dhall را به این شکل اصلاح کنید:
+معمولاً، شما فقط `source = true;` را برای عبارت Dhall سطح بالای مورد نظر (مانند بسته Dhall نمونهٔ ما `true.nix`) مشخص می‌کنید. با این حال، اگر تمایل دارید `source = true` را برای همه بسته‌های Dhall مشخص کنید، می‌توانید اورلی Dhall را به این شکل اصلاح کنید:
 
 ```nix
 {
@@ -225,7 +225,7 @@ $ cat ./result/source.dhall
 
 * `src`: پوشه‌ای حاوی کد Dhall که می‌خواهید به یک بسته Dhall تبدیل کنید
 
-* `file`: فایل سطح بالا (به‌طور پیش‌فرض `package.dhall`) که نقطهٔ ورود به باقی بسته است
+* `file`: فایل سطح بالا (به‌طور پیش‌فرض `package.dhall`) که نقطهٔ ورود به باقی بسته‌است
 
 * `document`: مقدار آن را برابر `true` قرار دهید تا مستندات برای بسته تولید شود
 
@@ -245,7 +245,7 @@ $ cat ./result/source.dhall
 
 * `directory`: زیرپوشه‌ای از مخزن Git جهت بسته‌بندی (اگر پوشه‌ای غیر از ریشهٔ مخزن باشد)
 
-* `file`: فایل سطح بالا (به‌طور پیش‌فرض `${directory}/package.dhall`) که نقطهٔ ورود به باقی بسته است
+* `file`: فایل سطح بالا (به‌طور پیش‌فرض `${directory}/package.dhall`) که نقطهٔ ورود به باقی بسته‌است
 
 * `document`: مقدار آن را برابر `true` قرار دهید تا مستندات برای بسته تولید شود
 
@@ -276,7 +276,7 @@ $ nix-shell -p haskellPackages.dhall-nixpkgs nix-prefetch-git
 ```
 
 :::{.note}
-`nix-prefetch-git` به فراخوانی `nix-shell -p` در بالا اضافه شده است، زیرا برای کارکرد `dhall-to-nixpkgs` باید در `$PATH` قرار داشته باشد.
+`nix-prefetch-git` به فراخوانی `nix-shell -p` در بالا اضافه شده‌است، زیرا برای کارکرد `dhall-to-nixpkgs` باید در `$PATH` قرار داشته باشد.
 :::
 
 این ابزار به‌طور خودکار درون‌ریزی‌های راه دور را تشخیص داده و آن‌ها را به وابستگی‌های بسته تبدیل می‌کند. همچنین می‌توانید از این ابزار روی پوشه‌های محلی Dhall نیز استفاده کنید:
@@ -323,7 +323,7 @@ $ dhall-to-nixpkgs directory --fixed-output-derivations ~/proj/dhall-semver
 
 ## بازنشانی نسخه‌های وابستگی {#ssec-dhall-overriding-dependency-versions}
 
-فرض کنید عبارت نمونه‌ی `true.dhall` خود را طوری تغییر دهیم که به نسخه قدیمی‌تری از Prelude (19.0.0) وابسته باشد:
+فرض کنید عبارت نمونهٔ `true.dhall` خود را طوری تغییر دهیم که به نسخه قدیمی‌تری از Prelude (19.0.0) وابسته باشد:
 
 ```dhall
 -- ./true.dhall

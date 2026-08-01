@@ -70,7 +70,7 @@ prelude
 
 ## ساخت یک پروژه Idris با Nix {#building-an-idris-project-with-nix}
 
-به‌عنوان مثالی از نحوهٔ ایجاد یک عبارت نیکس (Nix expression) برای یک بسته Idris، در ادامه عبارت مربوط به `idrisPackages.yaml` آورده شده است:
+به‌عنوان مثالی از نحوهٔ ایجاد یک عبارت نیکس (Nix expression) برای یک بسته Idris، در ادامه عبارت مربوط به `idrisPackages.yaml` آورده شده‌است:
 
 ```nix
 {

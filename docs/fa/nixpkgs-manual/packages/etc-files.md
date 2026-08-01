@@ -6,7 +6,6 @@ Check Persian fluency:
 
 برخی فراخوانی‌ها در Glibc به دسترسی به فایل‌های زمان اجرا در `/
 
-
 ```bash
 > nix-shell -p iana-etc
 

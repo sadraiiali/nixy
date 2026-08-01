@@ -5,7 +5,7 @@
 
 ## نمای کلی
 
-Nix از [لایه‌های سلسله‌مراتبی] تشکیل شده است.
+Nix از [لایه‌های سلسله‌مراتبی] تشکیل شده‌است.
 
 [hierarchical layers]: https://en.wikipedia.org/wiki/Multitier_architecture#Layers
 

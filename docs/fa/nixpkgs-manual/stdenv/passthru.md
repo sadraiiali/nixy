@@ -68,4 +68,4 @@ Check all links and markdown syntax preserve:
 ```
 
 تست‌های NixOS در یک ماشین مجازی (VM) اجرا می‌شوند، بنابراین نسبت به تست‌های معمولی بسته کندتر هستند.
-برای اطلاعات بیشتر، راهنمای NixOS درباره [تست‌های ماژول NixOS](https://nixos.org/manual/nixos/stable/#sec-nixos-tests)
+برای اطلاعات بیشتر، راهنمای NixOS دربارهٔ [تست‌های ماژول NixOS](https://nixos.org/manual/nixos/stable/#sec-nixos-tests)

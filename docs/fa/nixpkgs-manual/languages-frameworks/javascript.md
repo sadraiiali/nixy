@@ -2,7 +2,7 @@
 
 ## مقدمه {#javascript-introduction}
 
-این بخش شامل دستورالعمل‌هایی درباره نحوه بسته‌بندی برنامه‌های JavaScript است.
+این بخش شامل دستورالعمل‌هایی دربارهٔ نحوه بسته‌بندی برنامه‌های JavaScript است.
 
 ابزارهای مختلف موجود در [tools-overview](#javascript-tools-overview) فهرست خواهند شد.
 سپس برخی از اصول عمومی برای بسته‌بندی ارائه می‌شود.
@@ -24,7 +24,7 @@
   npm run build:server
   ```
 
-های صریح روی آن ایده خوبی است. در ادامه یک مثال آورده شده است:
+های صریح روی آن ایده خوبی است. در ادامه یک مثال آورده شده‌است:
 
     Let's check spacing and sentence structure:
 ```nix
@@ -75,7 +75,7 @@ buildNpmPackage (finalAttrs: {
 })
 ```
 
-در فاز نصب (installPhase) پیش‌فرض که توسط `buildNpmPackage` تنظیم می‌شود، از `npm pack --json --dry-run` برای تصمیم‌گیری درباره فایل‌های قابل نصب در `$out/lib/node_modules/$name/` استفاده می‌شود، که در آن `$name` همان رشته `name` تعریف‌شده در `package.json` متعلق به بسته است.
+در فاز نصب (installPhase) پیش‌فرض که توسط `buildNpmPackage` تنظیم می‌شود، از `npm pack --json --dry-run` برای تصمیم‌گیری دربارهٔ فایل‌های قابل نصب در `$out/lib/node_modules/$name/` استفاده می‌شود، که در آن `$name` همان رشته `name` تعریف‌شده در `package.json` متعلق به بسته‌است.
 علاوه بر این، کلیدهای `bin` و `man` در `package.json` کد منبع برای تصمیم‌گیری در مورد این‌که چه باینری‌ها و صفحات راهنمایی (manpages) باید نصب شوند، استفاده می‌شوند.
 اگر این موارد تعریف نشده باشند، ممکن است `npm pack` برخی از فایل‌ها را ندیده بگیرد و هیچ باینری تولید نشود.
 
@@ -160,7 +160,7 @@ buildNpmPackage {
 
 #### importNpmLock.buildNodeModules {#javascript-buildNpmPackage-importNpmLock.buildNodeModules}
 
-تابع `importNpmLock.buildNodeModules` یک درایویشن شامل یک پوشه `node_modules` پیش‌
+تابع `importNpmLock.buildNodeModules` یک درایویشن شامل یک پوشه `node_modules` پیش
 
 ```nix
 pkgs.mkShell {
@@ -467,13 +467,13 @@ stdenv.mkDerivation (finalAttrs: {
 
 ##### `yarn-berry_X.fetchYarnBerryDeps` {#javascript-fetchYarnBerryDeps}
 
-`fetchYarnBerryDeps` دستور `yarn-berry-fetcher fetch` را در یک derivation با خروجی ثابت (fixed-output derivation) اجرا می‌کند. این یک دریافت‌کننده سفارشی است که برای بارگیری بازتولیدپذیر تمام فایل‌های موجود در فایل `yarn.lock` و اعتبارسنجی هش‌های آن‌ها در طول این فرآیند طراحی شده است. برای وابستگی‌های git، یک چک‌اوت (checkout) در مسیر `${offlineCache}/checkouts/<40-character-commit-hash>` ایجاد می‌کند (که برای توصیف محتوای چک‌اوت
+`fetchYarnBerryDeps` دستور `yarn-berry-fetcher fetch` را در یک derivation با خروجی ثابت (fixed-output derivation) اجرا می‌کند. این یک دریافت‌کننده سفارشی است که برای بارگیری بازتولیدپذیر تمام فایل‌های موجود در فایل `yarn.lock` و اعتبارسنجی هش‌های آن‌ها در طول این فرآیند طراحی شده‌است. برای وابستگی‌های git، یک چک‌اوت (checkout) در مسیر `${offlineCache}/checkouts/<40-character-commit-hash>` ایجاد می‌کند (که برای توصیف محتوای چک‌اوت
 
 ```console
 $ yarn-berry-fetcher prefetch </path/to/yarn.lock> [/path/to/missing-hashes.json]
 ```
 
-این خروجی، هش را در stdout چاپ می‌کند و می‌توان از آن در اسکریپت‌های به‌روزرسانی برای محاسبه‌ی مجدد هش برای نسخه جدیدی از `yarn.lock` استفاده کرد.
+این خروجی، هش را در stdout چاپ می‌کند و می‌توان از آن در اسکریپت‌های به‌روزرسانی برای محاسبهٔ مجدد هش برای نسخه جدیدی از `yarn.lock` استفاده کرد.
 
 ##### `yarn-berry_X.yarnBerryConfigHook` {#javascript-yarnBerryConfigHook}
 `yarnBerryConfigHook` از مسیر انبار که `offlineCache` به آن اشاره دارد برای اجرای `yarn install` در طول ساخت استفاده می‌کند و یک پوشه `node_modules` قابل استفاده از وابستگی‌های دانلودشده تولید می‌نماید.

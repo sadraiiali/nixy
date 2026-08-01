@@ -4,7 +4,7 @@
 برای اطلاع از ماهیت یک store derivation، به [فصل انبار](@docroot@/store/derivation/index.md) مراجعه کنید؛
 این بخش صرفاً به نحوه ایجاد آن از طریق زبان Nix می‌پردازد.
 
-این تابع توکار یک مجموعه ویژگی به عنوان ورودی دریافت می‌کند که ویژگی‌های آن مشخص‌کننده‌ ورودی‌های فرآیند هستند.
+این تابع توکار یک مجموعه ویژگی به عنوان ورودی دریافت می‌کند که ویژگی‌های آن مشخص‌کننده ورودی‌های فرآیند هستند.
 این تابع یک مجموعه ویژگی خروجی می‌دهد و به عنوان اثر جانبی ارزیابی، یک [store derivation] تولید می‌کند.
 
 [store derivation]: @docroot@/glossary.md#gloss-store-derivation
@@ -42,9 +42,9 @@
   >
 ```nix
   > derivation {
-  >   # ...
-  >   system = "x86_64-linux";
-  >   # ...
+  > # ...
+  > system = "x86_64-linux";
+  > # ...
   > }
   > ```
 
@@ -71,9 +71,9 @@
   >
 ```nix
   > derivation {
-  >   # ...
-  >   builder = "/bin/bash";
-  >   # ...
+  > # ...
+  > builder = "/bin/bash";
+  > # ...
   > };
   > ```
 
@@ -98,9 +98,9 @@
 ```nix
   > let pkgs = import <nixpkgs> {}; in
   > derivation {
-  >   # ...
-  >   builder = "${pkgs.python}/bin/python";
-  >   # ...
+  > # ...
+  > builder = "${pkgs.python}/bin/python";
+  > # ...
   > };
   > ```
 
@@ -144,9 +144,9 @@
   >
 ```nix
   > derivation {
-  >   # ...
-  >   outputs = [ "lib" "dev" "doc" ];
-  >   # ...
+  > # ...
+  > outputs = [ "lib" "dev" "doc" ];
+  > # ...
   > }
   > ```
 >
@@ -169,9 +169,9 @@
 >
 ```nix
   > derivation {
-  >   name = "example";
-  >   outputs = [ "lib" "dev" "doc" "out" ];
-  >   # ...
+  > name = "example";
+  > outputs = [ "lib" "dev" "doc" "out" ];
+  > # ...
   > }
   > ```
 > مسیر derivation انبار `/nix/store/<hash>-example.drv` خواهد بود.
@@ -190,11 +190,11 @@
 >
 ```nix
   > let
-  >   myPackage = derivation {
-  >     name = "example";
-  >     outputs = [ "lib" "dev" "doc" "out" ];
-  >     # ...
-  >   };
+  > myPackage = derivation {
+  > name = "example";
+  > outputs = [ "lib" "dev" "doc" "out" ];
+  > # ...
+  > };
   > in myPackage.dev
   > ```
 >
@@ -202,7 +202,7 @@
 
 <!-- FIXME: refer to the output attributes when we have one -->
 
-- برای مشاهده صفت‌های اختیاری و کمتر استفاده‌شده‌ی بیشتر، به [صفات پیشرفته](./advanced-attributes.md) مراجعه کنید.
+- برای مشاهده صفت‌های اختیاری و کمتر استفاده‌شدهٔ بیشتر، به [صفات پیشرفته](./advanced-attributes.md) مراجعه کنید.
 
   <!-- FIXME: This should be moved here -->
 

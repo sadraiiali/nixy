@@ -21,9 +21,9 @@ lrwxrwxrwx 1 alice users 51 Oct 29 13:20 /home/alice/.local/state/nix/profiles/p
 lrwxrwxrwx 1 alice users 51 Nov 25 14:35 /home/alice/.local/state/nix/profiles/profile-7-link -> /nix/store/mp0x6xnsg0b8qhswy6riqvimai4gm677-profile
 ```
 
-هر یک از این پیوندهای نمادین (symlinks) ریشه‌ای برای جمع‌کننده‌ی زباله (garbage collector) نیکس است.
+هر یک از این پیوندهای نمادین (symlinks) ریشه‌ای برای جمع‌کنندهٔ زباله (garbage collector) نیکس است.
 
-محتویات مسیر انبار متناظر با هر نسخه از پروفایل، درختی از پیوندهای نمادین به فایل‌های بسته‌های نصب‌شده است، به عنوان مثال
+محتویات مسیر انبار متناظر با هر نسخه از پروفایل، درختی از پیوندهای نمادین به فایل‌های بسته‌های نصب‌شده‌است، به عنوان مثال
 
 ```console
 $ ll -R ~eelco/.local/state/nix/profiles/profile-7-link/

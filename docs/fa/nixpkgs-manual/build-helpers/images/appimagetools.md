@@ -15,7 +15,7 @@
 `wrapType2` انتظار آرگومانی حاوی صفت `src` و همچنین صفت `name` یا صفات `pname` و `version` را دارد.
 
 این تابع در نهایت [`buildFHSEnv`](#sec-fhs-environments) را فراخوانی می‌کند و هر صفت (attribute) اضافی در آرگومان ورودی به `wrapType2` به آن منتقل خواهد شد.
-این بدان معناست که برای مثال می‌توانید صفت `extraInstallCommands` را ارسال کنید و همان تأثیری را خواهد داشت که در [`buildFHSEnv`](#sec-fhs-environments) توصیف شده است.
+این بدان معناست که برای مثال می‌توانید صفت `extraInstallCommands` را ارسال کنید و همان تأثیری را خواهد داشت که در [`buildFHSEnv`](#sec-fhs-environments) توصیف شده‌است.
 
 ::: {.note}
 در گذشته، `appimageTools` هر دو تابع `wrapType1` و `wrapType2` را ارائه می‌داد تا بسته به نوع AppImage که بسته‌بندی می‌شد استفاده شوند.
@@ -86,7 +86,7 @@ appimageTools.wrapType2 {
 # استخراج یک AppImage برای نصب فایل‌های اضافی
 
 `wrapType2` به‌طور خودکار AppImage را برای شما استخراج کرده و آن را از طریق صفت `contents` در دسترس قرار می‌دهد.
-توجه کنید که چگونه از `finalAttrs.contents` در `extraInstallCommands` برای نصب فایل‌های اضافی استخراج‌شده از AppImage استفاده شده است.
+توجه کنید که چگونه از `finalAttrs.contents` در `extraInstallCommands` برای نصب فایل‌های اضافی استخراج‌شده از AppImage استفاده شده‌است.
 
 ```nix
 { appimageTools, fetchurl }:

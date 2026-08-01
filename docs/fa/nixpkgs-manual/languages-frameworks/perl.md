@@ -14,7 +14,7 @@
 $ perl ./myscript.pl
 ```
 
-هنگامی که اسکریپت از یک کتابخانه Perl استفاده می‌کند که به صورت سراسری نصب نشده است، ممکن است با خطایی مانند `Can't locate DB_File.pm in @INC (you may need to install the DB_File module)` مواجه شوید. در این صورت، می‌توانید از `nix-shell` برای راه‌اندازی یک شل آنی (ad-hoc) به همراه آن کتابخانه نصب‌شده استفاده کنید، برای نمونه:
+هنگامی که اسکریپت از یک کتابخانه Perl استفاده می‌کند که به صورت سراسری نصب نشده‌است، ممکن است با خطایی مانند `Can't locate DB_File.pm in @INC (you may need to install the DB_File module)` مواجه شوید. در این صورت، می‌توانید از `nix-shell` برای راه‌اندازی یک شل آنی (ad-hoc) به همراه آن کتابخانه نصب‌شده استفاده کنید، برای نمونه:
 
 ```ShellSession
 $ nix-shell -p perl perlPackages.DBFile --run ./myscript.pl

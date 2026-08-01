@@ -123,10 +123,10 @@ GTEST_BRIEF=1 GTEST_FILTER='Group.my-failing-test' meson test nix-expr-tests --g
 ```shell-session
 $ _NIX_TEST_ACCEPT=1 meson test nix-store-tests -v
 ...
-[  SKIPPED ] WorkerProtoTest.string_read
-[  SKIPPED ] WorkerProtoTest.string_write
-[  SKIPPED ] WorkerProtoTest.storePath_read
-[  SKIPPED ] WorkerProtoTest.storePath_write
+[ SKIPPED ] WorkerProtoTest.string_read
+[ SKIPPED ] WorkerProtoTest.string_write
+[ SKIPPED ] WorkerProtoTest.storePath_read
+[ SKIPPED ] WorkerProtoTest.storePath_write
 ...
 ```
 نتیجه‌ی مورد انتظار «gold master» را برای تست‌های توصیفی `libnixstore` بازسازی خواهد کرد.
@@ -177,8 +177,8 @@ $ checkPhase
 $ meson test --suite ca
 ninja: Entering directory `/home/jcericson/src/nix/master/build'
 ninja: no work to do.
-[1-20/20] 🌑 nix-functional-tests:ca / ca/why-depends                                1/20 nix-functional-tests:ca / ca/nix-run                                  OK               0.16s
-[2-20/20] 🌒 nix-functional-tests:ca / ca/why-depends                                2/20 nix-functional-tests:ca / ca/import-derivation                        OK               0.17s
+[1-20/20] 🌑 nix-functional-tests:ca / ca/why-depends 1/20 nix-functional-tests:ca / ca/nix-run OK 0.16s
+[2-20/20] 🌒 nix-functional-tests:ca / ca/why-depends 2/20 nix-functional-tests:ca / ca/import-derivation OK 0.17s
 ```
 
 ### اجرای تست‌های منفرد
@@ -189,14 +189,14 @@ ninja: no work to do.
 $ meson test --verbose ${testName}
 ninja: Entering directory `/home/jcericson/src/nix/master/build'
 ninja: no work to do.
-1/1 nix-functional-tests:main / ${testName}        OK               0.41s
+1/1 nix-functional-tests:main / ${testName} OK 0.41s
 
-Ok:                 1
-Expected Fail:      0
-Fail:               0
-Unexpected Pass:    0
-Skipped:            0
-Timeout:            0
+Ok: 1
+Expected Fail: 0
+Fail: 0
+Unexpected Pass: 0
+Skipped: 0
+Timeout: 0
 
 Full log written to /home/jcericson/src/nix/master/build/meson-logs/testlog.txt
 ```
@@ -269,7 +269,7 @@ _NIX_TEST_ACCEPT=1 meson test lang
 
 یک وضعیت جالب برای مستندسازی، حالتی است که این آزمون‌ها «بیش‌برازش‌شده» (overfitted) هستند.
 آزمون‌های زبان نیز نمونه‌ای از این موضوع هستند.
-خروجی موفقیت‌آمیز مورد انتظار ارزیابی باید بسیار پایدار باشد — ما قصد نداریم تغییرات خراب‌کننده (breaking changes) در (بخش‌های پایدار) زبان Nix ایجاد کنیم.
+خروجی موفقیت‌آمیز مورد انتظار ارزیابی باید بسیار پایدار باشد، ما قصد نداریم تغییرات خراب‌کننده (breaking changes) در (بخش‌های پایدار) زبان Nix ایجاد کنیم.
 با این حال، خطاها و اخطارهای حین ارزیابی (چه موفقیت‌آمیز و چه ناموفق) به این صورت پایدار نیستند.
 ما آزادی عمل داریم که نحوه نمایش آن‌ها را در هر زمانی تغییر دهیم.
 

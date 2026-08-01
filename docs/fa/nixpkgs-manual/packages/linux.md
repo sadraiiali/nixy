@@ -1,4 +1,4 @@
-قابلیت‌های اضافی کمتری دارد، همان‌طور که در ادامه توضیح داده شده است.
+قابلیت‌های اضافی کمتری دارد، همان‌طور که در ادامه توضیح داده شده‌است.
 
 Both functions have an argument `kernelPatches` which should be a list of `{name, patch, extraConfig}` attribute sets, where `name` is the name of the patch (which is included in the kernel’s `meta.description` attribute), `patch
 

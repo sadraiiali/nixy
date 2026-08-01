@@ -24,8 +24,8 @@
 >
 ```nix
 > {
->   foo = import ~/.nix-defexpr/foo.nix;
->   bar = import ~/.nix-defexpr/bar.nix;
+> foo = import ~/.nix-defexpr/foo.nix;
+> bar = import ~/.nix-defexpr/bar.nix;
 > }
 > ```
 

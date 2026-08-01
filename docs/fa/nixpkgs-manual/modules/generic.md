@@ -5,7 +5,7 @@
 
 ## `meta-maintainers.nix` {#modules-generic-meta-maintainers}
 
-گزینه‌های زیر هنگام استفاده از `imports = [ (nixpkgs + "/modules/generic/meta-maintainers.nix") ];` در دسترس قرار می‌
+گزینه‌های زیر هنگام استفاده از `imports = [ (nixpkgs + "/modules/generic/meta-maintainers.nix") ];` در دسترس قرار می
 
 ```{=include=} options
 id-prefix: opt-modules-generic-meta-maintainers-

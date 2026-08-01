@@ -3,10 +3,9 @@
 Nixpkgs توابع پوششی متنوعی ارائه می‌دهد که به ساخت درایویشن‌های کاربردیِ رایج کمک می‌کنند.
 مانند [`stdenv.mkDerivation`](#sec-using-stdenv)، هر یک از این کمک‌رسان‌های ساخت یک درایویشن ایجاد می‌کنند، اما آرگومان‌های ارسال‌شده متفاوت (معمولاً ساده‌تر) از آرگومان‌های مورد نیاز `stdenv.mkDerivation` هستند.
 
-
 ## `runCommandWith` {#trivial-builder-runCommandWith}
 
-تابع `runCommandWith` یک درایویشن ساخته‌شده با استفاده از دستور(های) مشخص‌شده در یک محیط تعیین‌شده را بازمی‌گرداند.
+تابع `runCommandWith` یک درایویشن ساخته‌شده با استفاده از دستور (های) مشخص‌شده در یک محیط تعیین‌شده را بازمی‌گرداند.
 
 این تابع، تابع پایه و زیرین تمام [گونه‌های `runCommand*`] است.
 رفتار کلی آن از طریق یک مجموعه ویژگی که به عنوان آرگومان اول پاس داده می‌شود کنترل شده و اجازه می‌دهد `stdenv` به صورت آزادانه تعیین شود.
@@ -29,10 +28,10 @@ runCommandWith :: {
 ### ورودی‌ها {#trivial-builder-runCommandWith-Inputs}
 
 `name` (رشته)
-:   نام درایویشن، که Nix آن را به مسیر انبار (store path) الحاق خواهد کرد؛ بخش [`mkDerivation`](#sec-using-stdenv) را ببینید.
+: نام درایویشن، که Nix آن را به مسیر انبار (store path) الحاق خواهد کرد؛ بخش [`mkDerivation`](#sec-using-stdenv) را ببینید.
 
 `runLocal` (بولین)
-:   اگر روی `true` تنظیم شود، این گزینه درایویشن را مجبور می‌کند که به‌صورت محلی ساخته شود و از [جایگزین‌ها][substitutes] یا ساخت‌های راه دور استفاده نکند.
+: اگر روی `true` تنظیم شود، این گزینه درایویشن را مجبور می‌کند که به‌صورت محلی ساخته شود و از [جایگزین‌ها][substitutes] یا ساخت‌های راه دور استفاده نکند.
     این ویژگی برای دستورات بسیار کم‌هزینه (زمان اجرای کمتر از ۱ ثانیه) در نظر گرفته شده است که می‌توان با اجتناب از رفت‌وبرگشت(های) شبکه سرعت اجرای آن‌ها را افزایش داد.
     تأثیر آن تنظیم [`preferLocalBuild = true`][preferLocalBuild] و [`allowSubstitutes = false`][allowSubstitutes] است.
 
@@ -43,13 +42,13 @@ runCommandWith :: {
    :::
 
 `stdenv` (درایویشن)
-:   [محیط استاندارد](#chap-stdenv) برای استفاده، که مقدار پیش‌فرض آن `pkgs.stdenv` است.
+: [محیط استاندارد](#chap-stdenv) برای استفاده، که مقدار پیش‌فرض آن `pkgs.stdenv` است.
 
 `derivationArgs` (مجموعه ویژگی)
-:   آرگومان‌های اضافی برای [`mkDerivation`](#sec-using-stdenv).
+: آرگومان‌های اضافی برای [`mkDerivation`](#sec-using-stdenv).
 
 `buildCommand` (رشته)
-:   دستورات شل برای اجرا در سازنده (Builder) درایویشن.
+: دستورات شل برای اجرا در سازنده (Builder) درایویشن.
 
     ::: {.note}
     شما باید یک فایل یا پوشه به نام `$out` ایجاد کنید تا Nix بتواند سازنده (Builder) را با موفقیت اجرا کند.
@@ -79,10 +78,9 @@ runCommandWith
 
 :::
 
-
 ## `runCommand` و `runCommandCC` {#trivial-builder-runCommand}
 
-تابع `runCommand` یک derivation / اشتقاق ساخت را برمی‌گرداند که با استفاده از دستور(های) مشخص‌شده، در محیط `stdenvNoCC` ساخته شده است.
+تابع `runCommand` یک derivation / اشتقاق ساخت را برمی‌گرداند که با استفاده از دستور (های) مشخص‌شده، در محیط `stdenvNoCC` ساخته شده‌است.
 
 `runCommandCC` مشابه است، اما از محیط کامپایلر پیش‌فرض استفاده می‌کند. برای به حداقل رساندن وابستگی‌ها، `runCommandCC` تنها باید زمانی استفاده شود که دستور ساخت به یک کامپایلر C نیاز دارد.
 
@@ -103,14 +101,13 @@ runCommandLocal :: String -> AttrSet -> String -> Derivation
 اگرچه امضای نوع با [`runCommandWith`] تفاوت دارد، آرگومان‌های مجزا با نام یکسان، دارای نوع و معنی یکسانی خواهند بود:
 
 `name` (رشته)
-:   نام derivation
+: نام derivation
 
 `derivationArgs` (مجموعه ویژگی)
-:   پارامترهای اضافی پاس‌داده‌شده به [`mkDerivation`]
+: پارامترهای اضافی پاس‌داده‌شده به [`mkDerivation`]
 
 `buildCommand` (رشته)
-:   دستور(هایی) که برای ساخت derivation اجرا می‌شوند.
-
+: دستور (هایی) که برای ساخت derivation اجرا می‌شوند.
 
 ::: {.example #ex-runcommand-simple}
 # فراخوانی `runCommand`
@@ -152,14 +149,13 @@ runCommandWith { inherit name derivationArgs; } buildCommand
 ```
 :::
 
-
 ## نوشتن فایل‌های متنی {#trivial-builder-text-writing}
 
 Nixpkgs توابع زیر را برای تولید درایویشن‌هایی که فایل‌های متنی یا اسکریپت‌های قابل اجرا را در انبار نیکس (Nix store) می‌نویسند، ارائه می‌دهد.
 این توابع برای ایجاد فایل‌ها از عبارت‌های Nix مفید هستند و همگی به عنوان پوشش‌های تسهیل‌کننده در اطراف `writeTextFile` پیاده‌سازی شده‌اند.
 
 هر یک از این توابع باعث تولید یک درایویشن می‌شوند.
-وقتی نتیجه‌ی هر یک از این توابع را با [درون‌گذاری رشته](https://nixos.org/manual/nix/stable/language/string-interpolation) یا [`toString`](https://nixos.org/manual/nix/stable/language/builtins#builtins-toString) به یک رشته تبدیل می‌کنید، به [مسیر انبار](https://nixos.org/manual/nix/stable/store/store-path) این درایویشن ارزیابی می‌شود.
+وقتی نتیجهٔ هر یک از این توابع را با [درون‌گذاری رشته](https://nixos.org/manual/nix/stable/language/string-interpolation) یا [`toString`](https://nixos.org/manual/nix/stable/language/builtins#builtins-toString) به یک رشته تبدیل می‌کنید، به [مسیر انبار](https://nixos.org/manual/nix/stable/store/store-path) این درایویشن ارزیابی می‌شود.
 
 ::: {.note}
 برخی از این توابع، فایل‌های حاصل را درون پوشه‌ای در داخل [خروجی درایویشن](https://nixos.org/manual/nix/stable/language/derivations#attr-outputs) قرار می‌دهند.
@@ -342,7 +338,7 @@ hello.overrideAttrs {
 : آیا جایگزینی از یک کش باینری مجاز باشد یا خیر.
   به [`allowSubstitutes`](https://nixos.org/manual/nix/stable/language/advanced-attributes#adv-attr-allowSubstitutes) در فراخوانی زیرین `derivation` منتقل می‌شود.
 
-  مقدار پیش‌فرض آن `false` است، زیرا فرض می‌شود اجرای فایل قابل اجرای ساده‌ی `builder` مربوط به derivation به صورت محلی سریع‌تر از عملیات شبکه‌ای است.
+  مقدار پیش‌فرض آن `false` است، زیرا فرض می‌شود اجرای فایل قابل اجرای سادهٔ `builder` مربوط به derivation به صورت محلی سریع‌تر از عملیات شبکه‌ای است.
   اگر گام `checkPhase` سنگین است، آن را برابر true قرار دهید.
 
   پیش‌فرض: `false`
@@ -679,7 +675,7 @@ writeTextFile {
 این توابع، `files` را در قالب یک فایل واحد در انبار نیکس (Nix store) به یکدیگر متصل می‌کنند. این ویژگی برای فایل‌های پیکربندی که به صورت خطوط متنی ساختار یافته‌اند مفید است. `concatTextFile` یک مجموعه ویژگی دریافت می‌کند و انتظار دو آرگومان دارد: `name` و `files`. `name` متناظر با نام استفاده‌شده در مسیر انبار نیکس (Nix store) است. `files` شامل فایل‌هایی خواهد بود که قرار است به هم متصل شوند. همچنین می‌توانید `executable` را برابر با true قرار دهید تا بیت قابل اجرا برای این فایل تنظیم شود.
 `concatText` و `concatScript` روکش‌های (wrapper) ساده‌ای روی `concatTextFile` هستند.
 
-در ادامه چند نمونه آورده شده است:
+در ادامه چند نمونه آورده شده‌است:
 ```nix
 # Writes my-file to /nix/store/<store path>
 concatTextFile
@@ -823,7 +819,7 @@ writeShellApplication {
 ## `symlinkJoin` {#trivial-builder-symlinkJoin}
 
 از این تابع می‌توان برای قرار دادن چندین درایویشن در یک ساختار پوشه یکسان استفاده کرد. نحوه کار آن به این صورت است که یک درایویشن جدید ایجاد کرده و پیوندهای نمادین (symlinks) را به هر یک از مسیرهای فهرست‌شده اضافه می‌کند. این تابع دو آرگومان دریافت می‌کند: `name` و `paths`. صفت `name` (یا به عنوان جایگزین، `pname` و `version`) نامی است که در مسیر انبار نیکس (Nix store) برای درایویشن ایجادشده استفاده می‌شود. `paths` فهرستی از مسیرها است که پیوند نمادین (symlink) داده خواهند شد. این مسیرها می‌توانند به درایویشن‌های انبار نیکس (Nix store) یا هر زیرپوشهٔ موجود در آن‌ها اشاره داشته باشند.
-در ادامه یک نمونه آورده شده است:
+در ادامه یک نمونه آورده شده‌است:
 ```nix
 # adds symlinks of hello and stack to current build and prints "links added"
 symlinkJoin {
@@ -879,7 +875,7 @@ writeClosure [ (writeScriptBin "hi" "${hello}/bin/hello") ]
 
 ## `writeDirectReferencesToFile` {#trivial-builder-writeDirectReferencesToFile}
 
-مجموعه‌ی ارجاعات، یعنی وابستگی‌های مستقیم آن‌ها را در فایل خروجی می‌نویسد.
+مجموعهٔ ارجاعات، یعنی وابستگی‌های مستقیم آن‌ها را در فایل خروجی می‌نویسد.
 
 این خروجی معادل `nix-store -q --references` تولید می‌کند.
 

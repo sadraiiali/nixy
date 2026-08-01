@@ -1,6 +1,6 @@
 # Meson {#meson}
 
-[Meson](https://mesonbuild.com/) یک سیستم فراساخت متن‌باز است که با هدف سریع و کاربرپسند بودن طراحی شده است.
+[Meson](https://mesonbuild.com/) یک سیستم فراساخت متن‌باز است که با هدف سریع و کاربرپسند بودن طراحی شده‌است.
 
 در Nixpkgs، ابزار meson همراه با یک setup hook ارائه می‌شود که فازهای پیکربندی، بررسی و نصب را بازنویسی می‌کند.
 
@@ -27,7 +27,7 @@
 #### `mesonWrapMode` {#meson-wrap-mode}
 
 کدام مقدار به عنوان [`-Dwrap_mode=`](https://mesonbuild.com/Builtin-options.html#core-options) پاس داده می‌شود.
-در Nixpkgs، مقدار پیش‌فرض `nodownload` است، به طوری که هیچ زیرپروژه‌ای دریافت نخواهد شد (زیرا دسترسی به شبکه در طول استقرار (deployment) در Nixpkgs از قبل غیرفعال شده است).
+در Nixpkgs، مقدار پیش‌فرض `nodownload` است، به طوری که هیچ زیرپروژه‌ای دریافت نخواهد شد (زیرا دسترسی به شبکه در طول استقرار (deployment) در Nixpkgs از قبل غیرفعال شده‌است).
 
 نکته: Meson امکان پیش-بارگذاری زیرپروژه‌هایی را که در غیر این صورت دریافت می‌شدند، فراهم می‌کند.
 
@@ -56,15 +56,15 @@
 
 #### `dontUseMesonConfigure` {#dont-use-meson-configure}
 
-وقتی روی true تنظیم شود، از `mesonConfigurePhase` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `mesonConfigurePhase` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 
 #### `dontUseMesonCheck` {#dont-use-meson-check}
 
-وقتی روی true تنظیم شود، از `mesonCheckPhase` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `mesonCheckPhase` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 
 #### `dontUseMesonInstall` {#dont-use-meson-install}
 
-وقتی روی true تنظیم شود، از `mesonInstallPhase` از‌پیش‌تعریف‌شده استفاده نمی‌کند.
+وقتی روی true تنظیم شود، از `mesonInstallPhase` ازپیش‌تعریف‌شده استفاده نمی‌کند.
 
 ### متغیرهای مورد پذیرش {#meson-honored-variables}
 

@@ -30,7 +30,7 @@ https://<domain name>/<owner>/<repo>/archive/<reference or revision>.tar.gz
 ```
 
 > **مثال**
-> 
+>
 >
 ```nix
 > # flake.nix

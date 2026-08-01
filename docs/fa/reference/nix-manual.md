@@ -30,7 +30,7 @@ Nix 2.31 (in Nixpkgs 25.11) </pages/nix-manual>
 
 - [نسخه پیش‌انتشار Nix](/pages/nix-manual)
 
-  ساخت توسعه‌ای از شاخه `master` از [مخزن Nix](https://github.com/NixOS/nix) — همان محتوای ترجمه‌شده در این سایت
+  ساخت توسعه‌ای از شاخه `master` از [مخزن Nix](https://github.com/NixOS/nix)، همان محتوای ترجمه‌شده در این سایت
 
 - [Nix 2.35](/pages/nix-manual) ([فهرست مطالب](/pages/nix-manual))
 
@@ -49,5 +49,5 @@ Nix 2.31 (in Nixpkgs 25.11) </pages/nix-manual>
   ارائه‌شده به همراه نسخه پایدار قبلی {term}`Nixpkgs` و {term}`NixOS`: 25.11
 
 :::{tip}
-اطلاعات بیشتر درباره نسخه‌های Nixpkgs و NixOS: [channel branches](/pages/nix-dev/concepts/faq#channel-branches)
+اطلاعات بیشتر دربارهٔ نسخه‌های Nixpkgs و NixOS: [channel branches](/pages/nix-dev/concepts/faq#channel-branches)
 :::

@@ -1,7 +1,7 @@
 # darwin.linux-builder {#sec-darwin-builder}
 
 :::{.warning}
-به‌طور پیش‌فرض، `darwin.linux-builder` از یک **کلید هاست** SSH خصوصی که به‌طور عمومی شناخته‌شده است استفاده می‌کند
+به‌طور پیش‌فرض، `darwin.linux-builder` از یک **کلید هاست** SSH خصوصی که به‌طور عمومی شناخته‌شده‌است استفاده می‌کند
 
 ```
 extra-trusted-users = <your username goes here>

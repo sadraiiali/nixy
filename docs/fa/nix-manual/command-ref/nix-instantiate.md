@@ -57,7 +57,7 @@
   > $ nix-instantiate --eval --expr 'a: a'
   > <LAMBDA>
   > $ nix eval --expr 'a: a'
-  > «lambda @ «string»:1:1»
+  > «lambda @ «string» :1:1»
   > ```
 >
 > برای خروجی قابل‌خواندن توسط ماشین، گزینه `--xml` خروجی صریح و بدون ابهامی تولید می‌کند:
@@ -119,7 +119,7 @@ $ nix-store --realise $(nix-instantiate test.nix) (build)
 /nix/store/qhqk4n8ci095g3sdp93x7rgwyh9rdvgk-perl-BerkeleyDB-0.26 (output path)
 
 $ ls -l /nix/store/qhqk4n8ci095g3sdp93x7rgwyh9rdvgk-perl-BerkeleyDB-0.26
-dr-xr-xr-x    2 eelco    users        4096 1970-01-01 01:00 lib
+dr-xr-xr-x 2 eelco users 4096 1970-01-01 01:00 lib
 ...
 ```
 

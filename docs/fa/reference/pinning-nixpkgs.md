@@ -2,7 +2,7 @@
 
 # سنجاق کردن Nixpkgs
 
-مشخص کردن عبارت‌های Nix راه دور، مانند آنچه توسط Nixpkgs ارائه شده است، به روش‌های مختلفی انجام‌پذیر است:
+مشخص کردن عبارت‌های Nix راه دور، مانند آنچه توسط Nixpkgs ارائه شده‌است، به روش‌های مختلفی انجام‌پذیر است:
 
 - [متغیر محیطی `$NIX_PATH`](/pages/nix-manual/command-ref/env-common#env-NIX_PATH)
 - [گزینه `-I`](/pages/nix-manual/command-ref/opt-common#opt-I) در اکثر دستورات مانند `nix-build`، `nix-shell` و غیره.
@@ -86,6 +86,6 @@
 ف فهرست کامل کانال‌ها در [nixos.org/channels](https://nixos.org/channels) در دسترس است.
 
 :::{tip}
-اطلاعات بیشتر درباره نسخه‌های Nixpkgs و NixOS: [](channel-branches)
+اطلاعات بیشتر دربارهٔ نسخه‌های Nixpkgs و NixOS: [](channel-branches)
 :::
 

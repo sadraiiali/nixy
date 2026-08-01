@@ -30,7 +30,7 @@
 دستور `nix-collect-garbage` نمی‌تواند از تمام پروفایل‌ها مطلع باشد؛ آن اطلاعات وجود ندارد.
 در عوض، این دستور چند مکان را بررسی می‌کند و روی تمام پروفایل‌هایی که در آنجا می‌یابد عمل می‌کند:
 
-1. مکان‌های پیش‌فرض پروفایل همان‌طور که در بخش [پروفایل]های راهنما مشخص شده است.
+1. مکان‌های پیش‌فرض پروفایل همان‌طور که در بخش [پروفایل]های راهنما مشخص شده‌است.
 
 2. > **نکته**
    >
@@ -52,14 +52,14 @@
 
   حذف تمام نسل‌های قدیمی پروفایل‌ها.
 
-  این معادل فراخوانی [`nix-env --delete-generations old`](@docroot@/command-ref/nix-env/delete-generations.md#generations-old) روی هر پروفایل یافت‌شده است.
+  این معادل فراخوانی [`nix-env --delete-generations old`](@docroot@/command-ref/nix-env/delete-generations.md#generations-old) روی هر پروفایل یافت‌شده‌است.
 
 - <span id="opt-delete-older-than">[`--delete-older-than`](#opt-delete-older-than)</span> *period*
 
   حذف تمام نسل‌های پروفایل‌هایی که قدیمی‌تر از مقدار مشخص‌شده هستند (به‌جز نسل‌هایی که در آن مقطع زمانی فعال بوده‌اند).
   مقدار *period* مقداری مانند `30d` است که به معنای ۳۰ روز خواهد بود.
 
-  این معادل فراخوانی [`nix-env --delete-generations <period>`](@docroot@/command-ref/nix-env/delete-generations.md#generations-time) روی هر پروفایل یافت‌شده است.
+  این معادل فراخوانی [`nix-env --delete-generations <period>`](@docroot@/command-ref/nix-env/delete-generations.md#generations-time) روی هر پروفایل یافت‌شده‌است.
   برای اطلاعات بیشتر دربارهٔ آرگومان *period*، مستندات آن دستور را مشاهده کنید.
 
 - <span id="opt-max-freed">[`--max-freed`](#opt-max-freed)</span> *bytes*
@@ -69,7 +69,7 @@
   به حذف مسیرها ادامه بده تا زمانی که حداقل *bytes* بایت حذف شود،
   سپس متوقف شو. آرگومان *bytes* می‌تواند با پسوند ضرب‌کنندهٔ
   `K`، `M`، `G` یا `T` دنبال شود که نشان‌دهندهٔ واحدهای KiB، MiB، GiB یا TiB است.
-  
+
 {{#include ./opt-common.md}}
 
 {{#include ./env-common.md}}

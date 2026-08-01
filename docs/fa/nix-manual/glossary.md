@@ -12,7 +12,7 @@
 
   مکان و مسیری که مسیرهای نسبی بر اساس آن حل می‌شوند.
 
-  - برای عبارت‌ها در یک فایل، دایرکتوری پایه، پوشه‌ای است که آن فایل را در خود جای داده است.
+  - برای عبارت‌ها در یک فایل، دایرکتوری پایه، پوشه‌ای است که آن فایل را در خود جای داده‌است.
     این مشابه دایرکتوری یک [URL پایه](https://datatracker.ietf.org/doc/html/rfc1808#section-3.3) است.
     <!-- که برای حل URLهای غیرخالی کافی است -->
 
@@ -52,7 +52,7 @@
 - [آدرس محتوا (content address)]{#gloss-content-address}
 
   یک [*آدرس محتوا*](https://en.wikipedia.org/wiki/Content-addressable_storage)، روشی امن برای ارجاع به داده‌های تغییرناپذیر است.
-  این ارجاع مستقیماً از محتوای داده‌هایی که به آن‌ها ارجاع داده می‌شود محاسبه می‌شود، به این معنی که ارجاع [*ضد دستکاری*](https://en.wikipedia.org/wiki/Tamperproofing) است — تغییرات داده‌ها همیشه باید به آدرس‌های محتوای متمایز منتهی شوند.
+  این ارجاع مستقیماً از محتوای داده‌هایی که به آن‌ها ارجاع داده می‌شود محاسبه می‌شود، به این معنی که ارجاع [*ضد دستکاری*](https://en.wikipedia.org/wiki/Tamperproofing) است، تغییرات داده‌ها همیشه باید به آدرس‌های محتوای متمایز منتهی شوند.
 
 برای اطلاع از نحوه استفادهٔ Nix از آدرس‌دهی محتوا (content-addressing)، به موارد زیر مراجعه کنید:
 
@@ -60,7 +60,7 @@
     - [اشیای انبار مبتنی بر آدرس محتوا](@docroot@/store/store-object/content-address.md)
     - [derivation مبتنی بر آدرس محتوا](#gloss-content-addressing-derivation)
 
-  مقاله‌ی Software Heritage در مورد [*شناسه‌های ذاتی و بیرونی*](https://www.softwareheritage.org/2020/07/09/intrinsic-vs-extrinsic-identifiers) نیز مقدمهٔ خوبی برای درک ارزش آدرس‌دهی محتوا در مقایسه با سایر طرح‌های ارجاع است.
+  مقالهٔ Software Heritage در مورد [*شناسه‌های ذاتی و بیرونی*](https://www.softwareheritage.org/2020/07/09/intrinsic-vs-extrinsic-identifiers) نیز مقدمهٔ خوبی برای درک ارزش آدرس‌دهی محتوا در مقایسه با سایر طرح‌های ارجاع است.
 
   علاوه بر آدرس‌دهی محتوا، انبار Nix از [آدرس‌دهی ورودی](#gloss-input-addressed-store-object) نیز استفاده می‌کند.
 
@@ -80,7 +80,7 @@
 
   یک derivation که صفت
   [`__contentAddressed`](./language/advanced-attributes.md#adv-attr-__contentAddressed)
-  در آن روی مقدار `true` تنظیم شده است.
+  در آن روی مقدار `true` تنظیم شده‌است.
 
 - [derivation]{#gloss-derivation}
 
@@ -112,9 +112,9 @@
 
 - [سازندهٔ derivation (deriver)]{#gloss-deriver}
 
-  آن [derivation انبار] که یک [مسیر خروجی] را تولید کرده است.
+  آن [derivation انبار] که یک [مسیر خروجی] را تولید کرده‌است.
 
-  سازندهٔ یک مسیر خروجی را می‌توان با گزینه‌ی `--deriver` در دستور
+  سازندهٔ یک مسیر خروجی را می‌توان با گزینهٔ `--deriver` در دستور
   [`nix-store --query`](@docroot@/command-ref/nix-store/query.md)
   استعلام کرد.
 
@@ -135,14 +135,14 @@
 
 - [ویژگی آزمایشی]{#gloss-experimental-feature}
 
-  قابلیتی که هنوز تثبیت نشده است و توسط پرچم‌های ویژگی‌های آزمایشی نام‌گذاری‌شده محافظت می‌شود.
+  قابلیتی که هنوز تثبیت نشده‌است و توسط پرچم‌های ویژگی‌های آزمایشی نام‌گذاری‌شده محافظت می‌شود.
   این پرچم‌ها با تنظیم [`experimental-features`](./command-ref/conf-file.html#conf-experimental-features) فعال یا غیرفعال می‌شوند.
 
   راهنمای مشارکت در خصوص [هدف و چرخه عمر ویژگی‌های آزمایشی](@docroot@/development/experimental-features.md) را مطالعه کنید.
 
 - [شیء سیستم‌فایل]{#gloss-file-system-object}
 
-  مدل داده‌ی Nix برای نمایش داده‌های ساده‌شده‌ی سیستم‌فایل.
+  مدل دادهٔ Nix برای نمایش داده‌های ساده‌شدهٔ سیستم‌فایل.
 
   برای جزئیات بیشتر، به [شیء سیستم‌فایل](@docroot@/store/file-system-object.md) مراجعه کنید.
 
@@ -150,7 +150,7 @@
 
 - [derivation خروجی‌ثابت]{#gloss-fixed-output-derivation} (FOD)
 
-  یک [store derivation] که در آن هش رمزنگاری‌شده‌ی [خروجی] از پیش با استفاده از صفت [`outputHash`](./language/advanced-attributes.md#adv-attr-outputHash) تعیین می‌شود، و در آن فایل اجرایی [`builder`](@docroot@/language/derivations.md#attr-builder) به شبکه دسترسی دارد.
+  یک [store derivation] که در آن هش رمزنگاری‌شدهٔ [خروجی] از پیش با استفاده از صفت [`outputHash`](./language/advanced-attributes.md#adv-attr-outputHash) تعیین می‌شود، و در آن فایل اجرایی [`builder`](@docroot@/language/derivations.md#attr-builder) به شبکه دسترسی دارد.
 
 - [بسته / هرمتیک (Hermetic)]{#gloss-hermetic}
 
@@ -176,7 +176,7 @@
 
   چیزی که می‌تواند در انبار Nix محقق (realise) شود.
 
-  برای جزئیات بیشتر درباره [`دستورات nix`](./command-ref/new-cli/nix.md) (آزمایشی)، به [قابل‌نصب‌ها](./command-ref/new-cli/nix.md#installables) مراجعه کنید.
+  برای جزئیات بیشتر دربارهٔ [`دستورات nix`](./command-ref/new-cli/nix.md) (آزمایشی)، به [قابل‌نصب‌ها](./command-ref/new-cli/nix.md#installables) مراجعه کنید.
 
 - [instantiate کردن (ساخت شیء derivation)]{#gloss-instantiate}، instantiation
 
@@ -248,8 +248,7 @@
   نیکس فایل‌ها را به عنوان [شیء سیستم‌فایل][file system object] نمایش می‌دهد و نحوه تعلق آن‌ها به یکدیگر به عنوان [مرجع]ها بین [شیء انبار]هایی که حاوی این اشیاء سیستم‌فایل هستند، کدگذاری می‌شود.
 
   [زبان نیکس] امکان نام‌گذاری بسته‌ها را بر حسب [مجموعه‌های صفت](@docroot@/language/types.md#type-attrs) شامل موارد زیر فراهم می‌کند:
-  - صفاتی که به فایل‌های یک بسته اشاره دارند، معمولاً در قالب [خروجی‌های درایویشن](#gloss-output)،
-  - صفاتی با فراداده، مانند اطلاعاتی درباره نحوه استفاده از بسته.
+  - صفاتی که به فایل‌های یک بسته اشاره دارند، معمولاً در قالب [خروجی‌های درایویشن](#gloss-output)، صفاتی با فراداده، مانند اطلاعاتی دربارهٔ نحوه استفاده از بسته.
 
   شکل دقیق این مجموعه‌های صفت بستگی به توافق دارد.
 
@@ -289,7 +288,7 @@
   - [ساختن](@docroot@/store/building.md) [derivation] متناظر با آن
   - تفویض به یک [ماشین راه دور](@docroot@/command-ref/conf-file.md#conf-builders) و بازیابی خروجی‌ها
 
-  برای توضیحات دقیق درباره الگوریتم، به [`nix-store --realise`](@docroot@/command-ref/nix-store/realise.md) مراجعه کنید.
+  برای توضیحات دقیق دربارهٔ الگوریتم، به [`nix-store --realise`](@docroot@/command-ref/nix-store/realise.md) مراجعه کنید.
 
   همچنین نگاه کنید به [`nix-build`](./command-ref/nix-build.md) و [`nix build`](./command-ref/new-cli/nix3-build.md) (آزمایشی).
 
@@ -346,7 +345,7 @@
 
 - [مسیر انبار]{#gloss-store-path}
 
-مکان یک [store object] در سیستم‌فایل، یعنی یک فرزند مستقیم از پوشه‌ی انبار Nix.
+مکان یک [store object] در سیستم‌فایل، یعنی یک فرزند مستقیم از پوشهٔ انبار Nix.
 
 > **مثال**
 >
@@ -388,7 +387,7 @@
 
 - [user environment]{#gloss-user-env}
 
-  یک store object خودکار ساخته‌شده که شامل مجموعه‌ای از پیوندهای نمادین (symlinks) به برنامه‌های «فعال»، یعنی سایر مسیرهای انبار (store paths) است. این موارد به طور خودکار توسط [`nix-env`](./command-ref/nix-env.md) تولید می‌شوند. به *profiles* مراجعه کنید.
+  یک store object خودکار ساخته‌شده که شامل مجموعه‌ای از پیوندهای نمادین (symlinks) به برنامه‌های «فعال» ، یعنی سایر مسیرهای انبار (store paths) است. این موارد به طور خودکار توسط [`nix-env`](./command-ref/nix-env.md) تولید می‌شوند. به *profiles* مراجعه کنید.
 
 - [validity]{#gloss-validity}
 

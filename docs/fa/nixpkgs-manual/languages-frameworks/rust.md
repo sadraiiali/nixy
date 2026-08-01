@@ -47,7 +47,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
 `buildRustPackage` به یک صفت (attribute) `cargoHash` نیاز دارد که بر روی تمام سورس‌های crate این بسته محاسبه می‌شود.
 
 ::: {.warning}
-`cargoSha256` پیش از این منسوخ شده است و به نفع `cargoHash` که از هش‌های [SRI](https://www.w3.org/TR/SRI/) پشتیبانی می‌کند، حذف خواهد شد.
+`cargoSha256` پیش از این منسوخ شده‌است و به نفع `cargoHash` که از هش‌های [SRI](https://www.w3.org/TR/SRI/) پشتیبانی می‌کند، حذف خواهد شد.
 
 اگر هنوز از `cargoSha256` استفاده می‌کنید، می‌توانید به‌سادگی آن را با `cargoHash` جایگزین کرده و هش را مجدداً محاسبه کنید، یا هش sha256 اصلی را با استفاده از `nix-hash --to-sri --type sha256 "<original sha256>"` به هش SRI تبدیل نمایید.
 :::
@@ -198,7 +198,7 @@ rustPlatform.buildRustPackage {
 ### کامپایل متقاطع {#cross-compilation}
 
 به‌طور پیش‌فرض، بسته‌های Rust درست مانند هر بستهٔ دیگری برای پلتفرم هاست کامپایل می‌شوند. مقدار `--target` ارسال‌شده به ابزارهای Rust از روی همین پلتفرم محاسبه می‌شود.
-به‌طور پیش‌فرض، این فرآیند `stdenv.hostPlatform.config` را دریافت کرده و مولفه‌هایی را که تفاوت آن‌ها شناخته‌شده است جایگزین می‌کند. اما روش‌هایی برای سفارشی‌سازی این آرگومان وجود دارد:
+به‌طور پیش‌فرض، این فرآیند `stdenv.hostPlatform.config` را دریافت کرده و مولفه‌هایی را که تفاوت آن‌ها شناخته‌شده‌است جایگزین می‌کند. اما روش‌هایی برای سفارشی‌سازی این آرگومان وجود دارد:
 
  - برای انتخاب یک تارگت متفاوت بر اساس نام، `stdenv.hostPlatform.rust.
 ```nix
@@ -435,7 +435,7 @@ buildPythonPackage rec {
 }
 ```
 
-#### بسته‌ی Python با استفاده از `maturin` {#python-package-using-maturin}
+#### بستهٔ Python با استفاده از `maturin` {#python-package-using-maturin}
 
 بسته‌های Python که از [Maturin](https://github.com/PyO3/maturin) استفاده می‌کنند می‌توانند با `fetchCargoVendor`، `cargoSetupHook` و `maturinBuildHook` ساخته شوند. برای نمونه، درایویشن (جزئی) زیر بسته Python به نام `retworkx` را می‌سازد. از `fetchCargoVendor` و `cargoSetupHook` برای دریافت و آماده‌سازی وابستگی‌های crate استفاده می‌شود. از `maturinBuildHook` نیز برای انجام فرآیند ساخت استفاده می‌شود.
 

@@ -1,10 +1,10 @@
 # pkgs.mkShell {#sec-pkgs-mkShell}
 
-`pkgs.mkShell` یک `stdenv.mkDerivation` تخصصی‌شده است که هنگام استفاده با `nix-shell` (یا `nix develop`) برخی تکرارها را کاهش می‌دهد.
+`pkgs.mkShell` یک `stdenv.mkDerivation` تخصصی‌شده‌است که هنگام استفاده با `nix-shell` (یا `nix develop`) برخی تکرارها را کاهش می‌دهد.
 
 ## نحوه استفاده {#sec-pkgs-mkShell-usage}
 
-در ادامه یک نمونه استفاده متداول آورده شده است:
+در ادامه یک نمونه استفاده متداول آورده شده‌است:
 
 ```nix
 {

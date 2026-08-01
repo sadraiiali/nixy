@@ -530,7 +530,7 @@ Fetch a file system tree or a plain file using one of the supported backends and
 
 the resulting fixed-output [store path](https://nix.dev/manual/nix/2.34/store/store-path)
 the corresponding [NAR](https://nix.dev/manual/nix/2.34/store/file-system-object/content-address#serial-nix-archive) hash
-backend-specific metadata (currently not documented). TODO: document output attributes 
+backend-specific metadata (currently not documented). TODO: document output attributes
 
 *input* must be an attribute set with the following attributes:
 
@@ -559,7 +559,7 @@ There is no cache entry or the cache entry is older than [`tarball-ttl`](https:/
 The following source types and associated input attributes are supported.
  TODO: It would be soooo much more predictable to work with (and
 document) if `fetchTree` was a curried call with the first parameter for
-`type` or an attribute like `builtins.fetchTree.git`! 
+`type` or an attribute like `builtins.fetchTree.git`!
 
 `"file"`
 Place a plain file into the Nix store.
@@ -882,7 +882,7 @@ Nix store, otherwise it is omitted. The function is called with two
 arguments. The first is the full path of the file. The second is a
 string that identifies the type of the file, which is either
 `"regular"`, `"directory"`, `"symlink"` or `"unknown"` (for other
-kinds of files such as device nodes or fifos — but note that those
+kinds of files such as device nodes or fifos، but note that those
 cannot be copied to the Nix store, so if the predicate returns
 `true` for them, the copy fails). If you exclude a directory,
 the entire corresponding subtree of *e2* is excluded.
@@ -1094,7 +1094,7 @@ Processing data structures with complex internal relationships.
 builtins.genericClosure {
  startSet = [ {key = 5;} ];
  operator = item: [{
- key = if (item.key / 2 ) * 2 == item.key
+ key = if (item.key / 2) * 2 == item.key
  then item.key / 2
  else 3 * item.key + 1;
  }];
@@ -1457,22 +1457,22 @@ evaluates to
 An enrichment of the built-in path type, based on the attributes
 present in *args*. All are optional except `path`:
 
-path 
+path
 
 The underlying path.
 
-name 
+name
 
 The name of the path when added to the store. This can used to
 reference paths that have nix-illegal characters in their names,
 like `@`.
 
-filter 
+filter
 
 A function of the type expected by `builtins.filterSource`,
 with the same semantics.
 
-recursive 
+recursive
 
 When `false`, when `path` is added to the store it is with a
 [flat hash](https://nix.dev/manual/nix/2.34/store/file-system-object/content-address#serial-flat),
@@ -1482,7 +1482,7 @@ of the file. Thus, `path` must refer to a regular file, not a
 directory. This allows similar behavior to `fetchurl`. Defaults
 to `true`.
 
-sha256 
+sha256
 
 When provided, this is the expected
 [content hash](https://nix.dev/manual/nix/2.34/store/file-system-object/content-address)

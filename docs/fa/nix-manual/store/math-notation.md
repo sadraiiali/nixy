@@ -1,6 +1,6 @@
 # پیوست: نشانه‌گذاری ریاضی
 
-در چند جای این راهنما، از «درخت‌های اثبات» صوری برای تعریف [استنتاج طبیعی](https://en.wikipedia.org/wiki/Natural_deduction)-محور انواع [روابط](https://en.wikipedia.org/wiki/Relation_(mathematics)) استفاده شده است.
+در چند جای این راهنما، از «درخت‌های اثبات» صوری برای تعریف [استنتاج طبیعی](https://en.wikipedia.org/wiki/Natural_deduction)-محور انواع [روابط](https://en.wikipedia.org/wiki/Relation_(mathematics)) استفاده شده‌است.
 
 در این بخش‌ها از گرامر و انتساب متامناغیرها به دسته‌های نحوی زیر استفاده می‌شود:
 

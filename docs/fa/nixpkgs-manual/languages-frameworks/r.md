@@ -26,7 +26,7 @@
 }
 ```
 
-سپس می‌توانید از `nix-env -f "<nixpkgs>" -iA rEnv` برای نصب آن در پروفایل کاربر خود استفاده کنید. مجموعه‌ی کتابخانه‌های در دسترس را می‌توان با اجرای دستور `nix-env -f "<nixpkgs>" -qaP -A rPackages` پیدا کرد. ستون اول از آن خروجی، همان نامی است که باید به `rWrapper` در قطعه‌
+سپس می‌توانید از `nix-env -f "<nixpkgs>" -iA rEnv` برای نصب آن در پروفایل کاربر خود استفاده کنید. مجموعهٔ کتابخانه‌های در دسترس را می‌توان با اجرای دستور `nix-env -f "<nixpkgs>" -qaP -A rPackages` پیدا کرد. ستون اول از آن خروجی، همان نامی است که باید به `rWrapper` در قطعه
 
 ```nix
 with import <nixpkgs> { };
@@ -48,7 +48,7 @@ with import <nixpkgs> { };
 
 ## RStudio {#rstudio}
 
-برنامه RStudio از یک مجموعه استاندارد از بسته‌ها استفاده می‌کند و هرگونه محیط‌ سفارشی R یا بسته‌های نصب‌شده‌ای را که ممکن است داشته باشید نادیده می‌گیرد. برای ایجاد یک محیط سفارشی، `rstudioWrapper` را ببینید که عملکردی مشابه `rWrapper` دارد:
+برنامه RStudio از یک مجموعه استاندارد از بسته‌ها استفاده می‌کند و هرگونه محیط سفارشی R یا بسته‌های نصب‌شده‌ای را که ممکن است داشته باشید نادیده می‌گیرد. برای ایجاد یک محیط سفارشی، `rstudioWrapper` را ببینید که عملکردی مشابه `rWrapper` دارد:
 
 ```nix
 {
@@ -106,7 +106,7 @@ Rscript generate-r-packages.R bioc-experiment > bioc-experiment-packages.json.ne
 mv bioc-experiment-packages.json.new bioc-experiment-packages.json
 ```
 
-`generate-r-packages.R <repo>` فایل `<repo>-packages.json` را می‌خواند، به همین دلیل این تغییر نام انجام شده است.
+`generate-r-packages.R <repo>` فایل `<repo>-packages.json` را می‌خواند، به همین دلیل این تغییر نام انجام شده‌است.
 
 محتویات فایل تولیدشدهٔ `*-packages.json` برای ایجاد یک derivation بسته به ازای هر بسته R فهرست‌شده در فایل استفاده خواهد شد.
 

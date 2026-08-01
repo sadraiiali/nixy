@@ -29,7 +29,7 @@ myst:
 
 - یک *ماشین محلی* (مثال نام هاست: `localmachine`)
 
-  کامپیوتری [که Nix روی آن نصب شده است](install-nix) و ساخت‌ها را بین ماشین‌های دیگر توزیع می‌کند.
+  کامپیوتری [که Nix روی آن نصب شده‌است](install-nix) و ساخت‌ها را بین ماشین‌های دیگر توزیع می‌کند.
 
 - یک *ماشین راه دور* (مثال نام هاست: `remotemachine`)
 
@@ -79,7 +79,7 @@ myst:
 فایل `remotebuild.pub` را در این پوشه کپی کنید.
 
 این ماژول پیکربندی یک کاربر جدید به نام `remotebuild` بدون پوشه خانه ایجاد می‌کند.
-کاربر `root` روی *ماشین محلی* قادر خواهد بود با استفاده از کلید SSH تولیدشده‌ی قبلی، از طریق SSH به سازنده راه دور وارد شود.
+کاربر `root` روی *ماشین محلی* قادر خواهد بود با استفاده از کلید SSH تولیدشدهٔ قبلی، از طریق SSH به سازنده راه دور وارد شود.
 
 ماژول جدید NixOS را به پیکربندی موجودِ *ماشین راه دور* اضافه کنید:
 
@@ -109,7 +109,7 @@ nixos-rebuild switch --no-flake --target-host root@remotemachine
 hello
 ```
 
-اگر پیام `hello` قابل مشاهده باشد، احراز هویت بهران انجام شده است.
+اگر پیام `hello` قابل مشاهده باشد، احراز هویت بهران انجام شده‌است.
 
 این ورود آزمایشی همچنین کلید هاست سازنده راه دور را به فایل `/root/.ssh/known_hosts` ماشین محلی اضافه می‌کند.
 ورودهای بعدی توسط بررسی‌های کلید هاست متوقف نخواهند شد.
@@ -285,7 +285,7 @@ copying path '/nix/store/hvj5vyg4723nly1qh5a8daifbi1yisb3-test' from 'ssh://remo
 ```
 
 :::{tip}
-برای کسب اطلاعات بیشتر درباره گزینه‌های موجود در [`nix.settings`](https://search.nixos.org/options?show=nix.settings)، به [راهنمای مرجع Nix](/pages/nix-manual/command-ref/conf-file-prefix) مراجعه کنید.
+برای کسب اطلاعات بیشتر دربارهٔ گزینه‌های موجود در [`nix.settings`](https://search.nixos.org/options?show=nix.settings)، به [راهنمای مرجع Nix](/pages/nix-manual/command-ref/conf-file-prefix) مراجعه کنید.
 :::
 
 سازنده‌های راه دور می‌توانند ویژگی‌های عملکردی متفاوتی داشته باشند.
@@ -293,7 +293,7 @@ copying path '/nix/store/hvj5vyg4723nly1qh5a8daifbi1yisb3-test' from 'ssh://remo
 این کار به Nix روی *ماشین محلی* کمک می‌کند تا ساخت‌ها را بهینه‌ترین شکل ممکن توزیع کند.
 
 :::{tip}
-برای جزئیات بیشتر به [مستندات گزینه NixOS درباره `nix.buildMachines`](https://search.nixos.org/options?query=nix.buildMachines) مراجعه کنید.
+برای جزئیات بیشتر به [مستندات گزینه NixOS دربارهٔ `nix.buildMachines`](https://search.nixos.org/options?query=nix.buildMachines) مراجعه کنید.
 :::
 
 فیلد `nix.buildMachines.*.publicHostKey` را روی کلید هاست عمومی هر سازنده راه دور تنظیم کنید تا توزیع ساخت در برابر سناریوهای حمله مرد میانی ایمن شود.
@@ -304,7 +304,7 @@ copying path '/nix/store/hvj5vyg4723nly1qh5a8daifbi1yisb3-test' from 'ssh://remo
 - [](post-build-hooks) برای بارگذاری آبجکت‌های انبار به یک کش باینری
 
 برای راه‌اندازی چندین سازنده، دستورالعمل‌های بخش [](set-up-remote-builder) را برای هر سازنده راه دور تکرار کنید.
-تمام سازنده‌های راه دور جدید را به صفت `nix.buildMachines` که در بخش [](set-up-distributed-builds) نشان داده شده است، اضافه کنید.
+تمام سازنده‌های راه دور جدید را به صفت `nix.buildMachines` که در بخش [](set-up-distributed-builds) نشان داده شده‌است، اضافه کنید.
 
 :::{tip}
 ماشین‌های ساخت راه دور را به گونه‌ای پیکربندی کنید که [میزبانی یک کش باینری](setup-http-binary-cache) را بر عهده داشته باشند و از آن‌ها به عنوان [کش‌های باینری ترجیحی](custom-binary-cache) برای کاهش ترافیک خارجی خود استفاده کنید.

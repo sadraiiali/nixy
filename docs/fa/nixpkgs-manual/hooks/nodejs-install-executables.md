@@ -1,7 +1,7 @@
 # nodejsInstallExecutables {#nodejs-install-executables}
 
 قلابی برای کپسوله‌سازی برنامه‌های اجرایی Node.js.
-عمدتاً برای یک محیط چندزبانه ایجاد شده است.
+عمدتاً برای یک محیط چندزبانه ایجاد شده‌است.
 
 ## مثال‌ها {#nodejs-install-executables-example}
 
