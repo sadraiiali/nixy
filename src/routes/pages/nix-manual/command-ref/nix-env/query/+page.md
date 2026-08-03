@@ -5,21 +5,24 @@
 `nix-env --query` - نمایش اطلاعات درباره بسته‌ها
 
 ## خلاصه دستور
-`nix-env` {'{'}'{'{'}'{'}'}`--query` | `-q`{'{'}'{'}'}'{'}'} *names…*
-  [`--installed` | `--available` | `-a`]
-  [{'{'}'{'{'}'{'}'}`--status` | `-s`{'{'}'{'}'}'{'}'}]
-  [{'{'}'{'{'}'{'}'}`--attr-path` | `-P`{'{'}'{'}'}'{'}'}]
-  [`--no-name`]
-  [{'{'}'{'{'}'{'}'}`--compare-versions` | `-c`{'{'}'{'}'}'{'}'}]
-  [`--system`]
-  [`--drv-path`]
-  [`--out-path`]
-  [`--description`]
-  [`--meta`]
-  [`--xml`]
-  [`--json`]
-  [{'{'}'{'{'}'{'}'}`--prebuilt-only` | `-b`{'{'}'{'}'}'{'}'}]
-  [{'{'}'{'{'}'{'}'}`--attr` | `-A`{'{'}'{'}'}'{'}'} *attribute-path*]
+
+```text
+nix-env {--query | -q} names…
+  [--installed | --available | -a]
+  [{--status | -s}]
+  [{--attr-path | -P}]
+  [--no-name]
+  [{--compare-versions | -c}]
+  [--system]
+  [--drv-path]
+  [--out-path]
+  [--description]
+  [--meta]
+  [--xml]
+  [--json]
+  [{--prebuilt-only | -b}]
+  [{--attr | -A} attribute-path]
+```
 
 ## توضیحات
 عملیات جستجو اطلاعاتی را درباره مسیرهای انبار که در نسل فعلی از پروفایل فعال نصب شده‌اند (`--installed`)، یا درایویشن‌هایی که برای نصب در عبارت Nix فعال موجود هستند (`--available`) نمایش می‌دهد. این دستور فقط اطلاعاتی را درباره درایویشن‌هایی چاپ می‌کند که نام نمادین آن‌ها با یکی از *names* مطابقت داشته باشد.

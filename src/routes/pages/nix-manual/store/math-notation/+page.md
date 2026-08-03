@@ -4,13 +4,13 @@
 
 در این بخش‌ها از گرامر و انتساب متامناغیرها به دسته‌های نحوی زیر استفاده می‌شود:
 
-\\begin{'{'}'{'{'}'{'}'}align{'{'}'{'}'}'{'}'}
-s, t &\in \text{'{'}'{'{'}'{'}'}store-path{'{'}'{'}'}'{'}'} \\\\
-o &\in \text{'{'}'{'{'}'{'}'}output-name{'{'}'{'}'}'{'}'} \\\\
-i, p &\in \text{'{'}'{'{'}'{'}'}deriving-path{'{'}'{'}'}'{'}'} \\\\
-d &\in \text{'{'}'{'{'}'{'}'}derivation{'{'}'{'}'}'{'}'}
-\\end{'{'}'{'{'}'{'}'}align{'{'}'{'}'}'{'}'}
+\\begin{'{'}align{'}'}
+s, t &\in \text{'{'}store-path{'}'} \\\\
+o &\in \text{'{'}output-name{'}'} \\\\
+i, p &\in \text{'{'}deriving-path{'}'} \\\\
+d &\in \text{'{'}derivation{'}'}
+\\end{'{'}align{'}'}
 
-\\begin{'{'}'{'{'}'{'}'}align{'{'}'{'}'}'{'}'}
-\text{'{'}'{'{'}'{'}'}deriving-path{'{'}'{'}'}'{'}'} \quad p &::= s \mid (p, o)
-\\end{'{'}'{'{'}'{'}'}align{'{'}'{'}'}'{'}'}
+\\begin{'{'}align{'}'}
+\text{'{'}deriving-path{'}'} \quad p &::= s \mid (p, o)
+\\end{'{'}align{'}'}

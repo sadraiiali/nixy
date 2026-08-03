@@ -5,9 +5,12 @@
 `nix-store` - دستکاری یا پرس‌وجو در انبار نیکس (Nix store)
 
 ## خلاصه دستور
-`nix-store` *operation* [*options…*] [*arguments…*]
-  [`--option` *name* *value*]
-  [`--add-root` *path*]
+
+```text
+nix-store operation [options…] [arguments…]
+  [--option name value]
+  [--add-root path]
+```
 
 ## توضیحات
 دستور `nix-store` عملیات‌های پایه‌ای را روی انبار نیکس (Nix store) انجام می‌دهد.

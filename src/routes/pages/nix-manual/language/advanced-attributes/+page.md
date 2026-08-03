@@ -300,9 +300,9 @@
     > [`ca-derivations`][xp-feature-ca-derivations] را فعال کنید.
     > به عنوان مثال، در فایل [nix.conf](/pages/nix-manual/command-ref/conf-file) می‌توانید این مورد را اضافه کنید:
     >
-```
-    > extra-experimental-features = ca-derivations
-    > ```
+> ```
+> extra-experimental-features = ca-derivations
+> ```
 
 این یک مقدار بولی (boolean) با مقدار پیش‌فرض `false` است.
 این گزینه تعیین می‌کند که آیا derivation به‌صورت آدرس‌دهی‌شده بر اساس محتوای شناور (floating content-addressing) است یا خیر.

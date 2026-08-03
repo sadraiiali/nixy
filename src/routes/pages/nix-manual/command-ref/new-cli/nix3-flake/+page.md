@@ -14,7 +14,9 @@
 
 # <a id="synopsis"></a> Synopsis
 
-`nix flake` [*option*...] *subcommand*
+```text
+nix flake [option...] subcommand
+```
 
 where *subcommand* is one of the following:
 

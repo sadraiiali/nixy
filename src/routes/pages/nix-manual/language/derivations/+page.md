@@ -22,12 +22,12 @@
   > **مثال**
   >
 
-```nix
-  > derivation {
-  >   name = "hello";
-  >   # ...
-  > }
-  > ```
+> ```nix
+> derivation {
+>   name = "hello";
+>   # ...
+> }
+> ```
 >
   > مسیر derivation برابر با `/nix/store/&lt;hash&gt;-hello.drv` خواهد بود.
   > مسیرهای [output](#attr-outputs) به شکل `/nix/store/&lt;hash&gt;-hello[-&lt;output&gt;]` خواهند بود.
@@ -41,26 +41,26 @@
   > اعلام یک derivation برای ساخت روی یک نوع سیستم خاص:
   >
 
-```nix
-  > derivation {
-  >   # ...
-  >   system = "x86_64-linux";
-  >   # ...
-  > }
-  > ```
+> ```nix
+> derivation {
+>   # ...
+>   system = "x86_64-linux";
+>   # ...
+> }
+> ```
 
 > **مثال**
 >
 > یک derivation را اعلام کنید تا روی نوع سیستمی که عبارت را ارزیابی می‌کند ساخته شود:
 >
 
-```nix
-  > derivation {
-  >   # ...
-  >   system = builtins.currentSystem;
-  >   # ...
-  > }
-  > ```
+> ```nix
+> derivation {
+>   # ...
+>   system = builtins.currentSystem;
+>   # ...
+> }
+> ```
 > [`builtins.currentSystem`](/pages/nix-manual/language/builtins#builtins-currentSystem) دارای مقدار [`system` configuration option] است و به طور پیش‌فرض روی نوع سیستم نصب فعلی Nix تنظیم می‌شود.
 
 - [`builder`]<a id="attr-builder"></a> ([Path](/pages/nix-manual/language/types#type-path) | [String](/pages/nix-manual/language/types#type-string))
@@ -72,40 +72,40 @@
   > از فایل واقع در مسیر `/bin/bash` به عنوان فایل اجرایی سازنده (Builder) استفاده کنید:
   >
 
-```nix
-  > derivation {
-  >   # ...
-  >   builder = "/bin/bash";
-  >   # ...
-  > };
-  > ```
+> ```nix
+> derivation {
+>   # ...
+>   builder = "/bin/bash";
+>   # ...
+> };
+> ```
 
   > **مثال**
   >
   > کپی کردن یک فایل محلی به انبار نیکس برای استفاده به عنوان فایل اجرایی سازنده (builder):
   >
 
-```nix
-  > derivation {
-  >   # ...
-  >   builder = ./builder.sh;
-  >   # ...
-  > };
-  > ```
+> ```nix
+> derivation {
+>   # ...
+>   builder = ./builder.sh;
+>   # ...
+> };
+> ```
 
 > **مثال**
 >
 > از یک فایل متعلق به درایویشن دیگری به‌عنوان فایل اجرایی سازنده (builder) استفاده کنید:
 >
 
-```nix
-  > let pkgs = import <nixpkgs> {}; in
-  > derivation {
-  >   # ...
-  >   builder = "${pkgs.python}/bin/python";
-  >   # ...
-  > };
-  > ```
+> ```nix
+> let pkgs = import <nixpkgs> {}; in
+> derivation {
+>   # ...
+>   builder = "${pkgs.python}/bin/python";
+>   # ...
+> };
+> ```
 
 ### اختیاری
 
@@ -120,14 +120,14 @@
   > ارسال آرگومان‌ها به Bash برای تفسیر یک فرمان شل:
   >
 
-```nix
-  > derivation {
-  >   # ...
-  >   builder = "/bin/bash";
-  >   args = [ "-c" "echo hello world > $out" ];
-  >   # ...
-  > };
-  > ```
+> ```nix
+> derivation {
+>   # ...
+>   builder = "/bin/bash";
+>   args = [ "-c" "echo hello world > $out" ];
+>   # ...
+> };
+> ```
 
 - [`outputs`]<a id="attr-outputs"></a> ([فهرست](/pages/nix-manual/language/types#type-list) از [رشته](/pages/nix-manual/language/types#type-string))
 
@@ -147,24 +147,24 @@
   > بنابراین، بسته کتابخانه می‌تواند موارد زیر را مشخص کند:
   >
 
-```nix
-  > derivation {
-  >   # ...
-  >   outputs = [ "lib" "dev" "doc" ];
-  >   # ...
-  > }
-  > ```
+> ```nix
+> derivation {
+>   # ...
+>   outputs = [ "lib" "dev" "doc" ];
+>   # ...
+> }
+> ```
 >
 > این کار باعث می‌شود Nix متغیرهای محیطی `lib`، `dev` و `doc` را که حاوی مسیرهای انبار موردنظر برای هر خروجی هستند، به سازنده (Builder) ارسال کند.
 > سازنده (Builder) معمولاً کاری شبیه به این انجام خواهد داد:
 >
 
-```bash
-  > ./configure \
-  >   --libdir=$lib/lib \
-  >   --includedir=$dev/include \
-  >   --docdir=$doc/share/doc
-  > ```
+> ```bash
+> ./configure \
+>   --libdir=$lib/lib \
+>   --includedir=$dev/include \
+>   --docdir=$doc/share/doc
+> ```
 >
 > برای یک بسته با سبک Autoconf.
 
@@ -174,13 +174,13 @@
 >
 >
 
-```nix
-  > derivation {
-  >   name = "example";
-  >   outputs = [ "lib" "dev" "doc" "out" ];
-  >   # ...
-  > }
-  > ```
+> ```nix
+> derivation {
+>   name = "example";
+>   outputs = [ "lib" "dev" "doc" "out" ];
+>   # ...
+> }
+> ```
 > مسیر derivation انبار `/nix/store/&lt;hash&gt;-example.drv` خواهد بود.
 > مسیرهای خروجی عبارتند از
 > - `/nix/store/&lt;hash&gt;-example-lib`
@@ -196,15 +196,15 @@
 > یک خروجی را با نام صفت (attribute) انتخاب کنید:
 >
 
-```nix
-  > let
-  >   myPackage = derivation {
-  >     name = "example";
-  >     outputs = [ "lib" "dev" "doc" "out" ];
-  >     # ...
-  >   };
-  > in myPackage.dev
-  > ```
+> ```nix
+> let
+>   myPackage = derivation {
+>     name = "example";
+>     outputs = [ "lib" "dev" "doc" "out" ];
+>     # ...
+>   };
+> in myPackage.dev
+> ```
 >
 > از آنجا که `lib` اولین خروجی است، `myPackage` معادل `myPackage.lib` است.
 

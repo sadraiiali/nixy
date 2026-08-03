@@ -5,13 +5,16 @@
 `nix-store --query` - نمایش اطلاعات درباره مسیرهای انبار
 
 ## خلاصه
-`nix-store` {'{'}'{'{'}'{'}'}`--query` | `-q`{'{'}'{'}'}'{'}'}
-  {'{'}'{'{'}'{'}'}`--outputs` | `--requisites` | `-R` | `--references` | `--referrers` |
-  `--referrers-closure` | `--deriver` | `-d` | `--valid-derivers` |
-  `--graph` | `--tree` | `--binding` *name* | `-b` *name* | `--hash` |
-  `--size` | `--roots`{'{'}'{'}'}'{'}'}
-  [`--use-output`] [`-u`] [`--force-realise`] [`-f`]
-  *paths…*
+
+```text
+nix-store {--query | -q}
+  {--outputs | --requisites | -R | --references | --referrers |
+  --referrers-closure | --deriver | -d | --valid-derivers |
+  --graph | --tree | --binding name | -b name | --hash |
+  --size | --roots}
+  [--use-output] [-u] [--force-realise] [-f]
+  paths…
+```
 
 ## توضیحات
 عملیات `--query` اطلاعات مختلفی را درباره مسیرهای انبار نمایش می‌دهد. پرس‌وجوها در ادامه شرح داده شده‌اند. حداکثر یک پرس‌وجو را می‌توان مشخص کرد. پرس‌وجوی پیش‌فرض `--outputs` است.

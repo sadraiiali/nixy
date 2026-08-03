@@ -5,7 +5,10 @@
 `nix-collect-garbage` - حذف [اشیاء انبار] غیرقابل‌دسترس
 
 ## خلاصه
-`nix-collect-garbage` [`--delete-old`] [`-d`] [`--delete-older-than` *period*] [`--max-freed` *bytes*] [`--dry-run`]
+
+```text
+nix-collect-garbage [--delete-old] [-d] [--delete-older-than period] [--max-freed bytes] [--dry-run]
+```
 
 ## توضیحات
 دستور `nix-collect-garbage` عمدتاً یک نام مستعار برای [`nix-store --gc`](/pages/nix-manual/command-ref/nix-store/gc) است.
@@ -47,13 +50,13 @@
 ## گزینه‌ها
 این گزینه‌ها برای حذف [پروفایل]‌های قدیمی پیش از حذف [اشیاء انبار] غیرقابل‌دسترس هستند.
 
-- &lt;span id="opt-delete-old"&gt;[`--delete-old`](#opt-delete-old)&lt;/span&gt; / `-d`
+- <span id="opt-delete-old">[`--delete-old`](#opt-delete-old)</span> / `-d`
 
   حذف تمام نسل‌های قدیمی پروفایل‌ها.
 
   این معادل فراخوانی [`nix-env --delete-generations old`](/pages/nix-manual/command-ref/nix-env/delete-generations#generations-old) روی هر پروفایل یافت‌شده است.
 
-- &lt;span id="opt-delete-older-than"&gt;[`--delete-older-than`](#opt-delete-older-than)&lt;/span&gt; *period*
+- <span id="opt-delete-older-than">[`--delete-older-than`](#opt-delete-older-than)</span> *period*
 
   حذف تمام نسل‌های پروفایل‌هایی که قدیمی‌تر از مقدار مشخص‌شده هستند (به‌جز نسل‌هایی که در آن مقطع زمانی فعال بوده‌اند).
   مقدار *period* مقداری مانند `30d` است که به معنای ۳۰ روز خواهد بود.
@@ -61,7 +64,7 @@
   این معادل فراخوانی [`nix-env --delete-generations &lt;period&gt;`](/pages/nix-manual/command-ref/nix-env/delete-generations#generations-time) روی هر پروفایل یافت‌شده است.
   برای اطلاعات بیشتر دربارهٔ آرگومان *period*، مستندات آن دستور را مشاهده کنید.
 
-- &lt;span id="opt-max-freed"&gt;[`--max-freed`](#opt-max-freed)&lt;/span&gt; *bytes*
+- <span id="opt-max-freed">[`--max-freed`](#opt-max-freed)</span> *bytes*
 
    
 

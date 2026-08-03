@@ -31,29 +31,37 @@ _HEH_HAMZA_EZAFE_RE = re.compile(
 # U+2014 em dash, U+2013 en dash, U+2015 horizontal bar
 _DASH_RE = re.compile(r"[\u2013\u2014\u2015]")
 
-# Regions that must not be rewritten (Markdown / MyST / HTML / URLs)
+# Regions that must not be rewritten (Markdown / MyST / HTML / URLs / Svelte)
 _MD_EXCEPTIONS: list[re.Pattern[str]] = [
-    # fenced code blocks (``` or ~~~)
+    # fenced code blocks (``` or ~~~), including ```{code-block} nix
     re.compile(r"(?m)^( {0,3})(`{3,}|~{3,}).*?\n[\s\S]*?^( {0,3})\2[^\n]*$", re.M),
-    # indented code block (4 spaces / tab) — conservative: whole indented runs
+    # indented code block (4 spaces / tab)
     re.compile(r"(?m)(?:^(?: {4}|\t).*(?:\n|$))+"),
+    # blockquote-indented code / preformatted (published pages use ">   nix…")
+    re.compile(r"(?m)(?:^>+(?: {2,}|\t).*(?:\n|$))+"),
     # inline code
     re.compile(r"`+[^`\n]+`+"),
     # HTML comments
     re.compile(r"<!--[\s\S]*?-->"),
-    # HTML tags (attributes often have English / digits / =)
+    # HTML tags
     re.compile(r"</?[A-Za-z][^>\n]*>"),
     # autolinks / bare URLs
     re.compile(r"https?://[^\s)\]>\"']+"),
     re.compile(r"//[^\s)\]>\"']+"),
-    # Markdown link/image destination: ](url) or ][ref]
+    # Markdown link/image destination
     re.compile(r"\]\([^)]*\)"),
     re.compile(r"\]\[[^\]]*\]"),
     # reference-style link definitions
     re.compile(r"(?m)^\[[^\]]+\]:\s+\S+.*$"),
-    # MyST / Sphinx roles with backticks: {term}`foo`, {ref}`...`
+    # MyST / Sphinx roles: {term}`foo`
     re.compile(r"\{[a-zA-Z0-9_:-]+\}`[^`\n]*`"),
-    # front-matter style (label) lines used in this repo: (install-nix)=
+    # MyST directive lines: :::{tip}, ::::, ```{code-block}, :class: …
+    re.compile(r"(?m)^:{1,6}\{?[^\n]*$"),
+    re.compile(r"(?m)^`{3,}\{[^}\n]+\}[^\n]*$"),
+    re.compile(r"(?m)^:(?:class|name|caption|linenos|emphasize-lines)[^\n]*$"),
+    # Svelte/mdsvex brace escapes: {'{'} {'}'}
+    re.compile(r"\{'(?:\{|\})'\}"),
+    # front-matter style labels: (install-nix)=
     re.compile(r"(?m)^\([A-Za-z0-9_./:-]+\)=\s*$"),
 ]
 

@@ -6,7 +6,10 @@
 
 [آرشیو نیکس]: /pages/nix-manual/store/file-system-object/content-address#serial-nix-archive
 ## خلاصه
-`nix-store` `--import`
+
+```text
+nix-store --import
+```
 
 ## توضیحات
 عملیات `--import`، سریال‌سازی مجموعه‌ای از [اشیاء انبار](/pages/nix-manual/glossary#gloss-store-object) تولیدشده توسط [`nix-store --export`](/pages/nix-manual/command-ref/nix-store/export) را از ورودی استاندارد می‌خواند و آن اشیاء انبار را به [انبار Nix](/pages/nix-manual/store) مشخص‌شده اضافه می‌کند.
@@ -23,7 +26,7 @@
 > با داشتن یک بسته (closure) از GNU Hello به عنوان یک فایل:
 >
 
-```shell
+> ```shell
 > $ storePath="$(nix-build '<nixpkgs>' -I nixpkgs=channel:nixpkgs-unstable -A hello --no-out-link)"
 > $ nix-store --export $(nix-store --query --requisites $storePath) > hello.closure
 > ```
@@ -31,6 +34,6 @@
 > بسته‌ی بسته (closure) را با استفاده از گزینه‌ی [`--store`](/pages/nix-manual/command-ref/conf-file#conf-store) به یک [انبار SSH راه دور](/pages/nix-manual/store/types/ssh-store) درون‌ریزی کنید:
 >
 
-```shell
+> ```shell
 > $ nix-store --import --store ssh://alice@itchy.example.org < hello.closure
 > ```

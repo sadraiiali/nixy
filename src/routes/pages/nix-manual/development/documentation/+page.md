@@ -170,10 +170,9 @@ $ meson compile manual
   ```
 
 نمونه‌های برجسته‌سازی‌شده را به این صورت نشان دهید:
-```
-  > **Example**
-  >
-  > ```
+> ```
+> **Example**
+> ```
   > ```console
   > $ nix --version
   >

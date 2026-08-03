@@ -14,7 +14,9 @@
 
 # <a id="synopsis"></a> Synopsis
 
-`nix` [*option*...] *subcommand*
+```text
+nix [option...] subcommand
+```
 
 where *subcommand* is one of the following:
 
@@ -212,7 +214,7 @@ The Nix expression in that file, or any selected attribute, must evaluate to a d
 
 ### <a id="nix-expression"></a> Nix expression
 
-Example: `--expr 'import &lt;nixpkgs&gt; {'{'}'{'{'}'{'}'}{'{'}'{'}'}'{'}'}' hello`
+Example: `--expr 'import &lt;nixpkgs&gt; {'{'}{'}'}' hello`
 
 When the option `--expr` *expression* [*attrpath*...] is given, installables are interpreted as the value of the of the Nix expression.
 If attribute paths are provided, commands will operate on the corresponding values accessible at these paths.
@@ -241,10 +243,10 @@ and likewise, using a store path to a "drv" file to specify the derivation:
 
 For `--expr` and `-f`/`--file`, the derivation output is specified as part of the attribute path:
 $ nix build -f '&lt;nixpkgs&gt;' 'glibc^dev,static'
-$ nix build --impure --expr 'import &lt;nixpkgs&gt; {'{'}'{'{'}'{'}'} {'{'}'{'}'}'{'}'}' 'glibc^dev,static'
+$ nix build --impure --expr 'import &lt;nixpkgs&gt; {'{'} {'}'}' 'glibc^dev,static'
 
 This syntax is the same even if the actual attribute path is empty:
-$ nix build --impure --expr 'let pkgs = import &lt;nixpkgs&gt; {'{'}'{'{'}'{'}'} {'{'}'{'}'}'{'}'}; in pkgs.glibc' '^dev,static'
+$ nix build --impure --expr 'let pkgs = import &lt;nixpkgs&gt; {'{'} {'}'}; in pkgs.glibc' '^dev,static'
 - You can also specify that *all* outputs should be used using the
 syntax *installable*`^*`. For example, the following shows the size
 of all outputs of the `glibc` package in the binary cache:

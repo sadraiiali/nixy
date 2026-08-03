@@ -25,7 +25,7 @@
 > اگر عبارت پیش‌فرض شامل دو فایل `foo.nix` و `bar.nix` باشد، آنگاه عبارت Nix پیش‌فرض معادل خواهد بود با
 >
 
-```nix
+> ```nix
 > {
 >   foo = import ~/.nix-defexpr/foo.nix;
 >   bar = import ~/.nix-defexpr/bar.nix;

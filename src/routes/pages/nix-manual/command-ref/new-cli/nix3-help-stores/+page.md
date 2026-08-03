@@ -14,7 +14,9 @@
 
 # <a id="synopsis"></a> Synopsis
 
-`nix help-stores` [*option*...]
+```text
+nix help-stores [option...]
+```
 
 Nix supports different types of stores:
 
@@ -199,7 +201,7 @@ Nix can, however, optionally check that the OverlayFS mount settings appear as e
 
 Not directly specified.
 The location of the database instead depends on the `state` setting.
-It is always `${'{'}'{'{'}'{'}'}state{'{'}'{'}'}'{'}'}/db`.
+It is always `${'{'}state{'}'}/db`.
 
 This contains the metadata of all of the upper layer [store objects](/pages/nix-manual/store/store-object) (everything beyond their file system objects), and also duplicate copies of some lower layer store object's metadata.
 The duplication is so the metadata for the [closure](/pages/nix-manual/glossary#gloss-closure) of upper layer [store objects](/pages/nix-manual/store/store-object) can be found entirely within the upper layer.

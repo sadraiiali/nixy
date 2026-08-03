@@ -980,12 +980,9 @@
 	}
 
 	function resolvedDirection(el: HTMLElement): 'rtl' | 'ltr' {
-		// Fenced listings stay LTR; inline code is RTL
-		if (el.tagName === 'PRE' || (el.tagName === 'CODE' && el.closest('pre'))) {
+		// Code (fenced + inline) and kbd stay LTR
+		if (el.tagName === 'PRE' || el.tagName === 'CODE' || el.tagName === 'KBD') {
 			return 'ltr';
-		}
-		if (el.tagName === 'CODE' || el.tagName === 'KBD') {
-			return 'rtl';
 		}
 		let cur: HTMLElement | null = el;
 		while (cur) {

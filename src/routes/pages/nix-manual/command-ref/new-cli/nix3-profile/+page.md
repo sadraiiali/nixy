@@ -14,7 +14,9 @@
 
 # <a id="synopsis"></a> Synopsis
 
-`nix profile` [*option*...] *subcommand*
+```text
+nix profile [option...] subcommand
+```
 
 where *subcommand* is one of the following:
 

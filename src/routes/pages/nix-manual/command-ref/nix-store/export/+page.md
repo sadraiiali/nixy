@@ -6,7 +6,9 @@
 
 ## خلاصه دستور
 
-`nix-store` `--export` *paths…*
+```text
+nix-store --export paths…
+```
 
 ## توضیحات
 
@@ -34,7 +36,7 @@
 > نوشتن بستار روی دستگاه بلوکی در ماشینی که به اینترنت متصل است:
 >
 
-```shell
+> ```shell
 > [alice@itchy]$ storePath=$(nix-build '<nixpkgs>' -I nixpkgs=channel:nixpkgs-unstable -A hello --no-out-link)
 > [alice@itchy]$ nix-store --export $(nix-store --query --requisites $storePath) | sudo dd of=/dev/usb
 > ```
@@ -42,7 +44,7 @@
 > خواندن closure از روی بلاک‌دیوایس روی ماشینی بدون اتصال به اینترنت:
 >
 
-```shell
+> ```shell
 > [bob@scratchy]$ hello=$(sudo dd if=/dev/usb | nix-store --import | tail -1)
 > [bob@scratchy]$ $hello/bin/hello
 > Hello, world!

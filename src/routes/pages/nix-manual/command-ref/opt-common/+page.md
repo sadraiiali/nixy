@@ -2,15 +2,15 @@
 
 اکثر دستورهای Nix گزینه‌های خط فرمان زیر را می‌پذیرند:
 
-- &lt;span id="opt-help"&gt;[`--help`](#opt-help)&lt;/span&gt;
+- <span id="opt-help">[`--help`](#opt-help)</span>
 
   خلاصه‌ای از نحو دستور را چاپ کرده و خارج می‌شود.
 
-- &lt;span id="opt-version"&gt;[`--version`](#opt-version)&lt;/span&gt;
+- <span id="opt-version">[`--version`](#opt-version)</span>
 
   شماره نسخه Nix را روی خروجی استاندارد چاپ کرده و خارج می‌شود.
 
-- &lt;span id="opt-verbose"&gt;[`--verbose`](#opt-verbose)&lt;/span&gt; / `-v`
+- <span id="opt-verbose">[`--verbose`](#opt-verbose)</span> / `-v`
 
   سطح جزئیات پیام‌های تشخیصی چاپ‌شده روی خروجی خطای استاندارد را افزایش می‌دهد.
   برای هر عملیات Nix، اطلاعات چاپ‌شده روی خروجی استاندارد خوش‌تعریف است؛
@@ -44,7 +44,7 @@
 
     مقدار بسیار زیادی از اطلاعات اشکال‌زدایی را چاپ می‌کند.
 
-- &lt;span id="opt-quiet"&gt;[`--quiet`](#opt-quiet)&lt;/span&gt;
+- <span id="opt-quiet">[`--quiet`](#opt-quiet)</span>
 
   سطح جزئیات پیام‌های تشخیصی چاپ‌شده روی خروجی خطای استاندارد را کاهش می‌دهد.
   این گزینه معکوس گزینه `-v` / `--verbose` است.
@@ -52,7 +52,7 @@
   این گزینه را می‌توان به دفعات مشخص کرد.
   به فهرست سطوح جزئیات قبلی مراجعه کنید.
 
-- &lt;span id="opt-log-format"&gt;[`--log-format`](#opt-log-format)&lt;/span&gt; *format*
+- <span id="opt-log-format">[`--log-format`](#opt-log-format)</span> *format*
 
   از این گزینه می‌توان برای تغییر فرمت خروجی گزارش (log) استفاده کرد، که در آن *format* یکی از موارد زیر است:
 
@@ -78,13 +78,13 @@
 
     گزارش‌های خام را به همراه نوار پیشرفت در پایین صفحه نمایش می‌دهد.
 
-- &lt;span id="opt-no-build-output"&gt;[`--no-build-output`](#opt-no-build-output)&lt;/span&gt; / `-Q`
+- <span id="opt-no-build-output">[`--no-build-output`](#opt-no-build-output)</span> / `-Q`
 
   به طور پیش‌فرض، خروجی نوشته‌شده توسط سازنده‌ها روی خروجی استاندارد و خطای استاندارد، در خروجی خطای استاندارد دستور Nix بازتاب می‌یابد.
   این گزینه این رفتار را متوقف می‌کند.
   توجه داشته باشید که خروجی استاندارد و خطای سازنده همیشه در یک فایل گزارش در `prefix/nix/var/log/nix` نوشته می‌شوند.
 
-- &lt;span id="opt-max-jobs"&gt;[`--max-jobs`](#opt-max-jobs)&lt;/span&gt; / `-j` *number*
+- <span id="opt-max-jobs">[`--max-jobs`](#opt-max-jobs)</span> / `-j` *number*
 
   حداکثر تعداد کارهای ساختی را که Nix به صورت موازی انجام خواهد داد روی مقدار مشخص‌شده تنظیم می‌کند.
   برای استفاده از تعداد پردازنده‌های موجود در سیستم، `auto` را مشخص کنید.
@@ -93,7 +93,7 @@
 
   تنظیم آن روی `0` ساخت‌وساز روی ماشین محلی را ممنوع می‌کند، که وقتی می‌خواهید ساخت‌ها فقط روی سازنده‌های راه دور انجام شوند، مفید است.
 
-- &lt;span id="opt-cores"&gt;[`--cores`](#opt-cores)&lt;/span&gt;
+- <span id="opt-cores">[`--cores`](#opt-cores)</span>
 
 مقدار متغیر محیطی `NIX_BUILD_CORES` را در فراخوانی سازنده‌ها تعیین می‌کند.
   سازنده‌ها می‌توانند به صلاحدید خود از این متغیر برای کنترل حداکثر میزان موازی‌سازی استفاده کنند.
@@ -101,30 +101,30 @@
   مقدار پیش‌فرض آن، در صورت تنظیم‌شدن، مقدار تنظیمات پیکربندی `cores` است، وگرنه `1` خواهد بود.
   مقدار `0` به این معناست که سازنده باید از تمام هسته‌های پردازنده موجود در سیستم استفاده کند.
 
-- &lt;span id="opt-max-silent-time"&gt;[`--max-silent-time`](#opt-max-silent-time)&lt;/span&gt;
+- <span id="opt-max-silent-time">[`--max-silent-time`](#opt-max-silent-time)</span>
 
   حداکثر تعداد ثانیه‌هایی را تعیین می‌کند که سازنده می‌تواند بدون تولید هیچ داده‌ای روی خروجی استاندارد یا خطای استاندارد سپری کند.
   مقدار پیش‌فرض توسط تنظیمات پیکربندی `max-silent-time` مشخص می‌شود.
   مقدار `0` به معنای نداشتن محدودیت زمانی (time-out) است.
 
-- &lt;span id="opt-timeout"&gt;[`--timeout`](#opt-timeout)&lt;/span&gt;
+- <span id="opt-timeout">[`--timeout`](#opt-timeout)</span>
 
   حداکثر تعداد ثانیه‌هایی را که یک سازنده می‌تواند اجرا شود تعیین می‌کند.
   مقدار پیش‌فرض توسط تنظیمات پیکربندی `timeout` مشخص می‌شود.
   مقدار `0` به معنای عدم اعمال محدودیت زمانی است.
 
-- &lt;span id="opt-keep-going"&gt;[`--keep-going`](#opt-keep-going)&lt;/span&gt; / `-k`
+- <span id="opt-keep-going">[`--keep-going`](#opt-keep-going)</span> / `-k`
 
   تا حد امکان، در صورت شکست ساخت‌ها، به کار ادامه دهید.
   یعنی اگر ساخت ورودیِ یک derivation با شکست مواجه شود، Nix همچنان سایر ورودی‌ها را می‌سازد، اما خودِ آن derivation را خیر.
   بدون این گزینه، اگر هر ساختی با شکست مواجه شود (به‌جز ساخت جایگزین‌ها)، Nix متوقف می‌شود و ممکن است ساخت‌های در جریان را (در صورت ساخت‌های موازی یا توزیع‌شده) متوقف کند.
 
-- &lt;span id="opt-keep-failed"&gt;[`--keep-failed`](#opt-keep-failed)&lt;/span&gt; / `-K`
+- <span id="opt-keep-failed">[`--keep-failed`](#opt-keep-failed)</span> / `-K`
 
   مشخص می‌کند که در صورت شکست ساخت، پوشه موقت (معمولاً در `/tmp`) که ساخت در آن انجام می‌شود نباید حذف شود.
   مسیر پوشه ساخت به عنوان یک پیام اطلاعاتی چاپ می‌شود.
 
-- &lt;span id="opt-fallback"&gt;[`--fallback`](#opt-fallback)&lt;/span&gt;
+- <span id="opt-fallback">[`--fallback`](#opt-fallback)</span>
 
   هر زمان که Nix تلاش می‌کند یک derivation را بسازد که برای هر مسیر خروجی آن جایگزین‌هایی شناخته شده است، اما تحقق مسیرهای خروجی از طریق جایگزین‌ها با شکست مواجه شود، به ساخت derivation بازمی‌گردد (fallback).
 
@@ -134,16 +134,16 @@
   بنابراین، نصب از روی باینری‌ها به نصب از روی کد منبع بازمی‌گردد.
   این گزینه به‌طور پیش‌فرض فعال نیست، زیرا معمولاً مطلوب نیست که یک خطای موقت در دریافت جایگزین‌ها منجر به ساخت کامل از روی کد منبع (همراه با مصرف منابع مرتبط با آن) شود.
 
-- &lt;span id="opt-readonly-mode"&gt;[`--readonly-mode`](#opt-readonly-mode)&lt;/span&gt;
+- <span id="opt-readonly-mode">[`--readonly-mode`](#opt-readonly-mode)</span>
 
   هنگامی که از این گزینه استفاده می‌شود، هیچ تلاشی برای باز کردن پایگاه‌داده Nix انجام نمی‌شود.
   بیشتر عملیات‌های Nix به دسترسی به پایگاه‌داده نیاز دارند، بنابراین آن عملیات‌ها با شکست مواجه خواهند شد.
 
-- &lt;span id="opt-arg"&gt;[`--arg`](#opt-arg)&lt;/span&gt; *name* *value*
+- <span id="opt-arg">[`--arg`](#opt-arg)</span> *name* *value*
 
   این گزینه توسط `nix-env`، `nix-instantiate`، `nix-shell` و `nix-build` پذیرفته می‌شود.
   هنگام ارزیابی عبارت‌های Nix، ارزیاب عبارت به‌طور خودکار تلاش می‌کند توابعی را که با آن‌ها مواجه می‌شود فراخوانی کند.
-  این ارزیاب می‌تواند به‌طور خودکار توابعی را که هر آرگومان آن‌ها دارای یک [مقدار پیش‌فرض](/pages/nix-manual/language/syntax#functions) است (مانند `{'{'}'{'{'}'{'}'} argName ? defaultValue {'{'}'{'}'}'{'}'}: ...`) فراخوانی کند.
+  این ارزیاب می‌تواند به‌طور خودکار توابعی را که هر آرگومان آن‌ها دارای یک [مقدار پیش‌فرض](/pages/nix-manual/language/syntax#functions) است (مانند `{'{'} argName ? defaultValue {'}'}: ...`) فراخوانی کند.
 
 با استفاده از `--arg`، همچنین می‌توانید توابعی را که دارای آرگومان بدون مقدار پیش‌فرض هستند (یا یک مقدار پیش‌فرض را بازنویسی کنند) فراخوانی کنید.
 یعنی اگر ارزیاب با تابعی مواجه شود که آرگومان آن دارای نام *name* است، آن را با مقدار *value* فراخوانی خواهد کرد.
@@ -161,20 +161,20 @@
   می‌توانید با استفاده از `--arg` این مقدار را بازنویسی کنید، مثلاً: `nix-env --install --attr pkgname --arg system \"i686-freebsd\"`.
   (توجه داشته باشید از آنجا که آرگومان یک لیترال رشته‌ای Nix است، باید نقل‌قول‌ها را escape کنید.)
 
-- &lt;span id="opt-arg-from-file"&gt;[`--arg-from-file`](#opt-arg-from-file)&lt;/span&gt; *name* *path*
+- <span id="opt-arg-from-file">[`--arg-from-file`](#opt-arg-from-file)</span> *name* *path*
 
   محتویات فایل *path* را به عنوان آرگومان *name* به توابع Nix ارسال می‌کند.
 
-- &lt;span id="opt-arg-from-stdin"&gt;[`--arg-from-stdin`](#opt-arg-from-stdin)&lt;/span&gt; *name*
+- <span id="opt-arg-from-stdin">[`--arg-from-stdin`](#opt-arg-from-stdin)</span> *name*
 
   محتویات ورودی استاندارد (stdin) را به عنوان آرگومان *name* به توابع Nix ارسال می‌کند.
 
-- &lt;span id="opt-argstr"&gt;[`--argstr`](#opt-argstr)&lt;/span&gt; *name* *value*
+- <span id="opt-argstr">[`--argstr`](#opt-argstr)</span> *name* *value*
 
   این گزینه شبیه به `--arg` است، با این تفاوت که مقدار آن یک عبارت Nix نیست بلکه یک رشته است.
   بنابراین به‌جای `--arg system \"i686-linux\"` (نقل‌قول‌های بیرونی برای سازگاری با شل هستند) می‌توانید بگویید `--argstr system i686-linux`.
 
-- &lt;span id="opt-attr"&gt;[`--attr`](#opt-attr)&lt;/span&gt; / `-A` *attrPath*
+- <span id="opt-attr">[`--attr`](#opt-attr)</span> / `-A` *attrPath*
 
   یک صفت را از عبارت سطح بالای Nix که در حال ارزیابی است انتخاب می‌کند.
   (فقط مختص `nix-env`، `nix-instantiate`، `nix-build` و `nix-shell`.)
@@ -185,11 +185,11 @@
   علاوه بر نام صفت‌ها، می‌توانید اندیس‌های آرایه را نیز مشخص کنید.
   به عنوان مثال، مسیر صفت `foo.3.bar` صفت `bar` از چهارمین عنصر آرایه واقع در صفت `foo` از عبارت سطح بالا را انتخاب می‌کند.
 
-- &lt;span id="opt-eval-store"&gt;[`--eval-store`](#opt-eval-store)&lt;/span&gt; *store-url*
+- <span id="opt-eval-store">[`--eval-store`](#opt-eval-store)</span> *store-url*
 
   [URL مربوط به انبار Nix](/pages/nix-manual/store/types#store-url-format) جهت استفاده برای ارزیابی، یعنی جایی که درایویشن‌ها (فایل‌های `.drv`) و ورودی‌های ارجاع‌داده‌شده توسط آن‌ها در آن ذخیره می‌شوند.
 
-- &lt;span id="opt-expr"&gt;[`--expr`](#opt-expr)&lt;/span&gt; / `-E`
+- <span id="opt-expr">[`--expr`](#opt-expr)</span> / `-E`
 
   آرگومان‌های خط فرمان را به عنوان فهرستی از عبارت‌های Nix برای تجزیه و ارزیابی تفسیر می‌کند، نه به عنوان فهرستی از نام فایل‌های حاوی عبارت‌های Nix.
   (فقط مختص `nix-instantiate`، `nix-build` و `nix-shell`.)
@@ -197,23 +197,23 @@
   برای `nix-shell`، این گزینه معمولاً برای ارائه یک شل استفاده می‌شود که در آن می‌توانید بسته‌های بازگردانده‌شده توسط عبارت را بسازید.
   اگر می‌خواهید شلی داشته باشید که حاوی بسته‌های *ساخته‌شده* و آماده برای استفاده باشد، به‌جای آن عبارت خود را به پرچم کمکی `nix-shell --packages` بدهید.
 
-- &lt;span id="opt-I"&gt;[`-I` / `--include`](#opt-I)&lt;/span&gt; *path*
+- <span id="opt-I">[`-I` / `--include`](#opt-I)</span> *path*
 
   یک ورودی به فهرست مسیرهای جستجوی مورد استفاده برای حل [مسیرهای جستجو](/pages/nix-manual/language/constructs/lookup-path) اضافه می‌کند.
   این گزینه ممکن است چندین بار داده شود.
 
   مسیرهای اضافه‌شده از طریق `-I` بر [تنظیمات پیکربندی `nix-path`](/pages/nix-manual/command-ref/conf-file#conf-nix-path) و [متغیر محیطی `NIX_PATH`](/pages/nix-manual/command-ref/env-common#env-NIX_PATH) اولویت دارند.
 
-- &lt;span id="opt-impure"&gt;[`--impure`](#opt-impure)&lt;/span&gt;
+- <span id="opt-impure">[`--impure`](#opt-impure)</span>
 
   امکان دسترسی به مسیرها و مخازن تغییرپذیر را فراهم می‌کند.
 
-- &lt;span id="opt-option"&gt;[`--option`](#opt-option)&lt;/span&gt; *name* *value*
+- <span id="opt-option">[`--option`](#opt-option)</span> *name* *value*
 
   گزینه پیکربندی Nix به نام *name* را روی مقدار *value* تنظیم می‌کند.
   این کار تنظیمات موجود در فایل پیکربندی Nix را بازنویسی می‌کند (به nix.conf5 مراجعه کنید).
 
-- &lt;span id="opt-repair"&gt;[`--repair`](#opt-repair)&lt;/span&gt;
+- <span id="opt-repair">[`--repair`](#opt-repair)</span>
 
 مسیرهای خراب یا مفقود شده‌ی انبار Nix را با بارگیری مجدد یا ساخت دوباره‌ی آن‌ها اصلاح کنید.
 توجه داشته باشید که این کار کند است، زیرا مستلزم محاسبه‌ی یک هش رمزنگاری‌شده از محتویات هر مسیر در وابستگی‌های زمان اجرا (closure) مربوط به ساخت است.

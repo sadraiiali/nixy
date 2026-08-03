@@ -6,7 +6,9 @@
 
 ## خلاصه‌ی دستور
 
-`nix-store` `--verify-path` *paths…*
+```text
+nix-store --verify-path paths…
+```
 
 ## توضیحات
 

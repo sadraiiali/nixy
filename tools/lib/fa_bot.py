@@ -174,14 +174,16 @@ def to_persian_digits(text: str) -> str:
 def apply_orthography(text: str) -> str:
     text = text.replace("\r", "")
     text = re.sub(r"[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F\uFEFF\u00AD]+", "", text)
+    # Trim trailing fancy spaces at EOL only — never strip indentation or ZWNJ (U+200C).
     text = re.sub(
-        r"[ \xA0\xAD\u1680\u180E\u2000-\u200D\u2028\u2029\u202F\u205F\u2060\u3000]+\n",
+        r"[ \xA0\xAD\u1680\u180E\u2000-\u200A\u2028\u2029\u202F\u205F\u2060\u3000]+\n",
         "\n",
         text,
     )
-    text = re.sub(r"\n[\t\u00A0]+", "\n", text)
+    # Do NOT strip leading tabs/spaces after newlines (breaks MD/Nix indent).
+    # Normalize exotic space chars to ASCII space (exclude ZWNJ/ZWJ U+200C–U+200D).
     text = re.sub(
-        r"[\u0020\u0085\u00A0\u180E\u2000-\u200A\u202F\u205F\u3000]",
+        r"[\u0085\u00A0\u180E\u2000-\u200A\u202F\u205F\u3000]",
         " ",
         text,
     )
@@ -316,8 +318,8 @@ def punctuation(text: str) -> str:
     text = re.sub(rf"([{PERSIAN_CHARACTERS}])(]]|»|)[ ]*[,]", r"\1\2، ", text)
     text = re.sub(r"(،|؛|؟)  ", r"\1 ", text)
     text = text.replace("\r", "")
-    # Collapse repeated spaces between non-space chars (preserve list indent style lightly)
-    text = re.sub(r"(?<=\S) {2,}(?=\S)", " ", text)
+    # Never collapse multiple ASCII spaces — that destroys Markdown/Nix indentation
+    # (lists, blockquote code, attrsets). Only trim duplicate spaces after Persian punct above.
     # Space after Persian punctuation marks (not ASCII ".")
     text = re.sub(
         r"([،\؛\؟»])([^\s\.\(\)«»\"\[\]<>\dA-Za-z_/\{\}\|۰۱۲۳۴۵۶۷۸۹'])",

@@ -5,7 +5,10 @@
 `nix-env --set-flag` - اصلاح صفت‌های فراداده (meta attributes) بسته‌های نصب‌شده
 
 ## خلاصه دستور
-`nix-env` `--set-flag` *name* *value* *drvnames*
+
+```text
+nix-env --set-flag name value drvnames
+```
 
 ## توضیحات
 عملیات `--set-flag` امکان اصلاح صفت‌های فراداده (meta attributes) بسته‌های نصب‌شده را فراهم می‌کند. چندین صفت وجود دارد که اصلاح آن‌ها مفید است، زیرا روی رفتار `nix-env` یا اسکریپت ساخت محیط کاربر تأثیر می‌گذارند:

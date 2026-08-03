@@ -26,7 +26,7 @@
 
 > نمونه‌ای از چند فایل که بخش زیادی از موارد توصیف‌شده در ادامه را نشان می‌دهند
 >
-```
+> ```
 > src
 > ├── libexpr
 > │   ├── meson.build
@@ -59,15 +59,15 @@
 > …
 > ```
 
-آزمون‌ها برای هر کتابخانه Nix (`libnixexpr`، `libnixstore` و غیره) در داخل یک پوشه به نام `src/${'{'}'{'{'}'{'}'}library_name_without-nix{'{'}'{'}'}'{'}'}-test` قرار دارند.
+آزمون‌ها برای هر کتابخانه Nix (`libnixexpr`، `libnixstore` و غیره) در داخل یک پوشه به نام `src/${'{'}library_name_without-nix{'}'}-test` قرار دارند.
 با فرض وجود یک جفت رابط (سرآیند) و پیاده‌سازی در کتابخانه اصلی، مثلاً `src/libexpr/include/nix/expr/value/context.hh` و `src/libexpr/value/context.cc`، ما آزمون‌های آن را در `src/libexpr-tests/value/context.cc` می‌نویسیم و (احتمالاً) رابط‌های اضافی را برای اهداف آزمایشی در `src/libexpr-test-support/include/nix/expr/tests/value/context.hh` و `src/libexpr-test-support/tests/value/context.cc` اعلام/تعریف می‌کنیم.
 
 داده‌های مربوط به تست‌های واحد در یک زیرپوشه `data` متعلق به پوشهٔ هر فایل اجرایی تست واحد ذخیره می‌شوند.
 برای نمونه، کد `libnixstore` در `src/libstore` قرار دارد و داده‌های تست آن در `src/libstore-tests/data` هستند.
-مسیر پوشهٔ `src/${'{'}'{'{'}'{'}'}library_name_without-nix{'{'}'{'}'}'{'}'}-test/data` از طریق متغیر محیطی `_NIX_TEST_UNIT_DATA` به فایل اجرایی تست واحد ارسال می‌شود.
+مسیر پوشهٔ `src/${'{'}library_name_without-nix{'}'}-test/data` از طریق متغیر محیطی `_NIX_TEST_UNIT_DATA` به فایل اجرایی تست واحد ارسال می‌شود.
 توجه داشته باشید که هر فایل اجرایی تنها داده‌های مربوط به تست‌های خودش را دریافت می‌کند.
 
-کتابخانه‌های تست واحد در `src/${'{'}'{'{'}'{'}'}library_name_without-nix{'{'}'{'}'}'{'}'}-test-support` قرار دارند.
+کتابخانه‌های تست واحد در `src/${'{'}library_name_without-nix{'}'}-test-support` قرار دارند.
 تمام سرآیندها در یک زیرپوشه `tests` قرار گرفته‌اند تا با دستور `#include "nix/tests/"` وارد (include) شوند.
 
 استفاده از تمام این پوشه‌های مجزا برای تست‌های واحد ممکن است نامطلوب به نظر برسد، زیرا برای مثال تست‌ها «درست در کنار» بخشی از کدی که در حال تست آن هستند قرار ندارند.
@@ -113,7 +113,7 @@ GTEST_BRIEF=1 GTEST_FILTER='Group.my-failing-test' meson test nix-expr-tests --g
 
 3. متوقف کردن برنامه در هنگام شکست خوردن تست، به کاربر اجازه می‌دهد تا دستورات دلخواهی را به GDB صادر کند.
 
-### تست مشخصه‌سازی {'{'}'{'{'}'{'}'} #characterisation-testing-unit {'{'}'{'}'}'{'}'}
+### تست مشخصه‌سازی {'{'} #characterisation-testing-unit {'}'}
 
 برای بحث گسترده‌تر پیرامون تست مشخصه‌سازی، به [تست مشخصه‌سازی تابعی](#characterisation-testing-functional) مراجعه کنید.
 
@@ -252,7 +252,7 @@ GNU gdb (GDB) 12.1
 می‌توان فراخوانی Nix را به تمام روش‌های معمول دیباگ (اشکال‌زدایی) کرد.
 برای مثال، `run` را وارد کنید تا فراخوانی Nix آغاز شود.
 
-### آزمایش توصیف رفتار {'{'}'{'{'}'{'}'} #characterisation-testing-functional {'{'}'{'}'}'{'}'}
+### آزمایش توصیف رفتار {'{'} #characterisation-testing-functional {'}'}
 
 گاهی اوقات، Nix از تکنیکی به نام [آزمایش توصیف رفتار](https://en.wikipedia.org/wiki/Characterization_test) به عنوان بخشی از تست‌های عملکردی استفاده می‌کند.
 این تکنیک شامل گنجاندن خروجی/رفتار دقیق نسخه قبلی Nix در یک تست است تا بررسی شود که Nix در آینده نیز به تولید همان رفتار ادامه می‌دهد.

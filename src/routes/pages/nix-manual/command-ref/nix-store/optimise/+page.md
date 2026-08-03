@@ -6,7 +6,9 @@
 
 ## خلاصه دستور
 
-`nix-store` `--optimise`
+```text
+nix-store --optimise
+```
 
 ## توضیحات
 

@@ -70,7 +70,7 @@ element of *list*, and `false` otherwise.
 `attrNames set`
 
 Return the names of the attributes in the set *set* in an
-alphabetically sorted list. For instance, `builtins.attrNames {'{'}'{'{'}'{'}'} y = 1; x = "foo"; {'{'}'{'}'}'{'}'}` evaluates to `[ "x" "y" ]`.
+alphabetically sorted list. For instance, `builtins.attrNames {'{'} y = 1; x = "foo"; {'}'}` evaluates to `[ "x" "y" ]`.
 
 `attrValues set`
 
@@ -115,7 +115,7 @@ if builtins ? hasContext then builtins.hasContext s else true
 Collect each attribute named *attr* from a list of attribute
 sets. Attrsets that don't contain the named attribute are
 ignored. For example,
-builtins.catAttrs "a" [{'{'}'{'{'}'{'}'}a = 1;{'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'}b = 0;{'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'}a = 2;{'{'}'{'}'}'{'}'}]
+builtins.catAttrs "a" [{'{'}a = 1;{'}'} {'{'}b = 0;{'}'} {'{'}a = 2;{'}'}]
 
 evaluates to `[1 2]`.
 
@@ -182,29 +182,29 @@ The result hash is the *toHashFormat* representation of the hash *hash*.
 
 **Example**
 Convert a SHA256 hash in Base16 to SRI:
-builtins.convertHash {'{'}'{'{'}'{'}'}
+builtins.convertHash {'{'}
  hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
  toHashFormat = "sri";
  hashAlgo = "sha256";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
 
 **Example**
 Convert a SHA256 hash in SRI to Base16:
-builtins.convertHash {'{'}'{'{'}'{'}'}
+builtins.convertHash {'{'}
  hash = "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=";
  toHashFormat = "base16";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 **Example**
 Convert a hash in the form `&lt;hashAlgo&gt;:&lt;hashBody&gt;` in Base16 to SRI:
-builtins.convertHash {'{'}'{'{'}'{'}'}
+builtins.convertHash {'{'}
  hash = "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
  toHashFormat = "sri";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
 
@@ -216,10 +216,10 @@ or else
 [`system`](/pages/nix-manual/command-ref/conf-file-prefix#conf-system)
 configuration option.
 It can be used to set the `system` attribute for [`builtins.derivation`](/pages/nix-manual/language/derivations) such that the resulting derivation can be built on the same system that evaluates the Nix expression:
- builtins.derivation {'{'}'{'{'}'{'}'}
+ builtins.derivation {'{'}
  # ...
  system = builtins.currentSystem;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 It can be overridden in order to create derivations for different system than the current one:
 $ nix-instantiate --system "mips64-linux" --eval --expr 'builtins.currentSystem'
@@ -295,20 +295,20 @@ Fetch a store path [closure](/pages/nix-manual/glossary#gloss-closure) from a bi
 This function can be invoked in three ways that we will discuss in order of preference.
 **Fetch a content-addressed store path**
 Example:
-builtins.fetchClosure {'{'}'{'{'}'{'}'}
+builtins.fetchClosure {'{'}
  fromStore = "https://cache.nixos.org";
  fromPath = /nix/store/ldbhlwhh39wha58rm61bkiiwm6j7211j-git-2.33.1;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 This is the simplest invocation, and it does not require the user of the expression to configure [`trusted-public-keys`](/pages/nix-manual/command-ref/conf-file-prefix#conf-trusted-public-keys) to ensure their authenticity.
 If your store path is [input addressed](/pages/nix-manual/glossary#gloss-input-addressed-store-object) instead of content addressed, consider the other two invocations.
 **Fetch any store path and rewrite it to a fully content-addressed store path**
 Example:
-builtins.fetchClosure {'{'}'{'{'}'{'}'}
+builtins.fetchClosure {'{'}
  fromStore = "https://cache.nixos.org";
  fromPath = /nix/store/nph9br6y2dmciy6q3dj3fwk2brdlr4gh-git-2.33.1;
  toPath = /nix/store/ldbhlwhh39wha58rm61bkiiwm6j7211j-git-2.33.1;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 This example fetches `/nix/store/r2jd...` from the specified binary cache,
 and rewrites it into the content-addressed store path
@@ -322,11 +322,11 @@ rewrote '/nix/store/nph9br6y2dmciy6q3dj3fwk2brdlr4gh-git-2.33.1' to '/nix/store/
 Alternatively, set `toPath = ""` and find the correct `toPath` in the error message.
 **Fetch an input-addressed store path as is**
 Example:
-builtins.fetchClosure {'{'}'{'{'}'{'}'}
+builtins.fetchClosure {'{'}
  fromStore = "https://cache.nixos.org";
  fromPath = /nix/store/nph9br6y2dmciy6q3dj3fwk2brdlr4gh-git-2.33.1;
  inputAddressed = true;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 It is possible to fetch an [input-addressed store path](/pages/nix-manual/glossary#gloss-input-addressed-store-object) and return it as is.
 However, this is the least preferred way of invoking `fetchClosure`, because it requires that the input-addressed paths are trusted by the Nix configuration.
@@ -403,27 +403,27 @@ Requires the [`verified-fetches` experimental feature](/pages/nix-manual/develop
 `publicKeys`
 The public keys against which `rev` is verified if `verifyCommit` is enabled.
 Must be given as a list of attribute sets with the following form:
-{'{'}'{'{'}'{'}'}
+{'{'}
  key = "&lt;public key&gt;";
  type = "&lt;key type&gt;"; # optional, default: "ssh-ed25519"
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 Requires the [`verified-fetches` experimental feature](/pages/nix-manual/development/experimental-features#xp-feature-verified-fetches).
 
 Here are some examples of how to use `fetchGit`.
 
 To fetch a private repository over SSH:
-builtins.fetchGit {'{'}'{'{'}'{'}'}
+builtins.fetchGit {'{'}
  url = "git@github.com:my-secret/repository.git";
  ref = "master";
  rev = "adab8b916a45068c044658c4158d81878f9ed1c3";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 To fetch an arbitrary reference:
-builtins.fetchGit {'{'}'{'{'}'{'}'}
+builtins.fetchGit {'{'}
  url = "https://github.com/NixOS/nix.git";
  ref = "refs/heads/0.5-release";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 If the revision you're looking for is in the default branch of
 the git repository you don't strictly need to specify the branch
@@ -431,11 +431,11 @@ name in the `ref` attribute.
 However, if the revision you're looking for is in a future
 branch for the non-default branch you will need to specify the
 the `ref` attribute as well.
-builtins.fetchGit {'{'}'{'{'}'{'}'}
+builtins.fetchGit {'{'}
  url = "https://github.com/nixos/nix.git";
  rev = "841fcbd04755c7a2865c51c1e2d3b045976b7452";
  ref = "1.11-maintenance";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 **Note**
 It is nice to always specify the branch which a revision
@@ -447,34 +447,34 @@ more obvious.
 
 If the revision you're looking for is in the default branch of
 the git repository you may omit the `ref` attribute.
-builtins.fetchGit {'{'}'{'{'}'{'}'}
+builtins.fetchGit {'{'}
  url = "https://github.com/nixos/nix.git";
  rev = "841fcbd04755c7a2865c51c1e2d3b045976b7452";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 To fetch a specific tag:
-builtins.fetchGit {'{'}'{'{'}'{'}'}
+builtins.fetchGit {'{'}
  url = "https://github.com/nixos/nix.git";
  ref = "refs/tags/1.9";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 To fetch the latest version of a remote branch:
-builtins.fetchGit {'{'}'{'{'}'{'}'}
+builtins.fetchGit {'{'}
  url = "ssh://git@github.com/nixos/nix.git";
  ref = "master";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 To verify the commit signature:
-builtins.fetchGit {'{'}'{'{'}'{'}'}
+builtins.fetchGit {'{'}
  url = "ssh://git@github.com/nixos/nix.git";
  verifyCommit = true;
  publicKeys = [
- {'{'}'{'{'}'{'}'}
+ {'{'}
  type = "ssh-ed25519";
  key = "AAAAC3NzaC1lZDI1NTE5AAAAIArPKULJOid8eS6XETwUjO48/HKBWl7FTCK0Z//fplDi";
- {'{'}'{'}'}'{'}'}
+ {'}'}
  ];
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 Nix refetches the branch according to the [`tarball-ttl`](/pages/nix-manual/command-ref/conf-file-prefix#conf-tarball-ttl) setting.
 This behavior is disabled in [pure evaluation mode](/pages/nix-manual/command-ref/conf-file-prefix#conf-pure-eval).
@@ -496,9 +496,9 @@ single directory, then the top-level path component of the files
 in the tarball is removed. The typical use of the function is to
 obtain external Nix expression dependencies, such as a
 particular version of Nixpkgs, e.g.
-with import (fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-14.12.tar.gz) {'{'}'{'{'}'{'}'}{'{'}'{'}'}'{'}'};
+with import (fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-14.12.tar.gz) {'{'}{'}'};
 
-stdenv.mkDerivation {'{'}'{'{'}'{'}'} … {'{'}'{'}'}'{'}'}
+stdenv.mkDerivation {'{'} … {'}'}
 
 The fetched tarball is cached for a certain amount of time (1
 hour by default) in `~/.cache/nix/tarballs/`. You can change the
@@ -510,12 +510,12 @@ option `--unpack` is required.
 This function can also verify the contents against a hash. In that
 case, the function takes a set instead of a URL. The set requires
 the attribute `url` and the attribute `sha256`, e.g.
-with import (fetchTarball {'{'}'{'{'}'{'}'}
+with import (fetchTarball {'{'}
  url = "https://github.com/NixOS/nixpkgs/archive/nixos-14.12.tar.gz";
  sha256 = "1jppksrfvbk5ypiqdz4cddxdl8z6zyzdb2srq8fcffr327ld5jj2";
-{'{'}'{'}'}'{'}'}) {'{'}'{'{'}'{'}'}{'{'}'{'}'}'{'}'};
+{'}'}) {'{'}{'}'};
 
-stdenv.mkDerivation {'{'}'{'{'}'{'}'} … {'{'}'{'}'}'{'}'}
+stdenv.mkDerivation {'{'} … {'}'}
 
 Not available in [restricted evaluation mode](/pages/nix-manual/command-ref/conf-file-prefix#conf-restrict-eval).
 
@@ -583,10 +583,10 @@ Supported protocols:
 `https`
 
 **Example**
-fetchTree {'{'}'{'{'}'{'}'}
+fetchTree {'{'}
  type = "file";
  url = "https://example.com/index.html";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 `http`
 Insecure HTTP transfer for legacy sources.
@@ -599,10 +599,10 @@ Use a `narHash` known in advance to ensure the output has expected contents.
 A file on the local file system.
 
 **Example**
-fetchTree {'{'}'{'{'}'{'}'}
+fetchTree {'{'}
  type = "file";
  url = "file:///home/eelco/nix/README.md";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 `"git"`
 Fetch a Git tree and copy it to the Nix store.
@@ -667,10 +667,10 @@ Default: `false`
 The URL formats supported are the same as for Git itself.
 
 **Example**
-fetchTree {'{'}'{'{'}'{'}'}
+fetchTree {'{'}
  type = "git";
  url = "git@github.com:NixOS/nixpkgs.git";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 **Note**
 If the URL points to a local directory, and no `ref` or `rev` is given, Nix only considers files added to the Git index, as listed by `git ls-files` but uses the *current file contents* of the Git working directory.
@@ -786,10 +786,10 @@ This has the same underlying implementation as [`builtins.fetchTarball`](/pages/
 `url` (String, required)
 
 **Example**
-fetchTree {'{'}'{'{'}'{'}'}
+fetchTree {'{'}
  type = "tarball";
  url = "https://github.com/NixOS/nixpkgs/tarball/nixpkgs-23.11";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 The following input types are still subject to change:
 
@@ -804,22 +804,22 @@ The additional input types and the URL-like syntax requires the [`flakes` experi
 
 **Example**
 Fetch a GitHub repository using the attribute set representation:
-builtins.fetchTree {'{'}'{'{'}'{'}'}
+builtins.fetchTree {'{'}
  type = "github";
  owner = "NixOS";
  repo = "nixpkgs";
  rev = "ae2e6b3958682513d28f7d633734571fb18285dd";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 This evaluates to the following attribute set:
-{'{'}'{'{'}'{'}'}
+{'{'}
  lastModified = 1686503798;
  lastModifiedDate = "20230611171638";
  narHash = "sha256-rA9RqKP9OlBrgGCPvfd5HVAXDOy8k2SmPtB/ijShNXc=";
  outPath = "/nix/store/l5m6qlvfs9sdw14ja3qbzpglcjlb6j1x-source";
  rev = "ae2e6b3958682513d28f7d633734571fb18285dd";
  shortRev = "ae2e6b3";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 **Example**
 Fetch the same GitHub repository using the URL-like syntax:
@@ -861,10 +861,10 @@ specifying the name of the output directory.
 This function allows you to copy sources into the Nix store while
 filtering certain files. For instance, suppose that you want to use
 the directory `source-dir` as an input to a Nix expression, e.g.
-stdenv.mkDerivation {'{'}'{'{'}'{'}'}
+stdenv.mkDerivation {'{'}
  ...
  src = ./source-dir;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 However, if `source-dir` is a Subversion working copy, then all of
 those annoying `.svn` subdirectories are also copied to the
@@ -903,30 +903,30 @@ A search path is represented as a list of [attribute sets](/pages/nix-manual/lan
 
 Examples of search path attribute sets:
 
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "";
  path = "/nix/var/nix/profiles/per-user/root/channels";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "nixos-config";
  path = "/etc/nixos/configuration.nix";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "nixpkgs";
  path = "https://github.com/NixOS/nixpkgs/tarballs/master";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "nixpkgs";
  path = "channel:nixpkgs-unstable";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "flake-compat";
  path = "flake:github:edolstra/flake-compat";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 The lookup algorithm checks each entry until a match is found, returning a [path value](/pages/nix-manual/language/types#type-path) of the match:
 
@@ -939,14 +939,14 @@ The combined absolute path of the directory (now downloaded if need be) and the 
 **Example**
 A *search-path* value
 [
- {'{'}'{'{'}'{'}'}
+ {'{'}
  prefix = "";
  path = "/home/eelco/Dev";
- {'{'}'{'}'}'{'}'}
- {'{'}'{'{'}'{'}'}
+ {'}'}
+ {'{'}
  prefix = "nixos-config";
  path = "/etc/nixos";
- {'{'}'{'}'}'{'}'}
+ {'}'}
 ]
 
 and a *lookup-path* value `"nixos-config"` causes Nix to try `/home/eelco/Dev/nixos-config` and `/etc/nixos` in that order and return the first path that exists.
@@ -959,31 +959,31 @@ See [documentation on `nix-channel`](/pages/nix-manual/command-ref/nix-channel) 
 **Example**
 These two search path entries are equivalent:
 
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "nixpkgs";
  path = "channel:nixpkgs-unstable";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "nixpkgs";
  path = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 Search paths can also point to source trees using [flake URLs](/pages/nix-manual/command-ref/new-cli/nix3-flake#url-like-syntax).
 
 **Example**
 The search path entry
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "nixpkgs";
  path = "flake:nixpkgs";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 specifies that the prefix `nixpkgs` shall refer to the source tree downloaded from the `nixpkgs` entry in the flake registry.
 Similarly
-{'{'}'{'{'}'{'}'}
+{'{'}
  prefix = "nixpkgs";
  path = "flake:github:nixos/nixpkgs/nixos-22.05";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 makes `&lt;nixpkgs&gt;` refer to a particular branch of the `NixOS/nixpkgs` repository on GitHub.
 
@@ -996,9 +996,9 @@ extra-experimental-features = flakes
 
 Convert a flake reference from attribute set format to URL format.
 For example:
-builtins.flakeRefToString {'{'}'{'{'}'{'}'}
+builtins.flakeRefToString {'{'}
  dir = "lib"; owner = "NixOS"; ref = "23.05"; repo = "nixpkgs"; type = "github";
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 evaluates to
 "github:NixOS/nixpkgs/23.05?dir=lib"
@@ -1018,7 +1018,7 @@ If the datatype of *number* is neither a NixInt (signed 64-bit integer) nor a Ni
 Reduce a list by applying a binary operator, from left to right,
 e.g. `foldl' op nul [x0 x1 x2 ...] = op (op (op nul x0) x1) x2) ...`.
 For example, `foldl' (acc: elem: acc + elem) 0 [1 2 3]` evaluates
-to `6` and `foldl' (acc: elem: {'{'}'{'{'}'{'}'} "${'{'}'{'{'}'{'}'}elem{'{'}'{'}'}'{'}'}" = elem; {'{'}'{'}'}'{'}'} // acc) {'{'}'{'{'}'{'}'}{'{'}'{'}'}'{'}'} ["a" "b"]` evaluates to `{'{'}'{'{'}'{'}'} a = "a"; b = "b"; {'{'}'{'}'}'{'}'}`.
+to `6` and `foldl' (acc: elem: {'{'} "${'{'}elem{'}'}" = elem; {'}'} // acc) {'{'}{'}'} ["a" "b"]` evaluates to `{'{'} a = "a"; b = "b"; {'}'}`.
 The first argument of `op` is the accumulator whereas the second
 argument is the current element being processed. The return value
 of each application of `op` is evaluated immediately, even for
@@ -1027,9 +1027,9 @@ intermediate values.
 `fromJSON e`
 
 Convert a JSON string to a Nix value. For example,
-builtins.fromJSON ''{'{'}'{'{'}'{'}'}"x": [1, 2, 3], "y": null{'{'}'{'}'}'{'}'}''
+builtins.fromJSON ''{'{'}"x": [1, 2, 3], "y": null{'}'}''
 
-returns the value `{'{'}'{'{'}'{'}'} x = [ 1 2 3 ]; y = null; {'{'}'{'}'}'{'}'}`.
+returns the value `{'{'} x = [ 1 2 3 ]; y = null; {'}'}`.
 
 `fromTOML e`
 
@@ -1041,16 +1041,16 @@ builtins.fromTOML ''
  y=2
 ''
 
-returns the value `{'{'}'{'{'}'{'}'} s = "a"; table = {'{'}'{'{'}'{'}'} y = 2; {'{'}'{'}'}'{'}'}; x = 1; {'{'}'{'}'}'{'}'}`.
+returns the value `{'{'} s = "a"; table = {'{'} y = 2; {'}'}; x = 1; {'}'}`.
 
 `functionArgs f`
 
 Return a set containing the names of the formal arguments expected
 by the function *f*. The value of each attribute is a Boolean
 denoting whether the corresponding argument has a default value. For
-instance, `functionArgs ({'{'}'{'{'}'{'}'} x, y ? 123{'{'}'{'}'}'{'}'}: ...) = {'{'}'{'{'}'{'}'} x = false; y = true; {'{'}'{'}'}'{'}'}`.
+instance, `functionArgs ({'{'} x, y ? 123{'}'}: ...) = {'{'} x = false; y = true; {'}'}`.
 "Formal argument" here refers to the attributes pattern-matched by
-the function. Plain lambdas are not included, e.g. `functionArgs (x: ...) = {'{'}'{'{'}'{'}'} {'{'}'{'}'}'{'}'}`.
+the function. Plain lambdas are not included, e.g. `functionArgs (x: ...) = {'{'} {'}'}`.
 
 `genList generator length`
 
@@ -1091,17 +1091,17 @@ Traversing through structures that may contain cycles or loops.
 Processing data structures with complex internal relationships.
 
 **Example**
-builtins.genericClosure {'{'}'{'{'}'{'}'}
- startSet = [ {'{'}'{'{'}'{'}'}key = 5;{'{'}'{'}'}'{'}'} ];
- operator = item: [{'{'}'{'{'}'{'}'}
+builtins.genericClosure {'{'}
+ startSet = [ {'{'}key = 5;{'}'} ];
+ operator = item: [{'{'}
  key = if (item.key / 2 ) * 2 == item.key
  then item.key / 2
  else 3 * item.key + 1;
- {'{'}'{'}'}'{'}'}];
-{'{'}'{'}'}'{'}'}
+ {'}'}];
+{'}'}
 
 evaluates to
-[ {'{'}'{'{'}'{'}'} key = 5; {'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'} key = 16; {'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'} key = 8; {'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'} key = 4; {'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'} key = 2; {'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'} key = 1; {'{'}'{'}'}'{'}'} ]
+[ {'{'} key = 5; {'}'} {'{'} key = 16; {'}'} {'{'} key = 8; {'}'} {'{'} key = 4; {'}'} {'{'} key = 2; {'}'} {'{'} key = 1; {'}'} ]
 
 `getAttr s set`
 
@@ -1117,10 +1117,10 @@ The string context tracks references to derivations within a string.
 It is represented as an attribute set of [store derivation](/pages/nix-manual/glossary#gloss-store-derivation) paths mapping to output names.
 Using [string interpolation](/pages/nix-manual/language/string-interpolation) on a derivation adds that derivation to the string context.
 For example,
-builtins.getContext "${'{'}'{'{'}'{'}'}derivation {'{'}'{'{'}'{'}'} name = "a"; builder = "b"; system = "c"; {'{'}'{'}'}'{'}'}{'{'}'{'}'}'{'}'}"
+builtins.getContext "${'{'}derivation {'{'} name = "a"; builder = "b"; system = "c"; {'}'}{'}'}"
 
 evaluates to
-{'{'}'{'{'}'{'}'} "/nix/store/arhvjaf6zmlyn8vh8fgn55rpwnxq0n7l-a.drv" = {'{'}'{'{'}'{'}'} outputs = [ "out" ]; {'{'}'{'}'}'{'}'}; {'{'}'{'}'}'{'}'}
+{'{'} "/nix/store/arhvjaf6zmlyn8vh8fgn55rpwnxq0n7l-a.drv" = {'{'} outputs = [ "out" ]; {'}'}; {'}'}
 
 `getEnv s`
 
@@ -1158,7 +1158,7 @@ For example,
 builtins.groupBy (builtins.substring 0 1) ["foo" "bar" "baz"]
 
 evaluates to
-{'{'}'{'{'}'{'}'} b = [ "bar" "baz" ]; f = [ "foo" ]; {'{'}'{'}'}'{'}'}
+{'{'} b = [ "bar" "baz" ]; f = [ "foo" ]; {'}'}
 
 `hasAttr s set`
 
@@ -1179,7 +1179,7 @@ name: meta:
 
 if builtins.hasContext name
 then throw "package name cannot contain string context"
-else {'{'}'{'{'}'{'}'} ${'{'}'{'{'}'{'}'}name{'{'}'{'}'}'{'}'} = meta; {'{'}'{'}'}'{'}'}
+else {'{'} ${'{'}name{'}'} = meta; {'}'}
 
 `hashFile type p`
 
@@ -1223,10 +1223,10 @@ Therefore, it cannot refer to variables that are in scope at the call site.
 
 **Example**
 If you have a calling expression
-rec {'{'}'{'{'}'{'}'}
+rec {'{'}
  x = 123;
  y = import ./foo.nix;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 then the following `foo.nix` throws an error:
 # foo.nix
@@ -1234,10 +1234,10 @@ x + 456
 
 since `x` is not in scope in `foo.nix`.
 If you want `x` to be available in `foo.nix`, pass it as a function argument:
-rec {'{'}'{'{'}'{'}'}
+rec {'{'}
  x = 123;
  y = import ./foo.nix x;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 and
 # foo.nix
@@ -1312,13 +1312,13 @@ In case of duplicate occurrences of the same name, the first
 takes precedence.
 Example:
 builtins.listToAttrs
- [ {'{'}'{'{'}'{'}'} name = "foo"; value = 123; {'{'}'{'}'}'{'}'}
- {'{'}'{'{'}'{'}'} name = "bar"; value = 456; {'{'}'{'}'}'{'}'}
- {'{'}'{'{'}'{'}'} name = "bar"; value = 420; {'{'}'{'}'}'{'}'}
+ [ {'{'} name = "foo"; value = 123; {'}'}
+ {'{'} name = "bar"; value = 456; {'}'}
+ {'{'} name = "bar"; value = 420; {'}'}
  ]
 
 evaluates to
-{'{'}'{'{'}'{'}'} foo = 123; bar = 456; {'{'}'{'}'}'{'}'}
+{'{'} foo = 123; bar = 456; {'}'}
 
 `map f list`
 
@@ -1331,9 +1331,9 @@ evaluates to `[ "foobar" "foobla" "fooabc" ]`.
 `mapAttrs f attrset`
 
 Apply function *f* to every element of *attrset*. For example,
-builtins.mapAttrs (name: value: value * 10) {'{'}'{'{'}'{'}'} a = 1; b = 2; {'{'}'{'}'}'{'}'}
+builtins.mapAttrs (name: value: value * 10) {'{'} a = 1; b = 2; {'}'}
 
-evaluates to `{'{'}'{'{'}'{'}'} a = 10; b = 20; {'{'}'{'}'}'{'}'}`.
+evaluates to `{'{'} a = 10; b = 20; {'}'}`.
 
 `match regex str`
 
@@ -1368,7 +1368,7 @@ Extended by the [`-I` option](/pages/nix-manual/command-ref/opt-common#opt-I) or
 
 **Example**
 $ NIX_PATH= nix-instantiate --eval --expr "builtins.nixPath" -I foo=bar --no-pure-eval
-[ {'{'}'{'{'}'{'}'} path = "bar"; prefix = "foo"; {'{'}'{'}'}'{'}'} ]
+[ {'{'} path = "bar"; prefix = "foo"; {'}'} ]
 
 Lookup path expressions are [desugared](https://en.wikipedia.org/wiki/Syntactic_sugar) using this and
 [`builtins.findFile`](/pages/nix-manual/language/builtins-prefix#builtins-findFile):
@@ -1423,8 +1423,8 @@ This primop corresponds to the `^` sigil for [deriving paths](/pages/nix-manual/
 Split the string *s* into a package name and version. The package
 name is everything up to but not including the first dash not followed
 by a letter, and the version is everything following that dash. The
-result is returned in a set `{'{'}'{'{'}'{'}'} name, version {'{'}'{'}'}'{'}'}`. Thus,
-`builtins.parseDrvName "nix-0.12pre12876"` returns `{'{'}'{'{'}'{'}'} name = "nix"; version = "0.12pre12876"; {'{'}'{'}'}'{'}'}`.
+result is returned in a set `{'{'} name, version {'}'}`. Thus,
+`builtins.parseDrvName "nix-0.12pre12876"` returns `{'{'} name = "nix"; version = "0.12pre12876"; {'}'}`.
 
 `parseFlakeRef flake-ref`
 
@@ -1438,7 +1438,7 @@ For example:
 builtins.parseFlakeRef "github:NixOS/nixpkgs/23.05?dir=lib"
 
 evaluates to:
-{'{'}'{'{'}'{'}'} dir = "lib"; owner = "NixOS"; ref = "23.05"; repo = "nixpkgs"; type = "github"; {'{'}'{'}'}'{'}'}
+{'{'} dir = "lib"; owner = "NixOS"; ref = "23.05"; repo = "nixpkgs"; type = "github"; {'}'}
 
 `partition pred list`
 
@@ -1450,7 +1450,7 @@ in *list* for which *pred* returned `true`, and a list named
 builtins.partition (x: x > 10) [1 23 9 3 42]
 
 evaluates to
-{'{'}'{'{'}'{'}'} right = [ 23 42 ]; wrong = [ 1 9 3 ]; {'{'}'{'}'}'{'}'}
+{'{'} right = [ 23 42 ]; wrong = [ 1 9 3 ]; {'}'}
 
 `path args`
 
@@ -1510,7 +1510,7 @@ Return the contents of the directory *path* as a set mapping
 directory entries to the corresponding file type. For instance, if
 directory `A` contains a regular file `B` and another directory
 `C`, then `builtins.readDir ./A` returns the set
-{'{'}'{'{'}'{'}'} B = "regular"; C = "directory"; {'{'}'{'}'}'{'}'}
+{'{'} B = "regular"; C = "directory"; {'}'}
 
 The possible values for the file type are `"regular"`,
 `"directory"`, `"symlink"` and `"unknown"`.
@@ -1528,9 +1528,9 @@ one of `"directory"`, `"regular"`, `"symlink"`, or `"unknown"`.
 
 Remove the attributes listed in *list* from *set*. The attributes
 don’t have to exist in *set*. For instance,
-removeAttrs {'{'}'{'{'}'{'}'} x = 1; y = 2; z = 3; {'{'}'{'}'}'{'}'} [ "a" "x" "z" ]
+removeAttrs {'{'} x = 1; y = 2; z = 3; {'}'} [ "a" "x" "z" ]
 
-evaluates to `{'{'}'{'{'}'{'}'} y = 2; {'{'}'{'}'}'{'}'}`.
+evaluates to `{'{'} y = 2; {'}'}`.
 
 `replaceStrings from to s`
 
@@ -1563,10 +1563,10 @@ If *path* is a directory, the file `default.nix` in that directory is used if it
 **Example**
 Create a file `greet.nix`:
 # greet.nix
-"${'{'}'{'{'}'{'}'}greeting{'{'}'{'}'}'{'}'}, ${'{'}'{'{'}'{'}'}name{'{'}'{'}'}'{'}'}!"
+"${'{'}greeting{'}'}, ${'{'}name{'}'}!"
 
 Import it with additional variables in scope:
-scopedImport {'{'}'{'{'}'{'}'} greeting = "Hello"; name = "World"; {'{'}'{'}'}'{'}'} ./greet.nix
+scopedImport {'{'} greeting = "Hello"; name = "World"; {'}'} ./greet.nix
 
 "Hello, World!"
 
@@ -1709,9 +1709,9 @@ path. The file has suffix *name*. This file can be used as an
 input to derivations. One application is to write builders
 “inline”. For instance, the following Nix expression combines the
 Nix expression for GNU Hello and its build script into one file:
-{'{'}'{'{'}'{'}'} stdenv, fetchurl, perl {'{'}'{'}'}'{'}'}:
+{'{'} stdenv, fetchurl, perl {'}'}:
 
-stdenv.mkDerivation {'{'}'{'{'}'{'}'}
+stdenv.mkDerivation {'{'}
  name = "hello-2.1.1";
 
  builder = builtins.toFile "builder.sh" "
@@ -1726,12 +1726,12 @@ stdenv.mkDerivation {'{'}'{'{'}'{'}'}
  make install
  ";
 
- src = fetchurl {'{'}'{'{'}'{'}'}
+ src = fetchurl {'{'}
  url = "http://ftp.nluug.nl/pub/gnu/hello/hello-2.1.1.tar.gz";
  sha256 = "1md7jsfd8pa45z73bz1kszpp01yw6x5ljkjk2hx7wl800any6465";
- {'{'}'{'}'}'{'}'};
+ {'}'};
  inherit perl;
-{'{'}'{'}'}'{'}'}
+{'}'}
 
 It is even possible for one file to refer to another, e.g.,
 builder = let
@@ -1742,7 +1742,7 @@ builder = let
 in builtins.toFile "builder.sh" "
  source $stdenv/setup
  ...
- cp ${'{'}'{'{'}'{'}'}configFile{'{'}'{'}'}'{'}'} $out/etc/foo.conf
+ cp ${'{'}configFile{'}'} $out/etc/foo.conf
 ";
 
 Note that `$`is a
@@ -1753,8 +1753,8 @@ spliced into the resulting string.
 It is however *not* allowed to have files mutually referring to each
 other, like so:
 let
- foo = builtins.toFile "foo" "...${'{'}'{'{'}'{'}'}bar{'{'}'{'}'}'{'}'}...";
- bar = builtins.toFile "bar" "...${'{'}'{'{'}'{'}'}foo{'{'}'{'}'}'{'}'}...";
+ foo = builtins.toFile "foo" "...${'{'}bar{'}'}...";
+ bar = builtins.toFile "bar" "...${'{'}foo{'}'}...";
 in foo
 
 This is not allowed because it would cause a cyclic dependency in
@@ -1785,7 +1785,7 @@ A string (in which case the string is returned unmodified).
 
 A path (e.g., `toString /foo/bar` yields `"/foo/bar"`.
 
-A set containing `{'{'}'{'{'}'{'}'} __toString = self: ...; {'{'}'{'}'}'{'}'}` or `{'{'}'{'{'}'{'}'} outPath = ...; {'{'}'{'}'}'{'}'}`.
+A set containing `{'{'} __toString = self: ...; {'}'}` or `{'{'} outPath = ...; {'}'}`.
 
 An integer.
 
@@ -1803,9 +1803,9 @@ application for `toXML` is to communicate information with the
 builder in a more structured format than plain environment
 variables.
 Here is an example where this is the case:
-{'{'}'{'{'}'{'}'} stdenv, fetchurl, libxslt, jira, uberwiki {'{'}'{'}'}'{'}'}:
+{'{'} stdenv, fetchurl, libxslt, jira, uberwiki {'}'}:
 
-stdenv.mkDerivation (rec {'{'}'{'{'}'{'}'}
+stdenv.mkDerivation (rec {'{'}
  name = "web-server";
 
  buildInputs = [ libxslt ];
@@ -1813,7 +1813,7 @@ stdenv.mkDerivation (rec {'{'}'{'{'}'{'}'}
  builder = builtins.toFile "builder.sh" "
  source $stdenv/setup
  mkdir $out
- echo "$servlets" | xsltproc ${'{'}'{'{'}'{'}'}stylesheet{'{'}'{'}'}'{'}'} - > $out/server-conf.xml ①
+ echo "$servlets" | xsltproc ${'{'}stylesheet{'}'} - > $out/server-conf.xml ①
  ";
 
  stylesheet = builtins.toFile "stylesheet.xsl" ②
@@ -1833,10 +1833,10 @@ stdenv.mkDerivation (rec {'{'}'{'{'}'{'}'}
  ";
 
  servlets = builtins.toXML [ ③
- {'{'}'{'{'}'{'}'} path = "/bugtracker"; war = jira + "/lib/atlassian-jira.war"; {'{'}'{'}'}'{'}'}
- {'{'}'{'{'}'{'}'} path = "/wiki"; war = uberwiki + "/uberwiki.war"; {'{'}'{'}'}'{'}'}
+ {'{'} path = "/bugtracker"; war = jira + "/lib/atlassian-jira.war"; {'}'}
+ {'{'} path = "/wiki"; war = uberwiki + "/uberwiki.war"; {'}'}
  ];
-{'{'}'{'}'}'{'}'})
+{'}'})
 
 The builder is supposed to generate the configuration file for a
 [Jetty servlet container](http://jetty.mortbay.org/). A servlet
@@ -1915,9 +1915,9 @@ successful and `false` otherwise. `tryEval` only prevents
 errors created by `throw` or `assert` from being thrown.
 Errors `tryEval` doesn't catch are, for example, those created
 by `abort` and type errors generated by builtins. Also note that
-this doesn't evaluate *e* deeply, so `let e = {'{'}'{'{'}'{'}'} x = throw ""; {'{'}'{'}'}'{'}'}; in (builtins.tryEval e).success` is `true`. Using
+this doesn't evaluate *e* deeply, so `let e = {'{'} x = throw ""; {'}'}; in (builtins.tryEval e).success` is `true`. Using
 `builtins.deepSeq` one can get the expected result:
-`let e = {'{'}'{'{'}'{'}'} x = throw ""; {'{'}'{'}'}'{'}'}; in (builtins.tryEval (builtins.deepSeq e e)).success` is
+`let e = {'{'} x = throw ""; {'}'}; in (builtins.tryEval (builtins.deepSeq e e)).success` is
 `false`.
 `tryEval` intentionally does not return the error message, because that risks bringing non-determinism into the evaluation result, and it would become very difficult to improve error reporting without breaking existing expressions.
 Instead, use [`builtins.addErrorContext`](/pages/nix-manual/language/builtins-prefix#builtins-addErrorContext) to add context to the error message, and use a Nix unit testing tool for testing.
@@ -1978,11 +1978,11 @@ The result is an attribute set where the attribute names are the
 union of the attribute names in each element of `list`. The attribute
 values are the return values of `f`.
 builtins.zipAttrsWith
- (name: values: {'{'}'{'{'}'{'}'} inherit name values; {'{'}'{'}'}'{'}'})
- [ {'{'}'{'{'}'{'}'} a = "x"; {'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'} a = "y"; b = "z"; {'{'}'{'}'}'{'}'} ]
+ (name: values: {'{'} inherit name values; {'}'})
+ [ {'{'} a = "x"; {'}'} {'{'} a = "y"; b = "z"; {'}'} ]
 
 evaluates to
-{'{'}'{'{'}'{'}'}
- a = {'{'}'{'{'}'{'}'} name = "a"; values = [ "x" "y" ]; {'{'}'{'}'}'{'}'};
- b = {'{'}'{'{'}'{'}'} name = "b"; values = [ "z" ]; {'{'}'{'}'}'{'}'};
-{'{'}'{'}'}'{'}'}
+{'{'}
+ a = {'{'} name = "a"; values = [ "x" "y" ]; {'}'};
+ b = {'{'} name = "b"; values = [ "z" ]; {'}'};
+{'}'}

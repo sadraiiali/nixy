@@ -137,7 +137,7 @@ Nix همچنین از پشتیبانی ویژه‌ای برای جاسازی JSO
 به‌عنوان یک تسهیلות برای سازنده‌های Bash، نیکس اسکریپتی را می‌نویسد که متغیرهای شل مربوط به تمام صفت‌هایی که قابل نمایش در Bash هستند را مقداردهی اولیه می‌کند.
 متغیر محیطی `NIX_ATTRS_SH_FILE` به مکان دقیق این اسکریپت، هم در یک ساخت و هم در یک [`nix-shell`](/pages/nix-manual/command-ref/nix-shell) اشاره می‌کند.
 این شامل آرایه‌های غیرتودرتو (انجمنی) نیز می‌شود.
-برای مثال، صفت `hardening.format = true` در نهایت به‌صورت عنصر آرایه انجمنی Bash یعنی `${'{'}'{'{'}'{'}'}hardening[format]{'{'}'{'}'}'{'}'}` درمی‌آید.
+برای مثال، صفت `hardening.format = true` در نهایت به‌صورت عنصر آرایه انجمنی Bash یعنی `${'{'}hardening[format]{'}'}` درمی‌آید.
 
 ### مکان‌نماها (Placeholders)
 
@@ -221,19 +221,19 @@ Nix همچنین از پشتیبانی ویژه‌ای برای جاسازی JSO
 
   > **مثال**
   >
-```
-  > /nix/store/lxrn8v5aamkikg6agxwdqd1jz7746wz4-firefox-98.0.2.drv^out
-  > ```
+> ```
+> /nix/store/lxrn8v5aamkikg6agxwdqd1jz7746wz4-firefox-98.0.2.drv^out
+> ```
 >
 > این به شکل زیر تجزیه (parse) می‌شود:
 >
-```
-  > /nix/store/lxrn8v5aamkikg6agxwdqd1jz7746wz4-firefox-98.0.2.drv^out
-  > |------------------------------------------------------------| |-|
-  > store path (usual encoding)                                    output name
-  >                                                           |--|
-  >                                                           note the ".drv"
-  > ```
+> ```
+> /nix/store/lxrn8v5aamkikg6agxwdqd1jz7746wz4-firefox-98.0.2.drv^out
+> |------------------------------------------------------------| |-|
+> store path (usual encoding)                                    output name
+>                                                           |--|
+>                                                           note the ".drv"
+> ```
 
 ## <a id="dynamic"></a> گسترش مدل به مرتبه بالاتر
 
@@ -290,7 +290,7 @@ type DerivingPath = ConstantPath | OutputPath;
 
 > **مثال**
 >
-```
+> ```
 > /nix/store/lxrn8v5aamkikg6agxwdqd1jz7746wz4-firefox-98.0.2.drv^foo.drv^bar.drv^out
 > |----------------------------------------------------------------------------| |-|
 > inner deriving path (usual encoding)                                           output name

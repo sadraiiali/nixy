@@ -5,11 +5,14 @@
 `nix-prefetch-url` - کپی کردن یک فایل از یک URL به انبار و چاپ هش آن
 
 ## خلاصه دستور
-`nix-prefetch-url` *url* [*hash*]
-  [`--type` *hashAlgo*]
-  [`--print-path`]
-  [`--unpack`]
-  [`--name` *name*]
+
+```text
+nix-prefetch-url url [hash]
+  [--type hashAlgo]
+  [--print-path]
+  [--unpack]
+  [--name name]
+```
 
 ## توضیحات
 دستور `nix-prefetch-url` فایل ارجاع‌داده‌شده توسط URL یعنی *url* را بارگیری می‌کند، هش رمزنگاری‌شده آن را چاپ می‌کند و آن را در انبار Nix کپی می‌کند.

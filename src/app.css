@@ -5880,7 +5880,7 @@ html[data-theme='dark'] .prose blockquote:has(.admonition-kind) pre {
 	word-break: break-all;
 }
 
-/* Inline code chip — RTL + align end (right), matches Persian page flow */
+/* Inline code chip — always LTR (paths, commands, identifiers) */
 .prose code,
 .prose-fa code,
 .prose kbd,
@@ -5894,8 +5894,8 @@ html[data-theme='dark'] .prose blockquote:has(.admonition-kind) pre {
 	padding: 0.1em 0.22em;
 	border-radius: 4px;
 	border: 1px solid var(--line-soft);
-	direction: rtl !important;
-	text-align: right !important;
+	direction: ltr !important;
+	text-align: left !important;
 	unicode-bidi: isolate;
 }
 

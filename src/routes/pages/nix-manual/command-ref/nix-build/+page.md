@@ -5,18 +5,19 @@
 `nix-build` - ساخت یک عبارت Nix
 
 ## خلاصه دستور
-`nix-build` [*paths…*]
-  [`--arg` *name* *value*]
-  [`--argstr` *name* *value*]
-  [{'{'}'{'{'}'{'}'}`--attr` | `-A`{'{'}'{'}'}'{'}'} *attrPath*]
-  [`--no-out-link`]
-  [`--dry-run`]
-  [{'{'}'{'{'}'{'}'}`--out-link` | `-o`{'{'}'{'}'}'{'}'} *outlink*]
+
+```text
+nix-build [paths…]
+  [--arg name value]
+  [--argstr name value]
+  [{--attr | -A} attrPath]
+  [--no-out-link]
+  [--dry-run]
+  [{--out-link | -o} outlink]
+```
 
 ## رفع ابهام
-این صفحه راهنما دستور `nix-build` را توصیف می‌کند که با دستور `nix`
-build` متفاوت است. برای مستندات مربوط به مورد دوم، دستور `nix build --help` را اجرا کنید یا `man
-nix3-build` را ببینید.`
+این صفحه راهنما دستور `nix-build` را توصیف می‌کند که با دستور `nix build` متفاوت است. برای مستندات مربوط به مورد دوم، دستور `nix build --help` را اجرا کنید یا `man nix3-build` را ببینید.
 
 ## توضیحات
 دستور `nix-build` درایویشن‌های توصیف‌شده توسط عبارت‌های Nix در *paths* را می‌سازد. اگر ساخت موفقیت‌آمیز باشد، یک پیوند نمادین (symlink) به نتیجه در پوشه فعلی قرار می‌دهد. پیوند نمادین `result` نام دارد. اگر چندین عبارت Nix وجود داشته باشد، یا عبارت‌های Nix به چندین درایویشن ارزیابی شوند، چندین پیوند نمادین با شماره‌گذاری ترتیبی ایجاد می‌شوند (`result`، `result-2` و غیره).
@@ -26,8 +27,7 @@ nix3-build` را ببینید.`
 اگر عنصری از *paths* با `http://` یا `https://` شروع شود، به عنوان URL یک فایل تاربال (tarball) تفسیر می‌شود که بارگیری شده و در یک مکان موقت استخراج می‌شود. فایل تاربال باید شامل یک پوشه سطح بالا منفرد باشد که حداقل حاوی فایلی به نام `default.nix` باشد.
 
 دستور `nix-build` اساساً پوششی پیرامون
-[`nix-instantiate`](/pages/nix-manual/command-ref/nix-instantiate) (برای ترجمه یک عبارت Nix سطح بالا به یک [store derivation] سطح پایین) و [`nix-store`
---realise`](/pages/nix-manual/command-ref/nix-store/realise) (برای ساخت store derivation) است.`
+[`nix-instantiate`](/pages/nix-manual/command-ref/nix-instantiate) (برای ترجمه یک عبارت Nix سطح بالا به یک [store derivation] سطح پایین) و [`nix-store --realise`](/pages/nix-manual/command-ref/nix-store/realise) (برای ساخت store derivation) است.
 
 [store derivation]: /pages/nix-manual/glossary#gloss-store-derivation
 > **هشدار**
@@ -37,15 +37,15 @@ nix3-build` را ببینید.`
 ## گزینه‌ها
 همه گزینه‌هایی که در اینجا ذکر نشده‌اند، به [`nix-store --realise`](/pages/nix-manual/command-ref/nix-store/realise) منتقل می‌شوند، به جز `--arg` و `--attr` / `-A` که به [`nix-instantiate`](/pages/nix-manual/command-ref/nix-instantiate) منتقل می‌شوند.
 
-- &lt;span id="opt-no-out-link"&gt;[`--no-out-link`](#opt-no-out-link)&lt;span&gt;
+- <span id="opt-no-out-link">[`--no-out-link`](#opt-no-out-link)</span>
 
   یک پیوند نمادین به مسیر خروجی ایجاد نکنید. توجه داشته باشید که در نتیجه، خروجی به ریشه‌ای از جمع‌کننده‌ی زباله تبدیل نمی‌شود و بنابراین ممکن است توسط `nix-store --gc` حذف شود.
 
-- &lt;span id="opt-dry-run"&gt;[`--dry-run`](#opt-dry-run)&lt;/span&gt;
+- <span id="opt-dry-run">[`--dry-run`](#opt-dry-run)</span>
 
   نشان دهید چه مسیرهای انباری (store paths) ساخته یا بارگیری خواهند شد.
 
-- &lt;span id="opt-out-link"&gt;[`--out-link`](#opt-out-link)&lt;/span&gt; / `-o` *outlink*
+- <span id="opt-out-link">[`--out-link`](#opt-out-link)</span> / `-o` *outlink*
 
   نام پیوند نمادین به مسیر خروجی ایجاد شده را از `result` به *outlink* تغییر دهید.
 

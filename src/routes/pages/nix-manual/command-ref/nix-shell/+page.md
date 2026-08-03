@@ -5,21 +5,22 @@
 `nix-shell` - راه‌اندازی یک شل تعاملی بر اساس یک عبارت نیکس (Nix expression)
 
 ## خلاصه دستور
-`nix-shell`
-  [`--arg` *name* *value*]
-  [`--argstr` *name* *value*]
-  [{'{'}'{'{'}'{'}'}`--attr` | `-A`{'{'}'{'}'}'{'}'} *attrPath*]
-  [`--command` *cmd*]
-  [`--run` *cmd*]
-  [`--exclude` *regexp*]
-  [`--pure`]
-  [`--keep` *name*]
-  {'{'}'{'{'}'{'}'}{'{'}'{'{'}'{'}'}`--packages` | `-p`{'{'}'{'}'}'{'}'} {'{'}'{'{'}'{'}'}*packages* | *expressions*{'{'}'{'}'}'{'}'} … | [*path*]{'{'}'{'}'}'{'}'}
+
+```text
+nix-shell
+  [--arg name value]
+  [--argstr name value]
+  [{--attr | -A} attrPath]
+  [--command cmd]
+  [--run cmd]
+  [--exclude regexp]
+  [--pure]
+  [--keep name]
+  {{--packages | -p} {packages | expressions} … | [path]}
+```
 
 ## رفع ابهام
-این صفحه راهنما (man page) دستور `nix-shell` را توصیف می‌کند که با دستور `nix`
-shell` متفاوت است. برای مستندات مربوط به مورد دوم، دستور `nix shell --help` را اجرا کنید یا به `man
-nix3-env-shell` مراجعه کنید.`
+این صفحه راهنما (man page) دستور `nix-shell` را توصیف می‌کند که با دستور `nix shell` متفاوت است. برای مستندات مربوط به مورد دوم، دستور `nix shell --help` را اجرا کنید یا به `man nix3-env-shell` مراجعه کنید.
 
 ## توضیحات
 دستور `nix-shell` وابستگی‌های derivation مشخص‌شده را می‌سازد، اما خود derivation را نمی‌سازد. سپس یک شل تعاملی را راه‌اندازی می‌کند که در آن تمام متغیرهای محیطی تعریف‌شده توسط *مسیر* derivation روی مقادیر متناظرشان تنظیم شده‌اند و اسکریپت `$stdenv/setup` منبع‌دهی (source) شده است. این کار برای بازتولید کردن محیط یک derivation جهت توسعه مفید است.
@@ -72,7 +73,7 @@ shellHook =
   هنگامی که یک شل `--pure` راه‌اندازی می‌شود، متغیرهای محیطی فهرست‌شده را نگه دارید.
 
 ## متغیرهای محیطی
-- &lt;span id="env-NIX_BUILD_SHELL"&gt;[`NIX_BUILD_SHELL`](#env-NIX_BUILD_SHELL)&lt;/span&gt;
+- <span id="env-NIX_BUILD_SHELL">[`NIX_BUILD_SHELL`](#env-NIX_BUILD_SHELL)</span>
 
   شل مورد استفاده برای راه‌اندازی محیط تعاملی.
   به طور پیش‌فرض روی `bash` مربوط به `bashInteractive` یافت‌شده در `&lt;nixpkgs&gt;` تنظیم می‌شود، و در صورت پیدا نشدن، به `bash` موجود در `PATH` بازمی‌گردد.
@@ -88,15 +89,15 @@ shellHook =
   > با وجود `--pure`، این فراخوانی به یک محیط شل کاملاً بازتولیدپذیر منجر نخواهد شد:
   >
 
-```nix
-  > #!/usr/bin/env -S nix-shell --pure
-  > let
-  >   pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/854fdc68881791812eddd33b2fed94b954979a8e.tar.gz") {};
-  > in
-  > pkgs.mkShell {
-  >   buildInputs = pkgs.bashInteractive;
-  > }
-  > ```
+> ```nix
+> #!/usr/bin/env -S nix-shell --pure
+> let
+>   pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/854fdc68881791812eddd33b2fed94b954979a8e.tar.gz") {};
+> in
+> pkgs.mkShell {
+>   buildInputs = pkgs.bashInteractive;
+> }
+> ```
 
 ## مثال‌ها
 برای ساخت وابستگی‌های بسته Pan و راه‌اندازی یک شل تعاملی که در آن ساخته شود:
@@ -150,7 +151,7 @@ $ nix-shell --packages pan -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/8
 Pan 0.139
 ```
 
-## استفاده به عنوان مفسر `#!`
+## استفاده به عنوان مفسر `#!
 شما می‌توانید از `nix-shell` به عنوان یک مفسر اسکریپت استفاده کنید تا به اسکریپت‌های نوشته‌شده با زبان‌های دلخواه اجازه دهید وابستگی‌های خود را از طریق Nix دریافت کنند. این کار با آغاز کردن اسکریپت با خطوط زیر انجام می‌شود:
 
 ```bash

@@ -14,7 +14,9 @@
 
 # <a id="synopsis"></a> Synopsis
 
-`nix hash` [*option*...] *subcommand*
+```text
+nix hash [option...] subcommand
+```
 
 where *subcommand* is one of the following:
 

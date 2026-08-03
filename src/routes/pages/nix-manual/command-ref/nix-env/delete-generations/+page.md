@@ -5,21 +5,24 @@
 `nix-env --delete-generations` - حذف پروفایل جنریشن‌ها
 
 ## خلاصه دستور
-`nix-env` `--delete-generations` *generations*
+
+```text
+nix-env --delete-generations generations
+```
 
 ## توضیحات
 این عملیات، جنریشن‌های مشخص‌شده‌ی پروفایل فعلی را حذف می‌کند.
 
 مقدار *generations* می‌تواند یکی از موارد زیر باشد:
 
-- &lt;span id="generations-list"&gt;[`&lt;number&gt;...`](#generations-list)&lt;/span&gt;
+- <span id="generations-list">[`&lt;number&gt;...`](#generations-list)</span>
 
   فهرستی از شماره‌های جنریشن که هر کدام یک آرگومان خط فرمان جداگانه هستند.
 
   دقیقاً جنریشن‌های پروفایلی را که با شماره‌شان مشخص شده‌اند، حذف می‌کند.
   حذف جنریشن فعلی مجاز نیست.
 
-- &lt;span id="generations-old"&gt;[مقدار خاص `old`](#generations-old)&lt;/span&gt;
+- <span id="generations-old">[مقدار خاص `old`](#generations-old)</span>
 
   حذف تمام جنریشن‌ها به جز جنریشن فعلی.
 
@@ -31,7 +34,7 @@
   > از آنجا که می‌توان به یک جنریشن قبلی بازگردانی (rollback) کرد، این امکان وجود دارد که جنریشن‌هایی جدیدتر از جنریشن فعلی داشته باشیم.
   > آن‌ها نیز حذف خواهند شد.
 
-- &lt;span id="generations-time"&gt;[`&lt;number&gt;d`](#generations-time)&lt;/span&gt;
+- <span id="generations-time">[`&lt;number&gt;d`](#generations-time)</span>
 
   *عدد* روز گذشته
 
@@ -40,7 +43,7 @@
   حذف تمام جنریشن‌هایی که بیش از *عدد* روز پیش ایجاد شده‌اند، به جز جدیدترین مورد در میان آن‌ها.
   این کار امکان بازگردانی (rollback) به جنریشن‌هایی را که در بازه زمانی مشخص‌شده در دسترس بوده‌اند، فراهم می‌کند.
 
-- &lt;span id="generations-count"&gt;[`+&lt;number&gt;`](#generations-count)&lt;/span&gt;
+- <span id="generations-count">[`+&lt;number&gt;`](#generations-count)</span>
 
   *عدد* جنریشن آخر منتهی به زمان حال
 

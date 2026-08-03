@@ -5,13 +5,16 @@
 `nix-copy-closure` - کپی کردن شیءهای انبار به یا از یک ماشین راه دور از طریق SSH
 
 ## خلاصه
-`nix-copy-closure`
-  [`--to` | `--from` ]
-  [`--gzip`]
-  [`--include-outputs`]
-  [`--use-substitutes` | `-s`]
-  [`-v`]
-  [_user_@]_machine_[:_port_] _paths_
+
+```text
+nix-copy-closure
+  [--to | --from ]
+  [--gzip]
+  [--include-outputs]
+  [--use-substitutes | -s]
+  [-v]
+  [user@]machine[:port] paths
+```
 
 ## توضیحات
 با داشتن _paths_ از یک ماشین، `nix-copy-closure` [closure](/pages/nix-manual/glossary#gloss-closure) آن مسیرها (یعنی تمام وابستگی‌های آن‌ها در انبار Nix) را محاسبه کرده و [store objects](/pages/nix-manual/glossary#gloss-store-object) موجود در آن closure را از طریق SSH به ماشینی دیگر کپی می‌کند.
@@ -62,7 +65,7 @@
 > کپی کردن GNU Hello به همراه تمام وابستگی‌های آن به یک ماشین راه دور:
 >
 
-```shell
+> ```shell
 > $ storePath="$(nix-build '<nixpkgs>' -I nixpkgs=channel:nixpkgs-unstable -A hello --no-out-link)"
 > $ nix-copy-closure --to alice@itchy.example.org "$storePath"
 > copying 5 paths...
@@ -78,7 +81,7 @@
 > کپی کردن GNU Hello از یک ماشین راه دور با استفاده از یک مسیر انبار شناخته‌شده و اجرای آن:
 >
 
-```shell
+> ```shell
 > $ storePath="$(nix-instantiate --eval --raw '<nixpkgs>' -I nixpkgs=channel:nixpkgs-unstable -A hello.outPath)"
 > $ nix-copy-closure --from alice@itchy.example.org "$storePath"
 > $ "$storePath"/bin/hello

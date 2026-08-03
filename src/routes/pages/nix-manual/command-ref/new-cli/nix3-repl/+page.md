@@ -14,7 +14,9 @@
 
 # <a id="synopsis"></a> Synopsis
 
-`nix repl` [*option*...] *installables*...
+```text
+nix repl [option...] installables...
+```
 
 # <a id="examples"></a> Examples
 
@@ -34,11 +36,11 @@ nix-repl> map (x: x * 2) [1 2 3]
 Loading Installable ''...
 Added 3 variables.
 
-# nix repl --expr '{'{'}'{'{'}'{'}'}a={'{'}'{'{'}'{'}'}b=3;c=4;{'{'}'{'}'}'{'}'};{'{'}'{'}'}'{'}'}'
+# nix repl --expr '{'{'}a={'{'}b=3;c=4;{'}'};{'}'}'
 Loading Installable ''...
 Added 1 variables.
 
-# nix repl --expr '{'{'}'{'{'}'{'}'}a={'{'}'{'{'}'{'}'}b=3;c=4;{'{'}'{'}'}'{'}'};{'{'}'{'}'}'{'}'}' a
+# nix repl --expr '{'{'}a={'{'}b=3;c=4;{'}'};{'}'}' a
 Loading Installable ''...
 Added 1 variables.
 
@@ -51,7 +53,7 @@ nix-repl> legacyPackages.x86_64-linux.emacs.name
 
 nix-repl> :q
 
-# nix repl --expr 'import &lt;nixpkgs&gt;{'{'}'{'{'}'{'}'}{'{'}'{'}'}'{'}'}'
+# nix repl --expr 'import &lt;nixpkgs&gt;{'{'}{'}'}'
 
 Loading Installable ''...
 Added 12439 variables.
@@ -62,7 +64,7 @@ nix-repl> emacs.name
 nix-repl> emacs.drvPath
 "/nix/store/lp0sjrhgg03y2n0l10n70rg0k7hhyz0l-emacs-27.1.drv"
 
-nix-repl> drv = runCommand "hello" {'{'}'{'{'}'{'}'} buildInputs = [ hello ]; {'{'}'{'}'}'{'}'} "hello; hello > $out"
+nix-repl> drv = runCommand "hello" {'{'} buildInputs = [ hello ]; {'}'} "hello; hello > $out"
 
 nix-repl> :b drv
 this derivation produced the following outputs:

@@ -5,7 +5,10 @@
 `nix-store --gc` - اجرای جمع‌آوری زباله (garbage collection)
 
 ## خلاصه دستور
-`nix-store` `--gc` [`--print-roots` | `--print-live` | `--print-dead`] [`--max-freed` *بایت‌ها*]
+
+```text
+nix-store --gc [--print-roots | --print-live | --print-dead] [--max-freed بایت‌ها]
+```
 
 ## توضیحات
 بدون پرچم‌های اضافی، عملیات `--gc` یک جمع‌آوری زباله (garbage collection) را روی انبار Nix انجام می‌دهد. یعنی تمام مسیرهای موجود در انبار Nix که از طریق ارجاعات سیستم‌فایل از مجموعه‌ای از «ریشه‌ها» قابل دستیابی نیستند، حذف می‌شوند.

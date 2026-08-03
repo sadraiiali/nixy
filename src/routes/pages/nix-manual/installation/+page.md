@@ -17,7 +17,7 @@
 >
 > اگر اخیراً به macOS 15 Sequoia به‌روزرسانی کرده‌اید و در حال دریافت
 
-```shell
+> ```shell
 > error: the user '_nixbld1' in the group 'nixbld' does not exist
 > ```
 > هنگام اجرای دستورهای Nix، برای اطلاع از دستورالعمل‌های رفع مشکل نصب خود بدون نیاز به نصب مجدد، به مسئلهٔ گیت‌هاب [NixOS/nix#10892](https://github.com/NixOS/nix/issues/10892) مراجعه کنید.

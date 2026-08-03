@@ -5,7 +5,10 @@
 `nix-store --realise` - ساخت یا دریافت اشیاء انبار
 
 ## خلاصه
-`nix-store` {'{'}'{'{'}'{'}'}`--realise` | `-r`{'{'}'{'}'}'{'}'} *paths…* [`--dry-run`]
+
+```text
+nix-store {--realise | -r} paths… [--dry-run]
+```
 
 ## توضیحات
 هر یک از *paths* به شرح زیر پردازش می‌شود:

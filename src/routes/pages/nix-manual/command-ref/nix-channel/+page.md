@@ -5,7 +5,10 @@
 `nix-channel` - مدیریت کانال‌های نیکس (Nix channels)
 
 ## خلاصه‌دستور
-`nix-channel` {'{'}'{'{'}'{'}'}`--add` url [*name*] | `--remove` *name* | `--list` | `--update` [*names…*] | `--list-generations` | `--rollback` [*generation*] {'{'}'{'}'}'{'}'}
+
+```text
+nix-channel {--add url [name] | --remove name | --list | --update [names…] | --list-generations | --rollback [generation] }
+```
 
 ## توصیف
 کانال‌ها مکانیزمی برای ارجاع به عبارت‌های Nix راه دور و بازیابی راحت آخرین نسخه آن‌ها هستند.

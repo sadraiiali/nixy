@@ -95,7 +95,7 @@
 > [`ca-derivations`][xp-feature-ca-derivations] را فعال کنید.
 > برای نمونه، در [nix.conf](/pages/nix-manual/command-ref/conf-file) می‌توانید این‌گونه اضافه کنید:
 >
-```
+> ```
 > extra-experimental-features = ca-derivations
 > ```
 

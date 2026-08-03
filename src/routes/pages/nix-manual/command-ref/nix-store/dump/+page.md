@@ -6,7 +6,9 @@
 
 ## خلاصه
 
-`nix-store` `--dump` *path*
+```text
+nix-store --dump path
+```
 
 ## توضیحات
 

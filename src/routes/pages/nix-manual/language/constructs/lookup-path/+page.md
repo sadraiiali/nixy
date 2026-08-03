@@ -10,17 +10,17 @@
 > **مثال**
 >
 
-```nix
+> ```nix
 > <nixpkgs>
->```
+> ```
 >
 >     /nix/var/nix/profiles/per-user/root/channels/nixpkgs
 
 > **مثال**
 >
 
-```nix
+> ```nix
 > <nixpkgs/nixos>
->```
+> ```
 >
 >     /nix/var/nix/profiles/per-user/root/channels/nixpkgs/nixos

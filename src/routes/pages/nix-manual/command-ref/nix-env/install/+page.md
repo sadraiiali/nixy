@@ -5,14 +5,17 @@
 `nix-env --install` - افزودن بسته‌ها به پروفایل کاربر
 
 ## خلاصه دستور
-`nix-env` {'{'}'{'{'}'{'}'}`--install` | `-i`{'{'}'{'}'}'{'}'} *args…*
-  [{'{'}'{'{'}'{'}'}`--prebuilt-only` | `-b`{'{'}'{'}'}'{'}'}]
-  [{'{'}'{'{'}'{'}'}`--attr` | `-A`{'{'}'{'}'}'{'}'}]
-  [`--from-expression`] [`-E`]
-  [`--from-profile` *path*]
-  [`--preserve-installed` | `-P`]
-  [`--remove-all` | `-r`]
-  [`--priority` *priority*]
+
+```text
+nix-env {--install | -i} args…
+  [{--prebuilt-only | -b}]
+  [{--attr | -A}]
+  [--from-expression] [-E]
+  [--from-profile path]
+  [--preserve-installed | -P]
+  [--remove-all | -r]
+  [--priority priority]
+```
 
 ## توضیحات
 عملیات `--install` یک پروفایل جدید ایجاد می‌کند.
@@ -183,8 +186,8 @@ $ nix-env --file ./foo.nix --install --expr \
     'f: (f {system = "i686-linux";}).subversionWithJava'
 ```
 
-یعنی این عبارت به `(f: (f {'{'}'{'{'}'{'}'}system =`
-"i686-linux";{'{'}'{'}'}'{'}'}).subversionWithJava) (import ./foo.nix)` ارزیابی می‌شود؛ در نتیجه صفت `subversionWithJava` را از مجموعهٔ بازگردانده‌شده با فراخوانی تابع تعریف‌شده در `./foo.nix` انتخاب می‌کند.`
+یعنی این عبارت به `(f: (f {'{'}system =`
+"i686-linux";{'}'}).subversionWithJava) (import ./foo.nix)` ارزیابی می‌شود؛ در نتیجه صفت `subversionWithJava` را از مجموعهٔ بازگردانده‌شده با فراخوانی تابع تعریف‌شده در `./foo.nix` انتخاب می‌کند.`
 
 یک اجرای آزمایشی (dry-run) به شما می‌گوید چه مسیرهایی بارگیری یا از روی کد منبع ساخته خواهند شد:
 

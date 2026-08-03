@@ -6,7 +6,9 @@
 
 ## خلاصه
 
-`nix-env` `--set` *drvname*
+```text
+nix-env --set drvname
+```
 
 ## توصیف
 

@@ -1066,9 +1066,15 @@ def strip_myst(
 
     md = map_outside_fences(md, clean_prose_myst)
 
-    # 4) Svelte-safe braces in prose only (fences handled by highlighter)
+    # 4) Man-page synopsis → fenced text (before brace escape so `{` stay
+    #    literal inside the fence; avoids broken multi-line MD paragraphs)
+    from tools.publish.fix_md_escapes import fix_man_synopsis_blocks
+
+    md = fix_man_synopsis_blocks(md)
+
+    # 5) Svelte-safe braces in prose only (fences handled by highlighter)
     md = escape_braces_outside_code(md)
-    # 5) Final pass: fences / broken inline code / stray < that mdsvex→Svelte reject
+    # 6) Final pass: fences / broken inline code / stray < that mdsvex→Svelte reject
     md = sanitize_for_mdsvex(md)
     md = re.sub(r"\n{3,}", "\n\n", md)
     return md.strip() + "\n"

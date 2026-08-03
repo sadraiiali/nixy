@@ -352,7 +352,7 @@
 
 - [string interpolation]<a id="gloss-string-interpolation"></a>
 
-  گسترش دادن عبارت‌های محصور شده در `${'{'}'{'{'}'{'}'} {'{'}'{'}'}'{'}'}` درون یک [string]، [path] یا [attribute name].
+  گسترش دادن عبارت‌های محصور شده در `${'{'} {'}'}` درون یک [string]، [path] یا [attribute name].
 
   برای جزئیات بیشتر به [String interpolation](/pages/nix-manual/language/string-interpolation) مراجعه کنید.
 

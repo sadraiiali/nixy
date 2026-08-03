@@ -6,7 +6,9 @@
 
 ## خلاصه
 
-`nix-store` `--print-env` *drvpath*
+```text
+nix-store --print-env drvpath
+```
 
 ## توضیحات
 

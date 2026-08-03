@@ -2,7 +2,7 @@
 
 گزینه‌های زیر برای تمام عملیات‌های `nix-store` مجاز هستند، اما ممکن است همیشه تأثیری نداشته باشند.
 
-- &lt;span id="opt-add-root"&gt;[`--add-root`](#opt-add-root)&lt;/span&gt; *path*
+- <span id="opt-add-root">[`--add-root`](#opt-add-root)</span> *path*
 
   باعث می‌شود نتیجه‌ی یک realization (`--realise` و `--force-realise`) به عنوان ریشه‌ی جمع‌کننده‌ی زباله ثبت شود. *path* به عنوان یک پیوند نمادین (symlink) به مسیر انبار حاصل ایجاد خواهد شد. علاوه بر این، یک پیوند نمادین با نامی منحصربه‌فرد به *path* در `/nix/var/nix/gcroots/auto/` ایجاد خواهد شد. برای نمونه،
 

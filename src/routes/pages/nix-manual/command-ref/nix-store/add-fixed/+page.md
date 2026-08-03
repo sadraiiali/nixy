@@ -6,7 +6,9 @@
 
 ## خلاصه
 
-`nix-store` `--add-fixed` [`--recursive`] *algorithm* *paths…*
+```text
+nix-store --add-fixed [--recursive] algorithm paths…
+```
 
 ## توضیحات
 

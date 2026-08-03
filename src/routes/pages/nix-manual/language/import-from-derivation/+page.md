@@ -11,7 +11,7 @@
 - [`builtins.readDir`](/pages/nix-manual/language/builtins#builtins-readDir)` expr`
 - [`builtins.pathExists`](/pages/nix-manual/language/builtins#builtins-pathExists)` expr`
 - [`builtins.filterSource`](/pages/nix-manual/language/builtins#builtins-filterSource)` f expr`
-- [`builtins.path`](/pages/nix-manual/language/builtins#builtins-path)` {'{'}'{'{'}'{'}'} path = expr; {'{'}'{'}'}'{'}'}`
+- [`builtins.path`](/pages/nix-manual/language/builtins#builtins-path)` {'{'} path = expr; {'}'}`
 - [`builtins.hashFile`](/pages/nix-manual/language/builtins#builtins-hashFile)` t expr`
 - `builtins.scopedImport x drv`
 

@@ -34,19 +34,19 @@ Nix تضمین خواهد کرد که تمام فایل‌های ارجاع‌ش
     > [`builtins.storePath`] یک رشته با یک عنصر زمینه رشته ثابت منفرد ایجاد می‌کند:
     >
 
-```nix
-    > builtins.getContext (builtins.storePath "/nix/store/ikwkxz4wwlp2g1428n7dy729cg1d9hin-hello-2.10")
-    > ```
+> ```nix
+> builtins.getContext (builtins.storePath "/nix/store/ikwkxz4wwlp2g1428n7dy729cg1d9hin-hello-2.10")
+> ```
 > ارزیابی می‌شود به
 >
 
-```nix
-    > {
-    >   "/nix/store/ikwkxz4wwlp2g1428n7dy729cg1d9hin-hello-2.10" = {
-    >     path = true;
-    >   };
-    > }
-    > ```
+> ```nix
+> {
+>   "/nix/store/ikwkxz4wwlp2g1428n7dy729cg1d9hin-hello-2.10" = {
+>     path = true;
+>   };
+> }
+> ```
 
 [deriving path]: /pages/nix-manual/glossary#gloss-deriving-path
     [store path]: glossary.md#gloss-store-path
@@ -60,22 +60,22 @@ Nix تضمین خواهد کرد که تمام فایل‌های ارجاع‌ش
     > این مثال با نسخه پایدار Nix کار *نخواهد* کرد!
     >
 
-```nix
-    > builtins.getContext
-    >   (builtins.outputOf
-    >     (builtins.storePath "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv")
-    >     "out")
-    > ```
+> ```nix
+> builtins.getContext
+>   (builtins.outputOf
+>     (builtins.storePath "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv")
+>     "out")
+> ```
 > ارزیابی می‌شود به
 >
 
-```nix
-    > {
-    >   "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv" = {
-    >     outputs = [ "out" ];
-    >   };
-    > }
-    > ```
+> ```nix
+> {
+>   "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv" = {
+>     outputs = [ "out" ];
+>   };
+> }
+> ```
 
 [`builtins.outputOf`]: /pages/nix-manual/language/builtins#builtins-outputOf
 - [*derivation deep*]<a id="string-context-element-derivation-deep"></a>
@@ -90,21 +90,21 @@ Nix تضمین خواهد کرد که تمام فایل‌های ارجاع‌ش
   > یک عنصر زمینه رشته‌ای ثابت معمولی را که به یک derivation اشاره می‌کند در نظر بگیرید، و آن را به یک عنصر زمینه رشته‌ای «Derivation deep» تبدیل کنید.
   >
 
-```nix
-  > builtins.getContext
-  >   (builtins.addDrvOutputDependencies
-  >     (builtins.storePath "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv"))
-  > ```
+> ```nix
+> builtins.getContext
+>   (builtins.addDrvOutputDependencies
+>     (builtins.storePath "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv"))
+> ```
 > ارزیابی می‌شود به
 >
 
-```nix
-  > {
-  >   "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv" = {
-  >     allOutputs = true;
-  >   };
-  > }
-  > ```
+> ```nix
+> {
+>   "/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv" = {
+>     allOutputs = true;
+>   };
+> }
+> ```
 
 [`builtins.addDrvOutputDependencies`]: /pages/nix-manual/language/builtins#builtins-addDrvOutputDependencies
   [`builtins.unsafeDiscardOutputDependency`]: ./builtins.md#builtins-unsafeDiscardOutputDependency

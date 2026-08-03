@@ -14,7 +14,9 @@
 
 # <a id="synopsis"></a> Synopsis
 
-`nix copy` [*option*...] *installables*...
+```text
+nix copy [option...] installables...
+```
 
 # <a id="examples"></a> Examples
 

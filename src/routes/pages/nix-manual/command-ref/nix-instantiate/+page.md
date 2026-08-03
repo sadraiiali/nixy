@@ -5,14 +5,17 @@
 `nix-instantiate` - نمونه‌سازی درایویشن‌های انبار از عبارت‌های Nix
 
 ## خلاصه
-`nix-instantiate`
-  [`--parse` | `--eval` [`--strict`] [`--raw` | `--json` | `--xml`] ]
-  [`--read-write-mode`]
-  [`--arg` *name* *value*]
-  [{'{'}'{'{'}'{'}'}`--attr`| `-A`{'{'}'{'}'}'{'}'} *attrPath*]
-  [`--add-root` *path*]
-  [`--expr` | `-E`]
-  *files…*
+
+```text
+nix-instantiate
+  [--parse | --eval [--strict] [--raw | --json | --xml] ]
+  [--read-write-mode]
+  [--arg name value]
+  [{--attr| -A} attrPath]
+  [--add-root path]
+  [--expr | -E]
+  files…
+```
 
 `nix-instantiate` `--find-file` *files…*
 
@@ -43,37 +46,37 @@
   > برای مثال، این دو عبارت Nix با وجود داشتن معنای متفاوت، نتیجه یکسانی را چاپ می‌کنند:
   >
 
-```shell
-  > $ nix-instantiate --eval --expr '{ a = {}; }'
-  > { a = <CODE>; }
-  > $ nix-instantiate --eval --expr '{ a = <CODE>; }'
-  > { a = <CODE>; }
-  > ```
+> ```shell
+> $ nix-instantiate --eval --expr '{ a = {}; }'
+> { a = <CODE>; }
+> $ nix-instantiate --eval --expr '{ a = <CODE>; }'
+> { a = <CODE>; }
+> ```
 >
 > برای خروجی خوانا برای انسان، دستور `nix eval` (تجربی) اطلاعات بیشتری ارائه می‌دهد:
 >
 
-```shell
-  > $ nix-instantiate --eval --expr 'a: a'
-  > <LAMBDA>
-  > $ nix eval --expr 'a: a'
-  > «lambda @ «string»:1:1»
-  > ```
+> ```shell
+> $ nix-instantiate --eval --expr 'a: a'
+> <LAMBDA>
+> $ nix eval --expr 'a: a'
+> «lambda @ «string»:1:1»
+> ```
 >
 > برای خروجی قابل‌خواندن توسط ماشین، گزینه `--xml` خروجی صریح و بدون ابهامی تولید می‌کند:
 >
 
-```shell
-  > $ nix-instantiate --eval --xml --expr '{ foo = <CODE>; }'
-  > <?xml version='1.0' encoding='utf-8'?>
-  > <expr>
-  >   <attrs>
-  >     <attr column="3" line="1" name="foo">
-  >       <unevaluated />
-  >     </attr>
-  >   </attrs>
-  > </expr>
-  > ```
+> ```shell
+> $ nix-instantiate --eval --xml --expr '{ foo = <CODE>; }'
+> <?xml version='1.0' encoding='utf-8'?>
+> <expr>
+>   <attrs>
+>     <attr column="3" line="1" name="foo">
+>       <unevaluated />
+>     </attr>
+>   </attrs>
+> </expr>
+> ```
 
 - `--find-file`
 

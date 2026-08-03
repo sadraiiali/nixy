@@ -6,7 +6,9 @@
 
 ## خلاصه‌دستور
 
-`nix-store` `--restore` *path*
+```text
+nix-store --restore path
+```
 
 ## توضیحات
 

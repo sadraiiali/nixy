@@ -13,7 +13,7 @@ Nix از تنظیمات پیکربندی متنوعی پشتیبانی می‌ک
 
 1. فایل پیکربندی سرتاسر سیستم `nix.conf` در پوشه‌ی پیکربندی.
 
-   پوشه‌ی پیکربندی به طور پیش‌فرض `${'{'}'{'{'}'{'}'}sysconfdir{'{'}'{'}'}'{'}'}/nix` (یعنی `/etc/nix` در اکثر سیستم‌های یونیکس) یا `%PROGRAMDATA%\nix\conf` در ویندوز است، و می‌توان آن را با [`NIX_CONF_DIR`](/pages/nix-manual/command-ref/env-common#env-NIX_CONF_DIR) بازنشانی کرد.
+   پوشه‌ی پیکربندی به طور پیش‌فرض `${'{'}sysconfdir{'}'}/nix` (یعنی `/etc/nix` در اکثر سیستم‌های یونیکس) یا `%PROGRAMDATA%\nix\conf` در ویندوز است، و می‌توان آن را با [`NIX_CONF_DIR`](/pages/nix-manual/command-ref/env-common#env-NIX_CONF_DIR) بازنشانی کرد.
 
    مقادیر بارگذاری‌شده در این فایل به daemon منتقل نمی‌شوند.
    کلاینت فرض می‌کند که daemon آن‌ها را از پیش بارگذاری کرده است.

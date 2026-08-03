@@ -6,7 +6,9 @@
 
 ## خلاصه
 
-`nix-store` `--generate-binary-cache-key` *key-name* *secret-key-file* *public-key-file*
+```text
+nix-store --generate-binary-cache-key key-name secret-key-file public-key-file
+```
 
 ## توضیحات
 

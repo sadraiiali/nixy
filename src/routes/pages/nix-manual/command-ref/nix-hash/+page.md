@@ -5,7 +5,10 @@
 `nix-hash` - محاسبه هش رمزنگاری‌شده یک مسیر
 
 ## خلاصه
-`nix-hash` [`--flat`] [`--base32`] [`--truncate`] [`--type` *hashAlgo*] *path…*
+
+```text
+nix-hash [--flat] [--base32] [--truncate] [--type hashAlgo] path…
+```
 
 `nix-hash` [`--to-base16`|`--to-base32`|`--to-base64`|`--to-sri`] [`--type` *hashAlgo*] *hash…*
 
