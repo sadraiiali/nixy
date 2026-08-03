@@ -2584,7 +2584,7 @@
 		padding: 0.3rem 0.4rem;
 		border-radius: 0.35rem;
 		background: var(--bg-soft);
-		font-family: ui-monospace, Menlo, Consolas, monospace;
+		font-family: var(--font-mono);
 		font-size: 0.65rem;
 		color: var(--muted);
 		overflow: hidden;

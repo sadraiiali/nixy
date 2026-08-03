@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import type * as Monaco from 'monaco-editor';
+	import {
+		EDITOR_FONT_EVENT,
+		EDITOR_FONT_SIZE_DEFAULT,
+		resolveEditorFontStack
+	} from '$lib/editor-font';
 	import { ensureMonacoEnv } from '$lib/tour/monaco-env';
 	import { registerNixLanguage } from '$lib/tour/nix-monaco-lang';
 
@@ -91,6 +96,8 @@
 			}
 		});
 
+		const fontFamily = resolveEditorFontStack();
+		const fontSize = readCssEditorFontSize();
 		const ed = monaco.editor.create(el, {
 			value: propsRef.value,
 			language: propsRef.language,
@@ -98,9 +105,9 @@
 			theme: 'ton-dark',
 			automaticLayout: false,
 			minimap: { enabled: false },
-			fontSize: 13.5,
-			lineHeight: 20,
-			fontFamily: "ui-monospace, 'SF Mono', Menlo, Consolas, monospace",
+			fontSize,
+			lineHeight: Math.round(fontSize * 1.45),
+			fontFamily,
 			tabSize: 2,
 			insertSpaces: true,
 			scrollBeyondLastLine: false,
@@ -223,6 +230,33 @@
 		}
 		editor.updateOptions({ readOnly: ro });
 	});
+
+	// Settings: editor mono font / size
+	$effect(() => {
+		void readyTick;
+		if (!browser || !editor) return;
+		const apply = () => {
+			if (!editor) return;
+			const fontSize = readCssEditorFontSize();
+			editor.updateOptions({
+				fontFamily: resolveEditorFontStack(),
+				fontSize,
+				lineHeight: Math.round(fontSize * 1.45)
+			});
+		};
+		apply();
+		window.addEventListener(EDITOR_FONT_EVENT, apply);
+		return () => window.removeEventListener(EDITOR_FONT_EVENT, apply);
+	});
+
+	function readCssEditorFontSize(): number {
+		if (typeof document === 'undefined') return EDITOR_FONT_SIZE_DEFAULT;
+		const raw = getComputedStyle(document.documentElement)
+			.getPropertyValue('--editor-font-size')
+			.trim();
+		const n = parseFloat(raw);
+		return Number.isFinite(n) && n > 0 ? n : EDITOR_FONT_SIZE_DEFAULT;
+	}
 </script>
 
 <!-- Monaco owns focus inside; host is only a layout shell -->

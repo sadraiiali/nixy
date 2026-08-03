@@ -31,6 +31,7 @@ import settings from './lucide/settings.svg?raw';
 import share2 from './lucide/share-2.svg?raw';
 import skipForward from './lucide/skip-forward.svg?raw';
 import sun from './lucide/sun.svg?raw';
+import terminal from './lucide/terminal.svg?raw';
 import typeIcon from './lucide/type.svg?raw';
 import x from './lucide/x.svg?raw';
 
@@ -68,6 +69,7 @@ export type IconName =
 	| 'share-2'
 	| 'skip-forward'
 	| 'sun'
+	| 'terminal'
 	| 'type'
 	| 'x';
 
@@ -105,6 +107,7 @@ export const icons: Record<IconName, string> = {
 	'share-2': share2,
 	'skip-forward': skipForward,
 	sun,
+	terminal,
 	type: typeIcon,
 	x
 };

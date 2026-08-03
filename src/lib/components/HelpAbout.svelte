@@ -4,6 +4,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import SiteBrand from '$lib/components/SiteBrand.svelte';
 	import { helpCardSources } from '$lib/doc-sources';
+	import { settingsUi } from '$lib/settings-ui.svelte';
 
 	const AUTO_KEY = 'nixi-help-auto-shown';
 	const DISMISS_KEY = 'nixi-help-dismissed';
@@ -169,7 +170,7 @@
 				<li>عرض پنل چپ توی دسکتاپ از طریق کشیدن لبهٔ راستش قابل تغییره.</li>
 				<li>
 					تغییر فونت و اندازهٔ متن از
-					<a href="/settings" onclick={hide}>تنظیمات</a>.
+					<button type="button" class="hab__linkish" onclick={() => { hide(); settingsUi.show(); }}>تنظیمات</button>.
 				</li>
 			</ul>
 
@@ -425,6 +426,20 @@
 
 	.help-card__ok:hover {
 		background: color-mix(in srgb, var(--accent) 20%, var(--bg));
+	}
+
+	.hab__linkish {
+		display: inline;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		color: var(--accent);
+		font: inherit;
+		font-weight: 700;
+		cursor: pointer;
+		text-decoration: underline;
+		text-underline-offset: 0.12em;
 	}
 
 	@media (prefers-reduced-motion: reduce) {

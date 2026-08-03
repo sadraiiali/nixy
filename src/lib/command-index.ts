@@ -139,6 +139,27 @@ function buildIndex(): CommandItem[] {
 			'ایکس'
 		)
 	});
+	push({
+		id: 'action:settings',
+		title: 'تنظیمات',
+		subtitle: 'تم، فونت متن، فونت ویرایشگر',
+		group: 'عمل‌ها',
+		kind: 'action',
+		icon: 'settings',
+		action: 'settings',
+		search: haystack(
+			'تنظیمات',
+			'settings',
+			'preferences',
+			'appearance',
+			'theme',
+			'font',
+			'فونت',
+			'ویرایشگر',
+			'editor font',
+			'monaco'
+		)
+	});
 
 	// Theme (appearance) — snappy palette names + EN/FA search tokens
 	push({

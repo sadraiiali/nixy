@@ -5,6 +5,7 @@
 	import LinkCopyModal from '$lib/components/LinkCopyModal.svelte';
 	import HelpAbout from '$lib/components/HelpAbout.svelte';
 	import DevMdEditor from '$lib/components/DevMdEditor.svelte';
+	import SettingsModal from '$lib/components/SettingsModal.svelte';
 	import SiteBrand from '$lib/components/SiteBrand.svelte';
 	import '../app.css';
 	import { page } from '$app/state';
@@ -13,6 +14,13 @@
 	import { onMount } from 'svelte';
 	import { applyFontSize, readFontSize } from '$lib/font-size';
 	import { applyFontFamily, readFontFamily } from '$lib/font-family';
+	import {
+		applyEditorFont,
+		applyEditorFontSize,
+		readEditorFont,
+		readEditorFontSize
+	} from '$lib/editor-font';
+	import { settingsUi } from '$lib/settings-ui.svelte';
 	import { applyTheme, readTheme, watchSystemTheme } from '$lib/theme';
 	import {
 		inAppPanel,
@@ -307,12 +315,32 @@
 		if (!a || !(a instanceof HTMLAnchorElement)) return;
 
 		// Chrome / nav: default handling
-		if (a.closest('[data-no-panel]')) return;
+		if (a.closest('[data-no-panel]')) {
+			// Settings opens as a modal (Notion-style), never full navigation
+			const hrefAttr = a.getAttribute('href');
+			if (hrefAttr && isSettingsHref(hrefAttr)) {
+				e.preventDefault();
+				e.stopPropagation();
+				e.stopImmediatePropagation();
+				closeMenu();
+				settingsUi.show();
+			}
+			return;
+		}
 
 		// Strip .md before any routing / panel logic
 		rewriteDocLink(a);
 
 		const hrefAttr = a.getAttribute('href');
+
+		if (hrefAttr && isSettingsHref(hrefAttr)) {
+			e.preventDefault();
+			e.stopPropagation();
+			e.stopImmediatePropagation();
+			closeMenu();
+			settingsUi.show();
+			return;
+		}
 
 		if (isWebxdc && isExternalHref(hrefAttr)) {
 			e.preventDefault();
@@ -453,10 +481,28 @@
 		};
 	});
 
+	function isSettingsHref(href: string): boolean {
+		try {
+			const u = new URL(href, typeof location !== 'undefined' ? location.origin : 'http://local');
+			const p = u.pathname.replace(/\/$/, '') || '/';
+			return p === '/settings';
+		} catch {
+			return href === '/settings' || href.startsWith('/settings?') || href.startsWith('/settings#');
+		}
+	}
+
+	function openSettings(e?: Event) {
+		e?.preventDefault();
+		closeMenu();
+		settingsUi.show();
+	}
+
 	onMount(() => {
 		if (!browser) return;
 		applyFontSize(readFontSize());
 		applyFontFamily(readFontFamily());
+		applyEditorFont(readEditorFont());
+		applyEditorFontSize(readEditorFontSize());
 		applyTheme(readTheme());
 		const stopThemeWatch = watchSystemTheme();
 		// WebMCP: expose site tools to browser AI agents (no-op if API unsupported)
@@ -467,11 +513,25 @@
 		enhanceExtLinkIcons(document);
 		enhanceSamePageLinks(document, page.url.pathname, page.url.search);
 		document.addEventListener('click', onDocumentClick, true);
+		// Deep link /settings → open modal without staying on a full page
+		const path = page.url.pathname.replace(/\/$/, '') || '/';
+		if (path === '/settings') {
+			settingsUi.show();
+		}
 		return () => {
 			disposeWebMcp();
 			stopThemeWatch();
 			document.removeEventListener('click', onDocumentClick, true);
 		};
+	});
+
+	// Visiting /settings while already mounted
+	$effect(() => {
+		if (!browser) return;
+		const path = page.url.pathname.replace(/\/$/, '') || '/';
+		if (path === '/settings') {
+			settingsUi.show();
+		}
 	});
 </script>
 
@@ -559,6 +619,7 @@
 
 {#if !embed}
 	<CommandPalette bind:open={cmdOpen} />
+	<SettingsModal />
 	<HelpAbout />
 	<DevMdEditor />
 {/if}
@@ -582,15 +643,29 @@
 
 		<nav class="top__nav top__nav--desktop" aria-label="اصلی" data-no-panel>
 			{#each navIcons as item}
-				<a
-					class="top__icon-btn"
-					href={item.href}
-					aria-current={current(item.href, item.exact) ? 'page' : undefined}
-					aria-label={item.label}
-					data-tip={item.tip ?? item.label}
-				>
-					<Icon name={item.icon} size={18} />
-				</a>
+				{#if item.href === '/settings'}
+					<button
+						type="button"
+						class="top__icon-btn"
+						aria-label={item.label}
+						data-tip={item.tip ?? item.label}
+						aria-haspopup="dialog"
+						aria-expanded={settingsUi.open}
+						onclick={openSettings}
+					>
+						<Icon name={item.icon} size={18} />
+					</button>
+				{:else}
+					<a
+						class="top__icon-btn"
+						href={item.href}
+						aria-current={current(item.href, item.exact) ? 'page' : undefined}
+						aria-label={item.label}
+						data-tip={item.tip ?? item.label}
+					>
+						<Icon name={item.icon} size={18} />
+					</a>
+				{/if}
 			{/each}
 			<button
 				type="button"
@@ -633,15 +708,23 @@
 				<span>جستجو</span>
 			</button>
 			{#each links as item}
-				<a
-					href={item.href}
-					aria-current={current(item.href, item.exact) ? 'page' : undefined}
-					onclick={closeMenu}
-				>
-					<Icon name={item.icon} size={20} />
-					<span>{item.label}</span>
-					<Icon name="arrow-right" size={18} dir class="drawer__arrow" />
-				</a>
+				{#if item.href === '/settings'}
+					<button type="button" class="drawer__settings" onclick={openSettings}>
+						<Icon name={item.icon} size={20} />
+						<span>{item.label}</span>
+						<Icon name="arrow-right" size={18} dir class="drawer__arrow" />
+					</button>
+				{:else}
+					<a
+						href={item.href}
+						aria-current={current(item.href, item.exact) ? 'page' : undefined}
+						onclick={closeMenu}
+					>
+						<Icon name={item.icon} size={20} />
+						<span>{item.label}</span>
+						<Icon name="arrow-right" size={18} dir class="drawer__arrow" />
+					</a>
+				{/if}
 			{/each}
 		</nav>
 		<button type="button" class="drawer__close" onclick={closeMenu}>

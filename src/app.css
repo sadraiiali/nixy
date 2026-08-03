@@ -217,6 +217,9 @@
 	/* Default UI font = Peyda */
 	--font: 'Peyda', Tahoma, system-ui, sans-serif;
 	--font-ui: 'Peyda', Tahoma, system-ui, sans-serif;
+	/* Code / Monaco — overridden by settings (editor-font.ts) */
+	--font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+	--editor-font-size: 14px;
 	--text-size: 0.875rem;
 	--text-lh: 1.5rem;
 	--h1-size: 2rem;
@@ -625,7 +628,7 @@ video {
 	border-radius: 0.4rem;
 	background: var(--bg-soft);
 	border: 1px solid var(--line-soft, var(--line));
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.68rem;
 	font-weight: 500;
 	color: var(--accent) !important;
@@ -966,7 +969,7 @@ html.shell-resizing .iap__frame {
 	flex: 1 1 8rem;
 	min-width: 0;
 	font-size: 0.72rem;
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	color: var(--muted);
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1817,7 +1820,7 @@ html.shell-resizing .iap__frame {
 }
 
 .settings-page__lead code {
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.85em;
 	background: var(--code-bg);
 	padding: 0.1em 0.35em;
@@ -2144,7 +2147,7 @@ html.shell-resizing .iap__frame {
 	padding: 0.45rem 0.75rem;
 	background: var(--ide-bg-soft);
 	border-bottom: 1px solid var(--ide-line);
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.72rem;
 }
 
@@ -2305,7 +2308,7 @@ html.ton-out-resizing * {
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: var(--ide-muted);
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 }
 
 /* Help / solution modal (centered) */
@@ -2423,7 +2426,7 @@ html.ton-out-resizing * {
 	background: var(--ide-bg);
 	color: var(--ide-fg);
 	overflow: auto;
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.82rem;
 	line-height: 1.5;
 	white-space: pre;
@@ -2489,7 +2492,7 @@ html.ton-out-resizing * {
 	overflow: auto;
 	background: var(--ide-out-bg);
 	color: color-mix(in srgb, var(--ide-fg) 85%, var(--ide-muted));
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.8rem;
 	line-height: 1.45;
 	outline: none;
@@ -2557,7 +2560,7 @@ html.ton-out-resizing * {
 	border: 1px solid transparent;
 	border-radius: 0.4rem;
 	background: transparent;
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.8rem;
 	font-weight: 600;
 	color: var(--muted);
@@ -2652,7 +2655,7 @@ html.ton-out-resizing * {
 
 .ton-lesson-picker__kicker {
 	margin: 0 0 0.15rem;
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.72rem;
 	font-weight: 600;
 	color: var(--muted);
@@ -2736,7 +2739,7 @@ html.ton-out-resizing * {
 	grid-row: 1 / span 2;
 	align-self: center;
 	min-width: 1.75rem;
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.78rem;
 	font-weight: 700;
 	color: var(--muted);
@@ -2756,7 +2759,7 @@ html.ton-out-resizing * {
 
 .ton-lesson-picker__path {
 	grid-column: 2;
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.68rem;
 	color: var(--faint);
 	overflow: hidden;
@@ -2816,7 +2819,7 @@ html.ton-out-resizing * {
 .ton-src a {
 	color: var(--accent);
 	text-decoration: none;
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.78rem;
 }
 
@@ -3580,7 +3583,7 @@ html.ton-out-resizing * {
 	border: 1px solid var(--line);
 	border-radius: 0.28rem;
 	background: var(--bg);
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.65rem;
 	font-weight: 600;
 	letter-spacing: 0.02em;
@@ -3758,7 +3761,7 @@ a.nd-page-src__web:focus-visible {
 .nd-page-src__url {
 	min-width: 0;
 	color: var(--fg);
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.78rem;
 	font-weight: 500;
 	word-break: break-all;
@@ -5824,7 +5827,7 @@ html[data-theme='dark'] .prose blockquote:has(.admonition-kind) pre {
 .doc-source a {
 	color: var(--accent) !important;
 	text-decoration: none !important;
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.84em;
 	font-weight: 500;
 	word-break: break-all;
@@ -5873,7 +5876,7 @@ html[data-theme='dark'] .prose blockquote:has(.admonition-kind) pre {
 
 .prose h1 + blockquote:not(:has(p + p)):not(:has(.admonition-kind)) a,
 .doc-page > h1 + blockquote:not(:has(p + p)):not(:has(.admonition-kind)) a {
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.9em;
 	direction: ltr;
 	unicode-bidi: isolate;
@@ -5887,7 +5890,7 @@ html[data-theme='dark'] .prose blockquote:has(.admonition-kind) pre {
 .prose-fa kbd,
 .nd-article__wysiwyg code:not(pre code),
 .nd-article__wysiwyg kbd {
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.88em;
 	background: var(--code-bg);
 	color: var(--fg);
@@ -6075,7 +6078,7 @@ html.dark .nd-article__wysiwyg mark,
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	color: var(--faint);
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	opacity: 0.9;
 	pointer-events: none;
 	line-height: 1;
@@ -6091,7 +6094,7 @@ html.dark .nd-article__wysiwyg mark,
 	padding: 0;
 	color: inherit;
 	font-size: inherit;
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	text-shadow: none;
 	white-space: pre;
 	display: block;
@@ -6572,7 +6575,7 @@ article.prose,
 	direction: ltr !important;
 	text-align: left !important;
 	unicode-bidi: isolate !important;
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 }
 
 /* ─── nix.dev reference glossary (card deck) ─── */
@@ -6649,7 +6652,7 @@ article.prose,
 }
 
 .gloss-card__term-en {
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.72rem;
 	font-weight: 600;
 	color: var(--muted);
@@ -6682,7 +6685,7 @@ article.prose,
 
 .gloss-card__ipa {
 	margin: 0.15rem 0 0 !important;
-	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.78rem !important;
 	line-height: 1.4 !important;
 	color: var(--muted) !important;
@@ -6797,7 +6800,7 @@ article.prose,
 }
 
 .g-top__hint code {
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	background: var(--code-bg);
 	border: var(--bw) solid var(--line-soft);
 	padding: 0.05em 0.3em;
@@ -7190,7 +7193,7 @@ article.prose,
 }
 
 .term-code {
-	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-family: var(--font-mono);
 	font-size: 0.8em;
 	background: var(--code-bg);
 	color: var(--fg);
@@ -7427,20 +7430,26 @@ article.prose,
 		border-top: var(--bw) solid var(--line);
 	}
 
-	.drawer__nav a {
+	.drawer__nav a,
+	.drawer__nav .drawer__settings {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
+		width: 100%;
 		min-height: 3.5rem;
+		margin: 0;
 		padding: 0.85rem 0;
 		border: none;
 		border-bottom: var(--bw) solid var(--line);
 		background: transparent;
 		color: var(--fg);
 		text-decoration: none;
+		font: inherit;
 		font-weight: 600;
 		font-size: 1.05rem;
 		box-shadow: none;
+		cursor: pointer;
+		text-align: start;
 	}
 
 	.drawer__cmd {
@@ -7480,7 +7489,7 @@ article.prose,
 		border: 1px solid var(--line);
 		border-radius: 0.3rem;
 		background: var(--bg-soft);
-		font-family: ui-monospace, Menlo, Consolas, monospace;
+		font-family: var(--font-mono);
 		font-size: 0.72rem;
 		font-weight: 500;
 		color: var(--muted);

@@ -6,6 +6,7 @@
 	import SharePageModal from '$lib/components/SharePageModal.svelte';
 	import { inAppPanel } from '$lib/in-app-panel.svelte';
 	import { searchCommands, type CommandItem } from '$lib/command-index';
+	import { settingsUi } from '$lib/settings-ui.svelte';
 	import { applyTheme, type ThemeId } from '$lib/theme';
 
 	let {
@@ -85,6 +86,11 @@
 			openSharePage();
 			return;
 		}
+		if (item.action === 'settings') {
+			close();
+			requestAnimationFrame(() => settingsUi.show());
+			return;
+		}
 		const themeId = runThemeAction(item.action);
 		if (themeId) {
 			applyTheme(themeId);
@@ -93,6 +99,13 @@
 		}
 		if (item.href) {
 			const href = item.href;
+			// Settings: open modal instead of navigating
+			const path = href.split('?')[0]?.replace(/\/$/, '') || '/';
+			if (path === '/settings') {
+				close();
+				requestAnimationFrame(() => settingsUi.show());
+				return;
+			}
 			close();
 			// full navigation (not side panel) — user chose deliberately
 			void goto(href);
@@ -442,7 +455,15 @@
 		border: 1px solid var(--line);
 		border-radius: 0.25rem;
 		background: var(--bg);
-		font-family: ui-monospace, Menlo, Consolas, monospace;
+		font-family: var(--font-mono);
 		font-size: 0.65rem;
+	}
+
+	/* Phone: no keyboard chrome (Esc / navigate / open) */
+	@media (max-width: 720px) {
+		.cmdk__kbd,
+		.cmdk__foot {
+			display: none;
+		}
 	}
 </style>
