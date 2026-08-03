@@ -110,6 +110,17 @@ export function readEditorFontSize(): number {
 	}
 }
 
+/** Live size from CSS var (settings / Ctrl+scroll), falling back to storage. */
+export function readCssEditorFontSizeFromDom(): number {
+	if (typeof document === 'undefined') return readEditorFontSize();
+	const raw = getComputedStyle(document.documentElement)
+		.getPropertyValue('--editor-font-size')
+		.trim();
+	const n = parseFloat(raw);
+	if (Number.isFinite(n) && n > 0) return clampEditorFontSize(n);
+	return readEditorFontSize();
+}
+
 function notifyEditorFont() {
 	if (typeof window === 'undefined') return;
 	window.dispatchEvent(new CustomEvent(EDITOR_FONT_EVENT));

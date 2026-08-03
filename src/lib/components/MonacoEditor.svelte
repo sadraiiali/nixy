@@ -3,7 +3,9 @@
 	import type * as Monaco from 'monaco-editor';
 	import {
 		EDITOR_FONT_EVENT,
-		EDITOR_FONT_SIZE_DEFAULT,
+		applyEditorFontSize,
+		readCssEditorFontSizeFromDom,
+		readEditorFontSize,
 		resolveEditorFontStack
 	} from '$lib/editor-font';
 	import { ensureMonacoEnv } from '$lib/tour/monaco-env';
@@ -97,7 +99,7 @@
 		});
 
 		const fontFamily = resolveEditorFontStack();
-		const fontSize = readCssEditorFontSize();
+		const fontSize = readCssEditorFontSizeFromDom();
 		const ed = monaco.editor.create(el, {
 			value: propsRef.value,
 			language: propsRef.language,
@@ -237,7 +239,7 @@
 		if (!browser || !editor) return;
 		const apply = () => {
 			if (!editor) return;
-			const fontSize = readCssEditorFontSize();
+			const fontSize = readCssEditorFontSizeFromDom();
 			editor.updateOptions({
 				fontFamily: resolveEditorFontStack(),
 				fontSize,
@@ -249,14 +251,42 @@
 		return () => window.removeEventListener(EDITOR_FONT_EVENT, apply);
 	});
 
-	function readCssEditorFontSize(): number {
-		if (typeof document === 'undefined') return EDITOR_FONT_SIZE_DEFAULT;
-		const raw = getComputedStyle(document.documentElement)
-			.getPropertyValue('--editor-font-size')
-			.trim();
-		const n = parseFloat(raw);
-		return Number.isFinite(n) && n > 0 ? n : EDITOR_FONT_SIZE_DEFAULT;
-	}
+	/**
+	 * Ctrl/Cmd + wheel (or trackpad pinch, which browsers report as ctrl+wheel)
+	 * changes editor code size and persists via settings.
+	 */
+	$effect(() => {
+		if (!browser || !host) return;
+		const el = host;
+		let acc = 0;
+		const onWheel = (e: WheelEvent) => {
+			// Pinch-zoom on Chrome/Safari is ctrlKey + wheel; Cmd+scroll on macOS is metaKey
+			if (!e.ctrlKey && !e.metaKey) return;
+			e.preventDefault();
+			e.stopPropagation();
+			// Normalize: line-mode deltas are larger; pixel mode (trackpad) accumulates
+			const raw = e.deltaY;
+			const step =
+				e.deltaMode === WheelEvent.DOM_DELTA_LINE
+					? raw
+					: e.deltaMode === WheelEvent.DOM_DELTA_PAGE
+						? raw * 16
+						: raw;
+			acc += step;
+			// ~40px / 1 line ≈ one size step
+			const threshold = 40;
+			while (Math.abs(acc) >= threshold) {
+				const dir = acc > 0 ? 1 : -1;
+				acc -= dir * threshold;
+				// wheel down / pinch out → larger (common editor zoom); invert if needed
+				// VS Code: scroll up (negative delta) = zoom in
+				const next = readEditorFontSize() + (dir < 0 ? 1 : -1);
+				applyEditorFontSize(next);
+			}
+		};
+		el.addEventListener('wheel', onWheel, { passive: false, capture: true });
+		return () => el.removeEventListener('wheel', onWheel, true);
+	});
 </script>
 
 <!-- Monaco owns focus inside; host is only a layout shell -->
